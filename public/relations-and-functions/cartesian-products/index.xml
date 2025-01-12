@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cartesian Products :: Maximum Mathematics</title>
+    <link>http://localhost:1313/relations-and-functions/cartesian-products/index.html</link>
+    <description>All of the set operations we’ve seen so far simply take some combination of elements from two given sets, and form a new conglomerate set. The same will be true of Cartesian Products.&#xA;Cartesian Products For all of the set operations we’ve seen so far, we essentially pick out only a subset of elements from each. What’s different about the Cartesian Product is that we iterate over all elements from both sets.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/relations-and-functions/cartesian-products/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

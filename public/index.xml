@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maximum Mathematics</title>
+    <link>http://localhost:1313/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Jan 2025 15:21:45 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Relations and Functions</title>
+      <link>http://localhost:1313/relations-and-functions/index.html</link>
+      <pubDate>Sat, 04 Jan 2025 15:21:45 -0500</pubDate>
+      <guid>http://localhost:1313/relations-and-functions/index.html</guid>
+      <description>Relations and functions are used all throughout mathematics. Examples of functions abound in subjects such as algebra, trigonometry, calculus, as well as computer science, physics, chemistry, biology, and economics.</description>
+    </item>
+    <item>
+      <title>Math Examples</title>
+      <link>http://localhost:1313/math-examples/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/math-examples/index.html</guid>
+      <description>This is an inline \(a^*=x-b^*\) equation&#xA;These are block equations:&#xA;\[a^*=x-b^*\]\[ a^*=x-b^* \]\[ a^*=x-b^* \]These are block equations using alternate delimiters:&#xA;$$a^*=x-b^*$$$$ a^*=x-b^* $$$$ a^*=x-b^* $$</description>
+    </item>
+  </channel>
+</rss>

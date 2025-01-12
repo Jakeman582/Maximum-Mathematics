@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Properties of the Cartesian Product :: Maximum Mathematics</title>
+    <link>http://localhost:1313/relations-and-functions/properties-of-the-cartesian-product/index.html</link>
+    <description>The Cartesian Product of two sets is just another set. This means we can also use other set operations like union, intersection, and set differences.&#xA;In this section, we explore how the Cartesian Product interacts with the other set operators.&#xA;Associativity of the Cartesian Product We already discussed how order matters in Cartesian Products, and as such sets don’t commute around the Cartesian Product operator $\times$. Associativity is another common property we should examine. What exactly is the difference between</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/relations-and-functions/properties-of-the-cartesian-product/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

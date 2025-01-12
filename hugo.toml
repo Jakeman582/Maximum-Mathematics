@@ -1,0 +1,40 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Maximum Mathematics'
+theme = 'relearn'
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\[', '\]'], ['$$', '$$']]
+                    inline = [['\(', '\)']]
+
+[params]
+    math = true
+
+    [[params.boxStyle]]
+        title = 'Definition'
+        identifier = 'definition'
+        color = '#8ED1FC'
+        icon = 'book'
+
+    [[params.boxStyle]]
+        title = 'Example'
+        identifier = 'example'
+        color = '#7BDCB5'
+        icon = 'pencil'
+
+    [[params.boxStyle]]
+        title = 'Important'
+        identifier = 'important'
+        color = '#FFEA00'
+        icon = 'star'
+
+    [[params.boxStyle]]
+        title = "Theorem"
+        identifier = "theorem"
+        color = "#CB95FA"
+        icon = "pen-ruler"
