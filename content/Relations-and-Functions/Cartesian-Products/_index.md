@@ -1,6 +1,6 @@
 +++
 date = '2025-01-04T15:21:45-05:00'
-draft = true
+draft = false
 title = 'Cartesian Products'
 weight = 2
 +++

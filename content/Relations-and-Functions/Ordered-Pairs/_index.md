@@ -1,6 +1,6 @@
 +++
 date = '2024-12-20T16:22:02-05:00'
-draft = true
+draft = false
 title = 'Ordered Pairs'
 weight = 1
 +++
