@@ -1,6 +1,6 @@
 +++
 date = '2024-12-20T16:23:38-05:00'
-draft = true
+draft = false
 title = 'Properties of the Cartesian Product'
 weight = 3 
 +++
