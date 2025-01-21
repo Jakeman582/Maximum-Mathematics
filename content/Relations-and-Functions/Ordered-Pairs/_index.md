@@ -16,7 +16,6 @@ what order we are doing things. In this section, we discuss a new type of
 mathematical object that takes order into account.
 
 ## Ordered Pairs
----
 
 When we were discussing sets, we noted that order and repetition did not 
 matter. All that mattered was whether or not an element was included in the 
@@ -107,6 +106,8 @@ $$ (0, 12) \neq (0, -9) $$
 as expected.
 
 {{% /notice %}}
+
+## Ordering Multiple Elements
 
 Naturally, we aren't limited to two elements. We can collect as many elements 
 as we want in a list. Equality of two n-tuples is also straightforward.

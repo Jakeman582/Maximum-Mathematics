@@ -29,12 +29,5 @@
       <guid>http://localhost:1313/relations-and-functions/properties-of-the-cartesian-product/index.html</guid>
       <description>The Cartesian Product of two sets is just another set. This means we can also use other set operations like union, intersection, and set differences.&#xA;In this section, we explore how the Cartesian Product interacts with the other set operators.&#xA;Associativity of the Cartesian Product We already discussed how order matters in Cartesian Products, and as such sets don’t commute around the Cartesian Product operator $\times$. Associativity is another common property we should examine. What exactly is the difference between</description>
     </item>
-    <item>
-      <title>Relations</title>
-      <link>http://localhost:1313/relations-and-functions/relations/index.html</link>
-      <pubDate>Fri, 20 Dec 2024 16:24:08 -0500</pubDate>
-      <guid>http://localhost:1313/relations-and-functions/relations/index.html</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>

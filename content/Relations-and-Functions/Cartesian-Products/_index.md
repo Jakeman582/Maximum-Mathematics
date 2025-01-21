@@ -10,7 +10,6 @@ elements from two given sets, and form a new conglomerate set. The same will
 be true of Cartesian Products.
 
 ## Cartesian Products
----
 
 For all of the set operations we've seen so far, we essentially pick out only 
 a subset of elements from each. What's different about the Cartesian Product 
@@ -48,7 +47,7 @@ We can organize the construction of the Cartesian Product in a table like so:
 Remember that since we're forming ordered pairs, the order in which we list 
 the sets is also important.
 
-{{% notice style="example" title="Example 4.1.3" %}}
+{{% notice style="example" title="Example 4.2.1" %}}
 Suppose we have 
 
 $$A = \{1, 2\}$$
@@ -95,7 +94,6 @@ affecting the result deserves extra emphasis.
 We are not limited to two sets.
 
 ## Cartesian Products with Multiple Sets
----
 
 Just as we can take the product of multiple numbers, we can also take the 
 Cartesian Product of multiple sets.
@@ -115,7 +113,7 @@ $$\{(a_1,\ a_2,\ \ldots,\ a_n)\ |\ a_1 \in A_1\ \land\ a_2 \in A_2\ \land\ \cdot
 Oftentimes, we refer to a Multiple Cartesian Product simply as a Cartesian 
 Product.
 
-{{% notice style="example" title="Example 4.1.4" %}}
+{{% notice style="example" title="Example 4.2.2" %}}
 Consider the following sets:
 
 \[
@@ -137,7 +135,6 @@ Though the examples we've seen all use different sets, we can use just one set
 multiple times.
 
 ## Repeated Cartesian Products
----
 
 Just as a number can be multiplied by itself multiple times, so too can sets.
 We use exponents to represent the number of times we are taking the Cartesian 
@@ -173,8 +170,4 @@ A^3 &= A \times A \times A \\
 \end{align*}
 \]
 {{% /notice %}}
-
-
-
-
 
