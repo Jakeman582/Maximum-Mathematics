@@ -28,7 +28,7 @@ is that we iterate over all elements from both sets.
 > 
 > Note that A and B do *not* need to be subsets from the same universe.
 > 
-> Sometimes, this is reffered to as a **Set Product**.
+> Sometimes, this is referred to as a **Set Product**.
 
 Basically, for each element in A, we iterate over all of the elements in B, 
 forming ordered pairs where the element from A is the first item in the pair, 

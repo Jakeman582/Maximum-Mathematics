@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Relations :: Maximum Mathematics</title>
+    <link>http://hiancemathbooks.com/relations/index.html</link>
+    <description>Relations are used all throughout mathematics. Examples of relations abound in subjects such as algebra, trigonometry, calculus, as well as computer science, physics, chemistry, biology, and economics.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Jan 2025 15:21:45 -0500</lastBuildDate>
+    <atom:link href="http://hiancemathbooks.com/relations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ordered Pairs</title>
+      <link>http://hiancemathbooks.com/relations/ordered-pairs/index.html</link>
+      <pubDate>Fri, 20 Dec 2024 16:22:02 -0500</pubDate>
+      <guid>http://hiancemathbooks.com/relations/ordered-pairs/index.html</guid>
+      <description>Just as we saw how sets can be built via propositional logic, we’ll see how relations and functions are built up using sets, a clear example of how multiple seemingly disperate concepts can be accumulated into a cohesive whole. But before we delve into what relations and functions are exactly, there is one more set operation we should get acquainted with: the set product. Ironically, even though order doesn’t matter when considering elements in a set, constructing a set product does require that we know in what order we are doing things. In this section, we discuss a new type of mathematical object that takes order into account.</description>
+    </item>
+    <item>
+      <title>Cartesian Products</title>
+      <link>http://hiancemathbooks.com/relations/cartesian-products/index.html</link>
+      <pubDate>Sat, 04 Jan 2025 15:21:45 -0500</pubDate>
+      <guid>http://hiancemathbooks.com/relations/cartesian-products/index.html</guid>
+      <description>All of the set operations we’ve seen so far simply take some combination of elements from two given sets, and form a new conglomerate set. The same will be true of Cartesian Products.&#xA;Cartesian Products For all of the set operations we’ve seen so far, we essentially pick out only a subset of elements from each. What’s different about the Cartesian Product is that we iterate over all elements from both sets.</description>
+    </item>
+    <item>
+      <title>Properties of the Cartesian Product</title>
+      <link>http://hiancemathbooks.com/relations/properties-of-the-cartesian-product/index.html</link>
+      <pubDate>Fri, 20 Dec 2024 16:23:38 -0500</pubDate>
+      <guid>http://hiancemathbooks.com/relations/properties-of-the-cartesian-product/index.html</guid>
+      <description>The Cartesian Product of two sets is just another set. This means we can also use other set operations like union, intersection, and set differences.&#xA;In this section, we explore how the Cartesian Product interacts with the other set operators.&#xA;Associativity of the Cartesian Product We already discussed how order matters in Cartesian Products, and as such sets don’t commute around the Cartesian Product operator $\times$. Associativity is another common property we should examine. What exactly is the difference between</description>
+    </item>
+    <item>
+      <title>Relations</title>
+      <link>http://hiancemathbooks.com/relations/relations/index.html</link>
+      <pubDate>Fri, 20 Dec 2024 16:24:08 -0500</pubDate>
+      <guid>http://hiancemathbooks.com/relations/relations/index.html</guid>
+      <description>When we form the Cartesian Product $A \times B$, we are essentially pairing up every element in A with every element in B. However, we may not want to associate every element of A with every element in B. Instead, we may only want to pair up certain elements together because they satisfy some condition.&#xA;The way we pair up only certain elements from A to certain elements of B is to take a subset of $A \times B$. These kinds of subsets are yet another fundamental structure that appear all throughout all of mathematics.</description>
+    </item>
+  </channel>
+</rss>

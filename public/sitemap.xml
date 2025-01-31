@@ -1,32 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/relations-and-functions/ordered-pairs/index.html</loc>
+    <loc>http://hiancemathbooks.com/relations/ordered-pairs/index.html</loc>
     <lastmod>2024-12-20T16:22:02-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/relations-and-functions/cartesian-products/index.html</loc>
+    <loc>http://hiancemathbooks.com/logic/index.html</loc>
+  </url>
+  <url>
+    <loc>http://hiancemathbooks.com/relations/cartesian-products/index.html</loc>
     <lastmod>2025-01-04T15:21:45-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/relations-and-functions/properties-of-the-cartesian-product/index.html</loc>
+    <loc>http://hiancemathbooks.com/arguments-and-proof/index.html</loc>
+  </url>
+  <url>
+    <loc>http://hiancemathbooks.com/relations/properties-of-the-cartesian-product/index.html</loc>
     <lastmod>2024-12-20T16:23:38-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/relations-and-functions/index.html</loc>
-    <lastmod>2025-01-04T15:21:45-05:00</lastmod>
+    <loc>http://hiancemathbooks.com/set-theory/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-01-04T15:21:45-05:00</lastmod>
+    <loc>http://hiancemathbooks.com/relations/index.html</loc>
+    <lastmod>2025-01-25T21:39:29-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/categories/index.html</loc>
+    <loc>http://hiancemathbooks.com/relations/relations/index.html</loc>
+    <lastmod>2024-12-20T16:24:08-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/math-examples/index.html</loc>
+    <loc>http://hiancemathbooks.com/functions/index.html</loc>
+    <lastmod>2025-01-25T21:41:03-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
+    <loc>http://hiancemathbooks.com/index.html</loc>
+    <lastmod>2025-01-25T21:41:03-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://hiancemathbooks.com/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>http://hiancemathbooks.com/math-examples/index.html</loc>
+  </url>
+  <url>
+    <loc>http://hiancemathbooks.com/tags/index.html</loc>
   </url>
 </urlset>

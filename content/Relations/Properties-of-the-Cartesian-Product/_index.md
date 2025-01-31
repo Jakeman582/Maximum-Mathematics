@@ -887,7 +887,7 @@ empty, the proposition
 
 $$(A \times B) \subseteq (C \times D) \longleftrightarrow (A \subseteq C) \land (B \subseteq D)$$
 
-still evaluated to true. Let's examine one more example where more than set is 
+still evaluated to true. Let's examine one more example where more than one set is 
 empty.
 
 {{% notice style="example" title="Example 4.3.10" %}}
@@ -1054,7 +1054,7 @@ element argument._
 \[
 \begin{array}{ r l l }
 & A \times (B\ \triangle\ C) & \textbf{Reason} \\
-= & A \times \bigl[ (B - C) \cup (C - B) \bigr] & \textit{Definition of Cartesian Product} \\
+= & A \times \bigl[ (B - C) \cup (C - B) \bigr] & \textit{Definition of Symmetric Difference} \\
 = & \bigl[ A \times (B - C) \bigr] \cup \bigl[ A \times (C - B) \bigr] & \textit{Theorem 4.3.2} \\
 = & \bigl[ (A \times B) - (A \times C) \bigr] \cup \bigl[ (A \times C) - (A \times B) \bigr] & \textit{Theorem 4.3.5} \\
 = & (A \times B)\ \triangle\ (A \times C) & \textit{Definition of Symmetric Difference}
