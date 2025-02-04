@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graphical Representations of Relations :: Maximum Mathematics</title>
-    <link>http://localhost:1313/relations/graphical-representations-of-relations/index.html</link>
-    <description>TODO:&#xA;Matrix/Tabular representations using 0-1 matrices (without explicet mention of matrices, just use true/false entries) Arrow Diagrams Tree Diagram</description>
+    <link>http://hiancemathbooks.com/relations/graphical-representations-of-relations/index.html</link>
+    <description>As seen in the previous section, some relations involve nested structures. For example, some relations have elements that contain ordered pairs. Remember that all elements in a relation are ordered pairs themselves, meaning the elements of some relations are ordered pairs that also contain ordered pairs. As such, when we were listing out all of the elements of a relation, we sometimes spaced them out to make it easier to see what was in each of the elements. We saw this in Example 4.4.1, and Example 4.4.8.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/relations/graphical-representations-of-relations/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://hiancemathbooks.com/relations/graphical-representations-of-relations/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

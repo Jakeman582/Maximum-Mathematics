@@ -6,7 +6,7 @@
     <description>Relations are used all throughout mathematics. Examples of relations abound in subjects such as algebra, trigonometry, calculus, as well as computer science, physics, chemistry, biology, and economics.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jan 2025 15:21:45 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 21:38:39 -0500</lastBuildDate>
     <atom:link href="http://hiancemathbooks.com/relations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ordered Pairs</title>
@@ -35,6 +35,13 @@
       <pubDate>Fri, 20 Dec 2024 16:24:08 -0500</pubDate>
       <guid>http://hiancemathbooks.com/relations/relations/index.html</guid>
       <description>When we form the Cartesian Product $A \times B$, we are essentially pairing up every element in A with every element in B. However, we may not want to associate every element of A with every element in B. Instead, we may only want to pair up certain elements together because they satisfy some condition.&#xA;The way we pair up only certain elements from A to certain elements of B is to take a subset of $A \times B$. These kinds of subsets are yet another fundamental structure that appear all throughout all of mathematics.</description>
+    </item>
+    <item>
+      <title>Graphical Representations of Relations</title>
+      <link>http://hiancemathbooks.com/relations/graphical-representations-of-relations/index.html</link>
+      <pubDate>Sat, 25 Jan 2025 21:38:39 -0500</pubDate>
+      <guid>http://hiancemathbooks.com/relations/graphical-representations-of-relations/index.html</guid>
+      <description>As seen in the previous section, some relations involve nested structures. For example, some relations have elements that contain ordered pairs. Remember that all elements in a relation are ordered pairs themselves, meaning the elements of some relations are ordered pairs that also contain ordered pairs. As such, when we were listing out all of the elements of a relation, we sometimes spaced them out to make it easier to see what was in each of the elements. We saw this in Example 4.4.1, and Example 4.4.8.</description>
     </item>
   </channel>
 </rss>

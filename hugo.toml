@@ -10,10 +10,11 @@ theme = 'relearn'
                 enable = true
                 [markup.goldmark.extensions.passthrough.delimiters]
                     block = [['\[', '\]'], ['$$', '$$']]
-                    inline = [['\(', '\)']]
+                    inline = [['\(', '\)'], ['$', '$']]
 
 [params]
     math = true
+    collapsibleMenu = true
 
     [[params.boxStyle]]
         title = 'Definition'
