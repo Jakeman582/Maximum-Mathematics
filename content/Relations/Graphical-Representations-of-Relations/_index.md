@@ -19,7 +19,8 @@ not provide rigorous logic that can't always be used to establish results,
 they can help us reason about issues, and can also provide some clarity.
 
 Here, we'll discuss three common ways to visualize Cartesian Products and 
-relations.
+relations. The first method we discuss will be especially helpful in the next 
+section where we describe binary relations on a single set.
 
 ## 0-1 Tables
 For some Cartesian Product $A \times B$, and relation 
