@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Propositions :: Maximum Mathematics</title>
+    <link>http://hiancemathbooks.com/logic/propositions/index.html</link>
+    <description>Logic provides a formal framework for expressing truth using precise symbolic systems. The most fundamental components of this framework are the statements we reason about - declarations that can be judged as being either true or false. On their own, these statements capture simple facts. Combining them in structured ways, we can express more complex ideas and uncover logical relationships.&#xA;This section explores the basic building blocks of logical expression and how they interact. By understanding these foundations, we lay the groundwork for more advanced reasoning - an essential tool in set theory, calculus, modern algebra, and combinatorics in addition to logic itself. In these areas, precise argumentation and structure play a role.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://hiancemathbooks.com/logic/propositions/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Characterizing Relations :: Maximum Mathematics</title>
-    <link>http://localhost:1313/relations/characterizing-relations/index.html</link>
-    <description>TODO:&#xA;Reflexive Symmetric Antisymmetric Transitive</description>
+    <link>http://hiancemathbooks.com/relations/characterizing-relations/index.html</link>
+    <description>In the previous couple of sections, we defined relations and described some ways to make it easier to visualize what elements were in those relations. Here, we take a closer look at relations defined on a single set. More specifically, we’ll look at some properties of a relation $\mathcal{R}$ defined on a single set A (that is, $\mathcal{R} \subseteq A^2$).&#xA;Reflexive Relations Perhaps the easiest property to verify for each relation is whether or not every element of A is related to itself under the given relation.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/relations/characterizing-relations/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://hiancemathbooks.com/relations/characterizing-relations/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

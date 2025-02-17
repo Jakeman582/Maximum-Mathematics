@@ -6,40 +6,40 @@
     <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jan 2025 21:41:03 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2025 05:28:25 -0500</lastBuildDate>
     <atom:link href="http://hiancemathbooks.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Logic</title>
       <link>http://hiancemathbooks.com/logic/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 12 Feb 2025 05:23:54 -0500</pubDate>
       <guid>http://hiancemathbooks.com/logic/index.html</guid>
-      <description>This is a new chapter.</description>
+      <description>Often when dealing with problems in mathematics, we make use of certain facts. For example, when dealing with geometry problems on a flat surface, we often make use of the Pythagorean Theorem and the Angle Bisector Theorem. When dealing with quadratic equations, we can use the Quadratic Formula to calculate its roots. The Fundamental Theorem of Calculus gives us a way to relate integrals and derivatives.&#xA;But how do we know that the Pythagorean Theorem, Angle Bisector Theorem, or the Fundamental Theorem of Calculus are true? How do we know that the Quadratic Formula gives us the correct roots, and not some mere approximation, or worse outright lies about the roots? Can we trust that these theorems, or the myriad of other theorems, accurately describe reality?</description>
     </item>
     <item>
       <title>Arguments and Proof</title>
       <link>http://hiancemathbooks.com/arguments-and-proof/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 12 Feb 2025 05:26:32 -0500</pubDate>
       <guid>http://hiancemathbooks.com/arguments-and-proof/index.html</guid>
       <description>This is a new chapter.</description>
     </item>
     <item>
       <title>Set Theory</title>
       <link>http://hiancemathbooks.com/set-theory/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 12 Feb 2025 05:26:52 -0500</pubDate>
       <guid>http://hiancemathbooks.com/set-theory/index.html</guid>
       <description>This is a new chapter.</description>
     </item>
     <item>
       <title>Relations</title>
       <link>http://hiancemathbooks.com/relations/index.html</link>
-      <pubDate>Sat, 25 Jan 2025 21:39:29 -0500</pubDate>
+      <pubDate>Wed, 12 Feb 2025 05:28:13 -0500</pubDate>
       <guid>http://hiancemathbooks.com/relations/index.html</guid>
       <description>Relations are used all throughout mathematics. Examples of relations abound in subjects such as algebra, trigonometry, calculus, as well as computer science, physics, chemistry, biology, and economics.</description>
     </item>
     <item>
       <title>Functions</title>
       <link>http://hiancemathbooks.com/functions/index.html</link>
-      <pubDate>Sat, 25 Jan 2025 21:41:03 -0500</pubDate>
+      <pubDate>Wed, 12 Feb 2025 05:28:25 -0500</pubDate>
       <guid>http://hiancemathbooks.com/functions/index.html</guid>
       <description>This is a new chapter.</description>
     </item>
