@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logic :: Maximum Mathematics</title>
+    <link>http://localhost:1313/the-book-of-foundational-mathematics/logic/index.html</link>
+    <description>Often when dealing with problems in mathematics, we make use of certain facts. For example, when dealing with geometry problems on a flat surface, we often make use of the Pythagorean Theorem and the Angle Bisector Theorem. When dealing with quadratic equations, we can use the Quadratic Formula to calculate its roots. The Fundamental Theorem of Calculus gives us a way to relate integrals and derivatives.&#xA;But how do we know that the Pythagorean Theorem, Angle Bisector Theorem, or the Fundamental Theorem of Calculus are true? How do we know that the Quadratic Formula gives us the correct roots, and not some mere approximation, or worse outright lies about the roots? Can we trust that these theorems, or the myriad of other theorems, accurately describe reality?</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Feb 2025 01:16:36 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/the-book-of-foundational-mathematics/logic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Propositions</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/logic/propositions/index.html</link>
+      <pubDate>Tue, 11 Feb 2025 01:16:36 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/logic/propositions/index.html</guid>
+      <description>Logic provides a formal framework for expressing truth using precise symbolic systems. The most fundamental components of this framework are the statements we reason about - declarations that can be judged as being either true or false. On their own, these statements capture simple facts. Combining them in structured ways, we can express more complex ideas and uncover logical relationships.&#xA;This section explores the basic building blocks of logical expression and how they interact. By understanding these foundations, we lay the groundwork for more advanced reasoning - an essential tool in set theory, calculus, modern algebra, and combinatorics in addition to logic itself. In these areas, precise argumentation and structure play a role.</description>
+    </item>
+  </channel>
+</rss>

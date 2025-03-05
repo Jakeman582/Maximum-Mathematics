@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ordered Pairs :: Maximum Mathematics</title>
+    <link>http://localhost:1313/the-book-of-foundational-mathematics/relations/ordered-pairs/index.html</link>
+    <description>Just as we saw how sets can be built via propositional logic, we’ll see how relations and functions are built up using sets, a clear example of how multiple seemingly disperate concepts can be accumulated into a cohesive whole. But before we delve into what relations and functions are exactly, there is one more set operation we should get acquainted with: the set product. Ironically, even though order doesn’t matter when considering elements in a set, constructing a set product does require that we know in what order we are doing things. In this section, we discuss a new type of mathematical object that takes order into account.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/the-book-of-foundational-mathematics/relations/ordered-pairs/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

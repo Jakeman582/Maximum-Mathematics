@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Relations :: Maximum Mathematics</title>
+    <link>http://localhost:1313/the-book-of-foundational-mathematics/relations/relations/index.html</link>
+    <description>When we form the Cartesian Product $A \times B$, we are essentially pairing up every element in A with every element in B. However, we may not want to associate every element of A with every element in B. Instead, we may only want to pair up certain elements together because they satisfy some condition.&#xA;The way we pair up only certain elements from A to certain elements of B is to take a subset of $A \times B$. These kinds of subsets are yet another fundamental structure that appear all throughout all of mathematics.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/the-book-of-foundational-mathematics/relations/relations/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

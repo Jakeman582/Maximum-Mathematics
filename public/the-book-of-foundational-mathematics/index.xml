@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Book of Foundational Mathematics :: Maximum Mathematics</title>
+    <link>http://localhost:1313/the-book-of-foundational-mathematics/index.html</link>
+    <description>This is a new chapter.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 Feb 2025 09:49:37 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/the-book-of-foundational-mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubiquitous Sets of Numbers</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html</link>
+      <pubDate>Mon, 17 Feb 2025 09:47:27 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Logic</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/logic/index.html</link>
+      <pubDate>Wed, 12 Feb 2025 05:23:54 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/logic/index.html</guid>
+      <description>Often when dealing with problems in mathematics, we make use of certain facts. For example, when dealing with geometry problems on a flat surface, we often make use of the Pythagorean Theorem and the Angle Bisector Theorem. When dealing with quadratic equations, we can use the Quadratic Formula to calculate its roots. The Fundamental Theorem of Calculus gives us a way to relate integrals and derivatives.&#xA;But how do we know that the Pythagorean Theorem, Angle Bisector Theorem, or the Fundamental Theorem of Calculus are true? How do we know that the Quadratic Formula gives us the correct roots, and not some mere approximation, or worse outright lies about the roots? Can we trust that these theorems, or the myriad of other theorems, accurately describe reality?</description>
+    </item>
+    <item>
+      <title>Arguments and Proof</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/arguments-and-proof/index.html</link>
+      <pubDate>Wed, 12 Feb 2025 05:26:32 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/arguments-and-proof/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Set Theory</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/set-theory/index.html</link>
+      <pubDate>Mon, 17 Feb 2025 09:38:34 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/set-theory/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Relations</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/relations/index.html</link>
+      <pubDate>Mon, 17 Feb 2025 09:49:37 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/relations/index.html</guid>
+      <description>Relations are used all throughout mathematics. Examples of relations abound in subjects such as algebra, trigonometry, calculus, as well as computer science, physics, chemistry, biology, and economics.</description>
+    </item>
+    <item>
+      <title>Functions</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/functions/index.html</link>
+      <pubDate>Wed, 12 Feb 2025 05:28:25 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/functions/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+  </channel>
+</rss>
