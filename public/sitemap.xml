@@ -5,10 +5,6 @@
     <lastmod>2025-02-17T09:49:37-05:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html</loc>
-    <lastmod>2025-02-17T09:47:27-05:00</lastmod>
-  </url>
-  <url>
     <loc>http://localhost:1313/the-book-of-probability/foundations-of-probability/index.html</loc>
     <lastmod>2025-02-16T23:38:19-05:00</lastmod>
   </url>
@@ -47,6 +43,10 @@
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/relations/properties-of-the-cartesian-product/index.html</loc>
     <lastmod>2024-12-20T16:23:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html</loc>
+    <lastmod>2025-02-17T09:47:27-05:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/relations/relations/index.html</loc>

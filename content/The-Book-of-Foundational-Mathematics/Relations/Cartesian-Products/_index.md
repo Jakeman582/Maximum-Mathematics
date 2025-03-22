@@ -15,7 +15,7 @@ For all of the set operations we've seen so far, we essentially pick out only
 a subset of elements from each. What's different about the Cartesian Product 
 is that we iterate over all elements from both sets.
 
-> [!definition] Cartesian Product, Set Product
+> [!definition] Cartesian Product, Set Product, Cross Product
 > Let A and B be any two given sets.
 > 
 > The **Cartesian Product** of A and B, denoted 
@@ -28,7 +28,7 @@ is that we iterate over all elements from both sets.
 > 
 > Note that A and B do *not* need to be subsets from the same universe.
 > 
-> Sometimes, this is referred to as a **Set Product**.
+> Sometimes, this is referred to as a **Set Product**, or a **Cross Product**.
 
 Basically, for each element in A, we iterate over all of the elements in B, 
 forming ordered pairs where the element from A is the first item in the pair, 
@@ -47,7 +47,7 @@ We can organize the construction of the Cartesian Product in a table like so:
 Remember that since we're forming ordered pairs, the order in which we list 
 the sets is also important.
 
-{{% notice style="example" title="Example 4.2.1" %}}
+{{% notice style="example" title="Example 5.2.1" %}}
 Suppose we have 
 
 $$A = \{1, 2\}$$
@@ -113,7 +113,7 @@ $$\{(a_1,\ a_2,\ \ldots,\ a_n)\ |\ a_1 \in A_1\ \land\ a_2 \in A_2\ \land\ \cdot
 Oftentimes, we refer to a Multiple Cartesian Product simply as a Cartesian 
 Product.
 
-{{% notice style="example" title="Example 4.2.2" %}}
+{{% notice style="example" title="Example 5.2.2" %}}
 Consider the following sets:
 
 \[
@@ -147,7 +147,7 @@ is shorthand for the Cartesian Product
 
 $$\underbrace{A \times A \times \cdots \times A}_{\text{n times}}$$
 
-{{% notice style="example" title="Example 4.2.3" %}}
+{{% notice style="example" title="Example 5.2.3" %}}
 Consider the set 
 
 $$A = \{1,\ a\}$$

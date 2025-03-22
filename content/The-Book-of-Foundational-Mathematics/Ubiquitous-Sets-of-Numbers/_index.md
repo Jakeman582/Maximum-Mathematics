@@ -1,7 +1,7 @@
 +++
 title = "Ubiquitous Sets of Numbers"
 type = "chapter"
-weight = 1
+weight = 4
 +++
 
 This is a new chapter.

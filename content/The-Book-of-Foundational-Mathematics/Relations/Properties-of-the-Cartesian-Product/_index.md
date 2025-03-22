@@ -29,7 +29,7 @@ if any difference exists at all?
 Remember that parentheses are used to indicate which operations are to be 
 performed first.
 
-{{% notice style="example" title="Example 4.3.1" %}}
+{{% notice style="example" title="Example 5.3.1" %}}
 Consider the sets 
 
 $$A = \{1,\ 2\}$$
@@ -92,7 +92,7 @@ A \times (B \times C) &= \{1, 2\} \times \{(a, \Psi),\ (a, \Omega),\ (b, \Psi),\
 
 Just as order matters when writing a Cartesian Product, the way we associate 
 sets using parentheses in a Cartesian Product also matters, as demonstrated in 
-Example 4.3.1. This deserves special emphasis.
+Example 5.3.1. This deserves special emphasis.
 
 {{% notice style="important" title="Association Matters with Cartesian Products" %}}
 The Cartesian Products 
@@ -128,14 +128,14 @@ elements in B, then there would be nothing to pair with the elements in A.
 Thus, no ordered pairs could be formed, and the resulting Cartesian Product 
 would be empty.
 
-{{% notice style="theorem" title="Theorem 4.3.1" %}}
+{{% notice style="theorem" title="Theorem 5.3.1" %}}
 For any arbitrary set A, we have that 
 
 $$A \times \emptyset = \emptyset$$
 $$\emptyset \times A = \emptyset$$
 {{% /notice %}}
 
-{{% expand expanded=false title="Proof 4.3.1" %}}
+{{% expand expanded=false title="Proof 5.3.1" %}}
 _General Strategy: By assuming that $A \times \emptyset$ is not empty, that 
 would imply that $\ \emptyset$ has at least one element, contradicting the 
 definition of the Empty Set. The exact same strategy works for 
@@ -160,7 +160,7 @@ a &\in A \\
 However, the fact that $? \in \emptyset$ contradicts the fact that 
 $|\emptyset| = 0$.
 
-Hence, our presupposition that $A \times \emptyset$ is non-empty lead to a 
+Hence, our presupposition that $A \times \emptyset$ is non-empty led to a 
 contradiction, meaning we must have that 
 
 $$A \times \emptyset = \emptyset$$
@@ -176,7 +176,7 @@ Showing that $\ \emptyset \times A = \emptyset$ is nearly identical.
 
 Here, we'll see some of the distributive properties of the Cartesian Product.
 
-{{% notice style="theorem" title="Theorem 4.3.2" %}}
+{{% notice style="theorem" title="Theorem 5.3.2" %}}
 For arbitrary sets A, B, C, we have that 
 
 \[
@@ -187,7 +187,7 @@ A \times (B \cup C) &= (A \times B) \cup (A \times C) \\
 \]
 {{% /notice %}}
 
-{{% expand expanded=false title="Proof 4.3.2" %}}
+{{% expand expanded=false title="Proof 5.3.2" %}}
 _General Strategy: We'll prove that_ 
 
 $$A \times (B \cup C) = (A \times B) \cup (A \times C)$$
@@ -259,9 +259,9 @@ make the proof more compact.
 ---
 {{% /expand %}}
 
-Let's see an example of Theorem 4.3.2 in action.
+Let's see an example of Theorem 5.3.2 in action.
 
-{{% notice style="example" title="Example 4.3.2" %}}
+{{% notice style="example" title="Example 5.3.2" %}}
 Consider the sets 
 
 \[
@@ -272,7 +272,7 @@ C &= \{\alpha, \beta\}
 \end{align*}
 \]
 
-According to Theorem 4.3.2, the two sets 
+According to Theorem 5.3.2, the two sets 
 
 $$A \times (B \cup C)$$
 
@@ -359,10 +359,10 @@ that
 $$A \times (B \cup C) = (A \times B) \cup (A \times C)$$
 {{% /notice %}}
 
-In Theorem 4.3.2, we mentioned that A, B, C can be any arbitrary sets. This 
+In Theorem 5.3.2, we mentioned that A, B, C can be any arbitrary sets. This 
 means any of the sets could be the empty set.
 
-{{% notice style="example" title="Example 4.3.3" %}}
+{{% notice style="example" title="Example 5.3.3" %}}
 Consider the sets 
 
 \[
@@ -386,7 +386,7 @@ A \times (B \cup C) &= A \times (\emptyset \cup C) \\
 
 #### Step 2: Compute $(A \times B) \cup (A \times C)$
 
-According to Theorem 4.3.1, we have that $A \times \emptyset = \emptyset$. 
+According to Theorem 5.3.1, we have that $A \times \emptyset = \emptyset$. 
 This makes computing $(A \times B) \cup (A \times C)$ much easier.
 
 \[
@@ -416,7 +416,7 @@ A \times (B \cup C) &= A \times (\emptyset \cup C) \\
 
 Of course, we have a similar result for the intersection of sets:
 
-{{% notice style="theorem" title="Theorem 4.3.3" %}}
+{{% notice style="theorem" title="Theorem 5.3.3" %}}
 For any arbitrary sets A, B, C, we have that 
 
 \[
@@ -427,9 +427,9 @@ A \times (B \cap C) &= (A \times B) \cap (A \times C) \\
 \]
 {{% /notice %}}
 
-{{% expand expanded=false title="Proof 4.3.3" %}}
+{{% expand expanded=false title="Proof 5.3.3" %}}
 _General Strategy: We'll adopt a similar strategy we used in the proof of 
-Theorem 4.3.2, except we'll use logical equivalencies with 
+Theorem 5.3.2, except we'll use logical equivalencies with 
 $\Longleftrightarrow$ instead of logical implications with $\implies$. This 
 will make the proof much more compact since we'll only have to make one 
 element argument instead of two._
@@ -493,7 +493,7 @@ as desired!
 
 Let's see some examples involving intersections.
 
-{{% notice style="example" title="Example 4.3.4" %}}
+{{% notice style="example" title="Example 5.3.4" %}}
 Consider the sets 
 
 \[
@@ -556,7 +556,7 @@ Finally, we compute $(A \times B) \cap (A \times C)$
 This is the exact same result we got earlier in Step 1.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.3.5" %}}
+{{% notice style="example" title="Example 5.3.5" %}}
 Consider the sets 
 
 \[
@@ -576,7 +576,7 @@ B \cap C &= \{ a, b \} \cap \{\alpha, \beta\} \\
 \end{align*}
 \]
 
-we have by Theorem 4.3.1 that
+we have by Theorem 5.3.1 that
 
 \[
 \begin{align*}
@@ -608,13 +608,13 @@ Once again, we see that $A \times (B \cap C) = (A \times B) \cap (A \times C)$.
 
 There is an interplay between Cartesian Products and subsets.
 
-{{% notice style="theorem" title="Theorem 4.3.4" %}}
+{{% notice style="theorem" title="Theorem 5.3.4" %}}
 For any non-empty sets A, B, C, and D, we have that 
 
 $$(A \times B) \subseteq (C \times D) \Longleftrightarrow (A \subseteq C) \land (B \subseteq D)$$
 {{% /notice %}}
 
-{{% expand title="Proof 4.3.4" expanded=false %}}
+{{% expand title="Proof 5.3.4" expanded=false %}}
 _General Strategy: Since we're trying to prove a logical equivalency, we'll 
 break the proof up into two steps. In both steps, we'll use element arguments 
 by picking arbitrary ordered pairs of the form (x, y)._
@@ -696,7 +696,7 @@ as desired.
 
 A couple of examples are in order.
 
-{{% notice style="example" title="Example 4.3.6" %}}
+{{% notice style="example" title="Example 5.3.6" %}}
 Consider the sets 
 
 \[
@@ -736,7 +736,7 @@ $C \times D$:
 Thus we have that $(A \times B) \subseteq (C \times D)$ as expected.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.3.7" %}}
+{{% notice style="example" title="Example 5.3.7" %}}
 Consider the sets 
 
 \[
@@ -757,7 +757,7 @@ and
 
 $$(A \times B) \subset (C \times D) \Longleftrightarrow (A \subseteq C) \land (B \subseteq D)$$
 
-we'd have by Theorem 4.3.4 that 
+we'd have by Theorem 5.3.4 that 
 
 $$(A \times B) \subseteq (C \times D) = 0$$
 
@@ -785,7 +785,7 @@ respectively.
 
 What happens when one or more of the sets involved is the Empty Set?
 
-{{% notice style="example" title="Example 4.3.8" %}}
+{{% notice style="example" title="Example 5.3.8" %}}
 Consider the sets 
 
 \[
@@ -833,11 +833,11 @@ As such, we see that
 \]
 
 We see that introducing the Empty Set does not necessarily "break" Theorem 
-4.3.4 because it held true in this case. But is that always the case? What if 
+5.3.4 because it held true in this case. But is that always the case? What if 
 we make a different set empty?
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.3.9" %}}
+{{% notice style="example" title="Example 5.3.9" %}}
 Consider the sets 
 
 \[
@@ -870,7 +870,7 @@ Thus we see that $(A \times B) \nsubseteq (C \times D)$, meaning
 $$(A \times B) \subseteq (C \times D) = 0$$
 
 Since both propositions $(A \subseteq C) \land (B \subseteq D) = 0$ and 
-$(A \times B) \subseteq (C \times D) = 0$ evaluated to false, Theorem 4.3.4 
+$(A \times B) \subseteq (C \times D) = 0$ evaluated to false, Theorem 5.3.4 
 seems to still hold true in this case as well. Again, we can use propositional 
 logic to more closely examine the situation: 
 
@@ -882,7 +882,7 @@ logic to more closely examine the situation:
 \]
 {{% /notice %}}
 
-In Example 4.3.8 and Example 4.3.9, we saw that only making one of four sets 
+In Example 5.3.8 and Example 5.3.9, we saw that only making one of four sets 
 empty, the proposition 
 
 $$(A \times B) \subseteq (C \times D) \longleftrightarrow (A \subseteq C) \land (B \subseteq D)$$
@@ -890,7 +890,7 @@ $$(A \times B) \subseteq (C \times D) \longleftrightarrow (A \subseteq C) \land 
 still evaluated to true. Let's examine one more example where more than one set is 
 empty.
 
-{{% notice style="example" title="Example 4.3.10" %}}
+{{% notice style="example" title="Example 5.3.10" %}}
 Consider the sets 
 
 \[
@@ -927,13 +927,13 @@ Again, we can examine this more closely using propositional logic:
 \]
 
 So, having two empty sets is enough to make the proposition false, meaning we 
-finally "broke" Theorem 4.3.4.
+finally "broke" Theorem 5.3.4.
 {{% /notice %}}
 
-Theorem 4.3.4 requires all involved sets need to be non-empty. Even if some of 
+Theorem 5.3.4 requires all involved sets need to be non-empty. Even if some of 
 the sets are empty, both $(A \times B) \land (C \times D)$ and 
 $(A \subseteq C) \land (B \subseteq D)$ can evaluate to the same logical 
-value, but Theorem 4.3.4 does not apply in those situations. Instead, other 
+value, but Theorem 5.3.4 does not apply in those situations. Instead, other 
 methods must be employed, such as verifying by hand.
 
 {{% notice style="important" title="Experiment with Theorem Premises" %}}
@@ -954,13 +954,13 @@ understand why a theorem is true.
 There are two more operators to discuss. First, we'll look at how $\times$ 
 interacts with set differences.
 
-{{% notice style="theorem" title="Theorem 4.3.5" %}}
+{{% notice style="theorem" title="Theorem 5.3.5" %}}
 For any sets A, B, and C, we have that 
 
 $$A \times (B - C) = (A \times B) - (A \times C)$$
 {{% /notice %}}
 
-{{% expand title="Proof 4.3.5" expanded=false %}}
+{{% expand title="Proof 5.3.5" expanded=false %}}
 _Gelneral Strategy: The proof is relatively straight-forward, relying mainly 
 on the definitions of various set operators. The actual proof will be an 
 element argument._
@@ -1018,7 +1018,7 @@ If $A = \emptyset$, then we would have that
 \]
 
 If $B - C = \emptyset$, then we would have that $B \subseteq C$. Furthermore, 
-since $A \subseteq A$, Theorem 4.3.4 tells us that 
+since $A \subseteq A$, Theorem 5.3.4 tells us that 
 $(A \times B) \subseteq (A \times C)$, meaning we have that 
 
 \[
@@ -1038,15 +1038,15 @@ as desired.
 ---
 {{% /expand %}}
 
-We can use Theorem 4.3.5 to help us prove the next theorem.
+We can use Theorem 5.3.5 to help us prove the next theorem.
 
-{{% notice style="theorem" title="Theorem 4.3.6" %}}
+{{% notice style="theorem" title="Theorem 5.3.6" %}}
 For any sets A, B, C, we have that 
 
 $$A \times (B\ \triangle\ C) = (A \times B)\ \triangle\ (A \times C)$$
 {{% /notice %}}
 
-{{% expand title="Proof 4.3.6" expanded=false %}}
+{{% expand title="Proof 5.3.6" expanded=false %}}
 _General Strategy: We'll use a bunch of previous theorems and definitions to 
 directly establish equality. This will allow us to avoid having to use an 
 element argument._
@@ -1055,8 +1055,8 @@ element argument._
 \begin{array}{ r l l }
 & A \times (B\ \triangle\ C) & \textbf{Reason} \\
 = & A \times \bigl[ (B - C) \cup (C - B) \bigr] & \textit{Definition of Symmetric Difference} \\
-= & \bigl[ A \times (B - C) \bigr] \cup \bigl[ A \times (C - B) \bigr] & \textit{Theorem 4.3.2} \\
-= & \bigl[ (A \times B) - (A \times C) \bigr] \cup \bigl[ (A \times C) - (A \times B) \bigr] & \textit{Theorem 4.3.5} \\
+= & \bigl[ A \times (B - C) \bigr] \cup \bigl[ A \times (C - B) \bigr] & \textit{Theorem 5.3.2} \\
+= & \bigl[ (A \times B) - (A \times C) \bigr] \cup \bigl[ (A \times C) - (A \times B) \bigr] & \textit{Theorem 5.3.5} \\
 = & (A \times B)\ \triangle\ (A \times C) & \textit{Definition of Symmetric Difference}
 \end{array}
 \]
@@ -1072,7 +1072,7 @@ as desired.
 
 Let's see some examples.
 
-{{% notice style="example" title="Example 4.3.11" %}}
+{{% notice style="example" title="Example 5.3.11" %}}
 Consider the sets 
 
 \[
@@ -1083,7 +1083,7 @@ C &= \{1, 4\}
 \end{align*}
 \]
 
-According to Theorem 4.3.5, we'd expect to see that 
+According to Theorem 5.3.5, we'd expect to see that 
 $A \times (B - C) = (A \times B) - (A \times C)$, so let's verify that is the 
 case.
 
@@ -1121,11 +1121,11 @@ difference:
 \end{align*}
 \]
 
-Thus we see that Theorem 4.3.5 holds.
+Thus we see that Theorem 5.3.5 holds.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.3.12" %}}
-Reconsider the sets from Example 4.3.11: 
+{{% notice style="example" title="Example 5.3.12" %}}
+Reconsider the sets from Example 5.3.11: 
 
 \[
 \begin{align*}
@@ -1135,7 +1135,7 @@ C &= \{1, 4\}
 \end{align*}
 \]
 
-Theorem 4.3.6 says that the two sets $A \times (B\ \triangle\ C)$ and 
+Theorem 5.3.6 says that the two sets $A \times (B\ \triangle\ C)$ and 
 $(A \times B)\ \triangle\ (A \times C)$ are equal. Let's verify that is the 
 case by first computing $A \times (B\ \triangle\ C)$:
 
@@ -1160,7 +1160,7 @@ A \times C &= \{x, y, z\} \times \{1, 4\} \\
 \end{align*}
 \]
 
-And so it appears that Theorem 4.3.6 has come through. Of course, it looks 
+And so it appears that Theorem 5.3.6 has come through. Of course, it looks 
 like if we ever need to compute $(A \times B)\ \triangle\ (A \times C)$ for 
 whatever reason, we can save a lot of work by computing 
 $A \times (B\ \triangle\ C)$ instead.

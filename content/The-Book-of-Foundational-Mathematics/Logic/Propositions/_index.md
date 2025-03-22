@@ -366,7 +366,7 @@ proposition is because we don't want true statements leading to false
 statements in a logical system.
 
 Curiously enough, we do consider both 
-"$\text{fasle}\ \rightarrow\ \text{false}$" and 
+"$\text{false}\ \rightarrow\ \text{false}$" and 
 "$\text{false}\ \rightarrow\ \text{true}$" to be true propositions. This is 
 because if we start with a false hypothesis, then the truth of the conclusion 
 is irrelevant.

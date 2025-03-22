@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.1.1">
     <meta name="description" content="Logic provides a formal framework for expressing truth using precise symbolic systems. The most fundamental components of this framework are the statements we reason about - declarations that can be judged as being either true or false. On their own, these statements capture simple facts. Combining them in structured ways, we can express more complex ideas and uncover logical relationships.
 This section explores the basic building blocks of logical expression and how they interact. By understanding these foundations, we lay the groundwork for more advanced reasoning - an essential tool in set theory, calculus, modern algebra, and combinatorics in addition to logic itself. In these areas, precise argumentation and structure play a role.">
@@ -27,16 +27,16 @@ This section explores the basic building blocks of logical expression and how th
     <meta itemprop="wordCount" content="2287">
     <title>Propositions :: Maximum Mathematics</title>
     <link href="/the-book-of-foundational-mathematics/logic/propositions/index.xml" rel="alternate" type="application/rss+xml" title="Propositions :: Maximum Mathematics">
-    <link href="/css/fontawesome-all.min.css?1739826460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739826460" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1739826460" rel="stylesheet">
-    <link href="/css/auto-complete.css?1739826460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739826460" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1739826460" rel="stylesheet">
-    <link href="/css/fonts.css?1739826460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1739826460" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1739826460" rel="stylesheet">
-    <link href="/css/theme-auto.css?1739826460" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1739826460" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/print.css?1739826460" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1739826460"></script>
+    <link href="/css/fontawesome-all.min.css?1742358526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742358526" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1742358526" rel="stylesheet">
+    <link href="/css/auto-complete.css?1742358526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742358526" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742358526" rel="stylesheet">
+    <link href="/css/fonts.css?1742358526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1742358526" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1742358526" rel="stylesheet">
+    <link href="/css/theme-auto.css?1742358526" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1742358526" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/print.css?1742358526" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1742358526"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -443,7 +443,7 @@ This deserves special emphasis:</p>
 proposition is because we don&rsquo;t want true statements leading to false
 statements in a logical system.</p>
 <p>Curiously enough, we do consider both
-&ldquo;$\text{fasle}\ \rightarrow\ \text{false}$&rdquo; and
+&ldquo;$\text{false}\ \rightarrow\ \text{false}$&rdquo; and
 &ldquo;$\text{false}\ \rightarrow\ \text{true}$&rdquo; to be true propositions. This is
 because if we start with a false hypothesis, then the truth of the conclusion
 is irrelevant.</p>
@@ -476,27 +476,27 @@ s &: \text{Ricardo earns \$500 by working a summer job.} \\
 t &: \text{Ricardo buys two front row tickets to the AC/DC concert.}
 \end{align*}
 \]<p>Let&rsquo;s take a closer look at the implication $s \rightarrow t$.</p>
-<h3 id="case-1-textfalse-rightarrow-textfalse">Case 1: $\text{false}\ \rightarrow\ \text{false}$</h3>
+<h3 id="case-1">Case 1: $\text{false}\ \rightarrow\ \text{false}$</h3>
 <p>Here, Ricardo does not save $500 working a summer job and does not buy two
 front row tickets to the AC/DC concert. Because Ricardo was unable to save the
 needed money, Ricardo did not go back on his word. As far as we can tell,
 Ricardo would have bought the tickets if he had the money, it&rsquo;s just that he
 wasn&rsquo;t able to save the money, and was thus unable to follow through.</p>
 <p>This is a trivially true implication.</p>
-<h3 id="case-2-textfalse-rightarrow-texttrue">Case 2: $\text{false}\ \rightarrow\ \text{true}$</h3>
+<h3 id="case-2">Case 2: $\text{false}\ \rightarrow\ \text{true}$</h3>
 <p>Here, Ricardo wasn&rsquo;t able to save $500, but still bought two front tow tickets
 to the AC/DC concert. Perhaps he won some money in a contest, or was gifted
 money by friends or family. In this case, Ricardo did not go back on his word
 of saving money to buy tickets. Again, he may have bought the tickets if he
 did save money working a summer job.</p>
 <p>This is a trivially true implication.</p>
-<h3 id="case-3-texttrue-rightarrow-textfalse">Case 3: $\text{true}\ \rightarrow\ \text{false}$</h3>
+<h3 id="case-3">Case 3: $\text{true}\ \rightarrow\ \text{false}$</h3>
 <p>In this case, Ricardo did save $500 working a summer job, but failed to buy
 the tickets. Here, Ricardo <em>did</em> go back on his word. This means that the
 proposition \(s \rightarrow t\) is not an accurate description of reality.
 Ricardo fulfilled the premise but did not follow through with the conclusion.</p>
 <p>The implication is a false one.</p>
-<h3 id="case-4-texttrue-rightarrow-texttrue">Case 4: $\text{true}\ \rightarrow\ \text{true}$</h3>
+<h3 id="case-4">Case 4: $\text{true}\ \rightarrow\ \text{true}$</h3>
 <p>In this case, Ricardo saved $500 working a summer job, and bought two front
 row tickets to the AC/DC concert. Ricardo kept his word, and fulfilled the
 resolution.</p>
@@ -519,7 +519,7 @@ Maximum Mathematics
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1739826460";
+          window.index_js_url="/searchindex.en.js?1742358526";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -532,12 +532,12 @@ Maximum Mathematics
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1739826460" defer></script>
-        <script src="/js/lunr/lunr.min.js?1739826460" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1739826460" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1739826460" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1739826460" defer></script>
-        <script src="/js/search.js?1739826460" defer></script>
+        <script src="/js/auto-complete.js?1742358526" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742358526" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742358526" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742358526" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742358526" defer></script>
+        <script src="/js/search.js?1742358526" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -548,11 +548,11 @@ Maximum Mathematics
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-shortcutmenu-The Book of Foundational Mathematics" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html">Ubiquitous Sets of Numbers</a></li>
             <li class="parent " data-nav-id="/the-book-of-foundational-mathematics/logic/index.html"><input type="checkbox" id="R-section-32daef1faf8069d3aec9b631d31a4fa2" aria-controls="R-subsections-32daef1faf8069d3aec9b631d31a4fa2" checked><label for="R-section-32daef1faf8069d3aec9b631d31a4fa2"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Logic</span></label><a class="padding" href="/the-book-of-foundational-mathematics/logic/index.html">Logic</a><ul id="R-subsections-32daef1faf8069d3aec9b631d31a4fa2" class="collapsible-menu">
             <li class="active " data-nav-id="/the-book-of-foundational-mathematics/logic/propositions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/logic/propositions/index.html">Propositions</a></li></ul></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/arguments-and-proof/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/arguments-and-proof/index.html">Arguments and Proof</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/set-theory/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/set-theory/index.html">Set Theory</a></li>
+            <li class="" data-nav-id="/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/ubiquitous-sets-of-numbers/index.html">Ubiquitous Sets of Numbers</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/relations/index.html"><input type="checkbox" id="R-section-7cfcc6bfab6f08ea7092797d1b8037ab" aria-controls="R-subsections-7cfcc6bfab6f08ea7092797d1b8037ab"><label for="R-section-7cfcc6bfab6f08ea7092797d1b8037ab"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Relations</span></label><a class="padding" href="/the-book-of-foundational-mathematics/relations/index.html">Relations</a><ul id="R-subsections-7cfcc6bfab6f08ea7092797d1b8037ab" class="collapsible-menu">
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/relations/ordered-pairs/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/relations/ordered-pairs/index.html">Ordered Pairs</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/relations/cartesian-products/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/relations/cartesian-products/index.html">Cartesian Products</a></li>
@@ -615,8 +615,8 @@ Maximum Mathematics
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1739826460" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1739826460" defer></script>
+    <script src="/js/clipboard.min.js?1742358526" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742358526" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -631,7 +631,7 @@ Maximum Mathematics
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1739826460"></script>
-    <script src="/js/theme.js?1739826460" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1742358526"></script>
+    <script src="/js/theme.js?1742358526" defer></script>
   </body>
 </html>

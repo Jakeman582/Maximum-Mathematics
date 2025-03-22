@@ -52,7 +52,7 @@ corresponding parts to be the same.
 > 
 > if (and only if) a = c and b = d.
 
-{{% notice style = "example" title = "Example 4.1.1" %}}
+{{% notice style = "example" title = "Example 5.1.1" %}}
 The following are all examples of ordered pairs:
 
 \[
@@ -148,7 +148,7 @@ It is common to refer to n-tuples with only two elements simply as tuples (in
 addition to ordered pairs), and n-tuples with three elements as triples (or 
 ordered triples).
 
-{{% notice style = "example" title = "Example 4.1.2" %}}
+{{% notice style = "example" title = "Example 5.1.2" %}}
 None of the following n-tuples are equal to each other because the order in 
 which the elements appear is different between each ordered pair:
 

@@ -36,7 +36,7 @@ to specify that element a is related to element b.
 The reason the word binary was used in the definition is because there 
 were two sets being used to form the relation. Let's look at a few examples.
 
-{{% notice style="example" title="Example 4.4.1" %}}
+{{% notice style="example" title="Example 5.4.1" %}}
 Consider the following two sets:
 
 \[
@@ -98,7 +98,7 @@ numbers from B:
 \]
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.4.2" %}}
+{{% notice style="example" title="Example 5.4.2" %}}
 Reconsider the Cartesian Product 
 
 \[
@@ -111,7 +111,7 @@ A \times B & = & \{ & (1, 2), & (1, 4), & (1, 6), & (1, 8), & (1, 10), & \\
 \end{array}
 \]
 
-from Example 4.4.1.
+from Example 5.4.1.
 
 Instead of picking arbitrary elements, let's choose elements that satisfy some  
 rule.
@@ -144,8 +144,8 @@ Going off $\mathcal{R}_3$, we can also use the logical and operation:
 \]
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.4.3" %}}
-Reconsider the Cartesian Product from Example 4.4.1 again: 
+{{% notice style="example" title="Example 5.4.3" %}}
+Reconsider the Cartesian Product from Example 5.4.1 again: 
 
 \[
 \begin{array}{c c c c c c c c c}
@@ -176,7 +176,7 @@ A to itself. In this case, we would call $\mathcal{R}$ a *binary relation on
 A*. Again, we use the word binary to describe the fact that there are two sets 
 being used to form the Cartesian Product.
 
-{{% notice style="example" title="Example 4.4.4" %}}
+{{% notice style="example" title="Example 5.4.4" %}}
 Consider the set $A = \{-2, -1, 0, 1, 2\}$.
 
 The Cartesian Product $A^2$ is thus 
@@ -207,7 +207,7 @@ usage), and as the name for a set (which is very unusual, and tends to be
 avoided to prevent confusion).
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.4.5" %}}
+{{% notice style="example" title="Example 5.4.5" %}}
 Consider the set 
 
 $$\bigstar = \{0, 0.3, 0.7, 1, 1.5, 1.7, 2, 2.1, 2.11\}$$
@@ -263,7 +263,7 @@ any subset of $\bigstar \times \bigstar$.
 Of course, there is nothing stopping us from considering subsets of Cartesian 
 Products of three or more sets.
 
-{{< notice style="example" title="Example 4.4.6" >}}
+{{< notice style="example" title="Example 5.4.6" >}}
 Consider the set of primary pigment colors and secondary pigment colors:
 
 $~$
@@ -278,7 +278,7 @@ S &= \{\text{Orange}, \text{Green}, \text{Purple}\}
 {{< figure 
     src="Pigment_Color_Theory.jpg" 
     width=400 height=400 
-    caption="Figure 4.4.1: This diagram shows how the primary pigment colors mix together to form the secondary pigment colors."
+    caption="Figure 5.4.1: This diagram shows how the primary pigment colors mix together to form the secondary pigment colors."
 >}}
 
 We can form a relation on the Cartesian Product $P \times P \times S$ by 
@@ -289,14 +289,14 @@ together:
 $$\mathcal{R} = \{(\text{Red}, \text{Yellow}, \text{Orange}), (\text{Red}, \text{Blue}, \text{Purple}), (\text{Yellow}, \text{Blue}, \text{Green})\}$$
 {{< /notice >}}
 
-{{< notice style="example" title="Example 4.4.7" >}}
+{{< notice style="example" title="Example 5.4.7" >}}
 Alternatively to pigments, light can mix together to form new colors as well, 
-as demonstrated in Figure 4.4.2 below.
+as demonstrated in Figure 5.4.2 below.
 
 {{< figure 
     src="Light_Color_Theory.jpg" 
     width=400 height=400
-    caption="Figure 4.4.2: Different wave lengths of light are different colors, which can be mixed together to form new colors. The primary colors here are Red, Green, and Blue. Pixels on screens are colored by emitting differnt comninations of those colors."
+    caption="Figure 5.4.2: Different wave lengths of light are different colors, which can be mixed together to form new colors. The primary colors here are Red, Green, and Blue. Pixels on screens are colored by emitting differnt comninations of those colors."
 >}}
 
 Consider the set P of primary light colors and the set S of secondary light colors:
@@ -308,15 +308,15 @@ S &= \{\text{Yellow}, \text{Magenta}, \text{Cyan}\}
 \end{align*}
 \]
 
-Differently to Example 4.4.6, let's take a relation on the Cartesian Product 
+Differently to Example 5.4.6, let's take a relation on the Cartesian Product 
 $(P \times P) \times S$, which should make it easier to see what colors are 
 mixing together to form the third color. The relation we'll take is the 
-relation of color mixtures as defined in Figure 4.4.2 above:
+relation of color mixtures as defined in Figure 5.4.2 above:
 
 $$\mathcal{R} = \{((\text{Red}, \text{Green}), \text{Yellow}), ((\text{Red}, \text{Blue}), \text{Magenta}), ((\text{Green}, \text{Blue}), \text{Cyan})\}$$
 {{< /notice >}}
 
-{{% notice style="example" title="Example 4.4.8" %}}
+{{% notice style="example" title="Example 5.4.8" %}}
 Astrid is a graphic artist for a large online magazine, and wants to upgrade 
 her computer. Her local computer shop sells computers with four categories of 
 specifications for the CPU, Graphics card, RAM, and Motherboard based on the 

@@ -26,7 +26,7 @@ $$\forall a \in A\ [a\ \mathcal{R}\ a]$$
 Put another way, $\mathcal{R}$ is reflexive when every single element in $A$ is 
 related to itself.
 
-{{% notice style="example" title="Example 4.6.1" %}}
+{{% notice style="example" title="Example 5.6.1" %}}
 ### a.)
 Consider the set $A = \{1, 2, 3\}$. Let $\mathcal{R}_1 \subseteq A^2$ be the 
 relation 
@@ -65,14 +65,14 @@ $$4\ \cancel{\mathcal{R}_1}\ 4$$
 meaning $\mathcal{R}_1$ is *not* reflexive on $B$.
 {{% /notice %}}
 
-Notice that based on Example 4.6.1, part c, that just because a relation 
+Notice that based on Example 5.6.1, part c, that just because a relation 
 $\mathcal{R}$ is reflexive on one set, it is not necessarily reflexive on 
 every set. Look again at the definition for reflexive. Notice how a relation 
 is described as being reflexive *on a set*, and not just reflexive.
 
 Let's look at a few more examples.
 
-{{% notice style="example" title="Example 4.6.2" %}}
+{{% notice style="example" title="Example 5.6.2" %}}
 Consider the set $X = \{1, 2, 3\}$. Let 
 $\mathcal{R} \subseteq \mathcal{P}(X)^2$ where 
 
@@ -104,7 +104,7 @@ this from Theorem 3.2.2). Hence, $\mathcal{R}$ is reflexive on
 $\mathcal{P}(X)$.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.6.3" %}}
+{{% notice style="example" title="Example 5.6.3" %}}
 Let $\mathcal{R} \subseteq \mathbb{R}^2$ such that 
 
 $$x\ \mathcal{R}\ y\ \text{if}\ x \leq y$$
@@ -127,9 +127,9 @@ propositions $x = x$ and $x < x$):
 Thus, $\mathcal{R}$ is reflexive on $\mathbb{R}$.
 {{% /notice %}}
 
-Notice that in Example 4.6.3 we had to prove that each member of the set was 
+Notice that in Example 5.6.3 we had to prove that each member of the set was 
 related to itself using a definition. This will be necessary when the 
-underlying set has infinitely many sets. On the other hand, in order to show 
+underlying set has infinitely many elements. On the other hand, in order to show 
 that a relation is not reflexive on an infinite set, all we need is one 
 counterexample, though finding the counterexample may be tricky at times.
 
@@ -145,7 +145,7 @@ $\mathcal{R}$ is called **symmetric** *on set $A$* if (and only if)
 $$\forall a,b \in A\ [a\ \mathcal{R}\ b \implies b\ \mathcal{R}\ a]$$
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.6.4" %}}
+{{% notice style="example" title="Example 5.6.4" %}}
 Consider the set $X = \{1, 2, 3, 4\}$
 
 Let $\mathcal{R} \subseteq X^2$ such that 
@@ -192,7 +192,7 @@ will show the value of $a$ and $b$, but will still show truth values for the
 propositions $(a\ \mathcal{R}\ b)$, $(b\ \mathcal{R}\ a)$, and their 
 implication.
 
-|$\mathbf{a}$|$\mathbf{b}$|$a\ \mathcal{R}\ b$|$b\ mathcal{R}\ a$|$(a\ mathcal{R}\ b) \rightarrow (b\ mathcal{R}\ a)$|
+|$\mathbf{a}$|$\mathbf{b}$|$a\ \mathcal{R}\ b$|$b\ \mathcal{R}\ a$|$(a\ \mathcal{R}\ b) \rightarrow (b\ \mathcal{R}\ a)$|
 |:-:|:-:|:-:|:-:|:-:|
 |**1**|**1**|1|1|1|
 |**1**|**2**|0|0|1|
@@ -214,10 +214,10 @@ implication.
 All of the necessary implications are true, which means $\mathcal{R}$ is 
 symmetric on $X$.
 
-We also see that $\mathcal{R}$ is also reflexive.
+We also see that $\mathcal{R}$ is reflexive.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.6.5" %}}
+{{% notice style="example" title="Example 5.6.5" %}}
 Consider the relation $\mathcal{R} \subseteq X^2$ on $X = \{1, 2, 3, 4\}$ 
 where 
 
@@ -239,7 +239,7 @@ symmetric, we'd also need $(b, a) \in \mathcal{R}$ as well, meaning that the
 element in the $b^{th}$ row and $a^{th}$ column also needs to be 1. This means 
 that the 0-1 table needs to be *symmetric* around the main diagonal.
 
-{{% notice style="example" title="Example 4.6.6" %}}
+{{% notice style="example" title="Example 5.6.6" %}}
 Consider the relation $\mathcal{R} \subseteq X^2$ on $X = \{1, 2, 3, 4\}$ 
 where 
 
@@ -261,7 +261,7 @@ symmetric.
 Since the main diagonal has 0s, $\mathcal{R}$ is not reflexive.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.6.7" %}}
+{{% notice style="example" title="Example 5.6.7" %}}
 Consider the relation $\mathcal{R} \subseteq X^2$ where $X = \{1, 2, 3, 4\}$ 
 with 0-1 table 
 
@@ -282,7 +282,7 @@ Since the main diagonal is all 1s, $\mathcal{R}$ is reflexive.
 Let's look at one more example involving a relation defined on the real 
 numbers.
 
-{{% notice style="example" title="Example 4.6.8" %}}
+{{% notice style="example" title="Example 5.6.8" %}}
 Let $\mathcal{R}_1 \subseteq \mathbb{R}^2$ such that 
 
 $$x\ \mathcal{R}_1\ y\ \text{if}\ xy > 0$$
@@ -335,7 +335,7 @@ $$\bigl(\forall a, b \in A\ [a\ \mathcal{R}\ b \land b\ \mathcal{R}\ a\ \rightar
 
 An example is in order.
 
-{{% notice style="example" title="Example 4.6.9" %}}
+{{% notice style="example" title="Example 5.6.9" %}}
 Consider the relation $\mathcal{R} \subseteq \{1, 2, 3\}^2$ such that 
 
 $$\mathcal{R} = \{(1, 1), (3, 3), (2, 1), (3, 2), (1, 3)\}$$
@@ -363,7 +363,7 @@ for every ordered pair $(a, b) \in \{1, 2, 3\}^2$. If even one implication is
 false, then we'll know that $\mathcal{R}$ is not antisymmetric.
 
 
-Just like in Example 4.6.4, we'll use a modified truth table to examine each 
+Just like in Example 5.6.4, we'll use a modified truth table to examine each 
 of the propositions $(a\ \mathcal{R}\ b)$, $(b\ \mathcal{R}\ a)$, and 
 $(a = b)$, including their conjunctions and implications.
 
@@ -387,7 +387,7 @@ suggests that it's possible to for a relation to be simultaneously symmetric
 and antisymmetric. A relation could also be neither symmetric nor 
 antisymmetric.
 
-{{% notice style="example" title="Example 4.6.10" %}}
+{{% notice style="example" title="Example 5.6.10" %}}
 Let $\mathcal{R}_1 \subseteq \{1, 2, 3\}^2$ be the relation 
 
 $$\mathcal{R}_1 = \{(1,1), (2,2)\}$$
@@ -440,12 +440,12 @@ and antisymmetric.
 
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.6.11" %}}
+{{% notice style="example" title="Example 5.6.11" %}}
 Let $\mathcal{R}_2 \subseteq \{1, 2, 3\}^2$ be the relation 
 
 $$\mathcal{R}_2 = \{(1, 1), (2, 2), (1, 3), (3, 1), (2, 3)\}$$
 
-Just like in Example 4.6.10, we start by checking if $\mathcal{R}_2$ is 
+Just like in Example 5.6.10, we start by checking if $\mathcal{R}_2$ is 
 symmetric:
 
 |$\mathbf{a}$|$\mathbf{b}$|$a\ \mathcal{R}\ b$|$b\ \mathcal{R}\ a$|$(a\ \mathcal{R}\ b) \rightarrow (b\ \mathcal{R}\ a)$|
@@ -479,7 +479,7 @@ Now we check if $\mathcal{R}_2$ is antisymmetric:
 |**3**|**2**|0|1|0|0|1|
 |**3**|**3**|0|0|0|1|1|
 
-The presenve of two 0s in the last column means $\mathcal{R}_2$ is not 
+The presence of two 0s in the last column means $\mathcal{R}_2$ is not 
 antisymmetric. The presence of the two symmetric ordered pairs $(1, 3)$ and 
 $(3, 1)$ prevents $\mathcal{R}_2$ from being antisymmetric.
 
@@ -525,7 +525,7 @@ $$\forall a, b, c \in A\ [(a\ \mathcal{R}\ b) \land (b\ \mathcal{R}\ c) \implies
 In the definition above, we can sort of think of element $b$ as an element 
 that "bridges the gap", so to speak, from element $a$ to element $c$.
 
-{{% notice style="example" title="Example 4.6.12" %}}
+{{% notice style="example" title="Example 5.6.12" %}}
 Consider the relation $\mathcal{R} \subseteq \{1, 2, 3\}^2$ where 
 
 $$\mathcal{R} = \{(1, 1), (1, 2), (2, 2), (2, 3), (3, 3), (1, 3)\}$$
@@ -579,19 +579,19 @@ truth table:
 |**3**|**3**|**2**|1|0|0|0|1|
 |**3**|**3**|**3**|1|1|1|1|1|
 
-Since the last row is all 1s, we now know that $\mathcal{R}$ is transitive on 
+Since the last column is all 1s, we now know that $\mathcal{R}$ is transitive on 
 $\{1, 2, 3\}$.
 
 {{% /notice %}}
 
-As demonstrated in Example 4.6.12, even with a set as small as $\{1, 2, 3\}$, 
+As demonstrated in Example 5.6.12, even with a set as small as $\{1, 2, 3\}$, 
 it can take a bit of work to verify that any relation defined on 
 $\{1, 2, 3\}^2$ is transitive.
 
 Sometimes, it may be easier to try and find a triple of elements $a, b, c$ 
 that prove a relation is *not* transitive.
 
-{{% notice style="example" title="Example 4.6.13" %}}
+{{% notice style="example" title="Example 5.6.13" %}}
 Consider the relation $\mathcal{R} \subseteq \{1, 2, 3, 4\}^2$ where 
 
 $$\mathcal{R} = \{(1, 2), (2, 3), (3, 4), (2, 4), (4, 1), (3, 1), (1, 3) , (4, 2)\}$$

@@ -48,7 +48,7 @@ $a_i\ \mathcal{R}\ b_j$ evaluates to.
 |$\vdots$|$\vdots$|$\vdots$|$\ddots$|$\vdots$|
 |$a_n$|$a_n\ \mathcal{R}\ b_1$|$a_n\ \mathcal{R}\ b_2$|$\cdots$|$a_n\ \mathcal{R}\ b_m$|
 
-{{% notice style="example" title="Example 4.5.1" %}}
+{{% notice style="example" title="Example 5.5.1" %}}
 Consider the two sets 
 
 \[
@@ -85,7 +85,7 @@ determining whether or not certain elements between two sets are related. Of
 course the elements in a relation can be listed out, but a 0-1 table may make 
 any patterns more evident (if any such patterns are present).
 
-{{% notice style="example" title="Example 4.5.2" %}}
+{{% notice style="example" title="Example 5.5.2" %}}
 Consider the relation 
 
 $$\mathcal{R} = \{(1, 2), (1, 3), (1, 4), (2, 1), (2, 3), (2, 4), (3, 1), (3, 2), (3, 4), (4, 1), (4, 2), (4, 3)\}$$
@@ -114,7 +114,7 @@ $$a\ \mathcal{R}\ b \text{ if } a \neq b$$
 This is the "not equal to" relation.
 {{% /notice %}}
 
-{{% notice style="example" title="Example 4.5.3" %}}
+{{% notice style="example" title="Example 5.5.3" %}}
 The math department at a certain college offers several courses: Calculus, 
 Combinatorics, Linear Algebra, Statistics, Probability, Analysis, and 
 Topology.
@@ -172,7 +172,7 @@ of B with some space in between. (The lists could be vertical or horizontal.)
 Next, for each element $a_i$ in A, we draw an arrow from $a_i$ to an element 
 $b_j$ in B if $a_i$ is related to $b_j$.
 
-{{< notice style="example" title="Example 4.5.4" >}}
+{{< notice style="example" title="Example 5.5.4" >}}
 Eustice is the manager of a technical support team for a company that 
 maintains various pieces of equipment to service customers. Everyday, Eustice 
 assigns technicians to monitor a piece of equipment. Sometimes, more than one 
@@ -186,12 +186,12 @@ database. On a particular day, Eustice made the following assignments for the
 equipment, resulting in the "assignment" relation.
 
 {{< figure 
-    src="Arrow_Diagram.jpg" 
+    src="1.png" 
 >}}
 
 {{< /notice >}}
 
-It should be apparent from Example 4.5.4 that arrow diagrams can look 
+It should be apparent from Example 5.5.4 that arrow diagrams can look 
 cluttered unless a lot of care is taken to properly space out the elements in 
 the diagram. These are not used often, but are still available when feasible.
 
@@ -213,7 +213,7 @@ elements in the second. Along each *branch* of the tree, we write the n-tuple
 containing all elements up to that branch in the tree. This process is 
 repeated for each subsequent set in the Cartesian Product.
 
-{{% notice style="example" title="Example 4.5.5" %}}
+{{< notice style="example" title="Example 5.5.5" >}}
 In a standard deck of playing cards, each card has a suit which can be one of 
 Spades (♠), Hearts (♥), Diamonds (♦), or Clubs (♣). Furthermore, each 
 card is colored either Red (R) or Black (B).
@@ -232,43 +232,14 @@ We capture these outcomes in the following sets.
 \]
 
 We construct the tree diagram for 
-$\text{Suit} \times \text{Color} \times \text{Flip}$ below in a top-down 
-style:
+$\text{Suit} \times \text{Color} \times \text{Flip}$ below:
 
-```goat
-                               .-------------------------------*-------------------------------.
-                              /                               / \                               \
-                             /                               /   \                               \
-                            /                               /     \                               \
-                           /                               /       \                               \
-                          /                               /         \                               \
-                         /                               /           \                               \
-                        /                               /             \                               \
-                       /                               /               \                               \
-                      /                               /                 \                               \
-                     /                               /                   \                               \
-                    /                               /                     \                               \
-                   /                               /                       \                               \
-                  /                               /                         \                               \
-                 /                               /                           \                               \
-                /                               /                             \                               \
-               ♠                               ♥                               ♦                               ♣
-              / \                             / \                             / \                             / \
-             /   \                           /   \                           /   \                           /   \
-            /     \                         /     \                         /     \                         /     \
-           /       \                       /       \                       /       \                       /       \
-          /         \                     /         \                     /         \                     /         \    
-         /           \                   /           \                   /           \                   /           \
-        /             \                 /             \                 /             \                 /             \
-     (♠,B)           (♠,R)           (♥,B)           (♥,R)           (♦,B)           (♦,R)           (♣,B)           (♣,R)
-     /   \           /   \           /   \           /   \           /   \           /   \           /   \           /   \
-    /     \         /     \         /     \         /     \         /     \         /     \         /     \         /     \
-(♠,B,H) (♠,B,T) (♠,R,H) (♠,R,T) (♥,B,H) (♥,B,T) (♥,R,H) (♥,R,T) (♦,B,H) (♦,B,T) (♦,R,H) (♦,R,T) (♣,B,H) (♣,B,T) (♣,R,H) (♣,R,T) 
+{{< figure 
+    src="2.png" 
+>}}
+{{< /notice >}}
 
-```
-{{% /notice %}}
-
-Notice in Example 4.5.5 that in the first level of the tree the elements are 
+Notice in Example 5.5.5 that in the first level of the tree the elements are 
 not enclosed in parentheses ( ). Since they are single elements, there is not 
 much point in surrounding them, creating 1-tuples. At that point, we have not 
 formed a Cartesian Product, so it's unnecessary. Though in a sense, a single 
@@ -279,33 +250,21 @@ Remember that order matters when writing the sets in a Cartesian Product. As
 such, we expect the tree diagram representing the Cartesian Product to look 
 different based on how the sets are ordered.
 
-{{% notice style="example" title="Example 4.5.6" %}}
-Reconsider the sets from Example 4.5.5. A vertical tree diagram for 
-$\text{Flip} \times \text{Suit} \times \text{Color}$ that goes bottom-to-top would look similar to 
-this diagram.
+{{< notice style="example" title="Example 5.5.6" >}}
+Reconsider the sets from Example 5.5.5. A tree diagram for 
+$\text{Flip} \times \text{Suit} \times \text{Color}$ would look like this:
 
-```goat
-(H,♠,R) (H,♠,B) (H,♥,R) (H,♥,B) (H,♦,R) (H,♦,B) (H,♣,R) (H,♣,B) (T,♠,R) (T,♠,B) (T,♥,R) (T,♥,B) (T,♦,R) (T,♦,B) (T,♣,R) (T,♣,B)
-    \     /         \     /         \     /         \     /         \     /         \     /         \     /         \     /
-     (H,♠)           (H,♥)           (H,♦)           (H,♣)           (T,♠)           (T,♥)           (T,♦)           (T,♣)
-        \              |               |              /                 \              |               |              /
-         '-------------+-------+-------+-------------'                   '-------------+-------+-------+-------------'
-                               |                                                               |
-                               H                                                               T
-                                \                                                             /
-                                 '-----------------------------+-----------------------------'
-                                                               |
-                                                               *
-
-```
-{{% /notice %}}
+{{< figure 
+    src="3.png" 
+>}}
+{{< /notice >}}
 
 To represnt a relation, we simply remove any branches that yield n-tuples that 
 are not in the relation. The act of removing such branches is sometimes called 
 *pruning* in keeping with the arbor theme.
 
-{{% notice style="example" title="Example 4.5.7" %}}
-Reconsider the tree diagram from Example 4.5.5:
+{{% notice style="example" title="Example 5.5.7" %}}
+Reconsider the tree diagram from Example 5.5.5 drawn in a different style:
 
 ```goat
                                .-------------------------------*-------------------------------.
@@ -443,13 +402,13 @@ Cartesian Product, and then prune branches to get the tree diagram for the
 desired relation. We could instead preemptively prune to prevent the tree from 
 growing too large in the first place.
 
-{{% notice style="example" title="Example 4.5.8" %}}
+{{% notice style="example" title="Example 5.5.8" %}}
 Reconsider the Cartesian Product $\text{Flip} \times \text{Suit} \times \text{Color}$ from Example 
-4.5.6. Suppose we impose the following conditions:
+5.5.6. Suppose we impose the following conditions:
 - Heads can't pair up with Hearts
 - Tails can only pair up with Diamonds
 
-Of course, just like with Example 4.5.7, we would like to exclude any ordered 
+Of course, just like with Example 5.5.7, we would like to exclude any ordered 
 triples that yield improperly colored cards. Instead of constructing the tree 
 for the entire Cartesian Product, let's just draw what we need:
 
