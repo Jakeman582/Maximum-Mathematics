@@ -3,10 +3,17 @@
   <channel>
     <title>Functions :: Maximum Mathematics</title>
     <link>http://localhost:1313/the-book-of-foundational-mathematics/functions/index.html</link>
-    <description>This is a new chapter.</description>
+    <description>In the previous chapter, we studied a way to relate elements of one set to another set. However, we didn’t place any restrictions on those relations. Usually, we want to have some specific type of structure in the way we relate elements.&#xA;Throughout our normal schooling, we encounter many types of these structured relations. Specifically, the kinds of relations we studied were functions. In this chapter, we delve deeper into these special kind of relations, and study them in an abstract sense. That is to say, what we discuss here will be applicable to all functions, not just those more familiar functions that relate real numbers to other real numbers.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 21:39:58 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/the-book-of-foundational-mathematics/functions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functions</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/functions/functions/index.html</link>
+      <pubDate>Sat, 25 Jan 2025 21:39:58 -0500</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/functions/functions/index.html</guid>
+      <description>In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.</description>
+    </item>
   </channel>
 </rss>

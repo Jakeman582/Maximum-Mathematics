@@ -5,17 +5,24 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.1.1">
-    <meta name="description" content="">
+    <meta name="description" content="In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Search :: Maximum Mathematics">
-    <meta property="og:url" content="http://localhost:1313/search/index.html">
+    <meta name="twitter:title" content="Functions :: Maximum Mathematics">
+    <meta name="twitter:description" content="In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.">
+    <meta property="og:url" content="http://localhost:1313/the-book-of-foundational-mathematics/functions/functions/index.html">
     <meta property="og:site_name" content="Maximum Mathematics">
-    <meta property="og:title" content="Search :: Maximum Mathematics">
+    <meta property="og:title" content="Functions :: Maximum Mathematics">
+    <meta property="og:description" content="In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Search :: Maximum Mathematics">
-    <title>Search :: Maximum Mathematics</title>
+    <meta itemprop="name" content="Functions :: Maximum Mathematics">
+    <meta itemprop="description" content="In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.">
+    <meta itemprop="datePublished" content="2025-01-25T21:39:58-05:00">
+    <meta itemprop="dateModified" content="2025-01-25T21:39:58-05:00">
+    <meta itemprop="wordCount" content="362">
+    <title>Functions :: Maximum Mathematics</title>
+    <link href="/the-book-of-foundational-mathematics/functions/functions/index.xml" rel="alternate" type="application/rss+xml" title="Functions :: Maximum Mathematics">
     <link href="/css/fontawesome-all.min.css?1742755782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742755782" rel="stylesheet"></noscript>
     <link href="/css/nucleus.css?1742755782" rel="stylesheet">
     <link href="/css/auto-complete.css?1742755782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742755782" rel="stylesheet"></noscript>
@@ -28,8 +35,8 @@
     <script src="/js/variant.js?1742755782"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -46,7 +53,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/search/index.html">
+  <body class="mobile-support html" data-url="/the-book-of-foundational-mathematics/functions/functions/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -57,17 +64,26 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#three-examples">Three Examples</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Maximum Mathematics</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/the-book-of-foundational-mathematics/index.html"><span itemprop="name">The Book of Foundational Mathematics</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/the-book-of-foundational-mathematics/functions/index.html"><span itemprop="name">Functions</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Functions</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/index.html" title="Maximum Mathematics (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/the-book-of-foundational-mathematics/functions/index.html" title="Functions (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/the-book-of-probability/index.html" title="The Book of Probability (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -81,27 +97,81 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable _relearn_searchform" tabindex="-1">
+      <main id="R-body-inner" class="highlightable the-book-of-foundational-mathematics" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="search">Search</h1>
+<h1 id="functions">Functions</h1>
 
-<search>
-  <form action="javascript:triggerSearch()">
-    <div class="searchform">
-      <label class="a11y-only" for="R-search-by-detail">Search</label>
-      <input data-search-input id="R-search-by-detail" class="search-by" name="search-by" type="search" placeholder="Search..."><span class="btn cstyle interactive secondary"><button onclick="" type="submit"><i class="fa-fw fas fa-search"></i> <span class="title">Search</span></button></span>
-    </div>
-  </form>
-</search>
-<div class="searchhint">
+<p>In this chapter&rsquo;s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let&rsquo;s look at some relations that behave differently from one another to get a more intuitive sense of what we&rsquo;re looking for in a function.</p>
+<h2 id="three-examples">Three Examples</h2>
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.1
+  </div>
+  <div class="box-content">
+<p>
+Consider the relation $\mathcal{R}_1 \subseteq \{1, 2, 3, 4\} \times \{a, b, c, d\}$ where 
+
+$$\mathcal{R}_1 = \{(2, d), (3, b), (4, b)\}$$
+
+<figure><img src="/the-book-of-foundational-mathematics/functions/functions/1.svg"
+    alt="Figure 6.1.1"><figcaption>
+      <p>Figure 6.1.1</p>
+    </figcaption>
+</figure>
+
+
+Notice that elements $2, 3, 4$ are related to elements from $\{a, b, c, d\}$, but what about the element $1$? Even though $\mathcal{R}_1$ is a legitimate relation, we may want to have a way to relate <i>all</i> elements in $\{1, 2, 3, 4\}$.
+  </div>
 </div>
-<hr>
-<div id="R-searchresults">
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.2
+  </div>
+  <div class="box-content">
+<p>
+Consider the relation $\mathcal{R}_2 \subseteq \{1, 2, 3, 4\} \times \{a, b, c, d\}$ where 
+
+$$\mathcal{R}_2 = \{(1, d), (2, c), (2, a), (3, b), (4, a)\}$$
+
+<figure><img src="/the-book-of-foundational-mathematics/functions/functions/2.svg"
+    alt="Figure 6.1.2"><figcaption>
+      <p>Figure 6.1.2</p>
+    </figcaption>
+</figure>
+
+
+Here, we have related every element in $\{1, 2, 3, 4\}$ to at least one element in $\{a, b, c, d\}$. However, the element $2$ is related to two different elements: $a, c$. Again, this is a valid relation, but perhaps we want to limit how many elements can be related to some given element.
+
+$$~$$
+
+For example, suppose we needed to pick an element related to $2$. How would we choose between $a$ and $c$? It's ambiguous unless we have some hueristic to settle the matter. However, if $2$ was only related to one element, then the choice is automatic and not ambiguous.
+  </div>
 </div>
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.3
+  </div>
+  <div class="box-content">
+<p>
+Consider the relation $\mathcal{R}_3 \subseteq \{1, 2, 3, 4\} \times \{a, b, c, d\}$ where 
+
+$$\mathcal{R}_3 = \{(1, a), (2, c), (3, d), (4, c)\}$$
+
+<figure><img src="/the-book-of-foundational-mathematics/functions/functions/3.svg"
+    alt="Figure 6.1.3"><figcaption>
+      <p>Figure 6.1.3</p>
+    </figcaption>
+</figure>
+
+
+Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c, d\}$, and each element in $\{1, 2, 3, 4\}$ is related to exactly one element in $\{a, b, c, d\}$. This avois the problems that $\mathcal{R}_1$ and $\mathcal{R}_2$ have in Example 6.1.1 and Example 6.1.2 above.
+  </div>
+</div>
+
   <footer class="footline">
   </footer>
 </article>
@@ -144,9 +214,8 @@
         <hr class="padding">
       </div>
       <div id="R-content-wrapper" class="highlightable">
-        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+        <div id="R-shortcutmenu-The Book of Foundational Mathematics" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/the-book-of-foundational-mathematics/index.html"><input type="checkbox" id="R-section-26d01a5dd03c78ed12951ed9e30a8fd7" aria-controls="R-subsections-26d01a5dd03c78ed12951ed9e30a8fd7"><label for="R-section-26d01a5dd03c78ed12951ed9e30a8fd7"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu The Book of Foundational Mathematics</span></label><a class="padding" href="/the-book-of-foundational-mathematics/index.html">The Book of Foundational Mathematics</a><ul id="R-subsections-26d01a5dd03c78ed12951ed9e30a8fd7" class="collapsible-menu">
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/logic/index.html"><input type="checkbox" id="R-section-32daef1faf8069d3aec9b631d31a4fa2" aria-controls="R-subsections-32daef1faf8069d3aec9b631d31a4fa2"><label for="R-section-32daef1faf8069d3aec9b631d31a4fa2"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Logic</span></label><a class="padding" href="/the-book-of-foundational-mathematics/logic/index.html">Logic</a><ul id="R-subsections-32daef1faf8069d3aec9b631d31a4fa2" class="collapsible-menu">
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/logic/propositions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/logic/propositions/index.html">Propositions</a></li></ul></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/arguments-and-proof/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/arguments-and-proof/index.html">Arguments and Proof</a></li>
@@ -160,13 +229,8 @@
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/relations/graphical-representations-of-relations/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/relations/graphical-representations-of-relations/index.html">Graphical Representations of Relations</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/relations/characterizing-relations/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/relations/characterizing-relations/index.html">Characterizing Relations</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/relations/composite-relations/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/relations/composite-relations/index.html">Composite Relations</a></li></ul></li>
-            <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/index.html"><input type="checkbox" id="R-section-3d68592fc69e82c1849ce3b311c2c50c" aria-controls="R-subsections-3d68592fc69e82c1849ce3b311c2c50c"><label for="R-section-3d68592fc69e82c1849ce3b311c2c50c"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Functions</span></label><a class="padding" href="/the-book-of-foundational-mathematics/functions/index.html">Functions</a><ul id="R-subsections-3d68592fc69e82c1849ce3b311c2c50c" class="collapsible-menu">
-            <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/functions/index.html">Functions</a></li></ul></li></ul></li>
-            <li class="" data-nav-id="/the-book-of-probability/index.html"><input type="checkbox" id="R-section-3e2ffbc63cb15ca60834b33a2f1a47e5" aria-controls="R-subsections-3e2ffbc63cb15ca60834b33a2f1a47e5"><label for="R-section-3e2ffbc63cb15ca60834b33a2f1a47e5"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu The Book of Probability</span></label><a class="padding" href="/the-book-of-probability/index.html">The Book of Probability</a><ul id="R-subsections-3e2ffbc63cb15ca60834b33a2f1a47e5" class="collapsible-menu">
-            <li class="" data-nav-id="/the-book-of-probability/foundations-of-probability/index.html"><input type="checkbox" id="R-section-095eddbec80ac2d7a057aedc5627a2cf" aria-controls="R-subsections-095eddbec80ac2d7a057aedc5627a2cf"><label for="R-section-095eddbec80ac2d7a057aedc5627a2cf"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Foundations of Probability</span></label><a class="padding" href="/the-book-of-probability/foundations-of-probability/index.html">Foundations of Probability</a><ul id="R-subsections-095eddbec80ac2d7a057aedc5627a2cf" class="collapsible-menu">
-            <li class="" data-nav-id="/the-book-of-probability/foundations-of-probability/sample-spaces-and-events/index.html"><a class="padding" href="/the-book-of-probability/foundations-of-probability/sample-spaces-and-events/index.html">Sample Spaces and Events</a></li></ul></li>
-            <li class="" data-nav-id="/the-book-of-probability/conditional-probability-and-independence/index.html"><input type="checkbox" id="R-section-231d8aa2fa5f3a765a22fff5a360d7e3" aria-controls="R-subsections-231d8aa2fa5f3a765a22fff5a360d7e3"><label for="R-section-231d8aa2fa5f3a765a22fff5a360d7e3"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Conditional Probability and Independence</span></label><a class="padding" href="/the-book-of-probability/conditional-probability-and-independence/index.html">Conditional Probability and Independence</a><ul id="R-subsections-231d8aa2fa5f3a765a22fff5a360d7e3" class="collapsible-menu">
-            <li class="" data-nav-id="/the-book-of-probability/conditional-probability-and-independence/conditional-probability/index.html"><a class="padding" href="/the-book-of-probability/conditional-probability-and-independence/conditional-probability/index.html">Conditional Probability</a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/the-book-of-foundational-mathematics/functions/index.html"><input type="checkbox" id="R-section-3d68592fc69e82c1849ce3b311c2c50c" aria-controls="R-subsections-3d68592fc69e82c1849ce3b311c2c50c" checked><label for="R-section-3d68592fc69e82c1849ce3b311c2c50c"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Functions</span></label><a class="padding" href="/the-book-of-foundational-mathematics/functions/index.html">Functions</a><ul id="R-subsections-3d68592fc69e82c1849ce3b311c2c50c" class="collapsible-menu">
+            <li class="active " data-nav-id="/the-book-of-foundational-mathematics/functions/functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/functions/index.html">Functions</a></li></ul></li>
           </ul>
         </div>
     
@@ -182,7 +246,7 @@
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/search/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/the-book-of-foundational-mathematics/functions/functions/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>

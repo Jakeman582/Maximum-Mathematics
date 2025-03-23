@@ -15,6 +15,15 @@ theme = 'relearn'
 [params]
     math = true
     collapsibleMenu = true
+    alwaysopen = false
+    
+    [[params.themeVariant]]
+        identifier = 'dark'
+        name = 'Dark Theme'
+
+    [[params.themeVariant]]
+        identifier = 'light'
+        name = 'Light Theme'
 
     [[params.boxStyle]]
         title = 'Definition'
