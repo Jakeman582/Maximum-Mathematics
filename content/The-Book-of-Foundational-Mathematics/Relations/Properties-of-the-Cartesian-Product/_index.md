@@ -970,11 +970,13 @@ Let (a, x) be an arbitrarily picked element from $A \times (B - C)$.
 \[
 \begin{array}{ r l l }
 & \mathbf{(a, x) \in A \times (B - C)} & \textbf{Reason} \\
-\Longleftrightarrow & (a \in A) \land (x \in B) \land (x \notin C) & \textit{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a \in A) \land (x \in B - C) & \textit{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a \in A) \land (x \in B) \land (x \notin C) & \textit{Definition of Set Difference} \\
 \Longleftrightarrow & (a \in A) \land (a \in A) \land (x \in B) \land (x \notin C) & \textit{Idempotent Law of } \land \\
 \Longleftrightarrow & (a \in A) \land (x \in B) \land (a \in A) \land (x \notin C) & \textit{Commutative Law of } \land \\
 \Longleftrightarrow & \bigl[(a \in A) \land (x \in B)\bigr] \land \bigl[(a \in A) \land (x \notin C)\bigr] & \textit{Associative Law of } \land \\
-\Longleftrightarrow & (a, x) \in (A \times B) \land (a, x) \notin (A \times C) & \textit{Definition of Cartesian Product}
+\Longleftrightarrow & (a, x) \in (A \times B) \land (a, x) \notin (A \times C) & \textit{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a, x) \in (A \times B) - (A \times C) & \textit{Definition of Set Difference}
 \end{array}
 \]
 

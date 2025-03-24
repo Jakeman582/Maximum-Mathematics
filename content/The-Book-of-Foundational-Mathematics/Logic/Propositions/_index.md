@@ -18,7 +18,7 @@ more advanced reasoning - an essential tool in set theory, calculus, modern
 algebra, and combinatorics in addition to logic itself. In these areas, 
 precise argumentation and structure play a role.
 
-## Primitive Propositions
+## Propositions
 
 The types of statements mentioned previously - declarative sentences that are 
 either true or false, but *never both* - are the most fundamental component of 
@@ -64,7 +64,7 @@ Here, $x_1$ is a true proposition while $x_2$ is a false proposition.
 Determining whether or not a proposition is true or false may take a variety 
 of methods. Knowing that $h$ and $t$ are true is a matter of pop culture 
 knowledge. Knowing that $p$ is a false proposition requires historical 
-knowledge. Knowing the truth values of $x, x_1$, and $x_2$ requires 
+knowledge. Knowing the truth values of $x$, $x_1$, and $x_2$ requires 
 mathematical knowledge.
 {{% /notice %}}
 

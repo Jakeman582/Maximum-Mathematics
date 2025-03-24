@@ -20,19 +20,19 @@
     <meta itemprop="description" content="In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.">
     <meta itemprop="datePublished" content="2025-01-25T21:39:58-05:00">
     <meta itemprop="dateModified" content="2025-01-25T21:39:58-05:00">
-    <meta itemprop="wordCount" content="362">
+    <meta itemprop="wordCount" content="2155">
     <title>Functions :: Maximum Mathematics</title>
     <link href="/the-book-of-foundational-mathematics/functions/functions/index.xml" rel="alternate" type="application/rss+xml" title="Functions :: Maximum Mathematics">
-    <link href="/css/fontawesome-all.min.css?1742755782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742755782" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1742755782" rel="stylesheet">
-    <link href="/css/auto-complete.css?1742755782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742755782" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742755782" rel="stylesheet">
-    <link href="/css/fonts.css?1742755782" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1742755782" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1742755782" rel="stylesheet">
-    <link href="/css/theme-dark.css?1742755782" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1742755782" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/print.css?1742755782" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1742755782"></script>
+    <link href="/css/fontawesome-all.min.css?1742783704" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742783704" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1742783704" rel="stylesheet">
+    <link href="/css/auto-complete.css?1742783704" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742783704" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742783704" rel="stylesheet">
+    <link href="/css/fonts.css?1742783704" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1742783704" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1742783704" rel="stylesheet">
+    <link href="/css/theme-dark.css?1742783704" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1742783704" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/print.css?1742783704" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1742783704"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -68,6 +68,9 @@
 <nav class="TableOfContents">
   <ul>
     <li><a href="#three-examples">Three Examples</a></li>
+    <li><a href="#defining-what-a-function-is">Defining What a Function Is</a></li>
+    <li><a href="#subsets-and-supersets-of-a-functions-domain">Subsets and Supersets of a Function&rsquo;s Domain</a></li>
+    <li><a href="#equality-of-functions">Equality of Functions</a></li>
   </ul>
 </nav>
                 </div>
@@ -168,9 +171,250 @@ $$\mathcal{R}_3 = \{(1, a), (2, c), (3, d), (4, c)\}$$
 </figure>
 
 
-Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c, d\}$, and each element in $\{1, 2, 3, 4\}$ is related to exactly one element in $\{a, b, c, d\}$. This avois the problems that $\mathcal{R}_1$ and $\mathcal{R}_2$ have in Example 6.1.1 and Example 6.1.2 above.
+Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c, d\}$, and each element in $\{1, 2, 3, 4\}$ is related to exactly one element in $\{a, b, c, d\}$. This avoids the problems that $\mathcal{R}_1$ and $\mathcal{R}_2$ have in Example 6.1.1 and Example 6.1.2 above.
   </div>
 </div>
+<h2 id="defining-what-a-function-is">Defining What a Function Is</h2>
+<p>We define functions in a way to avoid all of the shortcomings present in the relations defined in Example 6.1.1 and Example 6.1.2. Before we give the definition though, we intruduce one more quantifier.</p>
+<p>Remember that quantifiers are used in conjunction with propositions that have variables. In addition to the Universal Quantifier and the Existential Quantifier, we also have the <em>Uniqueness Quantifier</em>, which we denote using the notation $\exists!$, which is just the Existential Quantifier with an exclamation mark tacked on. The Uniqueness Quantifier is used to specify that a given proposition is true for exactly one element $x$ from the underlying universe $\mathcal{U}$. We write this as</p>
+$$\exists! x \in \mathcal{U}\ [p(x)]$$<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.4
+  </div>
+  <div class="box-content">
+<p>Reconsider the relation $\mathcal{R}_3$ from Example 6.1.3. We have that</p>
+$$\exists!\ x \in \{1, 2, 3, 4\}\ [x\ \mathcal{R}_3\ a] = 1$$<p>because there is a value of $x$ (namely $1$) such that $(x, a) \in \mathcal{R}_3$, and that value is the <em>only</em> value of $x$ such that $(x, a) \in \mathcal{R}_3$. This is because $2\ \mathcal{R}_3\ c, 3\ \mathcal{R}_3\ d, 4\ \mathcal{R}_3\ c$.</p>
+<p>Similarly, we have that</p>
+$$\exists!\ x \in \{1, 2, 3, 4\}\ [x\ \mathcal{R}_3\ d] = 1$$<p>because only one element in $\{1, 2, 3, 4\}$ is related to $d$.</p>
+<p>However, note that</p>
+$$\exists!\ x \in \{1, 2, 3, 4\}\ [x\ \mathcal{R}_3\ c] = 0$$<p>because there is <em>more than one</em> element in {1, 2, 3, 4} that is related to $c$. Those values are $2, 4$.</p>
+<p>Furthermore, we also have that</p>
+$$\exists!\ x \in \{1, 2, 3, 4\}\ [x\ \mathcal{R}_3\ b] = 0$$<p>because no element is related to $b$.</p>
+  </div>
+</div>
+<p>Now we formally state the definition of function:</p>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Function, Mapping
+  </div>
+  <div class="box-content">
+<p>Let $A$ and $B$ be arbitrary sets, and let $f$ be an arbitrary relation defined on $A \times B$. $f$ is called a <strong>function</strong> (also sometimes a <strong>mapping</strong>) from $A$ to $B$, and we write</p>
+$$f: A \rightarrow B$$<p>if (only if) every element in $A$ is related to exactly one element in $B$ under $f$. Logically, we write</p>
+$$\forall a \in A\ \exists! b \in B\ [(a, b) \in f]$$
+  </div>
+</div>
+<p>Notice that the definition applies with arbitrary sets. Both $A, B$ could be the Empty set, in which case  we&rsquo;d have $f: \emptyset \rightarrow \emptyset$, which is commonly called the <em>empty function</em>. If only one of $A, B$ were the empty set, then the only function possible would be the empty function (as a matter of fact, the only relation that could be defined would be the empty relation).</p>
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.5
+  </div>
+  <div class="box-content">
+<p>Reconsider the sets $A = \{1, 2, 3, 4\}$ and $B = \{a, b, c, d\}$ from the previous examples.</p>
+<h3 id="a">a.) $\mathcal{R}_1 = \{(2, d), (3, b), (4, b)\}$</h3>
+<p>The definition of function says that every element in $\{1, 2, 3, 4\}$ must be related to exactly one element in $\{a, b, c, d\}$. We need to examine the proposition $\exists!y \in B\ [(x, y) \in \mathcal{R}_1]$ for each $x \in A$. We&rsquo;ll tabulate our results in the following list:</p>
+<ol>
+<li>$\exists!y \in B\ [(1, y) \in \mathcal{R}_1] = 0\ $ ($1$ is not related to any element in $\{a, b, c, d\}$)</li>
+<li>$\exists!y \in B\ [(2, y) \in \mathcal{R}_1] = 1$</li>
+<li>$\exists!y \in B\ [(3, y) \in \mathcal{R}_1] = 1$</li>
+<li>$\exists!y \in B\ [(4, y) \in \mathcal{R}_1] = 1$</li>
+</ol>
+<p>One of the above propositions evaluated to 0, meaning not all elements in $\{1, 2, 3, 4\}$ are related to exactly one element from $\{a, b, c, d\}$. Hence, $\mathcal{R}_1$ is not a function.</p>
+<h3 id="b">b.) $\mathcal{R}_2 = \{(1, d), (2, c), (2, a), (3, b), (4, a)\}$</h3>
+<p>We can tabulate the propositions to check in another list:</p>
+<ol>
+<li>$\exists!y \in B\ [(1, y) \in \mathcal{R}_2] = 1$</li>
+<li>$\exists!y \in B\ [(2, y) \in \mathcal{R}_2] = 0\ $ ($2$ is related to more than one element in $\{a, b, c, d\}$)</li>
+<li>$\exists!y \in B\ [(3, y) \in \mathcal{R}_2] = 1$</li>
+<li>$\exists!y \in B\ [(4, y) \in \mathcal{R}_2] = 1$</li>
+</ol>
+<p>Again, one of the above propositions evaluated to false, so $\mathcal{R}_2$ is not a function.</p>
+<h3 id="c">c.) $\mathcal{R}_3 = \{(1, a), (2, c), (3, d), (4, c)\}$</h3>
+<p>Let&rsquo;s check all the necessary propositions:</p>
+<ol>
+<li>$\exists!y \in B\ [(1, y) \in \mathcal{R}_3] = 1$</li>
+<li>$\exists!y \in B\ [(2, y) \in \mathcal{R}_3] = 1$</li>
+<li>$\exists!y \in B\ [(3, y) \in \mathcal{R}_3] = 1$</li>
+<li>$\exists!y \in B\ [(4, y) \in \mathcal{R}_3] = 1$</li>
+</ol>
+<p>Since the proposition $\exists!y \in B\ [(x, y) \in \mathcal{R}_3]$ was true for all $x \in \{1, 2, 3, 4\}$, we have that</p>
+$$\forall x \in A\ \exists! y \in B\ [(x, y) \in \mathcal{R}_3] = 1$$<p>meaning $\mathcal{R}_3$ is a function.</p>
+  </div>
+</div>
+<p>Because functions are special types of relations, all of the normal notations we used for relations also apply to functions. For example, for some arbitrary function $f: A \rightarrow B$, if $a \in A$ is related to $b \in B$ under $f$, we can write $(a, b) \in f$, and $a\ f\ b$.</p>
+<p>When it comes to functions specifically, we introduce a new notation to signal that element $a \in A$ is related to element $b \in B$:</p>
+$$f(a) = b$$<p>This notation is very common, and will be adopted in this book henceforth.</p>
+<p>We also introduce new terminology to refer to $a$ and $b$ which will come in handy from time to time:</p>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Image, Preimage
+  </div>
+  <div class="box-content">
+<p>Let $f: A \rightarrow B$ be an arbitrary function with $a \in A$ and $b \in B$ where $f(a) = b$.</p>
+<p>The element $b$ is called the <strong>image</strong> of element $a$ <em>under $f$</em>. The element $a$ is the <strong>preimage</strong> of element $b$ <em>under $f$</em>.</p>
+  </div>
+</div>
+<p>We also have a few terms to describe the sets over which functions are defined.</p>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Domain, Codomain, Range
+  </div>
+  <div class="box-content">
+<p>Let $f: A \rightarrow B$ be an arbitrary function.</p>
+<p>The set $A$ is referred to as the <strong>domain</strong> of $f$ and is often written as $\text{Dom}(f)$.</p>
+<p>The set $B$ is referred to as the <strong>codomain</strong> of $f$ and is often written as $\text{Cod}(f)$.</p>
+<p>The subset of $B$ consisting of all the images from the elements of $A$ under $f$ is called the <strong>range</strong> of $f$ and is written as $\text{Rng}(f)$.</p>
+  </div>
+</div>
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.6
+  </div>
+  <div class="box-content">
+<p>Consider the function $f: \{1, 2, 3, 4\} \rightarrow \{a, b, c, d\}$ where</p>
+\[
+\begin{align*}
+f(1) &= c \\
+f(2) &= b \\
+f(3) &= d \\
+f(4) &= a
+\end{align*}
+\]<p>The image of $1$ under $f$ is the element $c$. The preimage of element $a$ under $f$ is the element $4$.</p>
+<p>We can also see that</p>
+\[
+\begin{align*}
+\text{Dom}(f) &= \{1, 2, 3, 4\} \\
+\text{Cod}(f) &= \{a, b, c, d\} \\
+\end{align*}
+\]<p>Finally, we observe that every element in $B$ is an image under $f$, meaning we have</p>
+$$\text{Rng}(f) = \{a, b, c, d\} = B$$
+  </div>
+</div>
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.7
+  </div>
+  <div class="box-content">
+<p>Reconsider the relation $\mathcal{R}_3 \subseteq \{1, 2, 3, 4\} \times \{a, b, c, d\}$ from Example 6.1.3 where</p>
+$$\mathcal{R}_3 = \{(1, a), (2, c), (3, d), (4, c)\}$$<p>Since $\mathcal{R}_3$ is a function, we&rsquo;ll use a lowercase letter to refer to it. This time, we&rsquo;ll use the letter $g$ just for the sake of variety:</p>
+\[
+\begin{align*}
+g(1) &= a \\
+g(2) &= c \\
+g(3) &= d \\
+g(4) &= c
+\end{align*}
+\]<p>Here, we see that $d$ is the image of $3$ under $g$, and that $1$ is the preimage of $a$ under $g$.</p>
+<p>We see that we have the same domain and range as function $f$ from Example 6.1.6:</p>
+\[
+\begin{align*}
+\text{Dom}(g) &= \{1, 2, 3, 4\} \\
+\text{Cod}(g) &= \{a, b, c, d\}
+\end{align*}
+\]<p>This time however, the element $b$ is not the image of some element in $\{1, 2, 3, 4\}$ under $g$. Thus we have that</p>
+$$\text{Rng}(g) = \{a, c, d\} \subset \{a, b, c, d\} = B$$
+  </div>
+</div>
+<p>If we were only interested in the images of some particular subset of a function&rsquo;s domain, we could collect them in their own set.</p>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Image Set
+  </div>
+  <div class="box-content">
+<p>Let $f: A \rightarrow B$ be an arbitrary function, and let $A_1 \subseteq A$.</p>
+<p>The set</p>
+$$f(A_1) = \{f(a)\ |\ a \in A_1\}$$<p>is called the <strong>image set</strong> of $A_1$ <em>under $f$</em>.</p>
+  </div>
+</div>
+<p>Based on the definitions given, we see that the range of a function is equal to the image set of that function&rsquo;s domain; in other words,</p>
+$$\text{Rng}(f) = f(\text{Dom}(f))$$<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.8
+  </div>
+  <div class="box-content">
+<p>Consider the funcion $f: \{1, 2, 3, 4\} \rightarrow \{a, b, c, d\}$ where</p>
+\[
+\begin{align*}
+f(1) &= b \\
+f(2) &= d \\
+f(3) &= a \\
+f(4) &= c
+\end{align*}
+\]<p>The image set of {1, 3} would be</p>
+$$f(\{1, 3\}) = \{b, a\}$$
+  </div>
+</div>
+<h2 id="subsets-and-supersets-of-a-functions-domain">Subsets and Supersets of a Function&rsquo;s Domain</h2>
+<p>Notice that a function is defined based in part on it&rsquo;s domain. This means we can easily make new functions by simply taking subsets and supersets of the original function&rsquo;s domain.</p>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Restriction
+  </div>
+  <div class="box-content">
+<p>Let $f: A \rightarrow B$ be an arbitrary function, and let $A_1 \subseteq A$.</p>
+<p>The function $f|_{A_1}: A_1 \rightarrow B$ is called the <strong>restriction</strong> of $f$ to $A_1$ if (and only if)</p>
+$$\forall a \in A_1\ [f|_{A_1}(a) = f(a)]$$
+  </div>
+</div>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Extension
+  </div>
+  <div class="box-content">
+<p>Let $f: A_1 \rightarrow B$ be an arbitrary function, and let $A_1 \subseteq A$.</p>
+<p>The function $g: A \rightarrow B$ is called the <strong>extesion</strong> of $f$ to $A$ if (and only if)</p>
+$$\forall a \in A_1\ [g(a) = f(a)]$$
+  </div>
+</div>
+<p>Essentially, a restriction of a function is simply a new function defined on a subset of the original function&rsquo;s domain while keeping the original function intact within the new function, likewise for extensions.</p>
+<div class="box notices cstyle example">
+  <div class="box-label">
+    <i class="fa-fw fas fa-pencil"></i> Example 6.1.9
+  </div>
+  <div class="box-content">
+<p>Consider the function $f: \{1, 2, 3, 4\} \rightarrow \{a, b, c, d\}$ where</p>
+\[
+\begin{align*}
+f(1) &= b \\
+f(2) &= a \\
+f(3) &= d \\
+f(4) &= c
+\end{align*}
+\]<p>One restriction we could define from $f$ is on the subset $\{1, 3, 4\}$, which we&rsquo;ll call $g$:</p>
+\[
+\begin{align*}
+g(1) &= b \\
+g(3) &= d \\
+g(4) &= c
+\end{align*}
+\]<p>One extension we could define on $f$, which we&rsquo;ll call $h$, will have domain $\{1, 2, 3, 4, 5\}$ and codomain $\{a, b, c, d, e\}$:</p>
+\[
+\begin{align*}
+h(1) &= b \\
+h(2) &= a \\
+h(3) &= d \\
+h(4) &= c \\
+h(5) &= e
+\end{align*}
+\]
+  </div>
+</div>
+<h2 id="equality-of-functions">Equality of Functions</h2>
+<p>Earlier, we defined functions based on their domain and codomain. Just like with relations, changing the underlying sets will yield different results.</p>
+<div class="box notices cstyle definition">
+  <div class="box-label">
+    <i class="fa-fw fas fa-book"></i> Equal
+  </div>
+  <div class="box-content">
+<p>Consider the two functions $f: A \rightarrow B$ and $g: C \rightarrow D$.</p>
+<p>We call $f$ and $g$ <strong>equal</strong>, and we write $f = g$ if (and only if) the following conditions are true:</p>
+<ul>
+<li>$\text{Dom}(f) = \text{Dom}(g)$</li>
+<li>$\text{Cod}(f) = \text{Cod}(g)$</li>
+<li>$\forall x \in \text{Dom}(f)\ [f(x) = g(x)]$</li>
+</ul>
+  </div>
+</div>
+<p>Note that there are three conditions for function equality. It&rsquo;s not enough that the functions relate the elements from $A$ or $C$ to the same elements in $B$ and $D$. The functions in question must also have exactly the same domain and codomain.</p>
 
   <footer class="footline">
   </footer>
@@ -187,7 +431,7 @@ Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c
   </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742755782";
+          window.index_js_url="/searchindex.en.js?1742783704";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -200,12 +444,12 @@ Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742755782" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742755782" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742755782" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742755782" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742755782" defer></script>
-        <script src="/js/search.js?1742755782" defer></script>
+        <script src="/js/auto-complete.js?1742783704" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742783704" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742783704" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742783704" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742783704" defer></script>
+        <script src="/js/search.js?1742783704" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -285,8 +529,8 @@ Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742755782" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742755782" defer></script>
+    <script src="/js/clipboard.min.js?1742783704" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742783704" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -301,7 +545,7 @@ Here, every element in $\{1, 2, 3, 4\}$ is related to some element in $\{a, b, c
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1742755782"></script>
-    <script src="/js/theme.js?1742755782" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1742783704"></script>
+    <script src="/js/theme.js?1742783704" defer></script>
   </body>
 </html>

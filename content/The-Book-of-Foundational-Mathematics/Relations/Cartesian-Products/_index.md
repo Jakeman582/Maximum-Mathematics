@@ -39,10 +39,10 @@ We can organize the construction of the Cartesian Product in a table like so:
 |||$A \times B$|||
 |:-:     |:-:         |:-:         |:-:     |:-:         |
 |        |$b_1$       |$b_2$       |$\ldots$|$b_m$       |
-|$a_1$   |$(a_1, b_2)$|$(a_1, b_2)$|$\cdots$|$(a_1, b_2)$|
-|$a_2$   |$(a_1, b_2)$|$(a_1, b_2)$|$\cdots$|$(a_1, b_2)$|
+|$a_1$   |$(a_1, b_1)$|$(a_1, b_2)$|$\cdots$|$(a_1, b_m)$|
+|$a_2$   |$(a_2, b_1)$|$(a_2, b_2)$|$\cdots$|$(a_2, b_m)$|
 |$\vdots$|$\vdots$    |$\vdots$    |$\ddots$|$\vdots$    |
-|$a_n$   |$(a_1, b_2)$|$(a_1, b_2)$|$\cdots$|$(a_1, b_2)$|
+|$a_n$   |$(a_n, b_1)$|$(a_n, b_2)$|$\cdots$|$(a_n, b_m)$|
 
 Remember that since we're forming ordered pairs, the order in which we list 
 the sets is also important.
