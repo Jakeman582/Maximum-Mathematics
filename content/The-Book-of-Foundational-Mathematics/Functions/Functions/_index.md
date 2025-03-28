@@ -93,7 +93,7 @@ Let $A$ and $B$ be arbitrary sets, and let $f$ be an arbitrary relation defined 
 
 $$f: A \rightarrow B$$
 
-if (only if) every element in $A$ is related to exactly one element in $B$ under $f$. Logically, we write 
+if (and only if) every element in $A$ is related to exactly one element in $B$ under $f$. Logically, we write 
 
 $$\forall a \in A\ \exists! b \in B\ [(a, b) \in f]$$
 {{% /notice %}}
@@ -215,7 +215,7 @@ g(4) &= c
 
 Here, we see that $d$ is the image of $3$ under $g$, and that $1$ is the preimage of $a$ under $g$.
 
-We see that we have the same domain and range as function $f$ from Example 6.1.6:
+We see that we have the same domain and codomain as function $f$ from Example 6.1.6:
 
 \[
 \begin{align*}
@@ -282,7 +282,7 @@ The function $g: A \rightarrow B$ is called the **extesion** of $f$ to $A$ if (a
 $$\forall a \in A_1\ [g(a) = f(a)]$$
 {{% /notice %}}
 
-Essentially, a restriction of a function is simply a new function defined on a subset of the original function's domain while keeping the original function intact within the new function, likewise for extensions.
+Essentially, a restriction of a function is simply a new function defined on a subset of the original function's domain while keeping the original function intact within the new function. Extensions are simply new functions defined on a superset of the original function's domain.
 
 {{% notice style="example" title="Example 6.1.9" %}}
 Consider the function $f: \{1, 2, 3, 4\} \rightarrow \{a, b, c, d\}$ where 
@@ -318,20 +318,3 @@ h(5) &= e
 \end{align*}
 \]
 {{% /notice %}}
-
-## Equality of Functions
-
-Earlier, we defined functions based on their domain and codomain. Just like with relations, changing the underlying sets will yield different results.
-
-{{% notice style="definition" title="Equal" %}}
-Consider the two functions $f: A \rightarrow B$ and $g: C \rightarrow D$.
-
-We call $f$ and $g$ **equal**, and we write $f = g$ if (and only if) the following conditions are true:
-
-- $\text{Dom}(f) = \text{Dom}(g)$
-- $\text{Cod}(f) = \text{Cod}(g)$
-- $\forall x \in \text{Dom}(f)\ [f(x) = g(x)]$
-
-{{% /notice %}}
-
-Note that there are three conditions for function equality. It's not enough that the functions relate the elements from $A$ or $C$ to the same elements in $B$ and $D$. The functions in question must also have exactly the same domain and codomain.
