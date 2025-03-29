@@ -306,7 +306,7 @@ g(4) &= c
 \end{align*}
 \]
 
-One extension we could define on $f$, which we'll call $h$, will have domain $\{1, 2, 3, 4, 5\}$ and codomain $\{a, b, c, d, e\}$:
+One extension we could define on $f$, which we'll call $h$, will have domain $\{1, 2, 3, 4, 5\}$:
 
 \[
 \begin{align*}
@@ -314,7 +314,7 @@ h(1) &= b \\
 h(2) &= a \\
 h(3) &= d \\
 h(4) &= c \\
-h(5) &= e
+h(5) &= d
 \end{align*}
 \]
 {{% /notice %}}

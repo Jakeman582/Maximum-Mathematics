@@ -161,11 +161,11 @@ implications we'll use will be bidirectional._
 \[
 \begin{array}{ r l l }
 & \mathbf{(a, d) \in \bigl(\mathcal{R}_1 \circ \mathcal{R}_2\bigr) \circ \mathcal{R}_3} & \textbf{Reason} \\
-\Longleftrightarrow & \exists c \in C\ [(a, c) \in \mathcal{R}_1 \circ \mathcal{R}_2 \land (c, d) \in \mathcal{R}_3] & \textit{Definition of Relation} \\
-\Longleftrightarrow & \exists c \in C\ \exists b \in B\ [(a, b) \in \mathcal{R}_1 \land (b, c) \in \mathcal{R}_2 \land (c, d) \in \mathcal{R}_3] & \textit{Definition of Relation} \\
-\Longleftrightarrow & \exists b \in B\ \exists c \in C\ [(a, b) \in \mathcal{R}_1 \land (b, c) \in \mathcal{R}_2 \land (c, d) \in \mathcal{R}_3] & \textit{Repeated Quantifiers can be swapped} \\
-\Longleftrightarrow & \exists b \in B\ [(a, b) \in \mathcal{R}_1 \land (b, d) \in \mathcal{R}_2 \circ \mathcal{R}_3] & \textit{Definition of Relation} \\
-\Longleftrightarrow & (a, d) \in \mathcal{R}_1 \circ \bigl(\mathcal{R}_2 \circ \mathcal{R}_3\bigr) & \textit{Definition of Relation}
+\Longleftrightarrow & \exists c \in C\ [(a, c) \in \mathcal{R}_1 \circ \mathcal{R}_2 \land (c, d) \in \mathcal{R}_3] & \text{Definition of Relation Composition} \\
+\Longleftrightarrow & \exists c \in C\ \exists b \in B\ [(a, b) \in \mathcal{R}_1 \land (b, c) \in \mathcal{R}_2 \land (c, d) \in \mathcal{R}_3] & \text{Definition of Relation Composition} \\
+\Longleftrightarrow & \exists b \in B\ \exists c \in C\ [(a, b) \in \mathcal{R}_1 \land (b, c) \in \mathcal{R}_2 \land (c, d) \in \mathcal{R}_3] & \text{Repeated Quantifiers can be swapped} \\
+\Longleftrightarrow & \exists b \in B\ [(a, b) \in \mathcal{R}_1 \land (b, d) \in \mathcal{R}_2 \circ \mathcal{R}_3] & \text{Definition of Relation Composition} \\
+\Longleftrightarrow & (a, d) \in \mathcal{R}_1 \circ \bigl(\mathcal{R}_2 \circ \mathcal{R}_3\bigr) & \text{Definition of Relation Composition}
 \end{array}
 \]
 

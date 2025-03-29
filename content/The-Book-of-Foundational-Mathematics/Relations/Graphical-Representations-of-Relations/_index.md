@@ -180,7 +180,7 @@ technician works on a piece of equipment.
 
 $$~$$
 
-The team consists of Alex, Brady, Chelsey, Danielle, Frank, and Gertrude. 
+The team consists of Alex, Brady, Chelsey, Danielle, Ed, Frank, and Gertrude. 
 Everyday, the team must monitor a server, a router, a firewall, and a 
 database. On a particular day, Eustice made the following assignments for the 
 equipment, resulting in the "assignment" relation.
@@ -192,8 +192,7 @@ equipment, resulting in the "assignment" relation.
 {{< /notice >}}
 
 It should be apparent from Example 5.5.4 that arrow diagrams can look 
-cluttered unless a lot of care is taken to properly space out the elements in 
-the diagram. These are not used often, but are still available when feasible.
+cluttered. Even with the visual clutter (which can be managed), arrow diagrams prove very useful, as we'll see in the next chapter.
 
 ## Tree Diagrams
 One shortcoming with the previous methods is that they do not easily 
@@ -303,7 +302,7 @@ black. However, in a normal deck of cards, those suits are not those colors.
 
 To make an authentic deck of cards, lets consider the following relation:
 
-$$\mathcal{R} = \{(\text{s}, \text{c}, \text{f})\ |\ \bigl[(\text{s} = ♠ \lor ♣) \rightarrow (\text{c} = B)\bigr] \land \bigl[(\text{s} = ♥ \lor ♦) \rightarrow (\text{c} = R)\bigr] \}$$
+$$\mathcal{R} = \{(\text{s}, \text{c}, \text{f})\ |\ \bigl[(\text{s} = ♠ \lor ♣) \land (\text{c} = B)\bigr] \lor \bigl[(\text{s} = ♥ \lor ♦) \land (\text{c} = R)\bigr] \}$$
 
 This relation says that if the card is in the relation and has a suit of 
 spades or clubs, that would imply the card's color is black. Similarly, if a 
@@ -344,7 +343,7 @@ $\mathcal{R}$.
 (♠,B,H) (♠,B,T) (♠,R,H) (♠,R,T) (♥,B,H) (♥,B,T) (♥,R,H) (♥,R,T) (♦,B,H) (♦,B,T) (♦,R,H) (♦,R,T) (♣,B,H) (♣,B,T) (♣,R,H) (♣,R,T) 
 ```
 
-We don't need tp prune any sub-branches because they are considered pruned if 
+We don't need to prune any sub-branches because they are considered pruned if 
 their ancestor branches are pruned. We could go one step further and simply 
 redraw the tree diagram without any of the pruned branches.
 

@@ -383,7 +383,7 @@ Since all of the implications are true, we now know that $\mathcal{R}$ is antisy
 {{% /notice %}}
 
 We noted above that we don't define *antisymmetric* as *not symmetric*. This 
-suggests that it's possible to for a relation to be simultaneously symmetric 
+suggests that it's possible for a relation to be simultaneously symmetric 
 and antisymmetric. A relation could also be neither symmetric nor 
 antisymmetric.
 
