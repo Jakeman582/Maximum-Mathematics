@@ -2,6 +2,7 @@ baseURL = 'http://hiancemathbooks.com/'
 languageCode = 'en-us'
 title = 'Maximum Mathematics'
 theme = 'relearn'
+enableEmoji = true
 
 [markup]
     [markup.goldmark]
