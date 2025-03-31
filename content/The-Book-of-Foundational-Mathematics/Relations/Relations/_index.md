@@ -296,7 +296,7 @@ as demonstrated in Figure 5.4.2 below.
 {{< figure 
     src="Light_Color_Theory.jpg" 
     width=400 height=400
-    caption="Figure 5.4.2: Different wave lengths of light are different colors, which can be mixed together to form new colors. The primary colors here are Red, Green, and Blue. Pixels on screens are colored by emitting differnt comninations of those colors."
+    caption="Figure 5.4.2: Different wave lengths of light are different colors, which can be mixed together to form new colors. The primary colors here are Red, Green, and Blue. Pixels on screens are colored by emitting different combinations of those colors."
 >}}
 
 Consider the set P of primary light colors and the set S of secondary light colors:

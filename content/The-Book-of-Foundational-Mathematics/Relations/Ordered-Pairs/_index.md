@@ -7,7 +7,7 @@ weight = 1
 
 Just as we saw how sets can be built via propositional logic, we'll see how 
 relations and functions are built up using sets, a clear example of how 
-multiple seemingly disperate concepts can be accumulated into a cohesive 
+multiple seemingly disparate concepts can be accumulated into a cohesive 
 whole. But before we delve into what relations and functions are exactly, 
 there is one more set operation we should get acquainted with: the set 
 product. Ironically, even though order doesn't matter when considering 

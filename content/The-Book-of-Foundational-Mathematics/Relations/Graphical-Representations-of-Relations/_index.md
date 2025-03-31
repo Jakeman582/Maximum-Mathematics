@@ -149,8 +149,8 @@ Based on the table above we see that
 \end{array}
 \]
 
-meaning the Smith likes to teach Combinatorics, Linear Algebra, Analysis, and 
-Toopology.
+meaning that Smith likes to teach Combinatorics, Linear Algebra, Analysis, and 
+Topology.
 
 On the other hand, we see that 
 
@@ -196,9 +196,9 @@ cluttered. Even with the visual clutter (which can be managed), arrow diagrams p
 
 ## Tree Diagrams
 One shortcoming with the previous methods is that they do not easily 
-accomodate Cartesian Products with three or more sets.
+accommodate Cartesian Products with three or more sets.
 
-Tree diagrams easily accomodate more than two sets in a Cartesian Product. 
+Tree diagrams easily accommodate more than two sets in a Cartesian Product. 
 However, depending on how many elements are in the sets, tree diagrams can 
 become quite unwieldy.
 
@@ -258,7 +258,7 @@ $\text{Flip} \times \text{Suit} \times \text{Color}$ would look like this:
 >}}
 {{< /notice >}}
 
-To represnt a relation, we simply remove any branches that yield n-tuples that 
+To represent a relation, we simply remove any branches that yield n-tuples that 
 are not in the relation. The act of removing such branches is sometimes called 
 *pruning* in keeping with the arbor theme.
 

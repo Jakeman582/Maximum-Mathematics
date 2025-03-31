@@ -204,11 +204,11 @@ _so we'll omit that part of the proof for the sake of brevity._
 \[
 \begin{array}{ r l l }
 & \mathbf{(a, x) \in A \times (B \cup C)} & \textbf{Reason} \\
-\implies & (a \in A) \land (x \in B \cup C) & \textit{Definition of Cartesian Product} \\
-\implies & (a \in A) \land [(x \in B) \lor (x \in C)] & \textit{Definition of Union} \\
-\implies & [(a \in A) \land (x \in B)] \lor [(a \in A) \land (x \in C)] & \textit{Distribution of } \land \textit{ over } \lor \\
-\implies & [(a, x) \in A \times B] \lor [(a, x) \in A \times C] & \textit{Definition of Cartesian Product} \\
-\implies & (a, x) \in (A \times B) \cup (A \times C) & \textit{Definition of Union}
+\implies & (a \in A) \land (x \in B \cup C) & \text{Definition of Cartesian Product} \\
+\implies & (a \in A) \land [(x \in B) \lor (x \in C)] & \text{Definition of Union} \\
+\implies & [(a \in A) \land (x \in B)] \lor [(a \in A) \land (x \in C)] & \text{Distribution of } \land \text{ over } \lor \\
+\implies & [(a, x) \in A \times B] \lor [(a, x) \in A \times C] & \text{Definition of Cartesian Product} \\
+\implies & (a, x) \in (A \times B) \cup (A \times C) & \text{Definition of Union}
 \end{array}
 \]
 
@@ -223,11 +223,11 @@ $$A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$$
 \[
 \begin{array}{ r l l }
 & \mathbf{(a, x) \in (A \times B) \cup (A \times C)} & \textbf{Reason} \\
-\implies & [(a, x) \in A \times B] \lor [(a, x) \in A \times C] & \textit{Definition of Union} \\
-\implies & [(a \in A) \land (x \in B)] \lor [(a \in A) \land (x \in C)] & \textit{Definition of Cartesian Product} \\
-\implies & (a \in A) \land (x \in B\ \lor\ x \in C) & \textit{Distribution of } \land \textit{ of } \lor \\
-\implies & (a \in A) \land (x \in B \cup C) & \textit{Definition of Union} \\
-\implies & (a, x) \in A \times (B \cup C) & \textit{Definition of Cartesian Product}
+\implies & [(a, x) \in A \times B] \lor [(a, x) \in A \times C] & \text{Definition of Union} \\
+\implies & [(a \in A) \land (x \in B)] \lor [(a \in A) \land (x \in C)] & \text{Definition of Cartesian Product} \\
+\implies & (a \in A) \land (x \in B\ \lor\ x \in C) & \text{Distribution of } \land \text{ of } \lor \\
+\implies & (a \in A) \land (x \in B \cup C) & \text{Definition of Union} \\
+\implies & (a, x) \in A \times (B \cup C) & \text{Definition of Cartesian Product}
 \end{array}
 \]
 
@@ -450,13 +450,13 @@ Product $A \times (B \cap C)$:
 \[
 \begin{array}{ r l l }
 & \mathbf{(a, x) \in A \times (B \cap C)} & \textbf{Reason} \\
-\Longleftrightarrow & (a \in A) \land (x \in B \cap C) & \textit{Definition of Cartesian Product} \\
-\Longleftrightarrow & (a \in A) \land (x \in B) \land (x \in C) & \textit{Definition of Intersection} \\
-\Longleftrightarrow & (a \in A) \land (a \in A) \land (x \in B) \land (x \in C) & \textit{Idempotent Law of } \land \\
-\Longleftrightarrow & (a \in A) \land (x \in B) \land (a \in A) \land (x \in C) & \textit{Commutative Law of } \land \\
-\Longleftrightarrow & [(a \in A) \land (x \in B)] \land [(a \in A) \land (x \in C)] & \textit{Associative Law of } \land \\
-\Longleftrightarrow & [(a, x) \in A \times B] \land [(a, x) \in A \times C] & \textit{Definition of Cartesian Product} \\
-\Longleftrightarrow & (a, x) \in (A \times B) \cap (A \times C) & \textit{Definition of Intersection}
+\Longleftrightarrow & (a \in A) \land (x \in B \cap C) & \text{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a \in A) \land (x \in B) \land (x \in C) & \text{Definition of Intersection} \\
+\Longleftrightarrow & (a \in A) \land (a \in A) \land (x \in B) \land (x \in C) & \text{Idempotent Law of } \land \\
+\Longleftrightarrow & (a \in A) \land (x \in B) \land (a \in A) \land (x \in C) & \text{Commutative Law of } \land \\
+\Longleftrightarrow & [(a \in A) \land (x \in B)] \land [(a \in A) \land (x \in C)] & \text{Associative Law of } \land \\
+\Longleftrightarrow & [(a, x) \in A \times B] \land [(a, x) \in A \times C] & \text{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a, x) \in (A \times B) \cap (A \times C) & \text{Definition of Intersection}
 \end{array}
 \]
 
@@ -961,7 +961,7 @@ $$A \times (B - C) = (A \times B) - (A \times C)$$
 {{% /notice %}}
 
 {{% expand title="Proof 5.3.5" expanded=false %}}
-_Gelneral Strategy: The proof is relatively straight-forward, relying mainly 
+_General Strategy: The proof is relatively straight-forward, relying mainly 
 on the definitions of various set operators. The actual proof will be an 
 element argument._
 
@@ -970,13 +970,13 @@ Let (a, x) be an arbitrarily picked element from $A \times (B - C)$.
 \[
 \begin{array}{ r l l }
 & \mathbf{(a, x) \in A \times (B - C)} & \textbf{Reason} \\
-\Longleftrightarrow & (a \in A) \land (x \in B - C) & \textit{Definition of Cartesian Product} \\
-\Longleftrightarrow & (a \in A) \land (x \in B) \land (x \notin C) & \textit{Definition of Set Difference} \\
-\Longleftrightarrow & (a \in A) \land (a \in A) \land (x \in B) \land (x \notin C) & \textit{Idempotent Law of } \land \\
-\Longleftrightarrow & (a \in A) \land (x \in B) \land (a \in A) \land (x \notin C) & \textit{Commutative Law of } \land \\
-\Longleftrightarrow & \bigl[(a \in A) \land (x \in B)\bigr] \land \bigl[(a \in A) \land (x \notin C)\bigr] & \textit{Associative Law of } \land \\
-\Longleftrightarrow & (a, x) \in (A \times B) \land (a, x) \notin (A \times C) & \textit{Definition of Cartesian Product} \\
-\Longleftrightarrow & (a, x) \in (A \times B) - (A \times C) & \textit{Definition of Set Difference}
+\Longleftrightarrow & (a \in A) \land (x \in B - C) & \text{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a \in A) \land (x \in B) \land (x \notin C) & \text{Definition of Set Difference} \\
+\Longleftrightarrow & (a \in A) \land (a \in A) \land (x \in B) \land (x \notin C) & \text{Idempotent Law of } \land \\
+\Longleftrightarrow & (a \in A) \land (x \in B) \land (a \in A) \land (x \notin C) & \text{Commutative Law of } \land \\
+\Longleftrightarrow & \bigl[(a \in A) \land (x \in B)\bigr] \land \bigl[(a \in A) \land (x \notin C)\bigr] & \text{Associative Law of } \land \\
+\Longleftrightarrow & (a, x) \in (A \times B) \land (a, x) \notin (A \times C) & \text{Definition of Cartesian Product} \\
+\Longleftrightarrow & (a, x) \in (A \times B) - (A \times C) & \text{Definition of Set Difference}
 \end{array}
 \]
 
@@ -1056,10 +1056,10 @@ element argument._
 \[
 \begin{array}{ r l l }
 & A \times (B\ \triangle\ C) & \textbf{Reason} \\
-= & A \times \bigl[ (B - C) \cup (C - B) \bigr] & \textit{Definition of Symmetric Difference} \\
-= & \bigl[ A \times (B - C) \bigr] \cup \bigl[ A \times (C - B) \bigr] & \textit{Theorem 5.3.2} \\
-= & \bigl[ (A \times B) - (A \times C) \bigr] \cup \bigl[ (A \times C) - (A \times B) \bigr] & \textit{Theorem 5.3.5} \\
-= & (A \times B)\ \triangle\ (A \times C) & \textit{Definition of Symmetric Difference}
+= & A \times \bigl[ (B - C) \cup (C - B) \bigr] & \text{Definition of Symmetric Difference} \\
+= & \bigl[ A \times (B - C) \bigr] \cup \bigl[ A \times (C - B) \bigr] & \text{Theorem 5.3.2} \\
+= & \bigl[ (A \times B) - (A \times C) \bigr] \cup \bigl[ (A \times C) - (A \times B) \bigr] & \text{Theorem 5.3.5} \\
+= & (A \times B)\ \triangle\ (A \times C) & \text{Definition of Symmetric Difference}
 \end{array}
 \]
 

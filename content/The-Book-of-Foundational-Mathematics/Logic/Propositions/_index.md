@@ -245,7 +245,7 @@ We can translate $(\neg p) \veebar q$ as
 \]
 {{% /notice %}}
 
-The last two logical connetives we'll talk about are those that describe the 
+The last two logical connectives we'll talk about are those that describe the 
 way theorems are stated: conditional statements.
 
 {{% notice style="definition" title="Implication, Hypothesis, Conclusion" %}}
