@@ -184,6 +184,14 @@ var relearn_searchindex = [
     "uri": "/the-book-of-probability/foundations-of-probability/sample-spaces-and-events/index.html"
   },
   {
+    "breadcrumb": "Maximum Mathematics \u003e The Book of Foundational Mathematics \u003e Logic",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Modeling Logic With Truth Tables",
+    "uri": "/the-book-of-foundational-mathematics/logic/modeling-logic-with-truth-tables/index.html"
+  },
+  {
     "breadcrumb": "Maximum Mathematics",
     "content": "",
     "description": "",
