@@ -80,6 +80,14 @@ var relearn_searchindex = [
     "uri": "/the-book-of-foundational-mathematics/relations/cartesian-products/index.html"
   },
   {
+    "breadcrumb": "Maximum Mathematics \u003e The Book of Foundational Mathematics \u003e Functions",
+    "content": "This is red colored text {style=“color: red;”}",
+    "description": "This is red colored text {style=“color: red;”}",
+    "tags": [],
+    "title": "Properties of Functions",
+    "uri": "/the-book-of-foundational-mathematics/functions/properties-of-functions/index.html"
+  },
+  {
     "breadcrumb": "Maximum Mathematics \u003e The Book of Foundational Mathematics",
     "content": "This is a new chapter.",
     "description": "This is a new chapter.",

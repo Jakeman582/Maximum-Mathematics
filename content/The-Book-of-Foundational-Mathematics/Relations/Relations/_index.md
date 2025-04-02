@@ -276,7 +276,7 @@ S &= \{\text{Orange}, \text{Green}, \text{Purple}\}
 \]
 
 {{< figure 
-    src="Pigment_Color_Theory.jpg" 
+    src="1.jpg" 
     width=400 height=400 
     caption="Figure 5.4.1: This diagram shows how the primary pigment colors mix together to form the secondary pigment colors."
 >}}
@@ -294,7 +294,7 @@ Alternatively to pigments, light can mix together to form new colors as well,
 as demonstrated in Figure 5.4.2 below.
 
 {{< figure 
-    src="Light_Color_Theory.jpg" 
+    src="2.jpg" 
     width=400 height=400
     caption="Figure 5.4.2: Different wave lengths of light are different colors, which can be mixed together to form new colors. The primary colors here are Red, Green, and Blue. Pixels on screens are colored by emitting different combinations of those colors."
 >}}
