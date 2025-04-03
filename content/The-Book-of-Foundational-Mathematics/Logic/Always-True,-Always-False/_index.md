@@ -140,3 +140,80 @@ Often, the symbol $F_0$ is used to represent contradictory propositions.
 ## Satisfiability
 
 For a given compound proposition, a truth table allows us to quickly look for any truth value assignments that yield a truth value of $1$ or $0$.
+
+{{< notice style="example" title="Example 1.3.3" >}}
+This time, let's look at the compound proposition $(p \lor q) \land r$ that is made up of three constituent propositions $p, q, r$:
+
+{{< figure
+    src="8.svg"
+    alt="Examining a compound proposition with three constituent proponents."
+>}}
+
+After filling out the column for $p \lor q$, the last column becomes easy to fill out:
+
+{{< figure
+    src="9.svg"
+    alt="A filled out truth table for $(p \lor q) \land r$."
+>}}
+
+Here, we see there are only three rows where $(p \lor q) \land r = 1$. We'll highlight those rows in green after stripping out the extraneous $p \lor q$ column:
+
+{{< figure
+    src="10.svg"
+    alt="A truth table for $(p \lor q) \land r$ highlighting where it is true."
+>}}
+
+Based on the above truth table, we see that $(p \lor q) \land r = 1$ when we have the following:
+
+\[
+\begin{align*}
+p = 0,\ q = 1,\ r = 1 \\
+p = 1,\ q = 0,\ r = 1 \\
+p = 1,\ q = 1,\ r = 1
+\end{align*}
+\]
+{{< /notice >}}
+
+{{< notice style="example" title="Example 1.3.4">}}
+Let's take another look at the truth table for the proposition $p \rightarrow (p \lor q)$:
+
+{{< figure 
+    src="4.svg"
+    alt="Another look at the truth table for $p \rightarrow (p \lor q)$."
+>}}
+
+As discussed previously, all truth value assignments for $p$ and $q$ result in a truth value of $1$ for $p \rightarrow (p \lor q)$. Thus, $p \rightarrow (p \lor q)$ is a tautology, and we can write 
+
+$$\bigl(p \rightarrow (p \lor q)\bigr) = T_0$$
+{{< /notice >}}
+
+In the previous two examples, we could make the desired proposition true with an appropriate selection of truth values for the component propositions $p$ and $q$. Example 1.3.2 and our next example both demonstrate that this is not always possible.
+
+{{< notice style="example" title="Example 1.3.5" >}}
+Consider the proposition $\neg p \land (p \land q)$, which is slightly different than the proposition given in Example 1.3.2. Here is it's truth table:
+
+{{< figure
+    src="11.svg"
+    alt="A truth table for $\neg p \land (p \land q)$."
+>}}
+
+Here, there is no way to choose truth values for $p$ and $q$ to make $\neg p \land (p \land q) = 1$. As such, we have that 
+
+$$\bigl(\neg p \land (p \land q)\bigr) = F_0$$
+{{< /notice >}}
+
+Some propositions can be made true with an appropriate choice of truth values for any constituent propositions. Others can't.
+
+{{% notice style="definition" title="Satisfiable, Unsatisfiable" %}}
+A compound proposition $p$ is called **satisfiable** if there exists truth value assignments for its constituent propositions such that $p = 1$.
+
+Otherwise, $p$ is **unsatisfiable**.
+{{% /notice %}}
+
+{{% notice style="example" title="Example 1.3.6" %}}
+As demonstrated in Example 1.3.3, since there exists truth values for $p, q, r$ such that $\bigl((p \lor q) \land r\bigr) = 1$, we have that $\bigl((p \lor q) \land r\bigr)$ is satisfiable.
+
+From Example 1.3.4, we saw that there exists truth values for $p, q$ such that $\bigl(p \rightarrow (p \lor q)\bigr) = 1$, meaning $p \rightarrow (p \lor q)$ is satisfiable.
+
+From Example 1.3.5, we saw that $\bigl(\neg p \land (p \land q)\bigr) = F_0$, meaning $\neg p \land (p \land q)$ is unsatisfiable.
+{{% /notice %}}

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/index.html</loc>
+    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/index.html</loc>
-    <lastmod>2025-03-31T02:16:45-04:00</lastmod>
+    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-probability/foundations-of-probability/index.html</loc>
     <lastmod>2025-02-16T23:38:19-05:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/index.html</loc>
-    <lastmod>2025-02-12T05:23:54-05:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/propositions/index.html</loc>
@@ -33,12 +33,20 @@
     <lastmod>2025-02-12T05:26:32-05:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/modeling-logic-with-truth-tables/index.html</loc>
+    <lastmod>2025-02-11T01:17:14-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/functions/special-functions/index.html</loc>
     <lastmod>2025-01-25T21:40:09-05:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/relations/cartesian-products/index.html</loc>
     <lastmod>2025-01-04T15:21:45-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/always-true-always-false/index.html</loc>
+    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/functions/properties-of-functions/index.html</loc>
@@ -82,7 +90,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-03-31T02:16:45-04:00</lastmod>
+    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-probability/conditional-probability-and-independence/conditional-probability/index.html</loc>
@@ -91,10 +99,6 @@
   <url>
     <loc>http://localhost:1313/the-book-of-probability/foundations-of-probability/sample-spaces-and-events/index.html</loc>
     <lastmod>2025-02-16T23:31:34-05:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/modeling-logic-with-truth-tables/index.html</loc>
-    <lastmod>2025-02-11T01:17:14-05:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
