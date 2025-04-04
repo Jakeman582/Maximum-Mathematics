@@ -89,7 +89,7 @@ because no element is related to $b$.
 Now we formally state the definition of function:
 
 {{% notice style="definition" title="Function, Mapping" %}}
-Let $A$ and $B$ be arbitrary sets, and let $f$ be an arbitrary relation defined on $A \times B$. $f$ is called a **function** (also sometimes a **mapping**) from $A$ to $B$, and we write 
+Let $A$ and $B$ be non-empty, but otherwise arbitrary sets, and let $f$ be an arbitrary relation defined on $A \times B$. $f$ is called a **function** (also sometimes a **mapping**) from $A$ to $B$, and we write 
 
 $$f: A \rightarrow B$$
 
@@ -98,7 +98,7 @@ if (and only if) every element in $A$ is related to exactly one element in $B$ u
 $$\forall a \in A\ \exists! b \in B\ [(a, b) \in f]$$
 {{% /notice %}}
 
-Notice that the definition applies with arbitrary sets. Both $A, B$ could be the Empty set, in which case  we'd have $f: \emptyset \rightarrow \emptyset$, which is commonly called the *empty function*. If only one of $A, B$ were the empty set, then the only function possible would be the empty function (as a matter of fact, the only relation that could be defined would be the empty relation).
+Notice that the definition applies with non-empty sets. Care should be taken when considering what kinds of relations can occur when letting either $A$ or $B$ be empty.
 
 {{% notice style="example" title="Example 6.1.5" %}}
 Reconsider the sets $A = \{1, 2, 3, 4\}$ and $B = \{a, b, c, d\}$ from the previous examples.
