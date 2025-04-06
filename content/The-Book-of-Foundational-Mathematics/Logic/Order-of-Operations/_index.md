@@ -130,3 +130,7 @@ using the above order of operations as follows:
 \end{align*}
 \]
 {{% /notice %}}
+
+Using the order of operations can make expressions more compact, but it's usually difficult to easily spot which parts of expressions have precedence. Parentheses () and brackets [] are commonly used to group parts of expressions together, and can also draw our attention to specific parts of equations.
+
+As such, we will continue to use parentheses and brackets to organize expressions when necessary, instead of relying on the order of operations presented here.
