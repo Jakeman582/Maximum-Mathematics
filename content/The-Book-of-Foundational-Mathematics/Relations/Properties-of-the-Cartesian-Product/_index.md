@@ -144,7 +144,7 @@ $\ \emptyset \times A$ as well._
 Presume - for the purpose of showing a contradiction - that 
 $A \times \emptyset$ is non-empty. This would mean that there is at least one 
 element in $A \times \emptyset$. That element would be an ordered pair which 
-we'll denote (a, ?). As such, we know that 
+we'll denote $(a, ?)$. As such, we know that 
 
 $$(a, ?) \in A \times \emptyset$$
 
