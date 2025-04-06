@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/index.html</loc>
-    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
+    <lastmod>2025-04-06T13:40:59-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/index.html</loc>
-    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
+    <lastmod>2025-04-06T13:40:59-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-probability/foundations-of-probability/index.html</loc>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/functions/index.html</loc>
-    <lastmod>2025-03-31T02:16:45-04:00</lastmod>
+    <lastmod>2025-04-06T02:51:54-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-foundational-mathematics/relations/characterizing-relations/index.html</loc>
@@ -90,7 +90,11 @@
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-04-02T20:10:31-04:00</lastmod>
+    <lastmod>2025-04-06T13:40:59-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/the-book-of-foundational-mathematics/logic/order-of-operations/index.html</loc>
+    <lastmod>2025-04-06T13:40:59-04:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/the-book-of-probability/conditional-probability-and-independence/conditional-probability/index.html</loc>
