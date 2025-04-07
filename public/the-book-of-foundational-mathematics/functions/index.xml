@@ -6,7 +6,7 @@
     <description>In the previous chapter, we studied a way to relate elements of one set to another set. However, we didn’t place any restrictions on those relations. Usually, we want to have some specific type of structure in the way we relate elements.&#xA;Throughout our normal schooling, we encounter many types of these structured relations. Specifically, the kinds of relations we studied were functions. In this chapter, we delve deeper into these special kind of relations, and study them in an abstract sense. That is to say, what we discuss here will be applicable to all functions, not just those more familiar functions that relate real numbers to other real numbers.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Mar 2025 02:16:45 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 06 Apr 2025 02:51:54 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/the-book-of-foundational-mathematics/functions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Functions</title>
@@ -28,6 +28,13 @@
       <pubDate>Mon, 31 Mar 2025 02:16:45 -0400</pubDate>
       <guid>http://localhost:1313/the-book-of-foundational-mathematics/functions/properties-of-functions/index.html</guid>
       <description>In the last section, we talked about certain kinds of functions that have properties not had by other functions. Surjective functions have properties not shared with injective functions, and vice-versa. In this section, we swing back to talking about properties that all functions have, though the last property we talk about is a bit more refined when the underlying function is injective.&#xA;Empty Inputs Produce Empty Outputs One classic analogy mathematicians use to talk about functions is that of a machine. Simply put, a machine is a device that takes in some input, operates on that input, and produces an output. Like machines, a function takes in an input, and based on how the function is defined, produces an output.</description>
+    </item>
+    <item>
+      <title>Equal Functions</title>
+      <link>http://localhost:1313/the-book-of-foundational-mathematics/functions/equal-functions/index.html</link>
+      <pubDate>Sun, 06 Apr 2025 02:51:54 -0400</pubDate>
+      <guid>http://localhost:1313/the-book-of-foundational-mathematics/functions/equal-functions/index.html</guid>
+      <description>We’ve previously discussed when two sets are considered equal, and when two ordered pairs are equal. We then extended the idea of set equality to see when two Cartesian products were considered equal (because Cartesian products are simply sets of ordered pairs).&#xA;However, we have not yet discussed when two relations are equal. As we saw in Section 5.6 Characterizing Relations, the sets on which a relation is defined can drastically alter that relation’s properties. A relation $\mathcal{R}$ may be reflexive on $A^2$, but may not be reflexive on $B^2$ even though $\mathcal{R}$ is the same set in each case.</description>
     </item>
   </channel>
 </rss>
