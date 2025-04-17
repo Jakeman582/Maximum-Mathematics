@@ -91,7 +91,7 @@ Suppose we wanted to examine the proposition $p \land (\neg p \land q)$. Natural
     alt="A blank truth table for the proposition $p \land (\neg p \land q)$."
 >}}
 
-We propositions $\neg p$ and $\neg p \land q$ are relatively easy to calculate. Once those propositions' columns are filled out, then filling out the final column becomes straightforward:
+The propositions $\neg p$ and $\neg p \land q$ are relatively easy to calculate. Once those propositions' columns are filled out, then filling out the final column becomes straightforward:
 
 {{< figure
     src="6.svg"
