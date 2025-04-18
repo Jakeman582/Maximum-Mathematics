@@ -100,6 +100,16 @@ $$\forall a \in A\ \exists! b \in B\ [(a, b) \in f]$$
 
 Notice that the definition applies with non-empty sets. Care should be taken when considering what kinds of relations can occur when letting either $A$ or $B$ be empty.
 
+A classic way to show what a function looks like is given below:
+
+{{< figure
+    src = "4.svg"
+    alt = "An ellipse for the domain, an ellipse for the codomain, and an arc for the function."
+    caption = "**Figure 6.1.4**: A classic way to depict what the function $f: A \rightarrow B$ is."
+>}}
+
+In Figure 6.1.4, we see two sets represented by ellipses labeled $A$ and $B$. As shown, we have that $a \in A$ and $b \in B$, and an arrow labeled $f$ is drawn going from $a$ to $b$. This represents the fact that $f$ is essentially "taking" $a$ to $b$. 
+
 {{% notice style="example" title="Example 6.1.5" %}}
 Reconsider the sets $A = \{1, 2, 3, 4\}$ and $B = \{a, b, c, d\}$ from the previous examples.
 
@@ -168,6 +178,16 @@ The set $B$ is referred to as the **codomain** of $f$ and is often written as $\
 
 The subset of $B$ consisting of all the images from the elements of $A$ under $f$ is called the **range** of $f$ and is written as $\text{Rng}(f)$.
 {{% /notice %}}
+
+We'll draw another picture to give us a more intuitive idea what the difference between the domain, codomain, and range of a function are.
+
+{{< figure
+    src="5.svg"
+    alt="A blue ellipse for the domain, a light orange ellipse for the codomain, and darker orange for the range."
+    caption="**Figure 6.1.5**: Color-coding the domain, codomain, and range of the function $f: A \rightarrow B$."
+>}}
+
+In Figure 6.1.5, we colored $\text{Dom}(f)$ blue, $\text{Cod}(f)$ a light orange color, and $\text{Rng}(f)$ a darker orange color. Since $b$ is the image of $a$ under $f$, we see that $b \in \text{Rng}(f)$. However, since $c$ is not the image of any element in $A$ under $f$, we have that $c \in \text{Cod}(f)$ but $c \notin \text{Rng}(f)$.
 
 {{% notice style="example" title="Example 6.1.6" %}}
 Consider the function $f: \{1, 2, 3, 4\} \rightarrow \{a, b, c, d\}$ where 

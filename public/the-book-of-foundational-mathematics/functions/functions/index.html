@@ -20,19 +20,19 @@
     <meta itemprop="description" content="In this chapter’s introduction, we mentioned that a function is a specific kind of relation, which means there are additional requirements for a relation to be a function that extend beyond simply being a subset of some cross product $A \times B$. Before we give the definition, let’s look at some relations that behave differently from one another to get a more intuitive sense of what we’re looking for in a function.">
     <meta itemprop="datePublished" content="2025-01-25T21:39:58-05:00">
     <meta itemprop="dateModified" content="2025-01-25T21:39:58-05:00">
-    <meta itemprop="wordCount" content="2006">
+    <meta itemprop="wordCount" content="2180">
     <title>Functions :: Maximum Mathematics</title>
     <link href="/the-book-of-foundational-mathematics/functions/functions/index.xml" rel="alternate" type="application/rss+xml" title="Functions :: Maximum Mathematics">
-    <link href="/css/fontawesome-all.min.css?1743969953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743969953" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1743969953" rel="stylesheet">
-    <link href="/css/auto-complete.css?1743969953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743969953" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743969953" rel="stylesheet">
-    <link href="/css/fonts.css?1743969953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1743969953" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1743969953" rel="stylesheet">
-    <link href="/css/theme-dark.css?1743969953" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1743969953" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/print.css?1743969953" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1743969953"></script>
+    <link href="/css/fontawesome-all.min.css?1744978516" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744978516" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1744978516" rel="stylesheet">
+    <link href="/css/auto-complete.css?1744978516" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744978516" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744978516" rel="stylesheet">
+    <link href="/css/fonts.css?1744978516" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1744978516" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1744978516" rel="stylesheet">
+    <link href="/css/theme-dark.css?1744978516" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1744978516" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/print.css?1744978516" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1744978516"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -203,6 +203,14 @@ $$\forall a \in A\ \exists! b \in B\ [(a, b) \in f]$$
   </div>
 </div>
 <p>Notice that the definition applies with non-empty sets. Care should be taken when considering what kinds of relations can occur when letting either $A$ or $B$ be empty.</p>
+<p>A classic way to show what a function looks like is given below:</p>
+<figure><img src="/the-book-of-foundational-mathematics/functions/functions/4.svg"
+    alt="An ellipse for the domain, an ellipse for the codomain, and an arc for the function."><figcaption>
+      <p><strong>Figure 6.1.4</strong>: A classic way to depict what the function $f: A \rightarrow B$ is.</p>
+    </figcaption>
+</figure>
+
+<p>In Figure 6.1.4, we see two sets represented by ellipses labeled $A$ and $B$. As shown, we have that $a \in A$ and $b \in B$, and an arrow labeled $f$ is drawn going from $a$ to $b$. This represents the fact that $f$ is essentially &ldquo;taking&rdquo; $a$ to $b$.</p>
 <div class="box notices cstyle example">
   <div class="box-label">
     <i class="fa-fw fas fa-pencil"></i> Example 6.1.5
@@ -264,6 +272,14 @@ $$f(a) = b$$<p>This notation is very common, and will be adopted in this book he
 <p>The subset of $B$ consisting of all the images from the elements of $A$ under $f$ is called the <strong>range</strong> of $f$ and is written as $\text{Rng}(f)$.</p>
   </div>
 </div>
+<p>We&rsquo;ll draw another picture to give us a more intuitive idea what the difference between the domain, codomain, and range of a function are.</p>
+<figure><img src="/the-book-of-foundational-mathematics/functions/functions/5.svg"
+    alt="A blue ellipse for the domain, a light orange ellipse for the codomain, and darker orange for the range."><figcaption>
+      <p><strong>Figure 6.1.5</strong>: Color-coding the domain, codomain, and range of the function $f: A \rightarrow B$.</p>
+    </figcaption>
+</figure>
+
+<p>In Figure 6.1.5, we colored $\text{Dom}(f)$ blue, $\text{Cod}(f)$ a light orange color, and $\text{Rng}(f)$ a darker orange color. Since $b$ is the image of $a$ under $f$, we see that $b \in \text{Rng}(f)$. However, since $c$ is not the image of any element in $A$ under $f$, we have that $c \in \text{Cod}(f)$ but $c \notin \text{Rng}(f)$.</p>
 <div class="box notices cstyle example">
   <div class="box-label">
     <i class="fa-fw fas fa-pencil"></i> Example 6.1.6
@@ -413,7 +429,7 @@ h(5) &= d
   </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743969953";
+          window.index_js_url="/searchindex.en.js?1744978516";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -426,12 +442,12 @@ h(5) &= d
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743969953" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743969953" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743969953" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743969953" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743969953" defer></script>
-        <script src="/js/search.js?1743969953" defer></script>
+        <script src="/js/auto-complete.js?1744978516" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744978516" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744978516" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744978516" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744978516" defer></script>
+        <script src="/js/search.js?1744978516" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -462,7 +478,8 @@ h(5) &= d
             <li class="active " data-nav-id="/the-book-of-foundational-mathematics/functions/functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/functions/index.html">Functions</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/special-functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/special-functions/index.html">Special Functions</a></li>
             <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/properties-of-functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/properties-of-functions/index.html">Properties of Functions</a></li>
-            <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/equal-functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/equal-functions/index.html">Equal Functions</a></li></ul></li>
+            <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/equal-functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/equal-functions/index.html">Equal Functions</a></li>
+            <li class="" data-nav-id="/the-book-of-foundational-mathematics/functions/composite-functions/index.html"><a class="padding" href="/the-book-of-foundational-mathematics/functions/composite-functions/index.html">Composite Functions</a></li></ul></li>
           </ul>
         </div>
     
@@ -517,8 +534,8 @@ h(5) &= d
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743969953" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743969953" defer></script>
+    <script src="/js/clipboard.min.js?1744978516" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744978516" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -533,7 +550,7 @@ h(5) &= d
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1743969953"></script>
-    <script src="/js/theme.js?1743969953" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1744978516"></script>
+    <script src="/js/theme.js?1744978516" defer></script>
   </body>
 </html>

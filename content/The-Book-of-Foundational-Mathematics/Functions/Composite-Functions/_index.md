@@ -1,6 +1,6 @@
 +++
 date = '2025-01-25T21:40:20-05:00'
-draft = true
+draft = false
 title = 'Composite Functions'
-weight = 4
+weight = 5
 +++
