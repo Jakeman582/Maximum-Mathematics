@@ -17,4 +17,4 @@ draft = true
             type="menu"
 +++
 
-This is a new chapter.
+This is a brand new book!
