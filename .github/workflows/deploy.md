@@ -19,10 +19,8 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
-
       - name: Build
         run: hugo --minify
-
       - name: SFTP Deploy public/
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
