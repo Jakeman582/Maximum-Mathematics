@@ -34,4 +34,4 @@ jobs:
           remote-password: ${{ secrets.SFTP_PASSWORD }}
           local-path: "./public"
           remote-path: ${{ secrets.SFTP_REMOTE_PATH }}
-          sync: "delta"
+          sync: "full"
