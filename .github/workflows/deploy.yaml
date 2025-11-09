@@ -25,13 +25,13 @@ jobs:
         run: hugo --minify
         
       - name: Deploy via SFTP (clean sync)
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        uses: milanmk/actions-file-deployer@master
         with:
-          server: ${{ secrets.SFTP_SERVER }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp
-          port: ${{ secrets.SFTP_PORT }}
-          local-dir: ./public
-          server-dir: ${{ secrets.SFTP_REMOTE_PATH }}
-          dangerous-clean-slate: true
+          remote-protocol: "sftp"
+          remote-host: ${{ secrets.SFTP_SERVER }}
+          remote-port: ${{ secrets.SFTP_PORT }}
+          remote-user: ${{ secrets.SFTP_USERNAME }}
+          remote-password: ${{ secrets.SFTP_PASSWORD }}
+          local-path: "./public"
+          remote-path: ${{ secrets.SFTP_REMOTE_PATH }}
+          sync: "delta"
