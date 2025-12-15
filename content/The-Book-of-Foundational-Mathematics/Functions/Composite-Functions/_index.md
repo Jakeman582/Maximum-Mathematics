@@ -160,7 +160,7 @@ As the previous example demonstrates, when some elements of the intermediate set
 
 Of course when the first function uses all elements of the intermediate set in its range, then we won't have to worry about some elements being left out of the composite's range. In other words, when the first function is surjective, then we expect the range of the composite to be equal to the range of the last function used in the composition.
 
-{{% notice style="theorem" title="Proof 6.5.1" %}}
+{{% notice style="theorem" title="Theorem 6.5.1" %}}
 Suppose for arbitrary sets $\text{A}$, $\text{B}$, and $\text{C}$, and for arbitrary functions 
 
 \[
