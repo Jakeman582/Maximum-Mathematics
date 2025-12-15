@@ -170,7 +170,7 @@ g: \text{B} \rightarrow \text{C}
 \end{align*}
 \]
 
-If $f$ is surjective, meaning $\text{Rng}(f) = \text{Dom}(g)$, then we have that
+If $f$ is surjective, then we have that
 
 $$\text{Rng}(g \circ f) = \text{Rng}(g)$$
 {{% /notice %}}
