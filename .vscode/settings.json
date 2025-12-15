@@ -19,5 +19,7 @@
         "Supersets",
         "Surjective",
         "textbf"
-    ]
+    ],
+    "editor.wordWrap": "off",
+    "diffEditor.wordWrap": "off"
 }
