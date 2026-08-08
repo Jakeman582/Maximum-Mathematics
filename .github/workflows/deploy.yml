@@ -41,6 +41,20 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.VPS_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
+      # TEMPORARY — diagnosing a `Connection timed out` on port 22 from this
+      # runner. firewalld, fail2ban, and the hosting panel's firewall have all
+      # been ruled out on the VPS side, so this checks whether the runner can
+      # reach the VPS on port 80 (known-open, unrelated service) at all — that
+      # tells us whether this is an SSH-specific block or nothing is getting
+      # through from this runner's IP range. Remove once diagnosed.
+      - name: Diagnose network reachability
+        run: |
+          echo "=== HTTP (port 80) ==="
+          curl -v -m 10 "http://${{ secrets.VPS_HOST }}/" || echo "HTTP FAILED"
+          echo "=== raw TCP to port 22 ==="
+          timeout 10 bash -c "echo > /dev/tcp/${{ secrets.VPS_HOST }}/22" \
+            && echo "TCP 22: OK" || echo "TCP 22: FAILED"
+
       - name: Sync build to staging
         # The destination path here is cosmetic: the VPS-side wrapper ignores
         # whatever path this client sends and always writes to its own fixed
