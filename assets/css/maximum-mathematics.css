@@ -138,3 +138,139 @@ mjx-container[display='true'] {
   text-align: right;
   line-height: 1;
 }
+
+/*----------------------------------------------------------------------------
+ * Notices: definition, theorem/proof, example, star, warning, question/answer
+ *--------------------------------------------------------------------------*/
+
+/* Rendered by the definition/theorem/proof/example/star/warning/question/
+   answer shortcodes, via layouts/partials/_mm/notice-box.html — a title bar
+   in the notice's accent colour over a body tinted with the same colour,
+   styled independently of Relearn's own box/cstyle system (which several
+   unrelated shortcodes share and which isn't meant to be extended with new
+   accent colours) rather than reusing it directly. Every kind sets the same
+   three custom properties; only the values differ. */
+.mm-notice {
+  --mm-notice-accent: var(--PRIMARY-color);
+  --mm-notice-accent-text: #ffffff;
+  --mm-notice-tint: rgba(127, 127, 127, 0.08);
+
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--mm-notice-accent);
+}
+
+.mm-notice__title {
+  padding: 0.5rem 0.9rem;
+  font-weight: 700;
+  background: var(--mm-notice-accent);
+  color: var(--mm-notice-accent-text);
+}
+
+.mm-notice__body {
+  padding: 0.9rem 1rem;
+  background: var(--mm-notice-tint);
+}
+
+.mm-notice__body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Collapsible kinds (proof, answer) reuse the same title/body classes on a
+   <details>/<summary> pair instead of two plain <div>s — the browser handles
+   showing and hiding .mm-notice__body, so no extra state or script is needed. */
+.mm-notice--collapsible > .mm-notice__title {
+  cursor: pointer;
+  user-select: none;
+  list-style: none; /* remove the default disclosure triangle */
+}
+
+.mm-notice--collapsible > .mm-notice__title::-webkit-details-marker {
+  display: none; /* Safari's equivalent of list-style: none on <summary> */
+}
+
+.mm-notice__chevron {
+  display: inline-block;
+  margin-right: 0.4em;
+  transition: transform 0.15s ease;
+}
+
+.mm-notice--collapsible[open] > .mm-notice__title > .mm-notice__chevron {
+  transform: rotate(90deg);
+}
+
+/* Definition — light blue. */
+.mm-notice--definition {
+  --mm-notice-accent: #29b6f6;
+  --mm-notice-accent-text: #ffffff;
+  --mm-notice-tint: rgba(41, 182, 246, 0.08);
+}
+
+/* Theorem and its Proof — fuchsia. */
+.mm-notice--theorem {
+  --mm-notice-accent: #c2185b;
+  --mm-notice-accent-text: #ffffff;
+  --mm-notice-tint: rgba(194, 24, 91, 0.08);
+}
+
+/* Example — light green. */
+.mm-notice--example {
+  --mm-notice-accent: #43a047;
+  --mm-notice-accent-text: #ffffff;
+  --mm-notice-tint: rgba(67, 160, 71, 0.08);
+}
+
+/* Star — yellow. Dark title text: white-on-yellow fails contrast. */
+.mm-notice--star {
+  --mm-notice-accent: #fbc02d;
+  --mm-notice-accent-text: #3e2e00;
+  --mm-notice-tint: rgba(251, 192, 45, 0.12);
+}
+
+/* Warning — red. */
+.mm-notice--warning {
+  --mm-notice-accent: #e53935;
+  --mm-notice-accent-text: #ffffff;
+  --mm-notice-tint: rgba(229, 57, 53, 0.08);
+}
+
+/* Question and its Solution (answer) — gray. */
+.mm-notice--question {
+  --mm-notice-accent: #757575;
+  --mm-notice-accent-text: #ffffff;
+  --mm-notice-tint: rgba(117, 117, 117, 0.08);
+}
+
+/* Dark mode: the tint opacities above read as barely-there on a dark page, so
+   they're bumped up here rather than relying on the same value everywhere. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .mm-notice--definition { --mm-notice-tint: rgba(41, 182, 246, 0.16); }
+  :root:not([data-theme='light']) .mm-notice--theorem    { --mm-notice-tint: rgba(194, 24, 91, 0.16); }
+  :root:not([data-theme='light']) .mm-notice--example    { --mm-notice-tint: rgba(67, 160, 71, 0.16); }
+  :root:not([data-theme='light']) .mm-notice--star       { --mm-notice-tint: rgba(251, 192, 45, 0.2); }
+  :root:not([data-theme='light']) .mm-notice--warning    { --mm-notice-tint: rgba(229, 57, 53, 0.16); }
+  :root:not([data-theme='light']) .mm-notice--question   { --mm-notice-tint: rgba(117, 117, 117, 0.16); }
+}
+:root[data-theme='dark'] .mm-notice--definition { --mm-notice-tint: rgba(41, 182, 246, 0.16); }
+:root[data-theme='dark'] .mm-notice--theorem    { --mm-notice-tint: rgba(194, 24, 91, 0.16); }
+:root[data-theme='dark'] .mm-notice--example    { --mm-notice-tint: rgba(67, 160, 71, 0.16); }
+:root[data-theme='dark'] .mm-notice--star       { --mm-notice-tint: rgba(251, 192, 45, 0.2); }
+:root[data-theme='dark'] .mm-notice--warning    { --mm-notice-tint: rgba(229, 57, 53, 0.16); }
+:root[data-theme='dark'] .mm-notice--question   { --mm-notice-tint: rgba(117, 117, 117, 0.16); }
+
+/* Inline term highlight: ==double equals== (Goldmark's `mark` extension),
+   restyled from the default yellow highlight to .mm-notice--definition's
+   blue — a term reads the same colour whether it's in its own definition
+   box or referenced later in running text. Nothing else on this site uses
+   ==...== yet, so repurposing `mark` sitewide is safe for now; if that
+   changes, scope this to `.mm-notice__body mark` and the page body instead. */
+mark {
+  background: none;
+  color: #29b6f6;
+  font-weight: 600;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) mark { color: #4fc3f7; }
+}
+:root[data-theme='dark'] mark { color: #4fc3f7; }

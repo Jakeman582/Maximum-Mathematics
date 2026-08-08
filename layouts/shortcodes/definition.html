@@ -1,0 +1,40 @@
+{{- /*
+  definition — introduces one or more terms.
+
+  Call with the angle-bracket delimiter form (see notice-box.html for why).
+
+  Parameters:
+    terms — comma-separated list of the word(s) or phrase(s) being defined,
+            in natural case; the title bar renders them capitalized
+
+  The title bar shows only the term(s) themselves — no surrounding sentence —
+  so the box reads like a dictionary entry. Highlight the term(s) again
+  inline within the body by wrapping them in ==double equals signs==
+  (Goldmark's mark extension, restyled sitewide to match this box's colour
+  instead of the default yellow highlight) — a plain shortcode can't do this
+  itself: nesting a shortcode that outputs raw HTML inside this one's body
+  would have that HTML silently stripped, since the body is re-rendered as
+  Markdown and this site disables raw HTML in Markdown source. See
+  content/style-guide for a live, copy-pasteable example of the exact call
+  syntax.
+*/ -}}
+
+{{- $termsRaw := .Get "terms" -}}
+{{- if not $termsRaw -}}
+  {{- errorf "definition shortcode in %q: the `terms` parameter is required" .Page.File.Path -}}
+{{- end -}}
+
+{{- $terms := slice -}}
+{{- range split $termsRaw "," -}}
+  {{- $terms = $terms | append (trim . " ") -}}
+{{- end -}}
+
+{{- $title := slice -}}
+{{- range $terms }}{{ $title = $title | append (strings.ToUpper .) }}{{ end -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"    "definition"
+  "title"   (delimit $title ", ")
+  "content" .Inner
+  "page"    .Page
+) -}}

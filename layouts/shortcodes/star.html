@@ -1,0 +1,23 @@
+{{- /*
+  star — flags an important observation worth remembering, distinct from a
+  theorem (no proof, not necessarily a formal result) and from a warning (not
+  a pitfall — a fact worth having front of mind).
+
+  Parameters:
+    title — the observation, stated as a short sentence fragment
+
+  See content/style-guide for a live, copy-pasteable example of the exact
+  call syntax.
+*/ -}}
+
+{{- $title := .Get "title" -}}
+{{- if not $title -}}
+  {{- errorf "star shortcode in %q: the `title` parameter is required" .Page.File.Path -}}
+{{- end -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"    "star"
+  "title"   $title
+  "content" .Inner
+  "page"    .Page
+) -}}

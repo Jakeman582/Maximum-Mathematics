@@ -1,0 +1,20 @@
+{{- /*
+  proof — a collapsible proof, closed by default. Place immediately after the
+  theorem it belongs to; there is no explicit link between them beyond that
+  adjacency, so keep them next to each other in the source.
+
+  No parameters — the title is always "Proof". See content/style-guide for a
+  live example.
+*/ -}}
+
+{{- $count := add (.Page.Store.Get "proofCount" | default 0) 1 -}}
+{{- .Page.Store.Set "proofCount" $count -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"        "theorem"
+  "title"       "Proof"
+  "content"     .Inner
+  "page"        .Page
+  "collapsible" true
+  "id"          (printf "proof-%d" $count)
+) -}}

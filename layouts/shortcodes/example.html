@@ -1,0 +1,22 @@
+{{- /*
+  example — a worked example.
+
+  Parameters:
+    title — a description of what the example does, e.g. "Tossing two fair
+            six-sided dice" or "Finding the supremum of a bounded set"
+
+  See content/style-guide for a live, copy-pasteable example of the exact
+  call syntax.
+*/ -}}
+
+{{- $title := .Get "title" -}}
+{{- if not $title -}}
+  {{- errorf "example shortcode in %q: the `title` parameter is required" .Page.File.Path -}}
+{{- end -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"    "example"
+  "title"   $title
+  "content" .Inner
+  "page"    .Page
+) -}}

@@ -1,0 +1,58 @@
+{{- /*
+  Shared rendering for every Maximum Mathematics notice type (definition,
+  theorem, proof, example, star, warning, question, answer). Each notice
+  shortcode computes its own title and calls this partial rather than
+  duplicating the box markup eight times.
+
+  Colours live in assets/css/maximum-mathematics.css, keyed by the
+  mm-notice--<kind> class — never inline here, since Go's template sanitizer
+  rejects a var(...) reference in a style attribute (substitutes ZgotmplZ).
+
+  Expects:
+    kind        — CSS suffix, e.g. "theorem"; also used as a fallback id prefix
+    title       — already-formatted title text (may contain math, rendered as
+                  Markdown below so $...$ still reaches MathJax)
+    content     — the shortcode's .Inner
+    page        — the shortcode's .Page, needed to render both title and content
+    collapsible — if true, the whole box is a closed-by-default <details>;
+                  if false, title and body are both always visible
+    id          — optional explicit id; falls back to "<kind>-N", N counting
+                  up per kind per page (definition-1, definition-2, ...) —
+                  callers that already number themselves (proof, question,
+                  answer) pass their own id instead of relying on this
+*/ -}}
+
+{{- $kind := .kind -}}
+{{- $title := .title -}}
+{{- $content := .content -}}
+{{- $page := .page -}}
+{{- $collapsible := .collapsible | default false -}}
+
+{{- $id := .id -}}
+{{- if not $id -}}
+  {{- $storeKey := printf "noticeCount-%s" $kind -}}
+  {{- $count := add ($page.Store.Get $storeKey | default 0) 1 -}}
+  {{- $page.Store.Set $storeKey $count -}}
+  {{- $id = printf "%s-%d" (anchorize $kind) $count -}}
+{{- end -}}
+
+{{- $renderedTitle := $title | $page.RenderString -}}
+{{- $renderedBody := $content | $page.RenderString (dict "display" "block") -}}
+
+{{- if $collapsible }}
+<details class="mm-notice mm-notice--{{ $kind }} mm-notice--collapsible" id="{{ $id }}">
+  <summary class="mm-notice__title">
+    <i class="mm-notice__chevron fa-fw fas fa-chevron-right"></i>{{ $renderedTitle }}
+  </summary>
+  <div class="mm-notice__body">
+{{ $renderedBody }}
+  </div>
+</details>
+{{- else }}
+<div class="mm-notice mm-notice--{{ $kind }}" id="{{ $id }}">
+  <div class="mm-notice__title">{{ $renderedTitle }}</div>
+  <div class="mm-notice__body">
+{{ $renderedBody }}
+  </div>
+</div>
+{{- end }}

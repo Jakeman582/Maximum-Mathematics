@@ -1,0 +1,20 @@
+{{- /*
+  answer — a collapsible solution, closed by default. Place immediately after
+  the question shortcode call it answers; there is no explicit link between
+  them beyond that adjacency, so keep them next to each other in the source.
+
+  No parameters — the title is always "Solution". See content/style-guide
+  for a live example.
+*/ -}}
+
+{{- $count := add (.Page.Store.Get "answerCount" | default 0) 1 -}}
+{{- .Page.Store.Set "answerCount" $count -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"        "question"
+  "title"       "Solution"
+  "content"     .Inner
+  "page"        .Page
+  "collapsible" true
+  "id"          (printf "answer-%d" $count)
+) -}}

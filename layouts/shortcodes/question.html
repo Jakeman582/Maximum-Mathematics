@@ -1,0 +1,19 @@
+{{- /*
+  question — a numbered practice problem. Pair with an answer shortcode call
+  immediately after for the (optional) solution — see answer.html.
+
+  No parameters — numbered automatically, starting at 1, with its own
+  counter separate from the statement shortcode's. See content/style-guide
+  for a live, copy-pasteable example of the exact call syntax.
+*/ -}}
+
+{{- $count := add (.Page.Store.Get "questionCount" | default 0) 1 -}}
+{{- .Page.Store.Set "questionCount" $count -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"    "question"
+  "title"   (printf "Question %d" $count)
+  "content" .Inner
+  "page"    .Page
+  "id"      (printf "question-%d" $count)
+) -}}

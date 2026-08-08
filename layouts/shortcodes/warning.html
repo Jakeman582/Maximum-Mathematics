@@ -1,0 +1,22 @@
+{{- /*
+  warning — flags a common mistake: something to watch for, not just an
+  observation (that's the star shortcode).
+
+  Parameters:
+    title — describes the pitfall, e.g. "Confusing a sequence with its limit"
+
+  See content/style-guide for a live, copy-pasteable example of the exact
+  call syntax.
+*/ -}}
+
+{{- $title := .Get "title" -}}
+{{- if not $title -}}
+  {{- errorf "warning shortcode in %q: the `title` parameter is required" .Page.File.Path -}}
+{{- end -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"    "warning"
+  "title"   $title
+  "content" .Inner
+  "page"    .Page
+) -}}

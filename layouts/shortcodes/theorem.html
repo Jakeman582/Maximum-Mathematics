@@ -1,0 +1,24 @@
+{{- /*
+  theorem — states a result. Pair with a proof shortcode call immediately
+  after for the (optional) proof, rather than nesting it inside — see
+  proof.html.
+
+  Parameters:
+    title — a short sentence fragment describing the result, e.g.
+            "Every prime greater than 2 is odd"
+
+  See content/style-guide for a live, copy-pasteable example of the exact
+  call syntax.
+*/ -}}
+
+{{- $title := .Get "title" -}}
+{{- if not $title -}}
+  {{- errorf "theorem shortcode in %q: the `title` parameter is required" .Page.File.Path -}}
+{{- end -}}
+
+{{- partial "_mm/notice-box.html" (dict
+  "kind"    "theorem"
+  "title"   $title
+  "content" .Inner
+  "page"    .Page
+) -}}
