@@ -1,0 +1,44 @@
+# Auto-retries the Deploy workflow on a fresh runner if it fails.
+#
+# GitHub Actions runners are ephemeral VMs drawn from a huge, shared Azure IP
+# pool, and reaching the VPS from some of those IPs occasionally times out —
+# likely automated IP-reputation filtering on the VPS's network edge reacting
+# to that specific address's history, not a real, consistent block (a deploy
+# succeeded, then a later one from a different runner timed out minutes
+# later). A fresh job draws a fresh runner and a fresh IP, so simply retrying
+# the failed run again is usually enough to get through.
+#
+# This has to be a *separate* workflow, not a second job inside deploy.yml:
+# `gh run rerun` refuses to rerun a run that's still in progress, and a job
+# living inside that same run trying to call it is exactly that — the run
+# isn't "complete" while one of its own jobs is still the one asking. The
+# `workflow_run` trigger below only fires once Deploy has fully finished, so
+# by the time this runs, the run really is in a terminal state and can
+# actually be rerun.
+
+name: Retry failed deploy
+
+on:
+  workflow_run:
+    workflows: [Deploy]
+    types: [completed]
+
+permissions:
+  actions: write
+
+jobs:
+  retry:
+    # run_attempt starts at 1 and increments with each rerun, so `< 3` allows
+    # two automatic retries (three attempts total) before giving up and
+    # requiring a human to look at it.
+    if: >
+      github.event.workflow_run.conclusion == 'failure' &&
+      github.event.workflow_run.run_attempt < 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run the failed jobs on a fresh runner
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh run rerun ${{ github.event.workflow_run.id }} --failed \
+            --repo ${{ github.repository }}
