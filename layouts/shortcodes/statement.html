@@ -1,0 +1,72 @@
+{{- /*
+  statement — a numbered definition, theorem, lemma, example, or proof.
+
+  Call it with the angle-bracket delimiter form. The percent form would route
+  this shortcode's own wrapper markup back through Goldmark, which discards raw
+  HTML while `renderer.unsafe` is false; the body is instead rendered as
+  Markdown explicitly below, so its mathematics still reaches MathJax.
+
+  Parameters:
+    kind   — one of the keys in $kinds below; defaults to "definition"
+    name   — optional italicised name shown after the number
+    number — explicit number; omit to take the next number on the page
+    id     — explicit HTML id for cross-references; defaults to kind-number
+
+  Numbering: every numbered kind shares one counter per page, so a page reads
+  Definition 1, Theorem 2, Example 3 — the usual textbook convention, which
+  keeps a cross-reference unambiguous without naming its kind. Set the page's
+  `chapter` front matter to prefix numbers with the chapter, e.g. Theorem 3.2.
+  Proofs and remarks are never numbered; a proof belongs to the statement
+  above it.
+*/ -}}
+
+{{- /* Accent colours live in assets/css/maximum-mathematics.css, keyed by the
+       statement--<kind> class. They cannot be set inline here: Go's template
+       sanitizer rejects a `var(...)` reference in a style attribute and
+       substitutes ZgotmplZ. */ -}}
+{{- $kinds := dict
+  "definition"  (dict "label" "Definition"  "numbered" true)
+  "theorem"     (dict "label" "Theorem"     "numbered" true)
+  "lemma"       (dict "label" "Lemma"       "numbered" true)
+  "corollary"   (dict "label" "Corollary"   "numbered" true)
+  "proposition" (dict "label" "Proposition" "numbered" true)
+  "example"     (dict "label" "Example"     "numbered" true)
+  "exercise"    (dict "label" "Exercise"    "numbered" true)
+  "notation"    (dict "label" "Notation"    "numbered" true)
+  "remark"      (dict "label" "Remark"      "numbered" false)
+  "proof"       (dict "label" "Proof"       "numbered" false)
+-}}
+
+{{- $kind := .Get "kind" | default "definition" | lower -}}
+{{- $spec := index $kinds $kind -}}
+{{- if not $spec -}}
+  {{- $known := slice -}}
+  {{- range $key, $_ := $kinds }}{{ $known = $known | append $key }}{{ end -}}
+  {{- errorf "statement shortcode in %q: unknown kind %q; expected one of %s"
+      .Page.File.Path $kind (delimit $known ", ") -}}
+{{- end -}}
+
+{{- $name := .Get "name" | default "" -}}
+{{- $number := .Get "number" | default "" -}}
+
+{{- /* Assign the next number on this page unless one was given or the kind is unnumbered. */ -}}
+{{- if and $spec.numbered (not $number) -}}
+  {{- $count := add (.Page.Store.Get "statementCount" | default 0) 1 -}}
+  {{- .Page.Store.Set "statementCount" $count -}}
+  {{- with .Page.Params.chapter -}}
+    {{- $number = printf "%v.%d" . $count -}}
+  {{- else -}}
+    {{- $number = printf "%d" $count -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $id := .Get "id" | default (printf "%s-%s" $kind (or $number "unnumbered") | anchorize) -}}
+
+<div class="statement statement--{{ $kind }}" id="{{ $id }}">
+  <div class="statement__heading">
+    {{- $spec.label }}{{ with $number }} {{ . }}{{ end -}}
+    {{- with $name }} <span class="statement__name">({{ . | markdownify }})</span>{{ end -}}
+    {{- if eq $kind "proof" }}.{{ end -}}
+  </div>
+  {{ .Inner | .Page.RenderString (dict "display" "block") }}
+</div>

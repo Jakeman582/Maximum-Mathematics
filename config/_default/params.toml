@@ -1,0 +1,84 @@
+# Relearn theme options. Full reference:
+# https://mcshelby.github.io/hugo-theme-relearn/configuration/reference/
+#
+# TOML binds every key that follows a table header to that table, so all plain
+# keys must come first and the [[themeVariant]] blocks last. Adding a key below
+# the variants would silently make it a property of the last variant instead of
+# a site parameter.
+
+author.name = 'Jacob Hiance'
+
+linkTitle = 'Maximum Mathematics'
+
+#------------------------------------------------------------------------------
+# Navigation
+#------------------------------------------------------------------------------
+
+collapsibleMenu = true                        # Books have many chapters; keep the sidebar collapsed.
+ordersectionsby = 'weight'                    # Chapter order is editorial, not alphabetical.
+showVisitedLinks = true                       # Readers track how far through a book they are.
+disableLandingPageButton = false
+disableRootBreadcrumb = true
+breadcrumbSeparator = '›'
+titleSeparator = '·'
+
+disableNextPrev = false                       # Sequential reading is the primary mode for a textbook.
+
+#------------------------------------------------------------------------------
+# Math
+#------------------------------------------------------------------------------
+
+# Load MathJax on every page rather than per-page opt-in: on this site the
+# exception is a page *without* mathematics.
+#
+# This is the theme's documented alias for `math.force = true`, and the only
+# spelling that currently works. Relearn 9.0.3 detects the table form by
+# comparing `printf "%T"` against the literal "maps.Params", but Hugo 0.164
+# reports that type as "hmaps.Params", so `math.force` is silently ignored.
+# The same applies to `mermaid.force` and `openapi.force`. Revisit when the
+# theme is upgraded.
+math = true
+
+#------------------------------------------------------------------------------
+# Figures
+#------------------------------------------------------------------------------
+
+# Asymptote SVGs are line art with their colours baked in — a theme border boxes
+# them in unnecessarily, and lightbox zoom is pointless for infinitely scalable
+# vectors.
+imageEffects.border = false
+imageEffects.lightbox = false
+imageEffects.lazy = true
+
+image.errorlevel = 'error'                    # A missing figure is a broken page, not a warning.
+link.errorlevel = 'warning'
+
+#------------------------------------------------------------------------------
+# Page furniture
+#------------------------------------------------------------------------------
+
+disableToc = false
+disablePrintButton = false
+disableMarkdownButton = true                  # Content source is not published alongside the site.
+disableSourceButton = true
+
+hideAuthorName = true                         # Single-author site; a byline on every page is noise.
+hideAuthorEmail = true
+dateFormat = ':date_long'
+
+#------------------------------------------------------------------------------
+# Appearance — keep last, see the note at the top of this file
+#------------------------------------------------------------------------------
+
+# Readers work through long proofs at odd hours, so follow the OS preference by
+# default and let them pin light or dark explicitly.
+[[themeVariant]]
+  identifier = 'auto'
+  name = 'Auto'
+  auto = ['relearn-light', 'relearn-dark']
+[[themeVariant]]
+  identifier = 'relearn-light'
+  name = 'Light'
+[[themeVariant]]
+  identifier = 'relearn-dark'
+  name = 'Dark'

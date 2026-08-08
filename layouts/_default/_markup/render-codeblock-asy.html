@@ -1,0 +1,23 @@
+{{- /*
+  Highlight ```asy fences as C++.
+
+  Chroma, the highlighter Hugo embeds, has no Asymptote lexer, so an `asy`
+  fence would otherwise render as unstyled plain text. Asymptote's syntax is
+  close enough to C that the C++ lexer picks up comments, strings, numbers,
+  and the shared keywords; the Asymptote-specific types (`real`, `pair`, `pen`,
+  `picture`) simply stay unstyled.
+
+  Content keeps writing ```asy, which is the honest label. This hook only
+  changes what the highlighter is told.
+
+  Delegating to the theme's own highlight partial — rather than calling
+  `highlight` directly — keeps the copy-to-clipboard button and line wrapping
+  that every other code block on the site has.
+*/ -}}
+{{- partial "shortcodes/highlight.html" (dict
+  "page"       .Page
+  "attributes" .Attributes
+  "content"    .Inner
+  "options"    .Options
+  "type"       "cpp"
+) }}

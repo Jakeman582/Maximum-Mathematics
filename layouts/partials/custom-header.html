@@ -1,0 +1,9 @@
+{{- /*
+  Injected into <head> on every page by the Relearn theme. Site-specific CSS is
+  loaded here so it overrides the theme's own stylesheets, which are emitted
+  before this partial.
+*/ -}}
+{{- with resources.Get "css/maximum-mathematics.css" -}}
+  {{- $style := . | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+{{- end -}}

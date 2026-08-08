@@ -1,0 +1,66 @@
+{{- /*
+  figure — embed a committed Asymptote SVG, with an optional caption and an
+  optional collapsible view of the .asy source that produced it.
+
+  Figures are pre-rendered and committed, so this shortcode never invokes
+  Asymptote; it only locates files that are already on disk. Keep the .svg and
+  its .asy source together in the page bundle so both resolve as page
+  resources and travel with the page.
+
+  Parameters:
+    src      — SVG filename, resolved as a page resource then as a site asset
+    title    — bold caption lead-in, e.g. "Figure 1:"
+    caption  — caption body; LaTeX between $...$ is rendered by MathJax
+    source   — .asy filename to show in a collapsible block (optional)
+    alt      — accessible description; falls back to the caption, then the title
+    width    — CSS width of the figure, e.g. "60%" (optional)
+
+  Example:
+    {{< figure src="bijection.svg" title="Figure 1:"
+               caption="A bijection between $A$ and $B$."
+               source="bijection.asy" >}}
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $source := .Get "source" | default "" -}}
+{{- $width := .Get "width" | default "" -}}
+{{- $alt := .Get "alt" | default $caption | default $title -}}
+
+{{- if not $src -}}
+  {{- errorf "figure shortcode in %q: the `src` parameter is required" .Page.File.Path -}}
+{{- end -}}
+
+{{- /* Prefer a page-bundle resource; fall back to a shared figure in assets/. */ -}}
+{{- $image := .Page.Resources.GetMatch $src -}}
+{{- if not $image -}}
+  {{- $image = resources.Get $src -}}
+{{- end -}}
+{{- if not $image -}}
+  {{- errorf "figure shortcode in %q: cannot find image %q as a page resource or site asset" .Page.File.Path $src -}}
+{{- end -}}
+
+<figure class="asymptote-figure"{{ with $width }} style="width: {{ . }}"{{ end }}>
+  <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" loading="lazy">
+
+  {{- if or $title $caption }}
+  <figcaption>
+    {{- with $title }}<span class="asymptote-figure__title">{{ . | markdownify }}</span> {{ end -}}
+    {{- with $caption }}<span class="asymptote-figure__caption">{{ . | markdownify }}</span>{{ end -}}
+  </figcaption>
+  {{- end }}
+
+  {{- with $source }}
+    {{- $file := $.Page.Resources.GetMatch . -}}
+    {{- if not $file -}}
+      {{- errorf "figure shortcode in %q: cannot find source file %q in the page bundle" $.Page.File.Path . -}}
+    {{- end }}
+  <details class="asymptote-figure__source">
+    <summary>Asymptote source</summary>
+    {{/* Chroma has no Asymptote lexer; C++ is the closest fit. See
+         layouts/_default/_markup/render-codeblock-asy.html. */}}
+    {{ highlight (trim $file.Content "\n") "cpp" }}
+  </details>
+  {{- end }}
+</figure>

@@ -1,0 +1,25 @@
+# Core site configuration for Maximum Mathematics.
+#
+# Environment-specific overrides live in sibling directories under `config/`
+# (for example `config/production/`), which Hugo merges on top of this file.
+
+baseURL = 'https://maximummathematics.com/'   # Change to the real domain before the first deploy.
+title = 'Maximum Mathematics'
+locale = 'en-US'
+defaultContentLanguage = 'en'
+
+theme = 'hugo-theme-relearn'
+
+# Set to true once the repository has commits. It surfaces a "last modified"
+# date on every page from the commit that last touched it, and Hugo refuses to
+# build against a repository with no history at all.
+enableGitInfo = false
+
+enableRobotsTXT = true
+
+# `print` gives every chapter and page a printable single-file version, which
+# matters for textbook chapters and problem sets that readers want on paper.
+[outputs]
+  home    = ['html', 'rss', 'print']
+  section = ['html', 'rss', 'print']
+  page    = ['html', 'print']

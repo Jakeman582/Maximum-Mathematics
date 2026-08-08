@@ -1,0 +1,17 @@
+# Hugo build output and caches — regenerated on every build, never committed.
+/public/
+/resources/
+/.hugo_build.lock
+
+# Asymptote leaves these beside a figure when a render fails partway.
+*.aux
+*.log
+*.dvi
+*.pre
+*_.tex
+
+# macOS
+.DS_Store
+
+# Claude Code local permission state — machine-specific, not project config.
+.claude/settings.local.json

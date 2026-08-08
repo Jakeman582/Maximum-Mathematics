@@ -1,0 +1,53 @@
+# Builds the site on GitHub's runners and publishes it to the VPS.
+#
+# The VPS never runs Hugo and never holds a git checkout of this repository —
+# only nginx and one SSH key restricted to two things (see
+# deploy/ssh-command-wrapper.sh): rsync into a staging directory, or run the
+# fixed swap script that publishes it. See deploy/README.md for the one-time
+# VPS setup this depends on.
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # allows a manual re-run from the Actions tab
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive # the Relearn theme is a submodule
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.164.0' # keep in sync with the version used locally
+          extended: true # required — the site uses SCSS/asset pipeline features
+
+      - name: Build
+        run: hugo --gc --minify
+
+      - name: Load the deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+
+      - name: Trust the VPS host key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+      - name: Sync build to staging
+        # The destination path here is cosmetic: the VPS-side wrapper ignores
+        # whatever path this client sends and always writes to its own fixed
+        # staging directory. See deploy/ssh-command-wrapper.sh.
+        run: |
+          rsync -az --delete public/ \
+            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/srv/maximum-mathematics/www.new/"
+
+      - name: Publish
+        run: ssh "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" swap

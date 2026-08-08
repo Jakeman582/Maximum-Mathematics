@@ -1,0 +1,140 @@
+/*
+ * Site-specific styling layered on top of the Relearn theme.
+ *
+ * Everything here is expressed in the theme's own CSS custom properties so it
+ * tracks whichever colour variant the reader has selected.
+ */
+
+/*----------------------------------------------------------------------------
+ * Asymptote figures
+ *--------------------------------------------------------------------------*/
+
+.asymptote-figure {
+  /* Centred in the text column, never wider than it. */
+  margin: 2rem auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Asymptote bakes its colours into the SVG — black line art that would vanish
+   against a dark page. Every figure therefore sits on its own white card,
+   which also keeps a figure looking identical in both colour variants. */
+.asymptote-figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.asymptote-figure figcaption {
+  margin-top: 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--MAIN-TEXT-color);
+}
+
+.asymptote-figure__title {
+  font-weight: 700;
+}
+
+/* Caption text is markdownified, so it arrives wrapped in its own paragraph. */
+.asymptote-figure figcaption p {
+  display: inline;
+  margin: 0;
+}
+
+.asymptote-figure__source {
+  margin-top: 0.75rem;
+  text-align: left;
+}
+
+/* The theme resolves its configurable colours into --INTERNAL-* properties;
+   those are what a variant actually leaves on the document, so read them here
+   rather than the --MAIN-LINK-color a variant file declares. */
+.asymptote-figure__source > summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  user-select: none;
+  color: var(--INTERNAL-MAIN-LINK-color, var(--PRIMARY-color));
+}
+
+.asymptote-figure__source > summary:hover {
+  color: var(--INTERNAL-MAIN-LINK-HOVER-color, var(--INTERNAL-MAIN-LINK-color));
+  text-decoration: underline;
+}
+
+/*----------------------------------------------------------------------------
+ * Mathematics
+ *--------------------------------------------------------------------------*/
+
+/* Long displayed equations scroll inside their own box rather than forcing the
+   whole page to scroll sideways on a narrow screen. */
+mjx-container[display='true'] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+/*----------------------------------------------------------------------------
+ * Definition, theorem, and proof blocks
+ *--------------------------------------------------------------------------*/
+
+/* Rendered by the `statement` shortcode, which emits statement--<kind>. The
+   accent is set here rather than in the template because Go's HTML sanitizer
+   strips a var() reference out of an inline style attribute. */
+.statement {
+  --statement-accent: var(--PRIMARY-color);
+
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--statement-accent);
+  border-radius: 0 2px 2px 0;
+  background: rgba(127, 127, 127, 0.06);
+}
+
+/* Formal results carry the primary accent; illustrative material is set apart
+   with the secondary one. */
+.statement--example,
+.statement--exercise,
+.statement--notation,
+.statement--remark {
+  --statement-accent: var(--SECONDARY-color);
+}
+
+.statement__heading {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--statement-accent);
+}
+
+.statement__name {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.statement > *:last-child {
+  margin-bottom: 0;
+}
+
+/* A proof is set apart by weight rather than colour, and closed with a tombstone. */
+.statement--proof {
+  --statement-accent: var(--MAIN-TEXT-color);
+
+  border-left-style: dashed;
+  background: none;
+}
+
+.statement--proof .statement__heading {
+  font-style: italic;
+}
+
+.statement--proof::after {
+  content: '\25A1'; /* □ — end of proof */
+  display: block;
+  text-align: right;
+  line-height: 1;
+}

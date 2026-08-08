@@ -1,0 +1,42 @@
+# Markdown rendering. The passthrough delimiters must stay in sync with the
+# MathJax defaults the Relearn theme initializes; changing one without the
+# other silently breaks math rendering.
+
+[highlight]
+  lineNumbersInTable = false                  # Wrapping code shifts table line numbers out of alignment.
+  noClasses = false                           # Use the theme's per-variant chroma stylesheets.
+
+[goldmark]
+  renderer.unsafe = false                     # Raw HTML in content is off; use shortcodes instead.
+
+  [goldmark.extensions]
+    strikethrough = false                     # Superseded by the `extras` delete extension below.
+
+    [goldmark.extensions.extras]
+      [goldmark.extensions.extras.delete]
+        enable = true
+      [goldmark.extensions.extras.insert]
+        enable = true
+      [goldmark.extensions.extras.mark]
+        enable = true
+      [goldmark.extensions.extras.subscript]
+        enable = true
+      [goldmark.extensions.extras.superscript]
+        enable = true
+
+    # Hand `$...$` and `$$...$$` to MathJax untouched instead of letting
+    # Goldmark interpret backslashes and underscores inside them as Markdown.
+    [goldmark.extensions.passthrough]
+      enable = true
+      [goldmark.extensions.passthrough.delimiters]
+        inline = [['\(', '\)'], ['$', '$']]
+        block  = [['\[', '\]'], ['$$', '$$']]
+
+  [goldmark.parser]
+    [goldmark.parser.attribute]
+      block = true                            # Required by the theme's `children` shortcode.
+
+# Table of contents depth: chapters are long, so show three levels.
+[tableOfContents]
+  startLevel = 2
+  endLevel = 4
