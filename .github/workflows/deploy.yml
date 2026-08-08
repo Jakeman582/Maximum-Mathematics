@@ -51,3 +51,26 @@ jobs:
 
       - name: Publish
         run: ssh "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" swap
+
+  # GitHub Actions runners are ephemeral VMs drawn from a huge, shared Azure
+  # IP pool, and reaching the VPS from some of those IPs occasionally times
+  # out — likely automated IP-reputation filtering on the VPS's network edge
+  # reacting to that specific address's history, not a real, consistent
+  # block (confirmed reachable, including a successful deploy, minutes
+  # before a later run timed out from a different runner). Retrying a step
+  # within the same job wouldn't help — same runner, same IP, same result.
+  # A fresh job gets a fresh runner and a fresh IP, so this re-runs the
+  # failed job as a new one, up to twice, before giving up and requiring a
+  # human to look at it (github.run_attempt starts at 1 and increments on
+  # each rerun, so `< 3` allows two automatic retries).
+  retry-on-failure:
+    needs: deploy
+    if: failure() && fromJSON(github.run_attempt) < 3
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Re-run the failed job on a fresh runner
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh run rerun ${{ github.run_id }} --failed --repo ${{ github.repository }}
