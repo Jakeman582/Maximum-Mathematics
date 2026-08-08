@@ -3,16 +3,14 @@
 # remote-swap.sh
 #
 # Installed once on the VPS at /srv/maximum-mathematics/bin/. Runs there,
-# triggered by poll-and-publish.sh once it's confirmed there's a new build to
-# publish — never runs on any other machine, and never runs directly from
-# GitHub Actions (see poll-and-publish.sh for why: the VPS pulls, it is never
-# pushed to).
+# triggered remotely by `ssh deploy@host swap` (see ssh-command-wrapper.sh) —
+# never runs on any other machine.
 #
-# By the time this runs, www.new/ already holds a fresh build. This makes
-# that build live with two renames, so nginx never serves a directory that is
-# half old build, half new build: the docroot either points at the complete
-# previous build or the complete new one, never a mix. The previous build is
-# kept as www.previous/ for a manual rollback.
+# By the time this runs, GitHub Actions has already rsynced a fresh build
+# into www.new/. This makes that build live with two renames, so nginx never
+# serves a directory that is half old build, half new build: the docroot
+# either points at the complete previous build or the complete new one, never
+# a mix. The previous build is kept as www.previous/ for a manual rollback.
 
 set -o errexit
 set -o nounset
@@ -35,12 +33,14 @@ if [ -d "${LIVE_DIRECTORY}" ]; then
 fi
 mv "${STAGING_DIRECTORY}" "${LIVE_DIRECTORY}"
 
-# Recreate empty staging so the next run has somewhere to land.
+# Recreate empty staging so the next rsync has somewhere to land — rsync
+# needs the destination directory to already exist.
 mkdir -p "${STAGING_DIRECTORY}"
 
 # nginx runs as its own unpriviliged user, not `deploy`; content must be
-# world-readable for it to serve. Hugo's own output is already world-readable,
-# but this makes it explicit rather than relying on that staying true.
+# world-readable for it to serve. rsync preserves Hugo's own output
+# permissions, which are already world-readable, but this makes it explicit
+# rather than relying on that staying true.
 chmod -R a+rX "${LIVE_DIRECTORY}"
 
 echo "published $(find "${LIVE_DIRECTORY}" -type f | wc -l) files"

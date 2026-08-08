@@ -76,16 +76,12 @@ The script needs Asymptote configured to find the library — see
 
 ## Deploying
 
-Push to `main`; GitHub Actions builds the site with Hugo and force-pushes the
-result to the `built` branch, GitHub delivers a webhook to the VPS, and a
-listener there pulls and publishes the new build within seconds. GitHub
-Actions runners themselves are blocked from reaching the VPS directly by
-something at the hosting provider's network edge, but GitHub's separate
-webhook-delivery infrastructure isn't — so the VPS is always the one
-initiating the connection out to GitHub, never the reverse. A systemd timer
-re-checks every 20 minutes as a fallback in case a webhook delivery is ever
-missed. See [`deploy/README.md`](deploy/README.md) for the full explanation
-and one-time VPS setup.
+Push to `main`; GitHub Actions builds the site with Hugo and `rsync`s it to
+the VPS, which runs nginx only — no Hugo, no git checkout, no listener beyond
+nginx and sshd. One-time VPS setup is in [`deploy/README.md`](deploy/README.md).
+
+Set the real domain in `config/_default/hugo.toml` before the first deploy —
+Hugo bakes `baseURL` into canonical URLs, the sitemap, and the RSS feed.
 
 Set the real domain in `config/_default/hugo.toml` before the first deploy —
 Hugo bakes `baseURL` into canonical URLs, the sitemap, and the RSS feed.
