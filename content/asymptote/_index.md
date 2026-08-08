@@ -1,54 +1,24 @@
 +++
 title = 'Asymptote Library'
-description = 'Draw mathematical figures with consistent styling, using the same library every figure on this site is drawn with.'
+description = 'Every figure on this site is drawn with the Maximum Mathematics Asymptote library.'
 weight = 20
 +++
 
-Every figure on this site is drawn with this library. It is free to use in your
-own work, and this section is its complete documentation.
+Nearly every figure on this site — diagrams, plots, tables — is drawn with
+[Asymptote](https://asymptote.sourceforge.io/), using the **Maximum
+Mathematics Asymptote library**: a set of Asymptote modules built alongside
+this site to give every figure the same consistent styling, without writing
+the layout arithmetic by hand each time.
 
-[Asymptote](https://asymptote.sourceforge.io/) is a vector graphics language
-with real mathematical typesetting behind it. It is powerful, and it is also
-verbose: a figure as ordinary as "two sets with arrows between them" is a
-hundred lines of layout arithmetic. This library supplies the layout so you
-only supply the mathematics.
+{{< figure src="conics.svg"
+           alt="A circle, an ellipse, a parabola, and a line, drawn with the Maximum Mathematics Asymptote library."
+           source="conics.asy" >}}
 
-## The shape of every figure
+The library is free to use in your own work, whether or not you're reading
+these books. Full documentation — installation, every visualization, styling
+— lives on its own site:
 
-Three steps, always in the same order:
+**[jakeman582.github.io/Maximum-Asymptote](https://jakeman582.github.io/Maximum-Asymptote/)**
 
-1. **Create a visualization** and configure its data.
-2. **Create an [`Image`]({{% relref "/asymptote/images" %}})** and configure its
-   size, margins, and caption.
-3. **Add the visualization to the image** with `image.add(visualization)`.
-
-That last step renders automatically. You never call a render, draw, or output
-function — the one exception being
-[standalone rendering]({{% relref "/asymptote/standalone-rendering" %}}), where
-you deliberately want the bare visualization without an enclosing image.
-
-```asy
-import MaximumMathematics;
-
-// 1. Create and configure a visualization
-RelationDiagram diagram = RelationDiagram();
-diagram.add_set(new string[] {"1", "2", "3"}, "A");
-diagram.add_set(new string[] {"a", "b", "c"}, "B");
-diagram.add_relation(0, 1, new pair[] {(0,0), (1,1), (2,2)});
-
-// 2. Create and configure an image
-Image img = Image();
-img.set_diagram_padding(0.5);
-img.caption_title("Figure 1:");
-img.caption_text("A bijection between two sets.");
-
-// 3. Add — this renders automatically
-img.add(diagram);
-```
-
-There are no configuration structs and no wrapper types. You configure
-everything through setter methods on the object itself.
-
-## Sections
-
-{{% children type="list" depth="1" description="true" %}}
+Source is at
+[github.com/Jakeman582/Maximum-Asymptote](https://github.com/Jakeman582/Maximum-Asymptote).

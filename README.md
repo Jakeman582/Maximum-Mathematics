@@ -1,8 +1,9 @@
 # Maximum Mathematics
 
-The Maximum Mathematics website: mathematics textbooks with their problem sets,
-and documentation for the
-[Maximum Mathematics Asymptote library](https://github.com/jacobhiance/Maximum-Asymptote).
+The Maximum Mathematics website: mathematics textbooks with their problem
+sets, illustrated with the
+[Maximum Mathematics Asymptote library](https://github.com/Jakeman582/Maximum-Asymptote)
+(documented on [its own site](https://jakeman582.github.io/Maximum-Asymptote/)).
 
 Built with [Hugo](https://gohugo.io/) and the
 [Relearn](https://mcshelby.github.io/hugo-theme-relearn/) theme.
@@ -36,7 +37,7 @@ Maximum-Mathematics/
 ├── config/_default/          # Site configuration, split by concern
 ├── content/
 │   ├── books/                # Textbooks — one section per book
-│   ├── asymptote/            # Asymptote library documentation
+│   ├── asymptote/            # One page pointing to the library's own docs site
 │   └── authoring/            # How to write pages here; live shortcode test
 ├── layouts/
 │   ├── shortcodes/           # figure, statement
@@ -71,20 +72,16 @@ scripts/render-figures.sh
 That renders only what is stale. Pass `--force` to re-render everything, which
 you want after changing the library's theme file.
 
-The script needs Asymptote configured to find the library — see
-[the installation page](content/asymptote/installation.md).
+The script needs Asymptote configured to find the library — see the
+installation instructions on the
+[library's documentation site](https://jakeman582.github.io/Maximum-Asymptote/).
 
 ## Deploying
 
 Push to `main`; GitHub Actions builds the site with Hugo and `rsync`s it to
 the VPS, which runs nginx only — no Hugo, no git checkout, no listener beyond
-nginx and sshd. One-time VPS setup is in [`deploy/README.md`](deploy/README.md).
-
-Set the real domain in `config/_default/hugo.toml` before the first deploy —
-Hugo bakes `baseURL` into canonical URLs, the sitemap, and the RSS feed.
-
-Set the real domain in `config/_default/hugo.toml` before the first deploy —
-Hugo bakes `baseURL` into canonical URLs, the sitemap, and the RSS feed.
+nginx and sshd. Live at [maximummathematics.com](https://maximummathematics.com).
+One-time VPS setup is in [`deploy/README.md`](deploy/README.md).
 
 ## Known theme constraint
 

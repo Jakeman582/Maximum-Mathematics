@@ -146,8 +146,8 @@ Then reference the SVG by name:
 | `width` | CSS width, e.g. `"60%"` |
 
 Passing `source` puts an **Asymptote source** disclosure under the figure —
-worth doing on any figure a reader might want to adapt. There is a live example
-on [every visualization page]({{% relref "/asymptote/visualizations" %}}).
+worth doing on any figure a reader might want to adapt. There is a live
+example on the [Asymptote Library]({{% relref "/asymptote" %}}) page.
 
 A missing `src` or `source` fails the build rather than rendering a broken
 image.
