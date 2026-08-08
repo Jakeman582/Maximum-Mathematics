@@ -1,51 +1,52 @@
 # Deploying to the VPS
 
-The flow: push to `main` → GitHub Actions builds the site with Hugo on
-GitHub's own runners → it `rsync`s the result to the VPS over SSH → a fixed
-script on the VPS atomically publishes it.
+The flow: push to `main` → GitHub Actions builds the site with Hugo and force-
+pushes the result to the repository's `built` branch → a systemd timer on the
+VPS notices, pulls it, and publishes it through an atomic swap.
 
-The VPS runs **nginx only**. It never installs Hugo, never holds a git
-checkout of this repository, and never runs a listener reachable from the
-internet beyond nginx and sshd. The deploy SSH key is restricted so that even
-if it leaked, it could only overwrite the staging directory or trigger the one
-fixed publish script — never open a shell.
+The VPS runs **nginx, `git`, and one systemd timer** — no Hugo, no webhook
+listener, no SSH key held by GitHub. It never has anything to say to GitHub
+Actions; it just checks in on `github.com` every couple of minutes.
 
-Written for **CentOS Stream 10**, confirmed clean: no web server installed,
-`firewalld` active, SELinux disabled, a sudo user `cloud-user`.
+## Why pull instead of push
 
-Files in this directory:
+The first version of this pipeline had GitHub Actions `rsync`ing directly to
+the VPS over SSH. That doesn't work here: GitHub Actions runners are blocked
+from reaching this VPS by something at the hosting provider's network edge —
+confirmed by testing that even a plain HTTP request on port 80 times out from
+a runner, not just SSH on port 22, and that this is outside anything
+`firewalld` or the provider's own firewall panel controls. The VPS's own
+*outbound* connections work fine (`dnf install` reaches package repos with no
+issue), so the fix is to flip the direction: the VPS reaches out to GitHub
+instead of GitHub reaching in to the VPS.
+
+## Files in this directory
 
 | File | Runs where | Role |
 |---|---|---|
-| `../.github/workflows/deploy.yml` | GitHub Actions | Build with Hugo, rsync, trigger the swap |
-| `ssh-command-wrapper.sh` | VPS, via `command=` in `authorized_keys` | The only two things the deploy key can do |
-| `remote-swap.sh` | VPS, via the wrapper | Atomically publish staging as live |
+| `../.github/workflows/deploy.yml` | GitHub Actions | Build with Hugo, force-push to `built` |
+| `poll-and-publish.sh` | VPS, via the timer below | Checks `built`, publishes if it moved |
+| `remote-swap.sh` | VPS, via `poll-and-publish.sh` | Atomically publish staging as live |
+| `maximum-mathematics-poll.service` | VPS (systemd) | Runs `poll-and-publish.sh` once |
+| `maximum-mathematics-poll.timer` | VPS (systemd) | Triggers the service every ~2 minutes |
 | `nginx.conf` | VPS | Serves the built site |
 
 ## One-time setup on the VPS
-
-Run as `cloud-user` with `sudo`, over SSH, unless noted otherwise.
 
 ### 1. Install nginx
 
 ```bash
 sudo dnf install -y nginx
-```
-
-```bash
 sudo systemctl enable --now nginx
 ```
 
-Confirm it's serving nginx's default page before going any further:
+Confirm it's serving before going further:
 
 ```bash
 curl -sI http://localhost/ | head -1
 ```
 
 ### 2. Open the firewall
-
-`firewalld` is already active and only allows `ssh`, `cockpit`, and
-`dhcpv6-client`. Add the web ports without touching those:
 
 ```bash
 sudo firewall-cmd --permanent --add-service=http --add-service=https
@@ -54,130 +55,113 @@ sudo firewall-cmd --reload
 
 ### 3. Create the `deploy` user and directory tree
 
-A dedicated, non-sudo user — if the CI key ever leaks, the blast radius is
-this one directory tree, not the whole VPS.
-
 ```bash
 sudo useradd --system --create-home --home-dir /srv/maximum-mathematics --shell /bin/bash deploy
-```
-
-```bash
 sudo -u deploy mkdir -p /srv/maximum-mathematics/{bin,www,www.new}
 ```
 
-`www` will hold the live site, `www.new` is the rsync target for the next
-build, `bin` holds the two scripts below.
-
-### 4. Install the wrapper and swap scripts
-
-From your own machine, copy them from this repository:
+The home directory `useradd` creates defaults to `700` (owner-only), which
+blocks nginx — running as its own user — from ever traversing into it to
+reach `www/`. Grant traverse-only access, not read/listing:
 
 ```bash
-scp deploy/ssh-command-wrapper.sh deploy/remote-swap.sh cloud-user@YOUR_VPS_IP:/tmp/
+sudo chmod 711 /srv/maximum-mathematics
 ```
 
-Then, on the VPS:
+Verify: `ls -ld /srv/maximum-mathematics` should read `drwx--x--x`.
+
+### 4. Install the scripts
+
+From your own machine:
 
 ```bash
-sudo mv /tmp/ssh-command-wrapper.sh /tmp/remote-swap.sh /srv/maximum-mathematics/bin/
+scp deploy/poll-and-publish.sh deploy/remote-swap.sh cloud-user@YOUR_VPS_IP:/tmp/
+```
+
+On the VPS:
+
+```bash
+sudo mv /tmp/poll-and-publish.sh /tmp/remote-swap.sh /srv/maximum-mathematics/bin/
 sudo chown deploy:deploy /srv/maximum-mathematics/bin/*.sh
 sudo chmod 700 /srv/maximum-mathematics/bin/*.sh
 ```
 
-These are not fetched from git on every deploy — they're small, security-
-sensitive, and hand-installed once. Re-copy them the same way if you ever edit
-them.
+Re-copy the same way any time you edit either script — they are not fetched
+from git automatically, on purpose: the thing deciding what gets published
+shouldn't itself be something a build can silently change.
 
-### 5. Generate the deploy keypair
+### 5. Install and enable the systemd timer
 
-**On your own machine**, not the VPS — the private key must never touch the
-server:
-
-```bash
-ssh-keygen -t ed25519 -f ~/.ssh/maximum-mathematics-deploy -C "github-actions-deploy" -N ""
-```
-
-This writes a private key (`~/.ssh/maximum-mathematics-deploy`) and a public
-key (`~/.ssh/maximum-mathematics-deploy.pub`).
-
-### 6. Install the public key, restricted
-
-On the VPS, as `deploy` (use `sudo -u deploy -i` from `cloud-user`, or `sudo
-su - deploy`):
+From your own machine:
 
 ```bash
-mkdir -p ~/.ssh && chmod 700 ~/.ssh
+scp deploy/maximum-mathematics-poll.service deploy/maximum-mathematics-poll.timer cloud-user@YOUR_VPS_IP:/tmp/
 ```
 
-Add the public key's contents to `~/.ssh/authorized_keys`, but prefix it —
-this is the line that makes the key incapable of opening a shell no matter
-what the client asks for:
+On the VPS:
 
+```bash
+sudo mv /tmp/maximum-mathematics-poll.service /tmp/maximum-mathematics-poll.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now maximum-mathematics-poll.timer
 ```
-command="/srv/maximum-mathematics/bin/ssh-command-wrapper.sh",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-ed25519 AAAA...rest-of-your-public-key... github-actions-deploy
+
+Check it's scheduled:
+
+```bash
+sudo systemctl list-timers maximum-mathematics-poll.timer
+```
+
+### 6. Configure nginx
+
+Copy `deploy/nginx.conf` to `/etc/nginx/conf.d/maximum-mathematics.conf`,
+replacing `maximummathematics.com` with your real domain — or `_` to match any
+hostname until DNS is pointed at the VPS:
+
+```bash
+scp deploy/nginx.conf cloud-user@YOUR_VPS_IP:/tmp/maximum-mathematics.conf
 ```
 
 ```bash
-chmod 600 ~/.ssh/authorized_keys
-```
-
-Verify the restriction works before wiring up CI — this should print the
-rejection message from the wrapper, not open a shell:
-
-```bash
-ssh -i ~/.ssh/maximum-mathematics-deploy deploy@YOUR_VPS_IP
-```
-
-### 7. Configure nginx
-
-Copy `deploy/nginx.conf` to `/etc/nginx/conf.d/maximum-mathematics.conf` on
-the VPS, replacing `maximummathematics.com` with your real domain — or, until
-DNS is pointed at the VPS, with `_` to match any hostname so you can test over
-the bare IP:
-
-```bash
+sudo mv /tmp/maximum-mathematics.conf /etc/nginx/conf.d/maximum-mathematics.conf
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-### 8. Add the GitHub repository secrets
+> **Watch out:** if the VPS's default `nginx.conf` ships its own example
+> `server { listen 80; server_name _; ... }` block (CentOS's nginx package
+> does), comment it out — two blocks both claiming `server_name _;` produces a
+> `conflicting server name` warning and leaves it ambiguous which one nginx
+> actually uses.
 
-**Settings → Secrets and variables → Actions → New repository secret**, four
-of them:
+### 7. Watch the first deploy happen
 
-| Secret | Value |
-|---|---|
-| `VPS_HOST` | The VPS's IP address or hostname |
-| `VPS_USER` | `deploy` |
-| `VPS_SSH_PRIVATE_KEY` | The **private** key from step 5 — full contents of `~/.ssh/maximum-mathematics-deploy` |
-| `VPS_KNOWN_HOSTS` | Output of `ssh-keyscan -t ed25519 YOUR_VPS_IP`, run from your own machine |
-
-`VPS_KNOWN_HOSTS` pins the server's host key so the workflow verifies it's
-really talking to your VPS rather than trusting whatever answers on first
-connect. Run the `ssh-keyscan` command yourself and paste its output — do not
-let the workflow do this discovery itself.
-
-### 9. Push and watch it deploy
+Push to `main` (or trigger `deploy.yml` manually from the Actions tab). Once
+that workflow finishes, wait up to ~2 minutes for the timer, then:
 
 ```bash
-git push origin main
+sudo journalctl -u maximum-mathematics-poll.service -n 20 --no-pager
 ```
 
-Check progress in the repository's **Actions** tab. On success:
+You should see `published <commit hash>`. Then:
 
 ```bash
 curl -sI http://YOUR_VPS_IP/
 ```
 
-should return a Hugo-built page. Because `www.new` starts empty, `remote-swap.sh`
-refuses to publish on a run where rsync sent nothing — check the Actions log
-if the site doesn't update.
+should return the real site, not the earlier `403` (empty docroot) or
+`404`.
 
-### 10. Point DNS, then add TLS
+To force an immediate check instead of waiting for the timer:
 
-Once `A`/`AAAA` records point the domain at the VPS, update
-`server_name` in the nginx config (and `baseURL` in
-[`config/_default/hugo.toml`](../config/_default/hugo.toml) — Hugo bakes it
-into canonical URLs, the sitemap, and the RSS feed), then:
+```bash
+sudo systemctl start maximum-mathematics-poll.service
+```
+
+### 8. Point DNS, then add TLS
+
+Once DNS points the domain at the VPS, update `server_name` in the nginx
+config and `baseURL` in
+[`config/_default/hugo.toml`](../config/_default/hugo.toml), then:
 
 ```bash
 sudo dnf install -y epel-release
@@ -185,15 +169,13 @@ sudo dnf install -y certbot python3-certbot-nginx
 sudo certbot --nginx -d maximummathematics.com -d www.maximummathematics.com
 ```
 
-certbot rewrites the server block in place and adds the HTTPS listener,
-redirect, and a renewal timer.
-
 ## Checking a deploy
 
-Actions tab → the workflow run → step-by-step logs, including the rsync
-transfer and the `swap` output.
+```bash
+sudo journalctl -u maximum-mathematics-poll.service -f
+```
 
-On the VPS, the previous build is always kept:
+The previous build is always kept:
 
 ```bash
 ls -la /srv/maximum-mathematics/
@@ -205,8 +187,12 @@ To roll back manually:
 sudo -u deploy bash -c 'rm -rf www.new && mv www www.new.bad && mv www.previous www'
 ```
 
-## Editing the wrapper or swap script later
+## Left over from the earlier push-based design
 
-Re-copy with `scp`, as in step 4 — they are not part of what CI deploys, on
-purpose. A script that decides what a CI-controlled SSH key is allowed to do
-should not itself be something that key can overwrite.
+An SSH keypair, a restricted `authorized_keys` entry, and four GitHub repo
+secrets (`VPS_HOST`, `VPS_USER`, `VPS_SSH_PRIVATE_KEY`, `VPS_KNOWN_HOSTS`)
+were set up for the original design before the network block was discovered.
+None of them do anything now — nothing on the VPS references that key
+anymore. They're harmless to leave in place, or you can remove the
+`authorized_keys` line on the VPS and delete the four secrets from
+**Settings → Secrets and variables → Actions** on GitHub; neither is urgent.

@@ -1,0 +1,13 @@
+[Unit]
+Description=Run the Maximum Mathematics publish check periodically
+
+[Timer]
+OnBootSec=1min
+# Measured from when the previous run finished, not a fixed clock schedule.
+# Adjust this if you want deploys to show up faster/slower than ~2 minutes
+# after a push — a `git fetch` against this small repo is cheap either way.
+OnUnitActiveSec=2min
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target
