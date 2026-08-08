@@ -1,0 +1,36 @@
+[
+  {
+    "id": "maximum-mathematics-deploy",
+    "execute-command": "/srv/maximum-mathematics/bin/poll-and-publish.sh",
+    "command-working-directory": "/srv/maximum-mathematics",
+    "response-message": "Checking for a new build.",
+    "trigger-rule": {
+      "and": [
+        {
+          "comment": "Reject anything not signed with the shared secret. Without this rule the endpoint would trigger a publish check for anyone who finds the URL. The secret is read from the environment at startup (webhook's -template flag) so it never enters this file or the repository.",
+          "match": {
+            "type": "payload-hmac-sha256",
+            "secret": "{{ getenv "WEBHOOK_SECRET" }}",
+            "parameter": { "source": "header", "name": "X-Hub-Signature-256" }
+          }
+        },
+        {
+          "comment": "Only pushes, ignoring the ping GitHub sends when the hook is created.",
+          "match": {
+            "type": "value",
+            "value": "push",
+            "parameter": { "source": "header", "name": "X-GitHub-Event" }
+          }
+        },
+        {
+          "comment": "Only the built branch. A push to main alone hasn't produced a new built branch yet — poll-and-publish.sh would just find nothing new and no-op on it, but filtering here avoids the wasted invocation.",
+          "match": {
+            "type": "value",
+            "value": "refs/heads/built",
+            "parameter": { "source": "payload", "name": "ref" }
+          }
+        }
+      ]
+    }
+  }
+]

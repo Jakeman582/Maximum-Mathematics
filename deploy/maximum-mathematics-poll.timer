@@ -1,13 +1,14 @@
 [Unit]
-Description=Run the Maximum Mathematics publish check periodically
+Description=Run the Maximum Mathematics publish check periodically (safety net)
 
 [Timer]
-OnBootSec=1min
-# Measured from when the previous run finished, not a fixed clock schedule.
-# Adjust this if you want deploys to show up faster/slower than ~2 minutes
-# after a push — a `git fetch` against this small repo is cheap either way.
-OnUnitActiveSec=2min
-AccuracySec=10s
+OnBootSec=2min
+# The webhook (maximum-mathematics-webhook.service) is the primary trigger —
+# this timer exists only to catch a missed or failed webhook delivery, so a
+# push eventually gets published even if that happens. 20 minutes is fine for
+# a fallback; there's no reason for it to run often.
+OnUnitActiveSec=20min
+AccuracySec=1min
 
 [Install]
 WantedBy=timers.target
