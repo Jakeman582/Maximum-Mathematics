@@ -3,10 +3,9 @@
 # Environment-specific overrides live in sibling directories under `config/`
 # (for example `config/production/`), which Hugo merges on top of this file.
 
-# Used for local `hugo server` and as a fallback; the GitHub Pages workflow
-# (.github/workflows/hugo.yml) overrides this at build time with `--baseURL`,
-# set to whatever URL Pages is actually serving from (its default
-# username.github.io/repo/ path, or a custom domain once one is configured).
+# The real, live domain — DNS already points it at the VPS. Used for both
+# local `hugo server` and the actual deploy; nothing overrides this at build
+# time.
 baseURL = 'https://maximummathematics.com/'
 title = 'Maximum Mathematics'
 locale = 'en-US'
