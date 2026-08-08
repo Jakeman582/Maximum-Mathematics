@@ -2,6 +2,11 @@
 title = 'Asymptote Library'
 description = 'Every figure on this site is drawn with the Maximum Mathematics Asymptote library.'
 weight = 20
+
+# Kept out of the main sidebar tree; reached via the shortcut at the bottom
+# of the sidebar instead (see config/_default/menus.toml).
+[params]
+  hidden = true
 +++
 
 Nearly every figure on this site — diagrams, plots, tables — is drawn with

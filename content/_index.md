@@ -19,4 +19,7 @@ The site is early — books are being written, not merely planned.
 
 ## Start here
 
-{{% children type="list" depth="1" description="true" %}}
+Both are also always one click away at the bottom of the sidebar.
+
+- **[Books]({{% relref "/books" %}})** — textbooks, with problem sets and solutions.
+- **[Asymptote Library]({{% relref "/asymptote" %}})** — every figure on this site is drawn with it.

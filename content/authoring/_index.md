@@ -2,6 +2,13 @@
 title = 'Authoring'
 description = 'How pages on this site are written: front matter, mathematics, statements, and figures.'
 weight = 90
+
+# Reference material for writing content here, not part of the site's public
+# navigation. Kept out of the sidebar tree entirely and has no shortcut link
+# — still reachable directly at /authoring/, and still doubles as the live
+# test for the statement/figure shortcodes during local development.
+[params]
+  hidden = true
 +++
 
 Reference for writing content on this site. This page is also the live test of
