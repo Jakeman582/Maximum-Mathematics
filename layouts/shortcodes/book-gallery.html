@@ -1,7 +1,7 @@
 {{- /*
   book-gallery — a grid of book cards on the books landing page, one per
-  direct child section under /books, each showing its cover, title, and
-  description.
+  direct child section under /books, each showing a "The Book of <title>"
+  wordmark above its cover.
 
   Reads .Page.Pages directly rather than the theme's children shortcode, so
   it's unaffected by `hidden = true` should a book ever want that.
@@ -19,13 +19,14 @@
       {{- $cover = resources.Get (printf "images/book-covers/%s" .) -}}
     {{- end -}}
   <a class="mm-book-gallery__card" href="{{ $book.RelPermalink }}">
+    <span class="mm-book-gallery__title">
+      <span class="mm-book-gallery__title-line">The Book</span>
+      <span class="mm-book-gallery__title-line">of</span>
+      <span class="mm-book-gallery__title-line">{{ $book.Title }}</span>
+    </span>
     {{- with $cover }}
       {{- $coverImage := .Resize "400x400" }}
     <img class="mm-book-gallery__cover" src="{{ $coverImage.RelPermalink }}" alt="{{ $book.Title }}">
-    {{- end }}
-    <span class="mm-book-gallery__title">{{ $book.Title }}</span>
-    {{- with $book.Description }}
-    <span class="mm-book-gallery__description">{{ . }}</span>
     {{- end }}
   </a>
   {{- end }}
