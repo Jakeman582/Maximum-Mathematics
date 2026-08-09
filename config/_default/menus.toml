@@ -8,8 +8,13 @@
 # own front matter, which keeps them out of the main sidebar tree except while
 # actually browsing inside them — these shortcuts are the only entry point
 # into any of them from elsewhere on the site.
+#
+# The "Books" entry below has an explicit identifier — layouts/partials/
+# _relearn/menuTitle.gotmpl looks it up by that identifier to swap its label
+# for the current book's own title while browsing inside one.
 
 [[shortcuts]]
+  identifier = 'books'
   name = '<i class="fa-fw fas fa-book"></i> Books'
   pageRef = '/books'
   weight = 10

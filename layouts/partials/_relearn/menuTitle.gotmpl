@@ -1,0 +1,33 @@
+{{- /*
+  Overrides the theme's own _relearn/menuTitle.gotmpl (a project-level file at
+  the same path takes precedence over the theme's).
+
+  Special-cases only the "books" shortcut (see config/_default/menus.toml):
+  while browsing inside a book, its label becomes that book's own title
+  instead of "Books", so the MORE section names whichever book you're
+  actually in. Everywhere else this is the theme's original logic, unchanged.
+*/ -}}
+
+{{- $title := "" }}
+{{- with and . .menu }}
+  {{- $coverPage := partial "_mm/book-page.html" $.page }}
+  {{- if and (eq .Identifier "books") $coverPage }}
+    {{- $title = printf `<i class="fa-fw fas fa-book"></i> %s` $coverPage.Title | safeHTML }}
+  {{- else }}
+    {{- $objectTitle := "" }}
+    {{- $menuPage := partial "_relearn/menuObject.gotmpl" (dict "page" $.page "menu" . "searchResource" false) }}
+    {{- with $menuPage }}
+      {{- $objectTitle = or .LinkTitle .Title }}
+    {{- else }}
+      {{- $menuResource := partial "_relearn/menuObject.gotmpl" (dict "page" $.page "menu" . "searchPage" false) }}
+      {{- with $menuResource }}
+        {{- $objectTitle = .Title }}
+      {{- end }}
+    {{- end }}
+    {{- $title = or .Title (.Name | safeHTML) (.Identifier | safeHTML) }}
+    {{- if and (eq $objectTitle .Title) (ne .Name .Title) }}
+      {{- $title = (.Name | safeHTML) }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $title }}

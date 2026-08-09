@@ -1,0 +1,26 @@
+{{- /*
+  Given a page, returns the nearest page — itself, or an ancestor — that has
+  a `cover` param set in front matter, i.e. the book currently being browsed.
+  Returns "" outside of any book.
+
+  Shared by logo.html (the sidebar hero image) and the menuTitle.gotmpl
+  override (the "Books" shortcut's label), so both agree on what counts as
+  "inside a book" without duplicating the ancestor walk.
+
+  Expects: a page, passed directly (not a dict).
+*/ -}}
+
+{{- $page := . -}}
+
+{{- $coverPage := "" -}}
+{{- if $page.Params.cover -}}
+  {{- $coverPage = $page -}}
+{{- else -}}
+  {{- range $page.Ancestors -}}
+    {{- if and (not $coverPage) .Params.cover -}}
+      {{- $coverPage = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $coverPage -}}

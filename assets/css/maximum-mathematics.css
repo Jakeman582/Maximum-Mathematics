@@ -65,15 +65,21 @@
    cover art is. */
 #R-sidebar:has(.mm-book-cover-logo) #R-header-wrapper,
 #R-sidebar:has(.mm-book-cover-logo) #R-homelinks {
+  /* Belt-and-suspenders under the layered background below: #R-homelinks
+     otherwise carries the theme's own solid green fill (its base colour,
+     underneath any background-image), which the browser doesn't always fully
+     repaint over when a fixed-attachment layer only just barely reaches this
+     far — flattening it to black removes any base colour that could show
+     through. */
+  background-color: #000000;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--mm-book-cover-photo);
   background-attachment: fixed, fixed;
   background-position: left top, left top;
-  /* Shorter than the gradient's box above: covers are square, and sizing to
-     the full sidebar width the way the gradient does would crop off more of
-     the artwork than looks good in the header's actual (much shorter than
-     wide) combined height. This keeps most of the cover visible at the cost
-     of a slight vertical squeeze. */
-  background-size: 18.75rem 280px, 18.75rem 230px;
+  /* Square, matching the covers' own 1:1 art, so nothing gets stretched —
+     tall enough to comfortably clear the actual combined header height
+     (title removed, so just the empty logo's min-height plus the search box
+     below it, plus the Home row after that; see .mm-book-cover-logo below). */
+  background-size: 18.75rem 18.75rem, 18.75rem 18.75rem;
   background-repeat: no-repeat, no-repeat;
 }
 
@@ -84,25 +90,15 @@
   --MENU-HOME-LINK-HOVER-color: #dddddd;
 }
 
-/* Padding rather than a fixed height, so the header sizes itself around the
-   title (and the search box rendered right after it) instead of an
-   arbitrary number — see the background-size note above for where that
-   height ends up mattering. */
+/* No title text renders here anymore — the anchor is otherwise empty (see
+   logo.html), so a fixed height is what actually gives the hero image room
+   to show, rather than the "padding around the title" that sized it before.
+   See the background-size note above for where this height ends up
+   mattering. */
 .mm-book-cover-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem 1rem 1rem;
+  display: block;
+  min-height: 9rem;
   text-decoration: none;
-}
-
-.mm-book-cover-logo__title {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.2;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /*----------------------------------------------------------------------------

@@ -7,8 +7,10 @@
   descendants — this replaces the site title/logo with that book's cover,
   shown full-bleed behind the header as a hero image (see
   assets/css/maximum-mathematics.css, ".mm-book-cover-logo"), linking back to
-  the book's own landing page. Everywhere else, it falls through unchanged to
-  the theme's original auto-logo.html.
+  the book's own landing page. No title text renders over the image — the
+  MORE section's "Books" shortcut names the book instead (see
+  _relearn/menuTitle.gotmpl). Everywhere else, this falls through unchanged
+  to the theme's original auto-logo.html.
 
   A book sets its cover via front matter:
     [params]
@@ -17,17 +19,7 @@
 */ -}}
 
 {{- $page := . -}}
-
-{{- $coverPage := "" -}}
-{{- if $page.Params.cover -}}
-  {{- $coverPage = $page -}}
-{{- else -}}
-  {{- range $page.Ancestors -}}
-    {{- if and (not $coverPage) .Params.cover -}}
-      {{- $coverPage = . -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+{{- $coverPage := partial "_mm/book-page.html" $page -}}
 
 {{- if $coverPage -}}
   {{- $coverPath := printf "images/book-covers/%s" $coverPage.Params.cover -}}
@@ -41,9 +33,7 @@
     <img>, so it's set as a CSS custom property on their shared ancestor
     instead, and painted as a background in maximum-mathematics.css. */ -}}
 <style>#R-sidebar{--mm-book-cover-photo:url("{{ $coverImage.RelPermalink }}");}</style>
-<a id="R-logo" class="mm-book-cover-logo" href="{{ $coverPage.RelPermalink }}">
-  <span class="mm-book-cover-logo__title">{{ $coverPage.Title }}</span>
-</a>
+<a id="R-logo" class="mm-book-cover-logo" href="{{ $coverPage.RelPermalink }}" aria-label="{{ $coverPage.Title }}"></a>
 {{- else -}}
   {{- partial "auto-logo.html" site.Home -}}
 {{- end -}}
