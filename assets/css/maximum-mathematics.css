@@ -51,27 +51,49 @@
 }
 
 /*----------------------------------------------------------------------------
- * Book cover, shown in the sidebar header while browsing inside a book
+ * Book cover, shown as a full-bleed hero across the sidebar header while
+ * browsing inside a book
  *--------------------------------------------------------------------------*/
 
-/* Rendered by layouts/partials/logo.html in place of the usual site title —
-   kept deliberately compact (image capped well below its actual resized
-   dimensions) so the header doesn't grow dramatically taller than the plain
-   text title does normally. */
+/* layouts/partials/logo.html sets --mm-book-cover-photo (and adds
+   .mm-book-cover-logo) only while browsing inside a book. When present, the
+   cover photo replaces the brand gradient as the background of both
+   #R-header-wrapper and #R-homelinks — same continuity technique as the
+   gradient above, just swapping the image in as a second layer. A flat dark
+   scrim (the first, uppermost layer) sits over the photo so the title,
+   search box, and Home link stay legible no matter how light the book's own
+   cover art is. */
+#R-sidebar:has(.mm-book-cover-logo) #R-header-wrapper,
+#R-sidebar:has(.mm-book-cover-logo) #R-homelinks {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--mm-book-cover-photo);
+  background-attachment: fixed, fixed;
+  background-position: left top, left top;
+  /* Shorter than the gradient's box above: covers are square, and sizing to
+     the full sidebar width the way the gradient does would crop off more of
+     the artwork than looks good in the header's actual (much shorter than
+     wide) combined height. This keeps most of the cover visible at the cost
+     of a slight vertical squeeze. */
+  background-size: 18.75rem 280px, 18.75rem 230px;
+  background-repeat: no-repeat, no-repeat;
+}
+
+/* The theme colours the Home row's text for its default light-green header —
+   swap it to white so it stays readable against the darkened photo. */
+#R-sidebar:has(.mm-book-cover-logo) {
+  --MENU-HOME-LINK-color: #ffffff;
+  --MENU-HOME-LINK-HOVER-color: #dddddd;
+}
+
+/* Padding rather than a fixed height, so the header sizes itself around the
+   title (and the search box rendered right after it) instead of an
+   arbitrary number — see the background-size note above for where that
+   height ends up mattering. */
 .mm-book-cover-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
+  padding: 2.5rem 1rem 1rem;
   text-decoration: none;
-}
-
-.mm-book-cover-logo img {
-  display: block;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .mm-book-cover-logo__title {
@@ -80,6 +102,7 @@
   font-size: 0.95rem;
   line-height: 1.2;
   text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /*----------------------------------------------------------------------------
