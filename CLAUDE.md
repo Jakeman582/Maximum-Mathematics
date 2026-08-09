@@ -6,6 +6,47 @@ For how the site is built, deployed, and structured, see
 about the *content* authoring conventions — the things a future session needs
 to know to write a page the same way every other page on this site is written.
 
+## Adding a new book
+
+Every book is `content/books/<slug>/_index.md`. Its front matter is
+boilerplate — set it up exactly like this for every new book, filling in only
+`title`, `description`, `weight`, and the two `<slug>` placeholders (which
+must match the book's own directory/URL):
+
+```toml
++++
+title = 'Book Title'
+description = 'One sentence, shown on the /books gallery card.'
+type = 'chapter'
+weight = 10
+
+[params]
+  cover = 'cover-image-filename.png'   # resolved against
+                                        # assets/images/book-covers/
+
+[cascade.params]
+  sidebarmenus = [
+    { type = 'page', identifier = 'main', pageRef = '/books/<slug>' },
+    { type = 'menu', identifier = 'shortcuts' },
+  ]
++++
+```
+
+What each piece is for:
+
+- `type = 'chapter'` — the book's chapters/sections nest under it as ordinary
+  content pages.
+- `[params] cover` — a filename only, resolved against
+  `assets/images/book-covers/` (add the actual image file there first). Drives
+  two things: the `/books` gallery card (`layouts/shortcodes/book-gallery.html`)
+  and, while browsing inside the book, the sidebar's full-bleed hero image in
+  place of the site title (`layouts/partials/logo.html`).
+- `[cascade.params] sidebarmenus` — scopes the *main* sidebar tree (not the
+  MORE section, which stays untouched) to this book's own table of contents
+  instead of the whole site's page tree, for every page inside the book no
+  matter how deeply nested. The `pageRef` has to repeat the book's own path —
+  Hugo's cascade has no way to self-reference the page that sets it.
+
 ## Notice types
 
 Every book uses the same six notice boxes for the same purposes, always. Don't
