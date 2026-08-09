@@ -9,27 +9,99 @@
  * Sidebar header — brand gradient
  *--------------------------------------------------------------------------*/
 
-/* #R-header-wrapper (title + search) and #R-homelinks (the "Home" row) are
-   adjacent siblings inside #R-sidebar, each with their own opaque background
-   — independently painting the same gradient on both would restart it twice
-   and visibly seam at the boundary. Instead the gradient is painted once on
-   their shared parent, sized to just the combined height of the two, and
-   both children are made transparent so it shows through as one continuous
-   sweep. #R-sidebar's own background-color (the dark tree/MORE area below)
-   is left untouched — background-size confines the gradient image to the
-   top of the box, so the plain colour still shows through underneath it.
-   180px comfortably covers both regions at their current combined height
-   (~179px); if the header ever grows a second row (a longer logo, more
-   home-row items) this may need to grow with it. */
-#R-sidebar {
-  background-image: linear-gradient(180deg, #0000ff 0%, #ffa500 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 180px;
-}
-
+/* #R-header-wrapper (title + search, or a book cover while browsing inside a
+   book — see layouts/partials/logo.html) and #R-homelinks (the "Home" row)
+   are adjacent siblings inside #R-sidebar. Each gets the same gradient
+   independently rather than one continuous sweep painted across both: a
+   single sweep would need a fixed pixel height to size correctly, and
+   #R-header-wrapper's height isn't fixed — a book cover is taller than the
+   plain site title, so any exact height baked into the CSS would drift out
+   of sync the moment someone opens a book. Two independent copies of the
+   same gradient stay correct regardless of either element's height, at the
+   cost of not being a single pixel-continuous sweep. */
 #R-header-wrapper,
 #R-homelinks {
-  background: transparent;
+  background-image: linear-gradient(180deg, #0000ff 0%, #ffa500 100%);
+}
+
+/*----------------------------------------------------------------------------
+ * Book cover, shown in the sidebar header while browsing inside a book
+ *--------------------------------------------------------------------------*/
+
+/* Rendered by layouts/partials/logo.html in place of the usual site title —
+   kept deliberately compact (image capped well below its actual resized
+   dimensions) so the header doesn't grow dramatically taller than the plain
+   text title does normally. */
+.mm-book-cover-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.mm-book-cover-logo img {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.mm-book-cover-logo__title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/*----------------------------------------------------------------------------
+ * Book gallery, shown on the books landing page
+ *--------------------------------------------------------------------------*/
+
+.mm-book-gallery {
+  display: grid;
+  /* A max, not just a min, on each column — with only one or two books, `1fr`
+     would stretch a card to fill the whole row rather than sizing it like
+     its future siblings. */
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 14rem));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.mm-book-gallery__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--MAIN-TEXT-color);
+}
+
+.mm-book-gallery__cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mm-book-gallery__card:hover .mm-book-gallery__cover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mm-book-gallery__title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.mm-book-gallery__description {
+  font-size: 0.9rem;
+  color: var(--MAIN-TEXT-color);
+  opacity: 0.8;
 }
 
 /*----------------------------------------------------------------------------

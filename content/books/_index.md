@@ -27,4 +27,4 @@ are, everything published here is free.
 
 ## Available now
 
-{{% children type="list" depth="1" description="true" %}}
+{{< book-gallery >}}

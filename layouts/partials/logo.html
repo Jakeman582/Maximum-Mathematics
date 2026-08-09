@@ -1,0 +1,43 @@
+{{- /*
+  Overrides the theme's own layouts/partials/logo.html (a project-level file
+  at the same path takes precedence over the theme's — standard Hugo layout
+  lookup, not a hook the theme provides specifically for this).
+
+  While browsing inside a book — the book's own page, or any of its
+  descendants — this replaces the site title/logo with that book's cover,
+  linking back to the book's own landing page. Everywhere else, it falls
+  through unchanged to the theme's original auto-logo.html.
+
+  A book sets its cover via front matter:
+    [params]
+      cover = 'my-book-cover.png'   # filename only, resolved against
+                                     # assets/images/book-covers/
+*/ -}}
+
+{{- $page := . -}}
+
+{{- $coverPage := "" -}}
+{{- if $page.Params.cover -}}
+  {{- $coverPage = $page -}}
+{{- else -}}
+  {{- range $page.Ancestors -}}
+    {{- if and (not $coverPage) .Params.cover -}}
+      {{- $coverPage = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $coverPage -}}
+  {{- $coverPath := printf "images/book-covers/%s" $coverPage.Params.cover -}}
+  {{- $cover := resources.Get $coverPath -}}
+  {{- if not $cover -}}
+    {{- errorf "logo.html: %q (from %q) has no matching file in assets/images/book-covers/" $coverPage.Params.cover $coverPage.File.Path -}}
+  {{- end -}}
+  {{- $coverImage := $cover.Resize "200x200" -}}
+<a id="R-logo" class="mm-book-cover-logo" href="{{ $coverPage.RelPermalink }}">
+  <img src="{{ $coverImage.RelPermalink }}" width="{{ $coverImage.Width }}" height="{{ $coverImage.Height }}" alt="{{ $coverPage.Title }}">
+  <span class="mm-book-cover-logo__title">{{ $coverPage.Title }}</span>
+</a>
+{{- else -}}
+  {{- partial "auto-logo.html" site.Home -}}
+{{- end -}}
