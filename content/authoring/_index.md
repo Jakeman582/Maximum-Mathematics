@@ -33,7 +33,8 @@ chapter = 2
 | `title` | Page title, sidebar entry, browser tab |
 | `description` | Shown in parent-section listings and search results |
 | `weight` | Sidebar ordering within its section; lower sorts first |
-| `chapter` | Prefixes statement numbers on the page, e.g. Theorem 2.4 |
+| `chapter` | Prefixes `statement` and `theorem`/`proof` numbers, e.g. Theorem 2.4 |
+| `section` | Adds a section level to `theorem`/`proof` numbers, e.g. Theorem 2.4.1 — has no effect on `statement`, which only ever uses `chapter` |
 | `type = 'chapter'` | Renders as a section landing page rather than an article |
 | `draft = true` | Excluded from builds unless `hugo -D` |
 
@@ -171,14 +172,64 @@ That renders only sources whose SVG is missing or older than the source. Pass
 `--force` to re-render everything, which you want after changing the library's
 theme file.
 
-## Notices
+## Notice types
 
-The theme's `notice` shortcode covers asides:
+Every book uses the same six notice boxes, always — see
+[`/style-guide`]({{% relref "/style-guide" %}}) for what each one looks like
+and means to a reader; this section is the syntax reference for writing them.
+Full detail, including why term-highlighting is `==mark==` syntax instead of
+a shortcode, is in this project's `CLAUDE.md`.
+
+All eight shortcodes (`definition`, `theorem`, `proof`, `example`, `star`,
+`warning`, `question`, `answer`) use the **angle-bracket** delimiter, never
+percent:
+
+```markdown
+{{</* definition terms="prime number" */>}}
+A natural number greater than 1 with no positive divisors other than 1 and
+itself.
+{{</* /definition */>}}
+```
+
+`theorem`, `example`, and `star` take a required `title` — a sentence
+fragment, not a number, e.g. `title="Every prime greater than 2 is odd"`.
+`definition` takes `terms` — a comma-separated list, natural case; the box
+capitalizes them itself. `question` takes no parameters — it numbers itself.
+
+`theorem` numbers itself as `Theorem <chapter>.<section>.<n>`, where `n`
+restarts at 1 on every page and `chapter`/`section` come from the page's own
+front matter (see the table above) — set neither and it's just `Theorem 1`.
+`proof` takes no parameters and must come immediately after the `theorem` it
+belongs to; it reuses that theorem's exact number rather than counting
+itself, so never put another theorem between a theorem and its proof:
+
+```markdown
+{{</* theorem title="Every prime greater than 2 is odd" */>}}
+If $p$ is prime and $p > 2$, then $p$ is odd.
+{{</* /theorem */>}}
+{{</* proof */>}}
+Suppose, for contradiction, that $p$ is even. Then...
+{{</* /proof */>}}
+```
+
+`question`/`answer` work the same way — `answer` immediately after the
+`question` it solves — except `question` numbers only itself (`Question 1`,
+`Question 2`, ...), with no chapter or section prefix, and `answer` is always
+just titled "Solution".
+
+Highlight a defined term inline, anywhere on the page — not just inside its
+own `definition` box — by wrapping it in `==double equals signs==`.
+
+## Theme asides
+
+The theme's own `notice` shortcode is unrelated to the notice types
+above — it covers generic asides that don't fit any of the six:
 
 {{% notice style="tip" title="A tip" %}}
 Use `style="tip"`, `"note"`, `"info"`, `"warning"`, or `"primary"`.
 {{% /notice %}}
 
 {{% notice style="warning" title="A warning" %}}
-Reserve warnings for things that will actually cost the reader time.
+Reserve this for the rare aside that isn't really a `warning` notice — a
+build-process caveat, say, not a mathematical pitfall.
 {{% /notice %}}

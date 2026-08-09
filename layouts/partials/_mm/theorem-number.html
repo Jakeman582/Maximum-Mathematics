@@ -1,0 +1,28 @@
+{{- /*
+  Formats "Chapter.Section.Number" for theorem/proof numbering, degrading
+  gracefully depending on what front matter the page actually sets:
+    chapter and section both set -> "1.1.1"
+    chapter only                 -> "1.1"
+    neither set                  -> "1"
+
+  Shared by theorem.html and proof.html so a proof always computes the exact
+  same number its theorem did, rather than two separate places deriving it
+  and risking drift.
+
+  Expects:
+    page   — the calling shortcode's .Page
+    number — the raw integer (that page's current theoremCount)
+*/ -}}
+
+{{- $page := .page -}}
+{{- $number := .number -}}
+{{- $chapter := $page.Params.chapter -}}
+{{- $section := $page.Params.section -}}
+
+{{- if and $chapter $section -}}
+  {{- return printf "%v.%v.%d" $chapter $section $number -}}
+{{- else if $chapter -}}
+  {{- return printf "%v.%d" $chapter $number -}}
+{{- else -}}
+  {{- return printf "%d" $number -}}
+{{- end -}}

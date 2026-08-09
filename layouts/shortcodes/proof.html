@@ -1,18 +1,23 @@
 {{- /*
-  proof — a collapsible proof, closed by default. Place immediately after the
-  theorem it belongs to; there is no explicit link between them beyond that
-  adjacency, so keep them next to each other in the source.
+  proof — a collapsible proof, closed by default, titled "Proof
+  <chapter>.<section>.<n>" to match the theorem it belongs to — not its own
+  count, the same number that theorem's title just used. Place immediately
+  after the theorem it belongs to; there is no explicit link between them
+  beyond that adjacency and sharing that number, so keep them next to each
+  other in the source and never put another theorem in between.
 
-  No parameters — the title is always "Proof". See content/style-guide for a
-  live example.
+  No parameters. See content/authoring for a live example.
 */ -}}
 
-{{- $count := add (.Page.Store.Get "proofCount" | default 0) 1 -}}
-{{- .Page.Store.Set "proofCount" $count -}}
+{{- $count := .Page.Store.Get "theoremCount" | default 0 -}}
+{{- if eq $count 0 -}}
+  {{- errorf "proof shortcode in %q: no theorem on this page yet for this proof to number itself after" .Page.File.Path -}}
+{{- end -}}
+{{- $number := partial "_mm/theorem-number.html" (dict "page" .Page "number" $count) -}}
 
 {{- partial "_mm/notice-box.html" (dict
   "kind"        "theorem"
-  "title"       "Proof"
+  "title"       (printf "Proof %s" $number)
   "content"     .Inner
   "page"        .Page
   "collapsible" true

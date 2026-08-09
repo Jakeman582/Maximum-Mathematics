@@ -1,7 +1,9 @@
 +++
 title = 'Style Guide'
-description = 'The notice types used throughout Maximum Mathematics, and when to use each.'
+description = 'What each notice box on this site means.'
 weight = 30
+chapter = 1
+section = 1
 
 # Kept out of the main sidebar tree; reached via the shortcut at the bottom
 # of the sidebar instead (see config/_default/menus.toml).
@@ -9,32 +11,21 @@ weight = 30
   hidden = true
 +++
 
-Every book on this site uses the same small set of notice boxes for the same
-purposes throughout. This page shows each one and explains what it's for.
-The same conventions are documented in this project's `CLAUDE.md`, so they
-stay consistent across writing sessions.
+Every book on this site uses the same small set of boxes for the same
+purposes, every time. Here's what each one means when you see it.
 
 ## Definition
 
-Introduces one or more terms. The title bar shows only the term itself, in
-capitals — nothing else — so it reads like a dictionary entry. Reference the
-term again later in running text by wrapping it in `==double equals signs==`,
-which colours it to match.
+Introduces one or more terms — shown by name, in capitals, so it reads like a
+dictionary entry. A term highlighted in blue elsewhere on the page always
+refers back to one of these.
 
 {{< definition terms="prime number" >}}
 A natural number greater than 1 with no positive divisors other than 1 and
 itself.
 {{< /definition >}}
 
-```markdown
-{{</* definition terms="prime number" */>}}
-A natural number greater than 1 with no positive divisors other than 1 and
-itself.
-{{</* /definition */>}}
-```
-
-A definition can introduce more than one term at once — pass a comma-separated
-list:
+A definition can introduce more than one term at once:
 
 {{< definition terms="injective, surjective, bijective" >}}
 A function $f: A \to B$ is ==injective== if distinct inputs always map to
@@ -44,10 +35,10 @@ input, and ==bijective== if it is both.
 
 ## Theorem and Proof
 
-States a result. The title bar is a short sentence fragment describing what
-the theorem says — not "Theorem 1" — so a reader scanning the page sees the
-actual claims, not just a numbered list. Pair it with `proof` immediately
-after, which holds the proof collapsed until clicked.
+States a result. The number identifies exactly where it falls in the
+book — Theorem 1.1.1 is the first theorem in Section 1 of Chapter 1 — so you
+can refer back to it precisely later. Its proof sits right below it, folded
+up until you click to read it.
 
 {{< theorem title="Every prime greater than 2 is odd" >}}
 If $p$ is prime and $p > 2$, then $p$ is odd.
@@ -57,21 +48,10 @@ Suppose, for contradiction, that $p$ is even. Then $2 \mid p$, so $p$ has a
 positive divisor other than 1 and itself — contradicting that $p$ is prime.
 {{< /proof >}}
 
-```markdown
-{{</* theorem title="Every prime greater than 2 is odd" */>}}
-If $p$ is prime and $p > 2$, then $p$ is odd.
-{{</* /theorem */>}}
-{{</* proof */>}}
-Suppose, for contradiction, that $p$ is even. Then...
-{{</* /proof */>}}
-```
-
 ## Example
 
-A worked example. The title bar describes what's being done — "Tossing two
-dice," "Translating a proposition to English," "Finding the supremum of a
-bounded set" — so a reader can find the example they're looking for at a
-glance.
+A worked example, titled by what it demonstrates, so you can find the one
+you're after at a glance.
 
 {{< example title="Tossing two fair six-sided dice" >}}
 The sample space is the 36 ordered pairs $(i, j)$ with $i, j \in \{1, ..., 6\}$.
@@ -81,8 +61,8 @@ so its probability is $6/36 = 1/6$.
 
 ## Star
 
-Flags an important observation worth keeping in mind — not a formal result
-(that's a theorem) and not a pitfall (that's a warning), just something worth
+An observation worth keeping in mind — not a formal result (that's a
+theorem) and not a mistake to avoid (that's a warning), just something worth
 having front of mind going forward.
 
 {{< star title="Every convergent sequence is bounded" >}}
@@ -92,8 +72,7 @@ sequence $(-1)^n$ is bounded but never converges.
 
 ## Warning
 
-Flags a common mistake. The title bar names the pitfall; the body explains
-how the error happens and how to avoid it.
+A common mistake, and how to avoid making it.
 
 {{< warning title="Confusing a sequence with its limit" >}}
 Writing $a_n = L$ instead of $\lim_{n \to \infty} a_n = L$ silently claims
@@ -103,10 +82,8 @@ approaches it. The two statements are rarely both true.
 
 ## Question and Answer
 
-A numbered practice problem. The title is just the question number — no
-description — since a problem set's own text supplies the context. Pair it
-with `answer` immediately after, which holds the solution collapsed until
-clicked, exactly like a theorem's proof.
+A numbered practice problem. The solution sits right below it, folded up
+until you click to reveal it — so you can try the problem yourself first.
 
 {{< question >}}
 Compute the probability of rolling a sum of 7 with two fair six-sided dice.
@@ -115,16 +92,3 @@ Compute the probability of rolling a sum of 7 with two fair six-sided dice.
 There are 6 favorable outcomes out of 36 possible outcomes, so
 $P(\text{sum} = 7) = 6/36 = 1/6$.
 {{< /answer >}}
-
-```markdown
-{{</* question */>}}
-Compute the probability of rolling a sum of 7 with two fair dice.
-{{</* /question */>}}
-{{</* answer */>}}
-There are 6 favorable outcomes out of 36, so $P = 1/6$.
-{{</* /answer */>}}
-```
-
-Question numbering restarts at 1 on every page, has its own counter separate
-from anything else on the page, and is not affected by how many definitions,
-theorems, or examples came before it.

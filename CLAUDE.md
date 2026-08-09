@@ -12,10 +12,13 @@ Every book uses the same six notice boxes for the same purposes, always. Don't
 invent a one-off variant for a new page — if none of these fit, that's worth
 raising with the user rather than deciding alone.
 
-A live, rendered example of every type below, plus the exact call syntax for
-each, is at [`/style-guide`](content/style-guide/_index.md) — treat that page
-as the authoritative reference and this file as the summary. If you change how
-a notice shortcode works, update both.
+The two reference pages split by audience, not by content:
+[`/style-guide`](content/style-guide/_index.md) is for readers of the books —
+what each box looks like and means, no shortcode syntax at all, since nobody
+but the site's author writes content.
+[`/authoring`](content/authoring/_index.md) is for whoever is writing that
+content — the exact call syntax for every shortcode on the site, notices
+included. If you change how a notice shortcode works or looks, update both.
 
 All eight shortcodes (`definition`, `theorem`, `proof`, `example`, `star`,
 `warning`, `question`, `answer`) live in `layouts/shortcodes/`, share their box
@@ -29,7 +32,7 @@ Colors live in `assets/css/maximum-mathematics.css` under `.mm-notice--<kind>`.
 | Type | Color | Title bar shows | Body |
 |---|---|---|---|
 | **Definition** | Light blue | Term(s) being defined, in capitals | The definition, as prose |
-| **Theorem** + **Proof** | Fuchsia | A sentence fragment stating the result (not "Theorem 1") | Statement, then a separate `proof` call right after — collapsed until clicked |
+| **Theorem** + **Proof** | Fuchsia | `Theorem <chapter>.<section>.<n>` plus a sentence fragment stating the result, e.g. "Theorem 2.1.3 — Every prime greater than 2 is odd"; the paired `Proof <chapter>.<section>.<n>` reuses the same number | Statement, then a separate `proof` call right after — collapsed until clicked |
 | **Example** | Light green | What's being demonstrated ("Tossing two dice," not "Example 1") | The worked example |
 | **Star** | Yellow | The observation itself | Why it matters / what follows from it |
 | **Warning** | Red | The pitfall being flagged | How the mistake happens and how to avoid it |
@@ -38,11 +41,20 @@ Colors live in `assets/css/maximum-mathematics.css` under `.mm-notice--<kind>`.
 Usage notes:
 
 - `theorem`/`example`/`star`/`warning` take a required `title` param (a string,
-  not numbered). `definition` takes `terms` — a comma-separated list, natural
+  not numbered — for `theorem` this is the sentence fragment, the number is
+  automatic). `definition` takes `terms` — a comma-separated list, natural
   case; the shortcode capitalizes them for the title bar itself.
 - `proof` and `answer` take no params. Place them immediately after the
   `theorem`/`question` they belong to — there's no explicit link between the
-  pair beyond that adjacency, so don't separate them with other content.
+  pair beyond that adjacency, so don't separate them with other content, and
+  never put a second theorem between a theorem and its proof: `proof` doesn't
+  count itself, it reuses whichever theorem's count was most recently
+  incremented.
+- `theorem`'s number restarts at 1 on every page and is prefixed by the page's
+  `chapter`/`section` front matter (`section` alone has no effect; both must
+  be set to get the three-part form) — set neither and it's just "Theorem 1".
+  This numbering is independent of `statement`'s, which only ever uses
+  `chapter`, never `section`.
 - Highlight a defined term inline, anywhere on the page — not just inside its
   own `definition` box — by wrapping it in `==double equals signs==`
   (Goldmark's `mark` extension, restyled from the default yellow highlight to

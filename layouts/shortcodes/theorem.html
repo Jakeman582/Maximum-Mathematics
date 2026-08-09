@@ -1,14 +1,16 @@
 {{- /*
-  theorem — states a result. Pair with a proof shortcode call immediately
-  after for the (optional) proof, rather than nesting it inside — see
-  proof.html.
+  theorem — states a result, numbered "Theorem <chapter>.<section>.<n>" (see
+  _mm/theorem-number.html for how chapter/section front matter affects the
+  format). Numbering restarts at 1 on every page. Pair with a proof shortcode
+  call immediately after for the (optional) proof, rather than nesting it
+  inside — see proof.html, which reuses this same number.
 
   Parameters:
     title — a short sentence fragment describing the result, e.g.
             "Every prime greater than 2 is odd"
 
-  See content/style-guide for a live, copy-pasteable example of the exact
-  call syntax.
+  See content/authoring for a live, copy-pasteable example of the exact call
+  syntax.
 */ -}}
 
 {{- $title := .Get "title" -}}
@@ -16,9 +18,14 @@
   {{- errorf "theorem shortcode in %q: the `title` parameter is required" .Page.File.Path -}}
 {{- end -}}
 
+{{- $count := add (.Page.Store.Get "theoremCount" | default 0) 1 -}}
+{{- .Page.Store.Set "theoremCount" $count -}}
+{{- $number := partial "_mm/theorem-number.html" (dict "page" .Page "number" $count) -}}
+
 {{- partial "_mm/notice-box.html" (dict
   "kind"    "theorem"
-  "title"   $title
+  "title"   (printf "Theorem %s — %s" $number $title)
   "content" .Inner
   "page"    .Page
+  "id"      (printf "theorem-%d" $count)
 ) -}}
