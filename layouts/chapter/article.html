@@ -1,0 +1,26 @@
+{{- /*
+  Overrides the theme's own layouts/chapter/article.html (a project-level
+  file at the same path takes precedence over the theme's).
+
+  The theme shows "Chapter <N>" — using .Weight as N — for any type="chapter"
+  page that has a weight set. A book's own _index.md uses type="chapter"
+  purely for its narrower article width, and weight purely for its ordering
+  among other books on /books — neither is a chapter number, so the theme's
+  version mislabels a book's own landing page as "Chapter <its own weight>".
+  This suppresses that label specifically for a book's own root page
+  (identified via _mm/book-page.html returning the page itself); everything
+  else is the theme's original logic, unchanged.
+*/ -}}
+
+<article class="chapter narrow">
+  <header class="headline">
+    {{- partial "content-header.html" . }}
+  </header>
+{{ partial "heading-pre.html" . }}{{ $isBookRoot := eq (partial "_mm/book-page.html" .) . }}{{ if and (not $isBookRoot) .Params.Weight }}<div class="article-subheading">{{ T "Chapter" .Params.Weight }}</div>{{ end }}
+{{ partial "heading.html" . }}{{ partial "heading-post.html" . }}
+
+{{ partial "article-content.html" . }}
+  <footer class="footline">
+    {{- partial "content-footer.html" . }}
+  </footer>
+</article>
