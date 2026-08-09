@@ -36,7 +36,7 @@ Colors live in `assets/css/maximum-mathematics.css` under `.mm-notice--<kind>`.
 | **Example** | Light green | What's being demonstrated ("Tossing two dice," not "Example 1") | The worked example |
 | **Star** | Yellow | The observation itself | Why it matters / what follows from it |
 | **Warning** | Red | The pitfall being flagged | How the mistake happens and how to avoid it |
-| **Question** + **Answer** | Gray | Just "Question N" — numbered automatically from 1, own counter, resets every page | The problem, then a separate `answer` call right after — collapsed until clicked, labeled "Solution" |
+| **Question** + **Answer** | Gray | Just "Question N" — numbered automatically from 1, resets every page; the paired "Solution N" reuses the same number | The problem, then a separate `answer` call right after — collapsed until clicked |
 
 Usage notes:
 
@@ -47,8 +47,8 @@ Usage notes:
 - `proof` and `answer` take no params. Place them immediately after the
   `theorem`/`question` they belong to — there's no explicit link between the
   pair beyond that adjacency, so don't separate them with other content, and
-  never put a second theorem between a theorem and its proof: `proof` doesn't
-  count itself, it reuses whichever theorem's count was most recently
+  never put a second theorem/question in between: neither counts itself,
+  each reuses whichever theorem's/question's count was most recently
   incremented.
 - `theorem`'s number restarts at 1 on every page and is prefixed by the page's
   `chapter`/`section` front matter (`section` alone has no effect; both must

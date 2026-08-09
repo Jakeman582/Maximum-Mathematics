@@ -213,9 +213,10 @@ Suppose, for contradiction, that $p$ is even. Then...
 ```
 
 `question`/`answer` work the same way — `answer` immediately after the
-`question` it solves — except `question` numbers only itself (`Question 1`,
-`Question 2`, ...), with no chapter or section prefix, and `answer` is always
-just titled "Solution".
+`question` it solves, reusing its number exactly like `proof` reuses
+`theorem`'s — except `question` numbers only itself (`Question 1`,
+`Question 2`, ...), with no chapter or section prefix, so the pair reads
+`Question 1` / `Solution 1`.
 
 Highlight a defined term inline, anywhere on the page — not just inside its
 own `definition` box — by wrapping it in `==double equals signs==`.

@@ -1,18 +1,22 @@
 {{- /*
-  answer — a collapsible solution, closed by default. Place immediately after
-  the question shortcode call it answers; there is no explicit link between
-  them beyond that adjacency, so keep them next to each other in the source.
+  answer — a collapsible solution, closed by default, titled "Solution <n>"
+  to match the question it answers — not its own count, the same number
+  that question's title just used. Place immediately after the question
+  shortcode call it answers; there is no explicit link between them beyond
+  that adjacency and sharing that number, so keep them next to each other in
+  the source and never put another question in between.
 
-  No parameters — the title is always "Solution". See content/style-guide
-  for a live example.
+  No parameters. See content/authoring for a live example.
 */ -}}
 
-{{- $count := add (.Page.Store.Get "answerCount" | default 0) 1 -}}
-{{- .Page.Store.Set "answerCount" $count -}}
+{{- $count := .Page.Store.Get "questionCount" | default 0 -}}
+{{- if eq $count 0 -}}
+  {{- errorf "answer shortcode in %q: no question on this page yet for this answer to number itself after" .Page.File.Path -}}
+{{- end -}}
 
 {{- partial "_mm/notice-box.html" (dict
   "kind"        "question"
-  "title"       "Solution"
+  "title"       (printf "Solution %d" $count)
   "content"     .Inner
   "page"        .Page
   "collapsible" true
