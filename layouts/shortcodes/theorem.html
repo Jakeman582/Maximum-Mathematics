@@ -24,7 +24,7 @@
 
 {{- partial "_mm/notice-box.html" (dict
   "kind"    "theorem"
-  "title"   (printf "Theorem %s — %s" $number $title)
+  "title"   (printf "Theorem %s: %s" $number $title)
   "content" .Inner
   "page"    .Page
   "id"      (printf "theorem-%d" $count)

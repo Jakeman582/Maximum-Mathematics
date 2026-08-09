@@ -32,7 +32,7 @@ Colors live in `assets/css/maximum-mathematics.css` under `.mm-notice--<kind>`.
 | Type | Color | Title bar shows | Body |
 |---|---|---|---|
 | **Definition** | Light blue | Term(s) being defined, in capitals | The definition, as prose |
-| **Theorem** + **Proof** | Fuchsia | `Theorem <chapter>.<section>.<n>` plus a sentence fragment stating the result, e.g. "Theorem 2.1.3 — Every prime greater than 2 is odd"; the paired `Proof <chapter>.<section>.<n>` reuses the same number | Statement, then a separate `proof` call right after — collapsed until clicked |
+| **Theorem** + **Proof** | Fuchsia | `Theorem <chapter>.<section>.<n>` plus a sentence fragment stating the result, e.g. "Theorem 2.1.3: Every prime greater than 2 is odd"; the paired `Proof <chapter>.<section>.<n>` reuses the same number | Statement, then a separate `proof` call right after — collapsed until clicked |
 | **Example** | Light green | What's being demonstrated ("Tossing two dice," not "Example 1") | The worked example |
 | **Star** | Yellow | The observation itself | Why it matters / what follows from it |
 | **Warning** | Red | The pitfall being flagged | How the mistake happens and how to avoid it |
