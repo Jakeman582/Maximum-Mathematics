@@ -6,6 +6,33 @@
  */
 
 /*----------------------------------------------------------------------------
+ * Sidebar header — brand gradient
+ *--------------------------------------------------------------------------*/
+
+/* #R-header-wrapper (title + search) and #R-homelinks (the "Home" row) are
+   adjacent siblings inside #R-sidebar, each with their own opaque background
+   — independently painting the same gradient on both would restart it twice
+   and visibly seam at the boundary. Instead the gradient is painted once on
+   their shared parent, sized to just the combined height of the two, and
+   both children are made transparent so it shows through as one continuous
+   sweep. #R-sidebar's own background-color (the dark tree/MORE area below)
+   is left untouched — background-size confines the gradient image to the
+   top of the box, so the plain colour still shows through underneath it.
+   180px comfortably covers both regions at their current combined height
+   (~179px); if the header ever grows a second row (a longer logo, more
+   home-row items) this may need to grow with it. */
+#R-sidebar {
+  background-image: linear-gradient(180deg, #0000ff 0%, #ffa500 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 180px;
+}
+
+#R-header-wrapper,
+#R-homelinks {
+  background: transparent;
+}
+
+/*----------------------------------------------------------------------------
  * Asymptote figures
  *--------------------------------------------------------------------------*/
 
