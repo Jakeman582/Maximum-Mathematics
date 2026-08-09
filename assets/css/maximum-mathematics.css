@@ -11,17 +11,32 @@
 
 /* #R-header-wrapper (title + search, or a book cover while browsing inside a
    book — see layouts/partials/logo.html) and #R-homelinks (the "Home" row)
-   are adjacent siblings inside #R-sidebar. Each gets the same gradient
-   independently rather than one continuous sweep painted across both: a
-   single sweep would need a fixed pixel height to size correctly, and
-   #R-header-wrapper's height isn't fixed — a book cover is taller than the
-   plain site title, so any exact height baked into the CSS would drift out
-   of sync the moment someone opens a book. Two independent copies of the
-   same gradient stay correct regardless of either element's height, at the
-   cost of not being a single pixel-continuous sweep. */
+   are adjacent siblings inside #R-sidebar, with no shared parent that's sized
+   to just the two of them — #R-sidebar itself also contains the page tree
+   below, which keeps its own dark background. Painting the same gradient on
+   each element independently would restart it twice, visibly seaming at the
+   boundary between them.
+
+   Instead this pins the gradient to the viewport with `background-attachment:
+   fixed`, positioned at the sidebar's own top-left corner (#R-sidebar is
+   itself `position: fixed; top: 0; left: 0`, and both elements sit flush
+   against its top edge). Both elements then sample two contiguous slices of
+   one continuous gradient rather than each stretching its own copy — the fix
+   holds regardless of #R-header-wrapper's height, so it stays correct whether
+   it's showing the plain site title or a book cover. The size is fixed to a
+   little more than the tallest combined height either case renders at
+   (~206px for a book cover, vs ~178px for the plain title), so the
+   transition reaches all the way to orange in both without visibly cutting
+   off; the width matches the sidebar's own default desktop width so the
+   150deg diagonal reads at the intended angle instead of being stretched flat
+   across the full viewport width. */
 #R-header-wrapper,
 #R-homelinks {
-  background-image: linear-gradient(180deg, #0000ff 0%, #ffa500 100%);
+  background-image: linear-gradient(150deg, #0000ff 0%, #ffa500 100%);
+  background-attachment: fixed;
+  background-position: left top;
+  background-size: 18.75rem 280px;
+  background-repeat: no-repeat;
 }
 
 /*----------------------------------------------------------------------------
