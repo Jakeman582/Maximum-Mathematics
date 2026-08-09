@@ -8,9 +8,10 @@
   shown full-bleed behind the header as a hero image (see
   assets/css/maximum-mathematics.css, ".mm-book-cover-logo"), linking back to
   the book's own landing page. No title text renders over the image — the
-  MORE section's "Books" shortcut names the book instead (see
-  _relearn/menuTitle.gotmpl). Everywhere else, this falls through unchanged
-  to the theme's original auto-logo.html.
+  main sidebar tree names the book instead, once it's showing that book's own
+  table of contents rather than the whole site (see the `cascade.params.
+  sidebarmenus` block in the book's own _index.md). Everywhere else, this
+  falls through unchanged to the theme's original auto-logo.html.
 
   A book sets its cover via front matter:
     [params]
