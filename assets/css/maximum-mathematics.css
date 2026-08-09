@@ -39,6 +39,17 @@
   background-repeat: no-repeat;
 }
 
+/* The theme draws a divider line under the last item in #R-homelinks — the
+   boundary between the header area and the page tree below — using this
+   variable, which falls back all the way to the theme's own brand green.
+   Against a solid green header that line was invisible; against our gradient
+   it reads as a stray green line sitting on the gradient. Nothing marks that
+   boundary elsewhere, so hiding it entirely reads cleaner than recolouring it
+   to match. */
+:root {
+  --MENU-HOME-BOTTOM-SEPARATOR-color: transparent;
+}
+
 /*----------------------------------------------------------------------------
  * Book cover, shown in the sidebar header while browsing inside a book
  *--------------------------------------------------------------------------*/
