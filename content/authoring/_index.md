@@ -65,6 +65,31 @@ Because Goldmark passes `$...$` through untouched, backslashes and underscores
 inside mathematics need no escaping: `$a_1 + a_2$` gives $a_1 + a_2$, not
 italics.
 
+**When to reach for LaTeX at all:** regular prose stays plain Markdown even
+on a heavily mathematical page — LaTeX is for the actual objects, not the
+discussion around them. A variable, proposition, set, or function gets inline
+math the moment it's referenced, even as a single bare letter ($p$, not
+"p"). A full statement being presented *as* a proposition — not just
+mentioned — gets typeset whole via `\text{}` inside a math environment:
+
+```markdown
+$$\text{Squares have four equal sides.}$$
+```
+
+or, when several need to line up together:
+
+```markdown
+\[
+\begin{array}{ll}
+w\text{: H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.} &\text{(true)} \\
+x\text{: 12 is divisible by 3.}                                             &\text{(true)}
+\end{array}
+\]
+```
+
+See `content/books/foundational-mathematics/logic/propositions/_index.md`
+for this pattern in full. Full rationale is in this project's `CLAUDE.md`.
+
 ## Statements
 
 `statement` renders a numbered definition, theorem, example, or proof. The body is

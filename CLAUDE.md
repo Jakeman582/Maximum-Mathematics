@@ -127,6 +127,32 @@ sub-list renders smaller than the chapter list itself (`article.chapter ol
 ol` in `assets/css/maximum-mathematics.css`) so the two levels read as
 distinct.
 
+## Math typesetting
+
+Regular expository prose stays plain Markdown — a page doesn't need LaTeX
+just because the topic is mathematical. LaTeX is reserved for the actual
+mathematical objects being referenced, not the discussion around them:
+
+- A specific variable, proposition, set, function, or symbolic expression —
+  even a single bare letter — gets inline math: `$p$`, `$x$`, `$p \land q$`.
+  Never leave one as plain text ("the proposition p" should read "the
+  proposition $p$").
+- A full statement being presented *as* an actual proposition (not just
+  mentioned in passing) gets typeset in its entirety via `\text{}` inside a
+  math environment: `$$\text{Squares have four equal sides.}$$` for one
+  standalone statement, or a `\[ \begin{array}{ll} ... \end{array} \]` block
+  when several need to line up together, e.g. a list of labeled example
+  propositions and their truth values. See
+  `content/books/foundational-mathematics/logic/propositions/_index.md` for
+  a fully worked example of both.
+- Prose *about* mathematics that isn't itself presenting a specific object —
+  "we can start to evaluate these expressions by examining simple
+  expressions" — stays ordinary text, no math markup at all.
+
+The rule doesn't change inside a notice box: an example proposition inside an
+`example` box is LaTeX; the sentence introducing that box is plain Markdown,
+except for whichever variable names it happens to mention in passing.
+
 ## Notice types
 
 Every book uses the same six notice boxes for the same purposes, always. Don't
