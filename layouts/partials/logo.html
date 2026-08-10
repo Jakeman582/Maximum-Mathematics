@@ -10,8 +10,14 @@
   the book's own landing page. No title text renders over the image — the
   main sidebar tree names the book instead, once it's showing that book's own
   table of contents rather than the whole site (see the `cascade.params.
-  sidebarmenus` block in the book's own _index.md). Everywhere else, this
-  falls through unchanged to the theme's original auto-logo.html.
+  sidebarmenus` block in the book's own _index.md).
+
+  Everywhere else, if assets/images/logo.png exists, that renders full-bleed
+  the same way (".mm-site-logo") in place of the plain brand gradient. That
+  same file is also picked up automatically as the site favicon by the
+  theme's own auto-favicon.html — nothing to wire up for that separately.
+  Only falls through to the theme's original auto-logo.html (the plain site
+  title on the gradient) if no logo.png exists.
 
   A book sets its cover via front matter:
     [params]
@@ -36,5 +42,12 @@
 <style>#R-sidebar{--mm-book-cover-photo:url("{{ $coverImage.RelPermalink }}");}</style>
 <a id="R-logo" class="mm-book-cover-logo" href="{{ $coverPage.RelPermalink }}" aria-label="{{ $coverPage.Title }}"></a>
 {{- else -}}
-  {{- partial "auto-logo.html" site.Home -}}
+  {{- $siteLogo := resources.Get "images/logo.png" -}}
+  {{- if $siteLogo -}}
+    {{- $logoImage := $siteLogo.Resize "800x800" -}}
+<style>#R-sidebar{--mm-site-logo:url("{{ $logoImage.RelPermalink }}");}</style>
+<a id="R-logo" class="mm-site-logo" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }}"></a>
+  {{- else -}}
+    {{- partial "auto-logo.html" site.Home -}}
+  {{- end -}}
 {{- end -}}

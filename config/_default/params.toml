@@ -64,7 +64,7 @@ disableSourceButton = true
 
 hideAuthorName = true                         # Single-author site; a byline on every page is noise.
 hideAuthorEmail = true
-dateFormat = ':date_long'
+hideAuthorDate = true                         # File mtime, not meaningful editorial info for a reader.
 
 #------------------------------------------------------------------------------
 # Appearance — keep last, see the note at the top of this file

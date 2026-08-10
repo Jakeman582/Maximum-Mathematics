@@ -9,96 +9,128 @@
  * Sidebar header — brand gradient
  *--------------------------------------------------------------------------*/
 
-/* #R-header-wrapper (title + search, or a book cover while browsing inside a
-   book — see layouts/partials/logo.html) and #R-homelinks (the "Home" row)
-   are adjacent siblings inside #R-sidebar, with no shared parent that's sized
-   to just the two of them — #R-sidebar itself also contains the page tree
-   below, which keeps its own dark background. Painting the same gradient on
-   each element independently would restart it twice, visibly seaming at the
-   boundary between them.
-
-   Instead this pins the gradient to the viewport with `background-attachment:
-   fixed`, positioned at the sidebar's own top-left corner (#R-sidebar is
-   itself `position: fixed; top: 0; left: 0`, and both elements sit flush
-   against its top edge). Both elements then sample two contiguous slices of
-   one continuous gradient rather than each stretching its own copy — the fix
-   holds regardless of #R-header-wrapper's height, so it stays correct whether
-   it's showing the plain site title or a book cover. The size is fixed to a
-   little more than the tallest combined height either case renders at
-   (~206px for a book cover, vs ~178px for the plain title), so the
-   transition reaches all the way to orange in both without visibly cutting
-   off; the width matches the sidebar's own default desktop width so the
-   150deg diagonal reads at the intended angle instead of being stretched flat
-   across the full viewport width. */
-#R-header-wrapper,
-#R-homelinks {
+/* #R-header-wrapper no longer shares this space with the search box or the
+   Home row — both are pinned to the bottom of the sidebar instead (see
+   "Search box and Home link" below) — so it's just this one box now, sized
+   to whatever its own content needs (the plain site title, or a book cover
+   filling a full square — see "Book cover" below). No cross-element
+   continuity trick needed for a single box. */
+#R-header-wrapper {
   background-image: linear-gradient(150deg, #0000ff 0%, #ffa500 100%);
-  background-attachment: fixed;
-  background-position: left top;
-  background-size: 18.75rem 280px;
-  background-repeat: no-repeat;
 }
 
-/* The theme draws a divider line under the last item in #R-homelinks — the
-   boundary between the header area and the page tree below — using this
-   variable, which falls back all the way to the theme's own brand green.
-   Against a solid green header that line was invisible; against our gradient
-   it reads as a stray green line sitting on the gradient. Nothing marks that
-   boundary elsewhere, so hiding it entirely reads cleaner than recolouring it
-   to match. */
+/* The theme draws a divider line under the last item in #R-homelinks using
+   this variable, which falls back all the way to the theme's own brand
+   green — reads as a stray green line against #R-homelinks' own dark
+   background (see below) if left alone. Nothing marks that boundary
+   elsewhere, so hiding it entirely reads cleaner than recolouring it to
+   match. */
 :root {
   --MENU-HOME-BOTTOM-SEPARATOR-color: transparent;
 }
 
 /*----------------------------------------------------------------------------
- * Book cover, shown as a full-bleed hero across the sidebar header while
- * browsing inside a book
+ * Book cover, filling #R-header-wrapper as a square hero while browsing
+ * inside a book
  *--------------------------------------------------------------------------*/
 
 /* layouts/partials/logo.html sets --mm-book-cover-photo (and adds
    .mm-book-cover-logo) only while browsing inside a book. When present, the
-   cover photo replaces the brand gradient as the background of both
-   #R-header-wrapper and #R-homelinks — same continuity technique as the
-   gradient above, just swapping the image in as a second layer. A flat dark
-   scrim (the first, uppermost layer) sits over the photo so the title,
-   search box, and Home link stay legible no matter how light the book's own
-   cover art is. */
-#R-sidebar:has(.mm-book-cover-logo) #R-header-wrapper,
-#R-sidebar:has(.mm-book-cover-logo) #R-homelinks {
-  /* Belt-and-suspenders under the layered background below: #R-homelinks
-     otherwise carries the theme's own solid green fill (its base colour,
-     underneath any background-image), which the browser doesn't always fully
-     repaint over when a fixed-attachment layer only just barely reaches this
-     far — flattening it to black removes any base colour that could show
-     through. */
+   cover photo replaces the brand gradient as #R-header-wrapper's background,
+   and the box becomes a perfect square (matching the covers' own 1:1 art) —
+   `aspect-ratio` against the sidebar's actual own width, rather than a
+   guessed pixel size, so it's exactly square at any sidebar width. A flat
+   dark scrim (the first, uppermost layer) sits over the photo so the title
+   stays legible no matter how light the book's own cover art is — mostly
+   moot now the anchor has no visible text, but cheap insurance if that
+   changes again. */
+#R-sidebar:has(.mm-book-cover-logo) #R-header-wrapper {
+  aspect-ratio: 1 / 1;
   background-color: #000000;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--mm-book-cover-photo);
-  background-attachment: fixed, fixed;
-  background-position: left top, left top;
-  /* Square, matching the covers' own 1:1 art, so nothing gets stretched —
-     tall enough to comfortably clear the actual combined header height
-     (title removed, so just the empty logo's min-height plus the search box
-     below it, plus the Home row after that; see .mm-book-cover-logo below). */
-  background-size: 18.75rem 18.75rem, 18.75rem 18.75rem;
-  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center, center;
 }
 
-/* The theme colours the Home row's text for its default light-green header —
-   swap it to white so it stays readable against the darkened photo. */
-#R-sidebar:has(.mm-book-cover-logo) {
-  --MENU-HOME-LINK-color: #ffffff;
-  --MENU-HOME-LINK-HOVER-color: #dddddd;
-}
-
-/* No title text renders here anymore — the anchor is otherwise empty (see
-   logo.html), so a fixed height is what actually gives the hero image room
-   to show, rather than the "padding around the title" that sized it before.
-   See the background-size note above for where this height ends up
-   mattering. */
 .mm-book-cover-logo {
   display: block;
-  min-height: 9rem;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
+}
+
+/*----------------------------------------------------------------------------
+ * Site logo, filling #R-header-wrapper as a square in place of the plain
+ * brand gradient
+ *--------------------------------------------------------------------------*/
+
+/* layouts/partials/logo.html sets --mm-site-logo (and adds .mm-site-logo)
+   whenever assets/images/logo.png exists and we're not inside a book — same
+   square treatment as the book cover above, but the logo's own background is
+   transparent (unlike a book cover's opaque art), so this fills the square
+   with the sidebar's own dark tone behind it instead of black, blending into
+   the rest of the sidebar chrome rather than reading as its own black
+   "poster". */
+#R-sidebar:has(.mm-site-logo) #R-header-wrapper {
+  aspect-ratio: 1 / 1;
+  background-color: var(--INTERNAL-MENU-SECTIONS-BG-color);
+  background-image: var(--mm-site-logo);
+  background-size: cover;
+  background-position: center;
+}
+
+.mm-site-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+/*----------------------------------------------------------------------------
+ * Search box and Home link — pinned to the bottom of the sidebar
+ *--------------------------------------------------------------------------*/
+
+/* #R-homelinks is an ordinary flex child of #R-sidebar (already a flex
+   column, from the theme) — moving it after #R-content-wrapper (which
+   flex-grows to fill whatever's left, so it shrinks to make room
+   automatically) is enough to relocate it, no fixed height or absolute
+   positioning needed. It keeps its own dark background rather than the
+   theme's default light-green one, since it's no longer sitting under the
+   gradient/cover header. */
+#R-homelinks {
+  order: 1;
+  background-color: var(--INTERNAL-MENU-SECTIONS-BG-color);
+}
+
+/* The theme colours Home's text for its own default light-green background —
+   swap it to match the tree's own light grey now that it sits on a dark one
+   instead. */
+:root {
+  --MENU-HOME-LINK-color: var(--INTERNAL-MENU-SECTIONS-LINK-color);
+  --MENU-HOME-LINK-HOVER-color: var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color);
+}
+
+/* The search box isn't its own sibling of #R-sidebar's other children — it
+   renders inside #R-header-wrapper, next to the book cover / site title — so
+   relocating it means pulling it out of that flow instead of a flex reorder.
+   #R-sidebar (itself `position: fixed`) is the nearest positioned ancestor,
+   so this anchors directly to the sidebar's own box regardless of
+   #R-header-wrapper's now-square shape. 53px comfortably clears
+   #R-homelinks' own natural height (~48px) once reordered below it. */
+#R-header-wrapper search {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 53px;
+}
+
+/* #R-content-wrapper's own flex-shrink already leaves room for #R-homelinks
+   (an ordinary flex sibling, per above) but has no way to know about the
+   absolutely-positioned search box overlaid on top of it — without this,
+   its own scrollable content (the theme switcher, "Built with Hugo") can
+   render underneath the search box instead of stopping short of it. */
+#R-content-wrapper {
+  padding-bottom: 53px;
 }
 
 /*----------------------------------------------------------------------------
@@ -154,6 +186,33 @@
   font-size: 1.05rem;
   line-height: 1.3;
   text-align: center;
+}
+
+/*----------------------------------------------------------------------------
+ * Chapter section list, shown on the table of contents page
+ *--------------------------------------------------------------------------*/
+
+/* A chapter's planned sections are a numbered sub-list nested under that
+   chapter's own list item — smaller than the chapter list itself so the two
+   levels read as distinct without needing a different marker style. Scoped
+   to nested ordered lists on a "chapter" page rather than a dedicated class,
+   since there's no shortcode/wrapper marking this list specifically. */
+article.chapter ol ol {
+  font-size: 0.875rem;
+}
+
+/* A heading followed immediately by a `---` divider (the convention for
+   section breaks within a page — see CLAUDE.md) collapses to whichever
+   margin is larger between the two by normal CSS rules, which reads as a lot
+   of empty space for what's meant to be a tight heading/rule pairing. Zero
+   out the heading's side of that so the divider's own margin is what
+   actually controls the gap. */
+article.chapter h2:has(+ hr) {
+  margin-bottom: 0;
+}
+
+article.chapter h2 + hr {
+  margin-top: 0.5rem;
 }
 
 /*----------------------------------------------------------------------------
@@ -228,6 +287,20 @@ mjx-container[display='true'] {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.25rem 0;
+}
+
+/* A wide table-like equation (an alignat* block, say) inside a notice box has
+   less room to breathe than one in the main text column, since the box's own
+   padding and border eat into the available width — MathJax's scroll above
+   still kicks in when a table's genuinely too wide to fit any narrower
+   column, but a couple of characters spilling past the edge reads as text
+   quietly getting cut off rather than "scroll for more": the scrollable
+   sliver is too thin to notice, let alone find. Sized down a bit so the same
+   table that fits in the main column also fits here without needing to
+   scroll. MathJax sets its own font-size inline (to match surrounding text
+   metrics), so overriding it needs !important. */
+.mm-notice__body mjx-container[display='true'] {
+  font-size: 95% !important;
 }
 
 /*----------------------------------------------------------------------------

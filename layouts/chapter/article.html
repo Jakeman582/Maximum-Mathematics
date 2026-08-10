@@ -3,20 +3,32 @@
   file at the same path takes precedence over the theme's).
 
   The theme shows "Chapter <N>" — using .Weight as N — for any type="chapter"
-  page that has a weight set. A book's own _index.md uses type="chapter"
-  purely for its narrower article width, and weight purely for its ordering
-  among other books on /books — neither is a chapter number, so the theme's
-  version mislabels a book's own landing page as "Chapter <its own weight>".
-  This suppresses that label specifically for a book's own root page
-  (identified via _mm/book-page.html returning the page itself); everything
-  else is the theme's original logic, unchanged.
+  page that has a weight set. Three cases don't actually want that:
+
+  - A book's own _index.md uses type="chapter" purely for its narrower
+    article width, and weight purely for its ordering among other books on
+    /books — neither is a chapter number. Detected via _mm/book-page.html
+    returning the page itself.
+  - A front-matter-style page (a table of contents, preface, etc.) that
+    sorts before Chapter 1 but isn't itself a numbered chapter — opts out
+    with `[params] frontmatter = true`. Give it a weight low enough to sort
+    before Chapter 1 (negative, say) without needing to renumber any real
+    chapter to make room.
+  - A section page within a chapter (e.g. Chapter 1, Section 1) also uses
+    type="chapter" for the same narrow article width, and its own weight
+    purely for its order among that chapter's other sections — again not a
+    chapter number. Identified by `[params] section` being set (see "Chapters
+    and front-matter pages" in CLAUDE.md); a section page gets no eyebrow
+    label at all here, just its own title.
+
+  Everything else is the theme's original logic, unchanged.
 */ -}}
 
 <article class="chapter narrow">
   <header class="headline">
     {{- partial "content-header.html" . }}
   </header>
-{{ partial "heading-pre.html" . }}{{ $isBookRoot := eq (partial "_mm/book-page.html" .) . }}{{ if and (not $isBookRoot) .Params.Weight }}<div class="article-subheading">{{ T "Chapter" .Params.Weight }}</div>{{ end }}
+{{ partial "heading-pre.html" . }}{{ $isBookRoot := eq (partial "_mm/book-page.html" .) . }}{{ if and (not $isBookRoot) (not .Params.frontmatter) (not .Params.section) .Params.Weight }}<div class="article-subheading">{{ T "Chapter" .Params.Weight }}</div>{{ end }}
 {{ partial "heading.html" . }}{{ partial "heading-post.html" . }}
 
 {{ partial "article-content.html" . }}

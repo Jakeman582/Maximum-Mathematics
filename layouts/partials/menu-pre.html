@@ -1,0 +1,19 @@
+{{- /*
+  Overrides the theme's own layouts/partials/menu-pre.html (a project-level
+  file at the same path takes precedence over the theme's). The original is a
+  one-liner that outputs a page's `menuPre`/`Pre` front matter param, if set,
+  right before its title in the sidebar tree — this adds one more case ahead
+  of that.
+
+  A numbered chapter (type="chapter", weight set, not a book's own root page,
+  not flagged `frontmatter = true`, not a section page (`[params] section`
+  set) — the same rule layouts/chapter/article.html uses to decide whether to
+  show "Chapter <N>" on the page itself) gets "<N>. " prefixed to its title
+  in the tree too, e.g. "1. Logic". Anything else falls through to the
+  theme's original logic, unchanged.
+*/ -}}
+{{- $isBookRoot := eq (partial "_mm/book-page.html" .) . -}}
+{{- if and (eq .Type "chapter") .Params.Weight (not $isBookRoot) (not .Params.frontmatter) (not .Params.section) -}}
+  {{- printf "%v. " .Params.Weight -}}
+{{- end -}}
+{{ if .Params.menuPre }}{{ .Params.menuPre | safeHTML }}{{ else }}{{ .Params.Pre | safeHTML }}{{ end }}

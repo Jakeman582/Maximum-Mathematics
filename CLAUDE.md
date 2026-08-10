@@ -47,6 +47,86 @@ What each piece is for:
   matter how deeply nested. The `pageRef` has to repeat the book's own path —
   Hugo's cascade has no way to self-reference the page that sets it.
 
+## Chapters and front-matter pages
+
+A chapter is `content/books/<slug>/<chapter-slug>/_index.md`:
+
+```toml
++++
+title = 'Chapter Title'
+type = 'chapter'
+weight = 1   # 1 for the first chapter, 2 for the second, etc.
+
+[cascade.params]
+  chapter = 1   # same number as weight, cascades to this chapter's own
+                # sections for theorem/proof numbering (see "Notice types"
+                # below)
++++
+```
+
+`weight` *is* the displayed chapter number (`layouts/chapter/article.html`
+labels the page "Chapter `<weight>`") — always sequential starting at 1, never
+the "leave gaps of 10" spacing used for books on `/books`, since gaps here
+would show up as skipped chapter numbers.
+
+A front-matter-style page — a table of contents, preface, acknowledgments,
+anything that belongs before Chapter 1 but isn't itself a numbered chapter —
+skips the number instead:
+
+```toml
++++
+title = 'Table of Contents'
+type = 'chapter'
+weight = -10   # negative, so it sorts before Chapter 1 without needing to
+               # renumber any real chapter to make room
+
+[params]
+  frontmatter = true   # suppresses the "Chapter <N>" label
++++
+```
+
+Give each front-matter page its own negative weight (e.g. -10, -20) if a book
+ends up with more than one, so their relative order is deliberate.
+
+A section is `content/books/<slug>/<chapter-slug>/<section-slug>/_index.md` —
+its own folder, one level inside its chapter's own directory, even though a
+section has no children of its own. The folder exists so the section's
+images and other resources have somewhere to live alongside it, colocated
+rather than in a separate site-wide assets tree.
+
+```toml
++++
+title = 'Section Title'
+type = 'chapter'
+weight = 1   # 1 for this chapter's first section, 2 for its second, etc. —
+             # its own sequential count, unrelated to the chapter's weight
+
+[params]
+  section = 1   # same number as weight; combines with the chapter's
+                # cascaded `chapter` param for theorem/proof numbering (see
+                # "Notice types" below) and suppresses the "Chapter <N>"
+                # label a section page would otherwise wrongly inherit from
+                # its own weight
++++
+```
+
+On a book's table of contents page, a chapter's planned sections are a
+numbered sub-list nested directly under that chapter's own list item:
+
+```markdown
+1. [Chapter Title]({{% relref "/books/<slug>/<chapter-slug>" %}})
+   1. Section One
+   2. Section Two
+   3. Section Three
+2. Next Chapter Title
+```
+
+Indent sub-items three spaces (aligning with the text after "1. ") so
+Goldmark treats them as nested rather than breaking the outer list. This
+sub-list renders smaller than the chapter list itself (`article.chapter ol
+ol` in `assets/css/maximum-mathematics.css`) so the two levels read as
+distinct.
+
 ## Notice types
 
 Every book uses the same six notice boxes for the same purposes, always. Don't
