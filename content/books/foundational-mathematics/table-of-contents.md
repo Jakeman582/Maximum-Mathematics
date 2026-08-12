@@ -8,8 +8,8 @@ weight = -10
 +++
 
 1. [Logic]({{% relref "/books/foundational-mathematics/logic" %}})
-   1. Propositions
-   2. Modeling Logic with Truth Tables
+   1. [Propositions]({{% relref "/books/foundational-mathematics/logic/propositions" %}})
+   2. [Modeling Logic with Truth Tables]({{% relref "/books/foundational-mathematics/logic/modeling-logic-with-truth-tables" %}})
    3. Logical Order of Operations
    4. Satisfiability
    5. Laws of Logic
