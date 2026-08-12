@@ -226,6 +226,22 @@ it correctly on every pass, however deeply nested. If a future shortcode needs
 to nest inside another shortcode's body, prefer extending Goldmark (a
 passthrough delimiter, an extension) over emitting raw HTML from the inner one.
 
+The `figure` shortcode hits this too: it emits raw `<figure>/<img>` HTML, so a
+`{{< figure >}}` call inside a notice box's body (e.g. a worked example with
+figures interspersed through the steps) gets silently stripped the same way —
+confirmed via Hugo's own build warning, `Raw HTML omitted while rendering
+<page>`. There's no per-call override for `unsafe` (it's a global site
+setting only), and no realistic way to make `figure`'s title-bar-plus-caption
+styling Goldmark-native. The workaround used in
+`content/books/foundational-mathematics/logic/modeling-logic-with-truth-tables/_index.md`
+is a plain Markdown image instead — `![alt text](01.svg)` — which *does*
+survive nesting, since Goldmark generates its `<img>` natively rather than
+finding raw HTML in the source. The tradeoff: no visible "Figure N:" caption
+bar, only the (screen-reader-only) alt text — write the alt text with the same
+care as a real caption, and make sure the surrounding prose still carries the
+context a reader would otherwise get from the caption. Figures *outside* any
+notice box are unaffected and should keep using the full `figure` shortcode.
+
 ### Also available
 
 - `statement` (`layouts/shortcodes/statement.html`) — numbered
