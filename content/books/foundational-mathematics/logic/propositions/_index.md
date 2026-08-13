@@ -9,16 +9,26 @@ weight = 1
 
 In Mathematics, we deal with statements like these:
 
-
-$$\text{Squares have four equal sides.}$$
-
-$$\text{Quadratic equations have at most two distinct roots.}$$
+\[
+\begin{align*}
+&\text{Squares have four equal sides.} \\
+\\ 
+&\text{Quadratic equations have at most two} \\
+&\text{distinct roots.}
+\end{align*}  
+\]
 
 In life, we deal with statements like these:
 
-$$\text{If you don't pay your parking tickets, then you will go to jail.}$$
-
-$$\text{The rent was paid on the first of the month, and the air conditioner stopped working.}$$
+\[
+\begin{align*}
+&\text{If you don't pay your parking tickets, then} \\
+&\text{you will go to jail.} \\
+\\
+&\text{The rent was paid on the first of the month, and the} \\
+&\text{air conditioner stopped working.}
+\end{align*}
+\]
 
 In Math, as in life, some statements are easy to determine if they're true
 or false. However, when we encounter more complicated expressions, we
@@ -138,8 +148,10 @@ That is to say, if $p$ is true, then $\neg p$ is false. If $p$ is false,
 then $\neg p$ is true.
 {{< /definition >}}
 
+We do not consider the negation $\lnot p$ of a proposition $p$ to be primitive.
+
 The rest of the logical connectives we introduce combine two given
-propositions into a proposition.
+propositions into one proposition.
 
 {{< definition terms="conjunction" >}}
 The ==conjunction== of two given propositions $p$ and $q$, denoted
@@ -164,6 +176,8 @@ The ==exclusive-or== of two given propositions $p$ and $q$, denoted
 $p \veebar q$, is true when exactly one of $p$ or $q$ is true. Otherwise,
 $p \veebar q$ is false.
 {{< /definition >}}
+
+The next definitions have to do with cause-and-effect type relationships between two propositions.
 
 {{< definition terms="implication, conditional" >}}
 The ==implication== of two given propositions $p$ and $q$, denoted
