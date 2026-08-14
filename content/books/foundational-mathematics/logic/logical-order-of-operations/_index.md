@@ -44,22 +44,11 @@ There are two ways to evaluate this expression.
 
 ++Method 1: $(p \land q) \lor r$++
 
-<!-- TODO(image): truth table for Method 1, atomic propositions p, q, r in the usual
-     dial order (p slowest, r fastest). Columns: p, q, r, p \land q (intermediary),
-     (p \land q) \lor r.
-     Rows: (0,0,0)->p∧q=0->0; (0,0,1)->0->1; (0,1,0)->0->0; (0,1,1)->0->1;
-           (1,0,0)->0->0; (1,0,1)->0->1; (1,1,0)->1->1; (1,1,1)->1->1
-     Embed with plain Markdown image syntax, not the figure shortcode (nested
-     inside an example box — see CLAUDE.md). -->
+![The truth table for $(p \land q) \lor r$.](01.svg)
 
 ++Method 2: $p \land (q \lor r)$++
 
-<!-- TODO(image): truth table for Method 2, atomic propositions p, q, r in the usual
-     dial order (p slowest, r fastest). Columns: p, q, r, q \lor r (intermediary),
-     p \land (q \lor r).
-     Rows: (0,0,0)->q∨r=0->0; (0,0,1)->1->0; (0,1,0)->1->0; (0,1,1)->1->0;
-           (1,0,0)->0->0; (1,0,1)->1->1; (1,1,0)->1->1; (1,1,1)->1->1
-     Same as above: embed with plain Markdown image syntax. -->
+![The truth table for $p \land (q \lor r)$.](02.svg)
 
 Note that from what we see,
 
@@ -72,7 +61,7 @@ Based on this calculation, we see that the expression
 $$p \land q \lor r$$
 
 is ambiguous — we don't know how to evaluate it until parentheses are
-added, or until some inherent order of operations is established.
+added, or until some order of operations is established.
 {{< /example >}}
 
 ## Establishing an Order of Operations
@@ -152,9 +141,9 @@ necessary.
 While the relative order between $\neg$, $\land$, $\lor$, $\longrightarrow$,
 and $\longleftrightarrow$ is *somewhat* standardized (heavy emphasis on the
 word "somewhat"), it is hardly universal. This is especially true when
-using $\veebar$ as well.
+$\veebar$ is thrown into the mix.
 
-Many texts liberally just use $()$ as well. In some ways, the
+Many texts use $()$ liberally as well. In some ways, the
 order of operations presented here was entirely engineered to meet this
 book's needs, and this order's scope is only contained within this book.
 
