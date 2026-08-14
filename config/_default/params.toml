@@ -39,6 +39,27 @@ disableNextPrev = false                       # Sequential reading is the primar
 # theme is upgraded.
 math = true
 
+# Base MathJax `tex.inlineMath`/`displayMath` must be repeated here even though
+# they're unchanged from the theme's own default (see dependencies/math.html) —
+# this value replaces the whole `tex` object via Object.assign rather than
+# merging into it. `textmacros` is the extension that lets `\textbf{}`/
+# `\textit{}` take macro arguments at all — without it, `\textit{Evaluate...}`
+# renders its argument as literal, unprocessed source text instead of styling
+# it (this is what content across the site now relies on for italicized/bold
+# text inside math). It ships in the theme's vendored MathJax build but isn't
+# part of the `tex-mml-chtml.js` combined component, so it also needs an
+# explicit `loader.load` entry — listing it in `tex.packages` alone no-ops.
+#
+# What it does NOT do: combine two of these in one span. `\textbf{\textit{x}}`,
+# `\textit{\textbf{x}}`, `\boldsymbol{\textit{x}}`, and `\text{\bf\it x}` were
+# all tried for a bold+italic table header (see
+# content/books/foundational-mathematics/logic/logical-order-of-operations/_index.md)
+# and every one rendered italic-only — the inner command's variant wins outright
+# rather than composing. `\pmb{}` doesn't work either: it depends on `\rlap`,
+# which is math-mode only and errors inside `\text{}`. Settle for one of
+# `\textbf{}` or `\textit{}`, not both, until a real fix is found.
+mathJaxInitialize = '{"loader": {"load": ["[tex]/textmacros"]}, "tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]], "packages": {"[+]": ["textmacros"]}}, "options": {"enableMenu": false}}'
+
 #------------------------------------------------------------------------------
 # Figures
 #------------------------------------------------------------------------------

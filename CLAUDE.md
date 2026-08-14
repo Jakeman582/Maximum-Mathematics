@@ -153,6 +153,77 @@ The rule doesn't change inside a notice box: an example proposition inside an
 `example` box is LaTeX; the sentence introducing that box is plain Markdown,
 except for whichever variable names it happens to mention in passing.
 
+## Step-by-step arithmetic and algebra
+
+Any worked derivation — simplifying an expression, evaluating a formula,
+solving for a variable, anything that proceeds line by line to a final
+result — uses one of two `\begin{array}{...}` layouts, never an unadorned
+`align*` chain of `&=` lines. Both live inside an `example` box. See
+`content/books/foundational-mathematics/logic/logical-order-of-operations/_index.md`
+(the "A Note on Organizing Arithmetic" section) for both in place.
+
+**Primary format — assume this one unless there's a reason to reach for the
+secondary.** Three columns: blank/`=`, the expression, the reason. The given
+expression sits bolded in the first row of the *second* column; every row
+after that repeats in the same column, ordinary weight, with a leading `=`
+in the first column. The third column is a bold-italic `Reason` header in
+the first row, then an italicized justification per row after:
+
+```
+\[
+\begin{array}{lll}
+ & \boldsymbol{<given expression>} & \textbf{\textit{Reason}} \\
+= & <simplification 1> & \textit{<reason 1>} \\
+= & <simplification 2> & \textit{<reason 2>} \\
+= & <final value>       & \textit{<final reason>}
+\end{array}
+\]
+```
+
+**Secondary format — for routine work that doesn't need much narration.**
+Three columns, or four when reasons are worth including. The given
+expression gets its *own* column (bolded, first row only, blank below); `=`
+repeats down the second column on every row including the first; the third
+column carries the simplification sequence; the optional fourth carries a
+reason per row:
+
+```
+\[
+\begin{array}{llll}
+\boldsymbol{<given expression>} & = & <simplification 1> & \textit{<reason 1>} \\
+                                 & = & <simplification 2> & \textit{<reason 2>} \\
+                                 & = & <final value>       & \textit{<final reason>}
+\end{array}
+\]
+```
+
+Drop the fourth column (and its cells) entirely for a bare `{lll}` version
+when the steps are self-explanatory enough that spelling out a reason for
+each one would just be noise — that's the point of this format existing
+separately from the primary one.
+
+Any layout beyond these two is a one-off — work it out for the specific page
+that needs it rather than trying to generalize a third standing format.
+
+Two dependencies worth knowing about if either format stops rendering
+right:
+
+- Bold and italic text inside math (`\textbf{}`, `\textit{}`, and nesting
+  them) only works because of MathJax's `textmacros` extension, enabled
+  sitewide via `mathJaxInitialize` in `config/_default/params.toml` — see the
+  comment there for why it's wired the way it is, and for the one thing it
+  still *can't* do (a single span that's both bold and italic at once; settle
+  for one or the other).
+- A wide table like these routinely overflows a notice box's width. Don't
+  reach for a smaller font-size as the fix — that's a losing battle against
+  longer reasons over time. The site instead gives every overflowing
+  display-math block its own always-visible custom scrollbar (native OS
+  scrollbars on macOS don't reliably show up until mid-scroll, so the real
+  one is hidden and replaced): `assets/js/mm-math-scroll.js`, wired in via
+  `layouts/partials/custom-footer.html`, styled as `.mm-scrollbar` in
+  `assets/css/maximum-mathematics.css`. It's automatic — nothing to do in
+  content for a new wide table to pick it up.
+
 ## Notice types
 
 Every book uses the same six notice boxes for the same purposes, always. Don't

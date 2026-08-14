@@ -1,0 +1,11 @@
+{{- /*
+  Injected at the end of the page by the Relearn theme, after
+  dependencies.html (footer location) — meaning MathJax's config script and
+  its own (async) library tag are already in the DOM by the time this runs,
+  though the library itself may not have finished loading yet; see the
+  polling wait in the script itself.
+*/ -}}
+{{- with resources.Get "js/mm-math-scroll.js" -}}
+  {{- $script := . | minify | fingerprint -}}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{- end -}}

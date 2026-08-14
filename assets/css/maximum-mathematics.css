@@ -287,6 +287,22 @@ mjx-container[display='true'] {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.25rem 0;
+
+  /* macOS hides the native scrollbar until the reader is already mid-scroll —
+     styling it (::-webkit-scrollbar below) only takes effect once the OS has
+     decided to show a classic, non-overlay bar in the first place, which
+     Safari won't reliably do no matter what CSS says. There's no dependable
+     cross-browser way to force that decision, so it's hidden outright here
+     and replaced with an always-visible custom bar (assets/js/mm-math-scroll.js
+     adds a `.mm-scrollbar` element right after every overflowing container;
+     styled in the "Custom scrollbar" block below). Two-finger trackpad
+     scrolling and click-dragging the content both still work either way —
+     this only changes whether "you can scroll this" is visible up front. */
+  scrollbar-width: none;
+}
+
+mjx-container[display='true']::-webkit-scrollbar {
+  display: none;
 }
 
 /* A wide table-like equation (an alignat* block, say) inside a notice box has
@@ -301,6 +317,44 @@ mjx-container[display='true'] {
    metrics), so overriding it needs !important. */
 .mm-notice__body mjx-container[display='true'] {
   font-size: 95% !important;
+}
+
+/* Custom scrollbar for wide equations, added by assets/js/mm-math-scroll.js
+   directly after every mjx-container it finds overflowing horizontally.
+   Hidden by default; the script toggles --active only once it's confirmed
+   there's actually something to scroll, so an equation that fits gets no
+   bar at all. A faint always-visible track is the point — it's what tells
+   the reader "there's more here" before they've touched anything, which the
+   native OS scrollbar this replaces couldn't do reliably. */
+.mm-scrollbar {
+  display: none;
+  position: relative;
+  height: 6px;
+  margin: 0 0 0.5rem;
+  border-radius: 3px;
+  background: rgba(128, 128, 128, 0.25);
+  cursor: grab;
+}
+
+.mm-scrollbar--active {
+  display: block;
+}
+
+.mm-scrollbar--dragging {
+  cursor: grabbing;
+}
+
+.mm-scrollbar__thumb {
+  position: absolute;
+  inset: 0 auto 0 0;
+  min-width: 2rem;
+  border-radius: 3px;
+  background: var(--INTERNAL-PRIMARY-color);
+}
+
+.mm-scrollbar__thumb:hover,
+.mm-scrollbar--dragging .mm-scrollbar__thumb {
+  background: var(--INTERNAL-PRIMARY-HOVER-color, var(--INTERNAL-PRIMARY-color));
 }
 
 /*----------------------------------------------------------------------------
