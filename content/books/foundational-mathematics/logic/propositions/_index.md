@@ -59,7 +59,7 @@ we evaluate and combine to form larger statements.
 \[
 \begin{align*}
 w &\text{: H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.} \\
-t &\text{: Mr. T was a mathematics major at Prairie View A&M University.} \\
+t &\text{: Mr. T was a mathematics major at Prairie View A\&M University.} \\
 j &\text{: Thomas Jefferson was the second president of the United States.} \\
 b &\text{: Mary Shelley wrote Frankenstein or Alexandre Dumas wrote Moby Dick.} \\
 x &\text{: 12 is divisible by 3.} \\
@@ -78,7 +78,7 @@ All of the sentences in the previous example have definite truth values.
 \[
 \begin{array}{ll}
 w\text{: H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.}  &\text{(true)} \\
-t\text{: Mr. T was a mathematics major at Prairie View A&M University.}       &\text{(true)} \\
+t\text{: Mr. T was a mathematics major at Prairie View A\&M University.}     &\text{(true)} \\
 j\text{: Thomas Jefferson was the second president of the United States.}     &\text{(false)} \\
 b\text{: Mary Shelley wrote Frankenstein or Alexandre Dumas wrote Moby Dick.} &\text{(true)} \\
 x\text{: 12 is divisible by 3.}                                               &\text{(true)} \\

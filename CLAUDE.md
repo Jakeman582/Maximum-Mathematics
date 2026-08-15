@@ -213,7 +213,15 @@ right:
   sitewide via `mathJaxInitialize` in `config/_default/params.toml` — see the
   comment there for why it's wired the way it is, and for the one thing it
   still *can't* do (a single span that's both bold and italic at once; settle
-  for one or the other).
+  for one or the other). It also changed what's safe inside any `\text{}` on
+  the site, not just these tables: before `textmacros`, `\text{}` content was
+  plain literal text, so a bare `&` in ordinary prose (e.g. "Prairie View
+  A&M University" in the Propositions page) was harmless. `textmacros`
+  parses `\text{}` more strictly and reserves `&`, so that same content broke
+  sitewide once the extension went in — fixed by escaping it as `\&`. If a
+  `\text{}` block ever throws `'&' can not be used here` (or similarly for
+  other TeX-special characters — `%`, `#`, `_`), escape the character with a
+  leading backslash rather than assuming it's a content error.
 - A wide table like these routinely overflows a notice box's width. Don't
   reach for a smaller font-size as the fix — that's a losing battle against
   longer reasons over time. The site instead gives every overflowing
