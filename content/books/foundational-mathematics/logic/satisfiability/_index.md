@@ -129,5 +129,5 @@ matter what truth values are assumed by its atomic propositions.
 Just like with tautologies, we sometimes use the symbol $\bot$ (sometimes
 also written $F_0$) to represent a contradiction. But since a
 contradiction is always false, we can also just use $0$ — though we may
-prefer $\bot$ if we wish to convey that we're talking about a
+prefer $\bot$ or $F_0$ if we wish to convey that we're talking about a
 proposition, rather than a literal value.
