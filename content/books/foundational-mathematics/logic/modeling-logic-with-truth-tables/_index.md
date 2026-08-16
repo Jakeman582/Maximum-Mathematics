@@ -30,7 +30,7 @@ values:
 Using numbers will make the following concept a bit more space efficient,
 and give a more mathematical flavor going forward.
 
-## The Truth Table
+## Atomic Propositions: Building Blocks of Truth Tables
 ---
 
 A truth table is simply a table organizing multiple logical expressions
@@ -54,10 +54,10 @@ In the expressions
 
 $p$ and $q$ are considered *atomic*.
 
-Note that atomic propositions themselves do **not** need to be primitive.
+Note that atomic propositions themselves do *not* need to be primitive.
 
 {{< example title="Identifying atomic propositions in logical expressions" >}}
-Let
+Let $p$ and $q$ be compound propositions defined as follows:
 
 \[
 \begin{align*}
@@ -89,7 +89,9 @@ of $p$ and $q$ given above, in terms of the propositions $a$ and $b$:
 {{< /example >}}
 
 In general, a proposition that is named or labeled (usually with a
-lowercase letter) is considered atomic.
+lowercase letter) is considered atomic because it can be used to build up
+other propositions when combined with other labeled propositions using the 
+logical conenctives.
 
 ## Constructing Truth Tables
 ---
@@ -135,7 +137,7 @@ desired proposition.
 
 ++Step 3: List all possible combinations of truth values for the atomic propositions being used++
 
-Here is what the overall table's structure will look like. We will use a
+Here is what the overall table's structure will look like. In this book, we will use a
 blue color to color in all of the values for the atomic propositions, and
 an orange color for the desired expression's column.
 
@@ -192,7 +194,7 @@ cell, shown below:
 
 ![The third row, where $p = 1$ and $q = 0$, filled in with $0$.](08.svg)
 
-Here we are on the last row, where $p = 1$ and $q = 1$. Here, both atomic
+Now we are on the last row, where $p = 1$ and $q = 1$. Here, both atomic
 propositions are true. This means the conjunction $p \land q$ is, by
 definition, true. That means in this final blank cell we fill in a $1$,
 leaving us with the completed truth table for the conjunction $p \land q$:
@@ -286,7 +288,7 @@ the row we are evaluating.
 
 {{< figure src="15.svg" alt="All six logical connectives combined into one table." >}}
 
-## Intermediate Columns
+## Intermediary Columns
 ---
 
 Notice that we just produced a truth table that has more than one
@@ -321,6 +323,19 @@ To fill in that blank column, we no longer need to think about $p$ and $q$
 at all — we just take the negation of whatever is already in the
 $p \land q$ column, one row at a time:
 
+\[
+\begin{array}{l|l|l}
+p \land q & \neg (p \land q) & \text{Result} \\
+\hline
+0 & \neg (0) & 1 \\
+0 & \neg (0) & 1 \\
+0 & \neg (0) & 1 \\
+1 & \neg (1) & 0
+\end{array}
+\]
+
+All we need to do now is copy the **Result** column from the above table into the truth table we are building.
+
 ![The completed truth table for $\neg (p \land q)$.](17.svg)
 
 That's the advantage of an intermediary column: instead of working out
@@ -343,31 +358,51 @@ With those two columns in hand, we build a third intermediary column for
 $\neg q \lor \neg r$, taking the disjunction of the two columns we just
 built, row by row:
 
+\[
+\begin{array}{l|l|l|l}
+\neg q & \neg r & \neg q \lor \neg r & \text{Result} \\
+\hline
+1 & 1 & 1 \lor 1 & 1 \\
+1 & 0 & 1 \lor 0 & 1 \\
+0 & 1 & 0 \lor 1 & 1 \\
+0 & 0 & 0 \lor 0 & 0 \\
+1 & 1 & 1 \lor 1 & 1 \\
+1 & 0 & 1 \lor 0 & 1 \\
+0 & 1 & 0 \lor 1 & 1 \\
+0 & 0 & 0 \lor 0 & 0
+\end{array}
+\]
+
+All we need to do now is copy the **Result** column from the above table into the truth table we are building.
+
 ![The table with the $\neg q \lor \neg r$ column filled in, and the final $p \land (\neg q \lor \neg r)$ column still blank.](19.svg)
 
 Finally, filling in $p \land (\neg q \lor \neg r)$ is just a matter of
 taking the conjunction of $p$ column with the $\neg q \lor \neg r$ column we just
 finished — no need to think about $q$ or $r$ individually at all:
 
+\[
+\begin{array}{l|l|l|l}
+p & \neg q \lor \neg r & p \land (\neg q \lor \neg r) & \text{Result} \\
+\hline
+0 & 1 & 0 \land 1 & 0 \\
+0 & 1 & 0 \land 1 & 0 \\
+0 & 1 & 0 \land 1 & 0 \\
+0 & 0 & 0 \land 0 & 0 \\
+1 & 1 & 1 \land 1 & 1 \\
+1 & 1 & 1 \land 1 & 1 \\
+1 & 1 & 1 \land 1 & 1 \\
+1 & 0 & 1 \land 0 & 0
+\end{array}
+\]
+
+We then copy the **Result** column from the above table into the truth table we are building, same as usual.
+
 ![The completed truth table for $p \land (\neg q \lor \neg r)$.](20.svg)
-{{< /example >}}
 
-Alternatively, we could construct an initial table that just consists of
-intermediary columns, and then construct a final table showing just the
-atomic propositions and the overall desired proposition.
+We could leave the table as it is, with a column for every intermediary
+piece we used along the way. Or, we could construct a condensed table that
+only shows the atomic propositions along with the desired expression.
 
-{{< example title="Constructing an intermediary table" >}}
-Consider the expression $\neg p \lor \neg q$. Here, both pieces being
-combined by the disjunction are themselves negations, so it's convenient to
-build an intermediary table with a column for *each* of $\neg p$ and
-$\neg q$:
-
-![The intermediary table with columns for $\neg p$ and $\neg q$.](21.svg)
-
-Now that we have both intermediary columns worked out, we can build a
-final table with just the atomic propositions and the desired expression
-$\neg p \lor \neg q$, taking the disjunction of the two intermediary
-columns above row by row:
-
-![The final table for $\neg p \lor \neg q$, with only the atomic propositions and the desired expression.](22.svg)
+![The condensed truth table for $p \land (\neg q \lor \neg r)$, with only the atomic propositions and the desired expression.](21.svg)
 {{< /example >}}
