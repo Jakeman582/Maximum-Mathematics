@@ -1,17 +1,19 @@
 {{- /*
-  Formats "Chapter.Section.Number" for theorem/proof numbering, degrading
-  gracefully depending on what front matter the page actually sets:
+  Formats "Chapter.Section.Number" for notice-box numbering (theorem, proof,
+  example), degrading gracefully depending on what front matter the page
+  actually sets:
     chapter and section both set -> "1.1.1"
     chapter only                 -> "1.1"
     neither set                  -> "1"
 
-  Shared by theorem.html and proof.html so a proof always computes the exact
-  same number its theorem did, rather than two separate places deriving it
-  and risking drift.
+  Shared across theorem.html, proof.html, and example.html so a proof always
+  computes the exact same number its theorem did (rather than two separate
+  places deriving it and risking drift), and so every notice type numbers
+  itself identically.
 
   Expects:
     page   — the calling shortcode's .Page
-    number — the raw integer (that page's current theoremCount)
+    number — the raw integer (that page's current per-kind counter)
 */ -}}
 
 {{- $page := .page -}}

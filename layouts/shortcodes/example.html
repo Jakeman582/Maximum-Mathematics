@@ -1,5 +1,8 @@
 {{- /*
-  example — a worked example.
+  example — a worked example, numbered "Example <chapter>.<section>.<n>: "
+  ahead of its title (see _mm/notice-number.html for how chapter/section
+  front matter affects the format). Numbering restarts at 1 on every page —
+  <n> is just that example's position among the examples on the page.
 
   Parameters:
     title — a description of what the example does, e.g. "Tossing two fair
@@ -14,9 +17,14 @@
   {{- errorf "example shortcode in %q: the `title` parameter is required" .Page.File.Path -}}
 {{- end -}}
 
+{{- $count := add (.Page.Store.Get "exampleCount" | default 0) 1 -}}
+{{- .Page.Store.Set "exampleCount" $count -}}
+{{- $number := partial "_mm/notice-number.html" (dict "page" .Page "number" $count) -}}
+
 {{- partial "_mm/notice-box.html" (dict
   "kind"    "example"
-  "title"   $title
+  "title"   (printf "Example %s: %s" $number $title)
   "content" .Inner
   "page"    .Page
+  "id"      (printf "example-%d" $count)
 ) -}}

@@ -13,7 +13,7 @@
 {{- if eq $count 0 -}}
   {{- errorf "proof shortcode in %q: no theorem on this page yet for this proof to number itself after" .Page.File.Path -}}
 {{- end -}}
-{{- $number := partial "_mm/theorem-number.html" (dict "page" .Page "number" $count) -}}
+{{- $number := partial "_mm/notice-number.html" (dict "page" .Page "number" $count) -}}
 
 {{- partial "_mm/notice-box.html" (dict
   "kind"        "theorem"

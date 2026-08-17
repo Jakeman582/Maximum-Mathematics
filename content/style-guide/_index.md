@@ -50,8 +50,9 @@ positive divisor other than 1 and itself — contradicting that $p$ is prime.
 
 ## Example
 
-A worked example, titled by what it demonstrates, so you can find the one
-you're after at a glance.
+A worked example. Numbered the same way as Theorem — Example 1.1.1 is the
+first example in Section 1 of Chapter 1 — and titled by what it
+demonstrates, so you can find the one you're after at a glance.
 
 {{< example title="Tossing two fair six-sided dice" >}}
 The sample space is the 36 ordered pairs $(i, j)$ with $i, j \in \{1, ..., 6\}$.

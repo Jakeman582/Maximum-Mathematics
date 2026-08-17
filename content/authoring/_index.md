@@ -221,9 +221,21 @@ fragment, not a number, e.g. `title="Every prime greater than 2 is odd"`.
 `definition` takes `terms` — a comma-separated list, natural case; the box
 capitalizes them itself. `question` takes no parameters — it numbers itself.
 
-`theorem` numbers itself as `Theorem <chapter>.<section>.<n>`, where `n`
-restarts at 1 on every page and `chapter`/`section` come from the page's own
-front matter (see the table above) — set neither and it's just `Theorem 1`.
+`theorem` and `example` both number themselves — `Theorem
+<chapter>.<section>.<n>` and `Example <chapter>.<section>.<n>` respectively —
+where `n` restarts at 1 on every page, counted separately per type, and
+`chapter`/`section` come from the page's own front matter (see the table
+above) — set neither and it's just `Theorem 1` / `Example 1`. Your `title`
+param supplies only the text after the number; you never write the number
+yourself:
+
+```markdown
+{{</* example title="Tossing two fair six-sided dice" */>}}
+```
+
+renders as `Example 2.1.3: Tossing two fair six-sided dice` if it's the third
+`example` on a page whose front matter sets `chapter = 2` and `section = 1`.
+
 `proof` takes no parameters and must come immediately after the `theorem` it
 belongs to; it reuses that theorem's exact number rather than counting
 itself, so never put another theorem between a theorem and its proof:

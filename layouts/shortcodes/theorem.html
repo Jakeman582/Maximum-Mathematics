@@ -1,6 +1,6 @@
 {{- /*
   theorem — states a result, numbered "Theorem <chapter>.<section>.<n>" (see
-  _mm/theorem-number.html for how chapter/section front matter affects the
+  _mm/notice-number.html for how chapter/section front matter affects the
   format). Numbering restarts at 1 on every page. Pair with a proof shortcode
   call immediately after for the (optional) proof, rather than nesting it
   inside — see proof.html, which reuses this same number.
@@ -20,7 +20,7 @@
 
 {{- $count := add (.Page.Store.Get "theoremCount" | default 0) 1 -}}
 {{- .Page.Store.Set "theoremCount" $count -}}
-{{- $number := partial "_mm/theorem-number.html" (dict "page" .Page "number" $count) -}}
+{{- $number := partial "_mm/notice-number.html" (dict "page" .Page "number" $count) -}}
 
 {{- partial "_mm/notice-box.html" (dict
   "kind"    "theorem"

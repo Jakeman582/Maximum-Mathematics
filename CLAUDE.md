@@ -259,28 +259,34 @@ Colors live in `assets/css/maximum-mathematics.css` under `.mm-notice--<kind>`.
 |---|---|---|---|
 | **Definition** | Light blue | Term(s) being defined, in capitals | The definition, as prose |
 | **Theorem** + **Proof** | Fuchsia | `Theorem <chapter>.<section>.<n>` plus a sentence fragment stating the result, e.g. "Theorem 2.1.3: Every prime greater than 2 is odd"; the paired `Proof <chapter>.<section>.<n>` reuses the same number | Statement, then a separate `proof` call right after — collapsed until clicked |
-| **Example** | Light green | What's being demonstrated ("Tossing two dice," not "Example 1") | The worked example |
+| **Example** | Light green | `Example <chapter>.<section>.<n>:` plus what's being demonstrated, e.g. "Example 1.4.2: Tossing two dice" | The worked example |
 | **Star** | Yellow | The observation itself | Why it matters / what follows from it |
 | **Warning** | Red | The pitfall being flagged | How the mistake happens and how to avoid it |
 | **Question** + **Answer** | Gray | Just "Question N" — numbered automatically from 1, resets every page; the paired "Solution N" reuses the same number | The problem, then a separate `answer` call right after — collapsed until clicked |
 
 Usage notes:
 
-- `theorem`/`example`/`star`/`warning` take a required `title` param (a string,
-  not numbered — for `theorem` this is the sentence fragment, the number is
-  automatic). `definition` takes `terms` — a comma-separated list, natural
-  case; the shortcode capitalizes them for the title bar itself.
+- `theorem`/`example`/`star`/`warning` take a required `title` param (a
+  string — for `theorem` and `example` this is just the sentence fragment or
+  description; the number prefix is automatic and not part of what you pass
+  in). `definition` takes `terms` — a comma-separated list, natural case; the
+  shortcode capitalizes them for the title bar itself.
 - `proof` and `answer` take no params. Place them immediately after the
   `theorem`/`question` they belong to — there's no explicit link between the
   pair beyond that adjacency, so don't separate them with other content, and
   never put a second theorem/question in between: neither counts itself,
   each reuses whichever theorem's/question's count was most recently
   incremented.
-- `theorem`'s number restarts at 1 on every page and is prefixed by the page's
-  `chapter`/`section` front matter (`section` alone has no effect; both must
-  be set to get the three-part form) — set neither and it's just "Theorem 1".
-  This numbering is independent of `statement`'s, which only ever uses
-  `chapter`, never `section`.
+- `theorem` and `example` both restart their numbering at 1 on every page,
+  independently of each other (a page's first `example` is "Example
+  <chapter>.<section>.1" even if three theorems came before it), and both are
+  prefixed by the page's `chapter`/`section` front matter the same way
+  (`section` alone has no effect; both must be set to get the three-part
+  form) — set neither and it's just "Theorem 1" / "Example 1". They share the
+  same formatting partial (`_mm/notice-number.html`), so this is one
+  behavior, not two coincidentally-matching ones. This numbering is
+  independent of `statement`'s, which only ever uses `chapter`, never
+  `section`.
 - Highlight a defined term inline, anywhere on the page — not just inside its
   own `definition` box — by wrapping it in `==double equals signs==`
   (Goldmark's `mark` extension, restyled from the default yellow highlight to

@@ -358,6 +358,30 @@ mjx-container[display='true']::-webkit-scrollbar {
 }
 
 /*----------------------------------------------------------------------------
+ * Reference grids — a plain Markdown table used as a two-column name/formula
+ * list (e.g. the Laws of Logic). The theme already outlines every table and
+ * every cell; this just overrides the default left/middle text alignment so
+ * a law's name stays pinned to the top of its row even when the formula
+ * beside it wraps onto several stacked lines (each cell's own array block
+ * handles that stacking — MathJax vertically centers the array as a whole
+ * within the cell, so top-aligning the *cell* keeps a one-line neighbor from
+ * drifting away from the first line of a taller one).
+ *--------------------------------------------------------------------------*/
+article.chapter table th,
+article.chapter table td {
+  text-align: center;
+  vertical-align: top;
+}
+
+/* These reference grids don't have column titles worth showing — Goldmark's
+   table syntax still requires a header row to exist in the source, so it's
+   hidden here rather than left as an empty, distractingly-tinted strip
+   (the theme gives every `th` row its own background and sticky position). */
+article.chapter table thead {
+  display: none;
+}
+
+/*----------------------------------------------------------------------------
  * Definition, theorem, and proof blocks
  *--------------------------------------------------------------------------*/
 
