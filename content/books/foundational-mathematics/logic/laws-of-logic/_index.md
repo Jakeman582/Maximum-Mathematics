@@ -220,16 +220,16 @@ Here, we present a rather long list of known logical laws.
 
 |  |  |
 |---|---|
-| Law of Double Negation | $\neg \neg p \Leftrightarrow p$ |
-| DeMorgan's Laws | $\begin{array}{c} \neg (p \land q) \Leftrightarrow \neg p \lor \neg q \\ \neg (p \lor q) \Leftrightarrow \neg p \land \neg q \end{array}$ |
-| Commutative Laws | $\begin{array}{c} p \land q \Leftrightarrow q \land p \\ p \lor q \Leftrightarrow q \lor p \end{array}$ |
-| Associative Laws | $\begin{array}{c} (p \land q) \land r \Leftrightarrow p \land (q \land r) \\ (p \lor q) \lor r \Leftrightarrow p \lor (q \lor r) \end{array}$ |
-| Distributive Laws | $\begin{array}{c} p \land (q \lor r) \Leftrightarrow (p \land q) \lor (p \land r) \\ p \lor (q \land r) \Leftrightarrow (p \lor q) \land (p \lor r) \end{array}$ |
-| Idempotent Laws | $\begin{array}{c} p \land p \Leftrightarrow p \\ p \lor p \Leftrightarrow p \end{array}$ |
-| Identity Laws | $\begin{array}{c} p \land T_0 \Leftrightarrow p \\ p \lor F_0 \Leftrightarrow p \end{array}$ |
-| Inverse Laws | $\begin{array}{c} p \land \neg p \Leftrightarrow F_0 \\ p \lor \neg p \Leftrightarrow T_0 \end{array}$ |
-| Domination Laws | $\begin{array}{c} p \land F_0 \Leftrightarrow F_0 \\ p \lor T_0 \Leftrightarrow T_0 \end{array}$ |
-| Absorption Laws | $\begin{array}{c} p \land (p \lor q) \Leftrightarrow p \\ p \lor (p \land q) \Leftrightarrow p \end{array}$ |
+| Law of Double Negation | $\neg \neg p \Longleftrightarrow p$ |
+| DeMorgan's Laws | $\begin{array}{c} \neg (p \land q) \Longleftrightarrow \neg p \lor \neg q \\ \neg (p \lor q) \Longleftrightarrow \neg p \land \neg q \end{array}$ |
+| Commutative Laws | $\begin{array}{c} p \land q \Longleftrightarrow q \land p \\ p \lor q \Longleftrightarrow q \lor p \end{array}$ |
+| Associative Laws | $\begin{array}{c} (p \land q) \land r \Longleftrightarrow p \land (q \land r) \\ (p \lor q) \lor r \Longleftrightarrow p \lor (q \lor r) \end{array}$ |
+| Distributive Laws | $\begin{array}{c} p \land (q \lor r) \Longleftrightarrow (p \land q) \lor (p \land r) \\ p \lor (q \land r) \Longleftrightarrow (p \lor q) \land (p \lor r) \end{array}$ |
+| Idempotent Laws | $\begin{array}{c} p \land p \Longleftrightarrow p \\ p \lor p \Longleftrightarrow p \end{array}$ |
+| Identity Laws | $\begin{array}{c} p \land T_0 \Longleftrightarrow p \\ p \lor F_0 \Longleftrightarrow p \end{array}$ |
+| Inverse Laws | $\begin{array}{c} p \land \neg p \Longleftrightarrow F_0 \\ p \lor \neg p \Longleftrightarrow T_0 \end{array}$ |
+| Domination Laws | $\begin{array}{c} p \land F_0 \Longleftrightarrow F_0 \\ p \lor T_0 \Longleftrightarrow T_0 \end{array}$ |
+| Absorption Laws | $\begin{array}{c} p \land (p \lor q) \Longleftrightarrow p \\ p \lor (p \land q) \Longleftrightarrow p \end{array}$ |
 
 Just like we did in the examples, all of the above can be verified by
 examining a truth table containing a biconditional and determining
@@ -242,8 +242,8 @@ There are a couple more logical equivalencies that prove to be useful.
 
 |  |  |
 |---|---|
-| Law of Material Implication | $p \to q \Leftrightarrow \neg p \lor q$ |
-| Law of Material Equivalence | $p \leftrightarrow q \Leftrightarrow (p \land q) \lor (\neg p \land \neg q)$ |
-| Exclusive-or Equivalence | $p \veebar q \Leftrightarrow (p \land \neg q) \lor (\neg p \land q)$ |
-| Law of Mutual Implication | $p \leftrightarrow q \Leftrightarrow (p \to q) \land (q \to p)$ |
-| Negated Biconditional Equivalence | $p \veebar q \Leftrightarrow \neg (p \leftrightarrow q)$ |
+| Law of Material Implication | $p \to q \Longleftrightarrow \neg p \lor q$ |
+| Law of Material Equivalence | $p \leftrightarrow q \Longleftrightarrow (p \land q) \lor (\neg p \land \neg q)$ |
+| Exclusive-or Equivalence | $p \veebar q \Longleftrightarrow (p \land \neg q) \lor (\neg p \land q)$ |
+| Law of Mutual Implication | $p \leftrightarrow q \Longleftrightarrow (p \to q) \land (q \to p)$ |
+| Negated Biconditional Equivalence | $p \veebar q \Longleftrightarrow \neg (p \leftrightarrow q)$ |

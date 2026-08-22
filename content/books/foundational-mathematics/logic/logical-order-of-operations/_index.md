@@ -171,12 +171,12 @@ Let's see an example.
 \[
 \begin{array}{lll}
  & \boldsymbol{0 \land 1 \to 0 \leftrightarrow 1 \lor (1 \veebar 1) \land 0 \to (1 \to \neg 1 \land (0 \lor 0))} & \textbf{Reason} \\
-= & 0 \land 1 \to 0 \leftrightarrow 1 \lor 0 \land 0 \to (1 \to \neg 1 \land 0) & \textit{Evaluate the parenthesized expressions.} \\
-= & 0 \land 1 \to 0 \leftrightarrow 1 \lor 0 \land 0 \to (1 \to 0 \land 0) & \textit{Evaluate the negation.} \\
-= & 0 \to 0 \leftrightarrow 1 \lor 0 \to 0 & \textit{Evaluate every conjunction.} \\
-= & 0 \to 0 \leftrightarrow 1 \to 0 & \textit{Evaluate the disjunction.} \\
-= & 1 \leftrightarrow 0 & \textit{Evaluate every implication.} \\
-= & 0 & \textit{Evaluate the biconditional.}
+= & 0 \land 1 \to 0 \leftrightarrow 1 \lor 0 \land 0 \to (1 \to \neg 1 \land 0) & \text{Evaluate the parenthesized expressions.} \\
+= & 0 \land 1 \to 0 \leftrightarrow 1 \lor 0 \land 0 \to (1 \to 0 \land 0) & \text{Evaluate the negation.} \\
+= & 0 \to 0 \leftrightarrow 1 \lor 0 \to 0 & \text{Evaluate every conjunction.} \\
+= & 0 \to 0 \leftrightarrow 1 \to 0 & \text{Evaluate the disjunction.} \\
+= & 1 \leftrightarrow 0 & \text{Evaluate every implication.} \\
+= & 0 & \text{Evaluate the biconditional.}
 \end{array}
 \]
 {{< /example >}}
@@ -187,11 +187,11 @@ already appear in a large, single block.
 {{< example title="Evaluating another expression" >}}
 \[
 \begin{array}{llll}
-\boldsymbol{0 \land (\neg 1 \to \neg 0) \veebar 1 \leftrightarrow 0 \lor 1} & = & 0 \land 1 \veebar 1 \leftrightarrow 0 \lor 1 & \textit{Evaluate the parenthesized implication.} \\
-& = & 0 \veebar 1 \leftrightarrow 0 \lor 1 & \textit{Evaluate the conjunction.} \\
-& = & 0 \veebar 1 \leftrightarrow 1 & \textit{Evaluate the disjunction.} \\
-& = & 1 \leftrightarrow 1 & \textit{Evaluate the exclusive-or.} \\
-& = & 1 & \textit{Evaluate the biconditional.}
+\boldsymbol{0 \land (\neg 1 \to \neg 0) \veebar 1 \leftrightarrow 0 \lor 1} & = & 0 \land 1 \veebar 1 \leftrightarrow 0 \lor 1 & \text{Evaluate the parenthesized implication.} \\
+& = & 0 \veebar 1 \leftrightarrow 0 \lor 1 & \text{Evaluate the conjunction.} \\
+& = & 0 \veebar 1 \leftrightarrow 1 & \text{Evaluate the disjunction.} \\
+& = & 1 \leftrightarrow 1 & \text{Evaluate the exclusive-or.} \\
+& = & 1 & \text{Evaluate the biconditional.}
 \end{array}
 \]
 {{< /example >}}

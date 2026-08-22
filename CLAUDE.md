@@ -163,22 +163,40 @@ result — uses one of two `\begin{array}{...}` layouts, never an unadorned
 (the "A Note on Organizing Arithmetic" section) for both in place.
 
 **Primary format — assume this one unless there's a reason to reach for the
-secondary.** Three columns: blank/`=`, the expression, the reason. The given
-expression sits bolded in the first row of the *second* column; every row
-after that repeats in the same column, ordinary weight, with a leading `=`
-in the first column. The third column is a bold-italic `Reason` header in
-the first row, then an italicized justification per row after:
+secondary.** Three columns, unbordered: blank/`=`, the expression, the
+reason. The given expression sits bolded in the first row of the *second*
+column; every row after that repeats in the same column, ordinary weight,
+with a leading `=` in the first column. The third column is a bold `Reason`
+header in the first row, then a plain (non-bold, non-italic) justification
+per row after:
 
 ```
 \[
 \begin{array}{lll}
- & \boldsymbol{<given expression>} & \textbf{\textit{Reason}} \\
-= & <simplification 1> & \textit{<reason 1>} \\
-= & <simplification 2> & \textit{<reason 2>} \\
-= & <final value>       & \textit{<final reason>}
+ & \boldsymbol{<given expression>} & \textbf{Reason} \\
+= & <simplification 1> & \text{<reason 1>} \\
+= & <simplification 2> & \text{<reason 2>} \\
+= & <final value>       & \text{<final reason>}
 \end{array}
 \]
 ```
+
+Swap `=` for `\Longleftrightarrow` throughout (first column and header
+preview alike) when the steps are a chain of *logical equivalencies* rather
+than arithmetic equalities — see
+`content/books/foundational-mathematics/logic/simplifying-logical-expressions/_index.md`
+for this in place. Everything else about the format stays the same; only
+the connecting symbol changes, since it's literally a different relation
+(`\Longleftrightarrow` claims two propositions are logically equivalent, the
+same distinction documented under "Logical Equivalence" in the Laws of
+Logic page). Use the long form here, not inline `\Leftrightarrow` — inline
+equivalence statements outside a tabular derivation keep the short form.
+
+Borders (`{l|l|l}` plus `\hline` under the header) are reserved for a
+*different* pattern — the small bridging tables that show one intermediary
+column's values being carried into the next (see "Intermediary Columns" on
+the Modeling Logic with Truth Tables page). Don't carry borders over to this
+primary format; the two are visually distinct on purpose.
 
 **Secondary format — for routine work that doesn't need much narration.**
 Three columns, or four when reasons are worth including. The given
@@ -190,9 +208,9 @@ reason per row:
 ```
 \[
 \begin{array}{llll}
-\boldsymbol{<given expression>} & = & <simplification 1> & \textit{<reason 1>} \\
-                                 & = & <simplification 2> & \textit{<reason 2>} \\
-                                 & = & <final value>       & \textit{<final reason>}
+\boldsymbol{<given expression>} & = & <simplification 1> & \text{<reason 1>} \\
+                                 & = & <simplification 2> & \text{<reason 2>} \\
+                                 & = & <final value>       & \text{<final reason>}
 \end{array}
 \]
 ```
@@ -222,6 +240,14 @@ right:
   `\text{}` block ever throws `'&' can not be used here` (or similarly for
   other TeX-special characters — `%`, `#`, `_`), escape the character with a
   leading backslash rather than assuming it's a content error.
+- When a reason ends with a symbol pulled out of `\text{}` — e.g.
+  `\text{Commutative Law of} \lor` — the space between the closing `}` and
+  the symbol gets silently dropped, rendering as "of∨" with no gap. Math
+  mode ignores literal whitespace between tokens outside `\text{}`, so that
+  space does nothing; `\text{}` is the only place in the expression where a
+  literal space still counts. Put the space *inside* the braces instead —
+  `\text{Commutative Law of } \lor` — so it survives. Same fix for any
+  reason text immediately followed by a symbol, not just `\lor`/`\land`.
 - A wide table like these routinely overflows a notice box's width. Don't
   reach for a smaller font-size as the fix — that's a losing battle against
   longer reasons over time. The site instead gives every overflowing
