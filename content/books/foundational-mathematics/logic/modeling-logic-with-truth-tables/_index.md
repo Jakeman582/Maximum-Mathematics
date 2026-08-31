@@ -47,8 +47,8 @@ In the expressions
 & p \land q \\
 & p \lor q \\
 & p \veebar q \\
-& p \longrightarrow q \\
-& p \longleftrightarrow q
+& p \to q \\
+& p \leftrightarrow q
 \end{align*}
 \]
 
@@ -60,10 +60,10 @@ Note that atomic propositions themselves do *not* need to be primitive.
 Let $p$ and $q$ be compound propositions defined as follows:
 
 \[
-\begin{align*}
-p: a \land b \\
-q: a \lor b
-\end{align*}
+\begin{array}{rl}
+p\text{: } &a \land b \\
+q\text{: } &a \lor b
+\end{array}
 \]
 
 In the context above, $a$ and $b$ are the atomic propositions.
@@ -73,8 +73,8 @@ Now reconsider the six expressions from earlier:
 - $p \land q$
 - $p \lor q$
 - $p \veebar q$
-- $p \longrightarrow q$
-- $p \longleftrightarrow q$
+- $p \to q$
+- $p \leftrightarrow q$
 
 Here in these expressions, $p$ and $q$ are also considered atomic, since
 they are named propositions being connected together to form compound
@@ -84,8 +84,8 @@ of $p$ and $q$ given above, in terms of the propositions $a$ and $b$:
 - $(a \land b) \land (a \lor b)$
 - $(a \land b) \lor (a \lor b)$
 - $(a \land b) \veebar (a \lor b)$
-- $(a \land b) \longrightarrow (a \lor b)$
-- $(a \land b) \longleftrightarrow (a \lor b)$
+- $(a \land b) \to (a \lor b)$
+- $(a \land b) \leftrightarrow (a \lor b)$
 {{< /example >}}
 
 In general, a proposition that is named or labeled (usually with a
@@ -250,15 +250,15 @@ values; or put another way, not equal to each other.
 
 {{< figure src="12.svg" alt="The truth table for exclusive-or, $p \veebar q$." >}}
 
-### Implication $\longrightarrow$
+### Implication $\to$
 
 The definition of implication tells us that the **only** time an
 implication is false is if $p$ is true, and $q$ is
 false. Otherwise, the implication is true.
 
-{{< figure src="13.svg" alt="The truth table for implication, $p \longrightarrow q$." >}}
+{{< figure src="13.svg" alt="The truth table for implication, $p \to q$." >}}
 
-### Biconditional $\longleftrightarrow$
+### Biconditional $\leftrightarrow$
 
 The definition for a biconditional essentially tells us that if the two
 atomic propositions have the same truth value, meaning they are equal to
@@ -266,7 +266,7 @@ each other, then the biconditional itself is true. It is false otherwise.
 We can almost think of the biconditional as being the exact opposite of an
 exclusive-or between two propositions.
 
-{{< figure src="14.svg" alt="The truth table for the biconditional, $p \longleftrightarrow q$." >}}
+{{< figure src="14.svg" alt="The truth table for the biconditional, $p \leftrightarrow q$." >}}
 
 ## Combining All Logical Connectives Into One Table
 ---

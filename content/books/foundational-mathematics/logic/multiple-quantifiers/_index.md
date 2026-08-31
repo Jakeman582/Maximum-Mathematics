@@ -61,7 +61,11 @@ in for the free variable $y$.
 {{< example title="A quantified statement with a free variable" >}}
 Consider the universe $N$ of all integers, along with the open statement
 
-$$p(m, n)\text{: } m + n = 0.$$
+\[
+\begin{array}{rl}
+p(m, n)\text{: } &m + n = 0.
+\end{array}
+\]
 
 What happens when we quantify the $m$ variable? With the universal
 quantifier, we get $\forall m\ [p(m, n)]$, which translates to "For every
@@ -149,12 +153,12 @@ There's a shorthand notation commonly used with repeated quantifiers.
 For some universe $\mathcal{U}$ and the open statement $p(x, y)$, we can
 use the following conventions:
 
-$$\forall x\ \forall y\ [p(x, y)] \Leftrightarrow \forall x, y\ [p(x, y)] \qquad \exists x\ \exists y\ [p(x, y)] \Leftrightarrow \exists x, y\ [p(x, y)].$$
+$$\forall x\ \forall y\ [p(x, y)] \Longleftrightarrow \forall x, y\ [p(x, y)] \qquad \exists x\ \exists y\ [p(x, y)] \Longleftrightarrow \exists x, y\ [p(x, y)].$$
 
 Naturally, this extends to three variables — for the open statement
 $q(a, b, c)$, we can write
 
-$$\forall a\ \forall b\ \forall c\ [q(a, b, c)] \Leftrightarrow \forall a, b, c\ [q(a, b, c)] \qquad \exists a\ \exists b\ \exists c\ [q(a, b, c)] \Leftrightarrow \exists a, b, c\ [q(a, b, c)].$$
+$$\forall a\ \forall b\ \forall c\ [q(a, b, c)] \Longleftrightarrow \forall a, b, c\ [q(a, b, c)] \qquad \exists a\ \exists b\ \exists c\ [q(a, b, c)] \Longleftrightarrow \exists a, b, c\ [q(a, b, c)].$$
 
 Of course, this can be extended to as many variables as needed.
 
@@ -256,7 +260,7 @@ multiple quantifiers.
 For a given universe $\mathcal{U}$ and an open statement $p(x)$ defined
 on that universe, we saw earlier that
 
-$$\neg \forall x\ [p(x)] \Leftrightarrow \exists x\ [\neg p(x)] \qquad \neg \exists x\ [p(x)] \Leftrightarrow \forall x\ [\neg p(x)].$$
+$$\neg \forall x\ [p(x)] \Longleftrightarrow \exists x\ [\neg p(x)] \qquad \neg \exists x\ [p(x)] \Longleftrightarrow \forall x\ [\neg p(x)].$$
 
 When negating a multiply quantified statement, we just need to keep
 punting the negation inside the quantified statement, one layer at a
@@ -265,15 +269,15 @@ time, until all that's left is to negate the contained proposition:
 \[
 \begin{array}{lll}
  & \boldsymbol{\neg \forall x\ \forall y\ [p(x, y)]} & \textbf{Reason} \\
-\Longleftrightarrow & \exists x\ [\neg \forall y\ [p(x, y)]] & \neg \forall x\ [p(x)] \Leftrightarrow \exists x\ [\neg p(x)] \\
-\Longleftrightarrow & \exists x\ \exists y\ [\neg p(x, y)] & \neg \forall x\ [p(x)] \Leftrightarrow \exists x\ [\neg p(x)]
+\Longleftrightarrow & \exists x\ [\neg \forall y\ [p(x, y)]] & \neg \forall x\ [p(x)] \Longleftrightarrow \exists x\ [\neg p(x)] \\
+\Longleftrightarrow & \exists x\ \exists y\ [\neg p(x, y)] & \neg \forall x\ [p(x)] \Longleftrightarrow \exists x\ [\neg p(x)]
 \end{array}
 \]
 
 So, after punting the negation further inside each nested layer, we've
 determined that whatever open statement $p(x, y)$ represents,
 
-$$\neg \forall x\ \forall y\ [p(x, y)] \Leftrightarrow \exists x\ \exists y\ [\neg p(x, y)].$$
+$$\neg \forall x\ \forall y\ [p(x, y)] \Longleftrightarrow \exists x\ \exists y\ [\neg p(x, y)].$$
 
 This same strategy works for the other forms of multiply quantified
 statements, so we summarize the important combinations below.
@@ -297,21 +301,21 @@ Suppose we have a universe $\mathcal{U}$, and open statements $a(x, y)$,
 $b(x, y)$, and $c(x, y)$ defined on that universe. We want to negate the
 statement
 
-$$\exists x\ \forall y\ [a(x, y) \land b(x, y) \longrightarrow c(x, y)].$$
+$$\exists x\ \forall y\ [a(x, y) \land b(x, y) \to c(x, y)].$$
 
 Before we start, we make the following shorthand substitutions to keep
 things tidy:
 
 $$a(x, y): a \qquad b(x, y): b \qquad c(x, y): c$$
 
-giving us $\exists x\ \forall y\ [(a \land b) \longrightarrow c]$. Now we
+giving us $\exists x\ \forall y\ [(a \land b) \to c]$. Now we
 perform the negation:
 
 \[
 \begin{array}{lll}
- & \boldsymbol{\neg \exists x\ \forall y\ [(a \land b) \longrightarrow c]} & \textbf{Reason} \\
-\Longleftrightarrow & \forall x\ \exists y\ [\neg[(a \land b) \longrightarrow c]] & \neg \exists x\ \forall y\ [p(x, y)] \Leftrightarrow \forall x\ \exists y\ [\neg p(x, y)] \\
-\Longleftrightarrow & \forall x\ \exists y\ [\neg[\neg(a \land b) \lor c]] & p \longrightarrow q \Leftrightarrow \neg p \lor q \\
+ & \boldsymbol{\neg \exists x\ \forall y\ [(a \land b) \to c]} & \textbf{Reason} \\
+\Longleftrightarrow & \forall x\ \exists y\ [\neg[(a \land b) \to c]] & \neg \exists x\ \forall y\ [p(x, y)] \Longleftrightarrow \forall x\ \exists y\ [\neg p(x, y)] \\
+\Longleftrightarrow & \forall x\ \exists y\ [\neg[\neg(a \land b) \lor c]] & p \to q \Longleftrightarrow \neg p \lor q \\
 \Longleftrightarrow & \forall x\ \exists y\ [\neg \neg (a \land b) \land \neg c] & \text{DeMorgan's Law} \\
 \Longleftrightarrow & \forall x\ \exists y\ [(a \land b) \land \neg c] & \text{Law of Double Negation} \\
 \Longleftrightarrow & \forall x\ \exists y\ [a \land b \land \neg c] & \text{Associative Law of } \land
@@ -321,7 +325,7 @@ perform the negation:
 Substituting $a(x, y)$, $b(x, y)$, and $c(x, y)$ back in for $a$, $b$,
 and $c$ respectively, we find that the negation of
 
-$$\exists x\ \forall y\ [a(x, y) \land b(x, y) \longrightarrow c(x, y)]$$
+$$\exists x\ \forall y\ [a(x, y) \land b(x, y) \to c(x, y)]$$
 
 is the statement
 

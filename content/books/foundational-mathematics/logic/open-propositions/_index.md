@@ -43,12 +43,16 @@ proposition.
 We start by modeling the statement using a letter, like we've done up to
 this point, but we also use parentheses to denote the variable $x$:
 
-$$p(x)\text{: } x + 3 = 8.$$
+\[
+\begin{array}{rl}
+p(x)\text{: } &x + 3 = 8.
+\end{array}
+\]
 
 We can substitute values in for $x$ to get different propositions:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 p(5)\text{: } &5 + 3 = 8 \\
 p(3)\text{: } &3 + 3 = 8 \\
 p(-4.73)\text{: } &-4.73 + 3 = 8
@@ -69,7 +73,11 @@ p(-4.73) &= 0
 {{< example title="An open statement with ambiguous inputs" >}}
 Consider the statement
 
-$$p(x)\text{: } x \text{ was the 30th president of the United States.}$$
+\[
+\begin{array}{rl}
+p(x)\text{: } &x \text{ was the 30th president of the United States.}
+\end{array}
+\]
 
 We can evaluate this statement with many values substituted in for $x$:
 
@@ -124,7 +132,11 @@ $$\ell + 2w + 2h \leq 108 \text{ inches.}$$
 We can model this situation using a propositional function with three
 variables:
 
-$$s(\ell, w, h)\text{: } \ell + 2w + 2h \leq 108 \text{ inches.}$$
+\[
+\begin{array}{rl}
+s(\ell, w, h)\text{: } &\ell + 2w + 2h \leq 108 \text{ inches.}
+\end{array}
+\]
 
 Can we ship a box with dimensions $\ell = 32$ inches, $w = 16$ inches,
 and $h = 18$ inches?
@@ -164,7 +176,11 @@ Let's reconsider the president example.
 {{< example title="Restricting inputs to remove ambiguity" >}}
 For the propositional function
 
-$$p(x)\text{: } x \text{ was the 30th president of the United States,}$$
+\[
+\begin{array}{rl}
+p(x)\text{: } &x \text{ was the 30th president of the United States,}
+\end{array}
+\]
 
 we could argue $p(3)$ is either false or undefined. We can
 eliminate this ambiguity by specifying what kinds of values we're
@@ -190,7 +206,11 @@ U.S. president.
 {{< example title="Restricting inputs can force every output to agree" >}}
 Reconsider the propositional function
 
-$$p(x)\text{: } x \text{ was the 30th president of the United States.}$$
+\[
+\begin{array}{rl}
+p(x)\text{: } &x \text{ was the 30th president of the United States.}
+\end{array}
+\]
 
 Suppose we restrict the allowable values to names of U.S. presidents,
 except "Calvin Coolidge." Then $p(\text{Calvin Coolidge})$ would be
@@ -208,7 +228,11 @@ false, or undefined.
 {{< example title="The same restriction can change which values are undefined" >}}
 Reconsider the propositional function
 
-$$p(x)\text{: } x + 3 = 8.$$
+\[
+\begin{array}{rl}
+p(x)\text{: } &x + 3 = 8.
+\end{array}
+\]
 
 If we restrict our inputs to integers only, we can make $p(x)$ true by
 substituting $5$ in for $x$. Any other integer yields $0$. Non-integers
@@ -236,20 +260,23 @@ may be used.
 {{< example title="Checking whether a value belongs to the universe" >}}
 Consider the propositional function
 
-$$r(x)\text{: } x \text{ has a right angle,}$$
+\[
+\begin{array}{rl}
+r(x)\text{: } &x \text{ has a right angle,}
+\end{array}
+\]
 
 with universe of discourse $\mathcal{U}$ the collection of all planar
 polygons.
 
-Since the number $2$ isn't a planar polygon, $2 \notin \mathcal{U}$,
-so $r(2)$ is undefined.
+Since the number $2$ isn't a planar polygon, $r(2)$ is undefined.
 
 Suppose $s_1$ represents a square with side length $1$. $s_1$ is a
-planar polygon, so $s_1 \in \mathcal{U}$, meaning $r(s_1)$ is either $0$
+planar polygon, meaning $r(s_1)$ is either $0$
 or $1$. Since every square has a right angle, $r(s_1) = 1$.
 
 Suppose $s_2$ represents an equilateral triangle with side length $1$.
-$s_2$ is also a planar polygon, so $s_2 \in \mathcal{U}$. Since no
+$s_2$ is also a planar polygon. Since no
 equilateral triangle has a right angle, $r(s_2) = 0$.
 {{< /example >}}
 
@@ -260,7 +287,11 @@ those variables have to adhere to.
 {{< example title="One shared universe for every variable" >}}
 Consider the propositional function
 
-$$e(x, y)\text{: } x + y \text{ is an even integer,}$$
+\[
+\begin{array}{rl}
+e(x, y)\text{: } &x + y \text{ is an even integer,}
+\end{array}
+\]
 
 with universe of discourse $\mathcal{U}$ for both $x$ and $y$ the
 integers. This means both $x$ and $y$ must be integers.
@@ -283,7 +314,11 @@ a propositional function.
 {{< example title="A separate universe for each variable" >}}
 Consider the propositional function
 
-$$q(x, y)\text{: } x \div y \text{ is larger than 5.2,}$$
+\[
+\begin{array}{rl}
+q(x, y)\text{: } &x \div y \text{ is larger than 5.2,}
+\end{array}
+\]
 
 with universe for $x$, denoted $\mathcal{U}_x$, all real numbers, and
 universe for $y$, denoted $\mathcal{U}_y$, all real numbers except $0$.
@@ -293,11 +328,10 @@ $q(0.52, 0.1) = 0$.
 
 $q(1, 0)$ would be undefined, since $0 \notin \mathcal{U}_y$.
 
-$q(\text{Monday}, 1)$ would be undefined, since $\text{Monday} \notin
-\mathcal{U}_x$.
+$q(\text{Monday}, 1)$ would be undefined, since $\text{Monday}$ is not a real number.
 
-$q(\text{Friday}, 0)$ would be undefined, since $\text{Friday} \notin
-\mathcal{U}_x$, and $0 \notin \mathcal{U}_y$.
+$q(\text{Friday}, 0)$ would be undefined, since $\text{Friday}$ is not a real number, and $0$
+is not a non-zero real number.
 {{< /example >}}
 
 Of course, it's also possible for some of a propositional function's
@@ -307,7 +341,11 @@ universe.
 {{< example title="Some variables sharing a universe, others not" >}}
 Consider the propositional function
 
-$$q(x, y, z)\text{: } (x + y) \div z = 1,$$
+\[
+\begin{array}{rl}
+q(x, y, z)\text{: } &(x + y) \div z = 1,
+\end{array}
+\]
 
 with universe for $x$ and $y$, denoted $M$, all integers, and universe
 for $z$, denoted $N$, all real numbers except $0$.

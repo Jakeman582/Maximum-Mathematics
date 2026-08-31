@@ -47,9 +47,9 @@ reviewed below:
 
 \[
 \begin{align*}
-\neg \neg p &\Leftrightarrow p \\
-p \lor q &\Leftrightarrow q \lor p \\
-p \lor p &\Leftrightarrow p
+\neg \neg p &\Longleftrightarrow p \\
+p \lor q &\Longleftrightarrow q \lor p \\
+p \lor p &\Longleftrightarrow p
 \end{align*}
 \]
 
@@ -108,7 +108,7 @@ is a tautology.
 
 Thus, we see that
 
-$$[\neg (p \to q)] \Leftrightarrow [p \land \neg q]$$
+$$[\neg (p \to q)] \Longleftrightarrow [p \land \neg q]$$
 
 Using the truth table method required us to make keen observations on
 how to work, manipulate, and coax truth values into the proper rows so

@@ -80,7 +80,7 @@ barely.
 ---
 
 We have yet to see a proposition that is always true, no matter what
-combinations of truth values are assigned to its atomic propositions.
+combination of truth values are assigned to its atomic propositions.
 
 {{< example title="Evaluating $p \to (p \lor q)$" >}}
 We've seen $p \to (p \land q)$ above, but changing to the disjunction

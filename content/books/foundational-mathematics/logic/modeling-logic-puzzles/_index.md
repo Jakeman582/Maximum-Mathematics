@@ -51,7 +51,7 @@ One thing we can do is craft four statements representing who performed
 the heist:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 a\text{: } &\text{Adam performed the heist.} \\
 b\text{: } &\text{Billy performed the heist.} \\
 c\text{: } &\text{Chelsey performed the heist.} \\
@@ -62,7 +62,7 @@ d\text{: } &\text{Darla performed the heist.}
 Next, we represent each suspect's statement with a letter:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 \alpha\text{: } &\text{Chelsey performed the heist.} \\
 \beta\text{: } &\text{Billy did not perform the heist.} \\
 \gamma\text{: } &\text{Darla performed the heist.} \\
@@ -151,7 +151,7 @@ opposite types"?
 To answer this, we craft two propositions:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 a\text{: } &\text{Person } A \text{ is a knight.} \\
 b\text{: } &\text{Person } B \text{ is a knight.}
 \end{array}
@@ -160,7 +160,7 @@ b\text{: } &\text{Person } B \text{ is a knight.}
 Since there are only two types of people,
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 \neg a\text{: } &\text{Person } A \text{ is a knave.} \\
 \neg b\text{: } &\text{Person } B \text{ is a knave.}
 \end{array}
@@ -231,7 +231,7 @@ children say each time?
 Before we start, let's craft the following propositions:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 b\text{: } &\text{The boy has a muddy forehead.} \\
 g\text{: } &\text{The girl has a muddy forehead.}
 \end{array}

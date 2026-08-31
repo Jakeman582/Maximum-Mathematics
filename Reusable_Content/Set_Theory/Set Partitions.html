@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<!-- Google Analytics opt-out snippet added by Site Kit -->
+	<script>
+window["ga-disable-G-SVXC0XFE11"] = true;
+</script>
+	<!-- End Google Analytics opt-out snippet added by Site Kit -->
+	<title>Set Partitions</title>
+<meta name="robots" content="max-image-preview:large">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="alternate" type="application/rss+xml" title=" » Feed" href="https://jakehiance-com-243437.hostingersite.com/feed/">
+<link rel="alternate" type="application/rss+xml" title=" » Comments Feed" href="https://jakehiance-com-243437.hostingersite.com/comments/feed/">
+<link rel="stylesheet" id="blocksy-dynamic-global-css" href="Set%20Partitions_files/global.css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="Set%20Partitions_files/dashicons.min.css" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="Set%20Partitions_files/admin-bar.min.css" media="all">
+<style id="admin-bar-inline-css">
+
+		@media screen { html { margin-top: 32px !important; } }
+		@media screen and ( max-width: 782px ) { html { margin-top: 46px !important; } }
+	
+@media print { #wpadminbar { display:none; } }
+</style>
+<link rel="stylesheet" id="ugb-style-css-css" href="Set%20Partitions_files/frontend_blocks.css" media="all">
+<style id="ugb-style-css-inline-css">
+:root {--stk-block-width-default-detected: 1708px;}
+#start-resizable-editor-section{display:none}@media only screen and (min-width:1000px){:where(.has-text-align-left) .stk-block-divider{--stk-dots-margin-left:0;--stk-dots-margin-right:auto}:where(.has-text-align-right) .stk-block-divider{--stk-dots-margin-right:0;--stk-dots-margin-left:auto}:where(.has-text-align-center) .stk-block-divider{--stk-dots-margin-right:auto;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-center{--stk-dots-margin-right:auto;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-right{--stk-dots-margin-right:0;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-left{--stk-dots-margin-left:0;--stk-dots-margin-right:auto}.stk-block-feature>*>.stk-row{flex-wrap:var(--stk-feature-flex-wrap,nowrap)}.stk-row{flex-wrap:nowrap}.stk--hide-desktop,.stk--hide-desktop.stk-block{display:none!important}}@media only screen and (min-width:690px){:where(body:not(.wp-admin) .stk-block-column:first-child:nth-last-child(2)){flex:1 1 calc(50% - var(--stk-column-gap, 0px)*1/2)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(2):last-child){flex:1 1 calc(50% - var(--stk-column-gap, 0px)*1/2)!important}:where(body:not(.wp-admin) .stk-block-column:first-child:nth-last-child(3)){flex:1 1 calc(33.33333% - var(--stk-column-gap, 0px)*2/3)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(2):nth-last-child(2)){flex:1 1 calc(33.33333% - var(--stk-column-gap, 0px)*2/3)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(3):last-child){flex:1 1 calc(33.33333% - var(--stk-column-gap, 0px)*2/3)!important}:where(body:not(.wp-admin) .stk-block-column:first-child:nth-last-child(4)){flex:1 1 calc(25% - var(--stk-column-gap, 0px)*3/4)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(2):nth-last-child(3)){flex:1 1 calc(25% - var(--stk-column-gap, 0px)*3/4)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(3):nth-last-child(2)){flex:1 1 calc(25% - var(--stk-column-gap, 0px)*3/4)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(4):last-child){flex:1 1 calc(25% - var(--stk-column-gap, 0px)*3/4)!important}:where(body:not(.wp-admin) .stk-block-column:first-child:nth-last-child(5)){flex:1 1 calc(20% - var(--stk-column-gap, 0px)*4/5)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(2):nth-last-child(4)){flex:1 1 calc(20% - var(--stk-column-gap, 0px)*4/5)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(3):nth-last-child(3)){flex:1 1 calc(20% - var(--stk-column-gap, 0px)*4/5)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(4):nth-last-child(2)){flex:1 1 calc(20% - var(--stk-column-gap, 0px)*4/5)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(5):last-child){flex:1 1 calc(20% - var(--stk-column-gap, 0px)*4/5)!important}:where(body:not(.wp-admin) .stk-block-column:first-child:nth-last-child(6)){flex:1 1 calc(16.66667% - var(--stk-column-gap, 0px)*5/6)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(2):nth-last-child(5)){flex:1 1 calc(16.66667% - var(--stk-column-gap, 0px)*5/6)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(3):nth-last-child(4)){flex:1 1 calc(16.66667% - var(--stk-column-gap, 0px)*5/6)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(4):nth-last-child(3)){flex:1 1 calc(16.66667% - var(--stk-column-gap, 0px)*5/6)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(5):nth-last-child(2)){flex:1 1 calc(16.66667% - var(--stk-column-gap, 0px)*5/6)!important}:where(body:not(.wp-admin) .stk-block-column:nth-child(6):last-child){flex:1 1 calc(16.66667% - var(--stk-column-gap, 0px)*5/6)!important}.stk-block-tabs>.stk-inner-blocks.stk-block-tabs--vertical{grid-template-columns:auto 1fr auto}.stk-block-tabs>.stk-inner-blocks.stk-block-tabs--vertical>.stk-block-tab-labels:first-child{grid-column:1/2}.stk-block-tabs>.stk-inner-blocks.stk-block-tabs--vertical>.stk-block-tab-content:last-child{grid-column:2/4}.stk-block-tabs>.stk-inner-blocks.stk-block-tabs--vertical>.stk-block-tab-content:first-child{grid-column:1/3}.stk-block-tabs>.stk-inner-blocks.stk-block-tabs--vertical>.stk-block-tab-labels:last-child{grid-column:3/4}.stk-block .stk-block.aligncenter,.stk-block:is(.aligncenter,.alignwide,.alignfull)>.stk-content-align:not(.alignwide):not(.alignfull){margin-left:auto;margin-right:auto;max-width:var(--stk-block-default-width,var(--stk-block-width-default-detected,900px));width:100%}.stk-block .stk-block.alignwide,.stk-block:is(.aligncenter,.alignwide,.alignfull)>.stk-content-align.alignwide{margin-left:auto;margin-right:auto;max-width:var(--stk-block-wide-width,var(--stk-block-width-wide-detected,80vw));width:100%}.stk-row.stk-columns-2>.stk-column{flex:1 1 50%;max-width:50%}.stk-row.stk-columns-3>.stk-column{flex:1 1 33.3333333333%;max-width:33.3333333333%}.stk-row.stk-columns-4>.stk-column{flex:1 1 25%;max-width:25%}.stk-row.stk-columns-5>.stk-column{flex:1 1 20%;max-width:20%}.stk-row.stk-columns-6>.stk-column{flex:1 1 16.6666666667%;max-width:16.6666666667%}.stk-row.stk-columns-7>.stk-column{flex:1 1 14.2857142857%;max-width:14.2857142857%}.stk-row.stk-columns-8>.stk-column{flex:1 1 12.5%;max-width:12.5%}.stk-row.stk-columns-9>.stk-column{flex:1 1 11.1111111111%;max-width:11.1111111111%}.stk-row.stk-columns-10>.stk-column{flex:1 1 10%;max-width:10%}}@media only screen and (min-width:690px) and (max-width:999px){.stk-button-group:is(.stk--collapse-on-tablet)>.block-editor-inner-blocks>.block-editor-block-list__layout>[data-block]{margin-inline-end:var(--stk-alignment-margin-right);margin-inline-start:var(--stk-alignment-margin-left)}:where(.has-text-align-left-tablet) .stk-block-divider{--stk-dots-margin-left:0;--stk-dots-margin-right:auto}:where(.has-text-align-right-tablet) .stk-block-divider{--stk-dots-margin-right:0;--stk-dots-margin-left:auto}:where(.has-text-align-center-tablet) .stk-block-divider{--stk-dots-margin-right:auto;--stk-dots-margin-left:auto}.stk--hide-tablet,.stk--hide-tablet.stk-block{display:none!important}.stk-button-group:is(.stk--collapse-on-tablet) .stk-block:is(.stk-block-button,.stk-block-icon-button){margin-inline-end:var(--stk-alignment-margin-right);margin-inline-start:var(--stk-alignment-margin-left)}}@media only screen and (max-width:999px){.stk-block-button{min-width:-moz-fit-content;min-width:fit-content}.stk-block.stk-block-divider.has-text-align-center-tablet{--stk-dots-margin-right:auto;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-right-tablet{--stk-dots-margin-right:0;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-left-tablet{--stk-dots-margin-left:0;--stk-dots-margin-right:auto}.stk-block-timeline.stk-block-timeline__ios-polyfill{--fixed-bg:linear-gradient(to bottom,var(--line-accent-bg-color,#000) 0,var(--line-accent-bg-color-2,#000) var(--line-accent-bg-location,50%))}.has-text-align-center-tablet{--stk-alignment-padding-left:0;--stk-alignment-justify-content:center;--stk-alignment-text-align:center;--stk-alignment-margin-left:auto;--stk-alignment-margin-right:auto;text-align:var(--stk-alignment-text-align,start)}.has-text-align-left-tablet{--stk-alignment-justify-content:flex-start;--stk-alignment-text-align:start;--stk-alignment-margin-left:0;--stk-alignment-margin-right:auto;text-align:var(--stk-alignment-text-align,start)}.has-text-align-right-tablet{--stk-alignment-justify-content:flex-end;--stk-alignment-text-align:end;--stk-alignment-margin-left:auto;--stk-alignment-margin-right:0;text-align:var(--stk-alignment-text-align,start)}.has-text-align-justify-tablet{--stk-alignment-text-align:justify}.has-text-align-space-between-tablet{--stk-alignment-justify-content:space-between}.has-text-align-space-around-tablet{--stk-alignment-justify-content:space-around}.has-text-align-space-evenly-tablet{--stk-alignment-justify-content:space-evenly}}@media only screen and (max-width:689px){.stk-button-group:is(.stk--collapse-on-mobile)>.block-editor-inner-blocks>.block-editor-block-list__layout>[data-block],.stk-button-group:is(.stk--collapse-on-tablet)>.block-editor-inner-blocks>.block-editor-block-list__layout>[data-block]{margin-inline-end:var(--stk-alignment-margin-right);margin-inline-start:var(--stk-alignment-margin-left)}.stk-block-carousel.stk--hide-mobile-arrows>.stk-block-carousel__content-wrapper>*>.stk-block-carousel__buttons,.stk-block-carousel.stk--hide-mobile-dots>.stk-block-carousel__content-wrapper>.stk-block-carousel__dots{display:none}:where(.has-text-align-left-mobile) .stk-block-divider{--stk-dots-margin-left:0;--stk-dots-margin-right:auto}:where(.has-text-align-right-mobile) .stk-block-divider{--stk-dots-margin-right:0;--stk-dots-margin-left:auto}:where(.has-text-align-center-mobile) .stk-block-divider{--stk-dots-margin-right:auto;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-center-mobile{--stk-dots-margin-right:auto;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-right-mobile{--stk-dots-margin-right:0;--stk-dots-margin-left:auto}.stk-block.stk-block-divider.has-text-align-left-mobile{--stk-dots-margin-left:0;--stk-dots-margin-right:auto}.stk-block.stk-block-feature:is(.is-style-default,.is-style-horizontal)>.stk-container>.stk-inner-blocks.stk-block-content{flex-direction:column-reverse}.stk-block-posts{--stk-columns:1}.stk-block-tab-labels:not(.stk-block-tab-labels--wrap-mobile){overflow-x:auto!important;width:100%}.stk-block-tab-labels:not(.stk-block-tab-labels--wrap-mobile)::-webkit-scrollbar{height:0!important}.stk-block-tab-labels:not(.stk-block-tab-labels--wrap-mobile) .stk-block-tab-labels__wrapper{flex-wrap:nowrap;min-width:-webkit-fill-available;min-width:fill-available;width:max-content}.stk-block-tabs>.stk-inner-blocks{grid-template-columns:1fr}.stk-block-tabs>.stk-inner-blocks>.stk-block-tab-labels:last-child{grid-row:1/2}.stk-block.stk-block-timeline{--content-line:0!important;padding-top:0}.stk-block-timeline>.stk-inner-blocks{align-items:flex-start;grid-template-columns:var(--line-dot-size,16px) 1fr;grid-template-rows:auto 1fr;padding-left:16px}.stk-block-timeline>.stk-inner-blocks:after{inset-inline-start:calc(var(--line-dot-size, 16px)/2 - var(--line-bg-width, 3px)/2 + 16px)}.stk-block-timeline .stk-block-timeline__middle{inset-block-start:8px;inset-inline-start:16px;position:absolute}.stk-block-timeline .stk-block-timeline__content{grid-column:2/3;grid-row:2/3;text-align:start}.stk-block-timeline .stk-block-timeline__date{grid-column:2/3;grid-row:1/2;text-align:start}.stk-block-timeline>.stk-inner-blocks:after{bottom:calc(100% - var(--line-dot-size, 16px)/2 - .5em);top:calc(var(--line-dot-size, 16px)/2 + .5em)}.stk-block-timeline+.stk-block-timeline>.stk-inner-blocks:after{top:-16px}:root{--stk-block-margin-bottom:16px;--stk-container-padding:24px 24px;--stk-container-padding-large:32px 24px;--stk-container-padding-small:8px 24px;--stk-column-margin:8px;--stk-block-background-padding:16px 16px}.stk-block .stk-block:is(.aligncenter,.alignwide),.stk-block:is(.aligncenter,.alignwide,.alignfull)>.stk-content-align.alignwide,.stk-block:is(.aligncenter,.alignwide,.alignfull)>.stk-content-align:not(.alignwide):not(.alignfull){width:100%}.stk-column{flex:1 1 100%;max-width:100%}.stk--hide-mobile,.stk--hide-mobile.stk-block{display:none!important}.stk-button-group:is(.stk--collapse-on-mobile) .stk-block:is(.stk-block-button,.stk-block-icon-button),.stk-button-group:is(.stk--collapse-on-tablet) .stk-block:is(.stk-block-button,.stk-block-icon-button){margin-inline-end:var(--stk-alignment-margin-right);margin-inline-start:var(--stk-alignment-margin-left)}.has-text-align-center-mobile{--stk-alignment-padding-left:0;--stk-alignment-justify-content:center;--stk-alignment-text-align:center;--stk-alignment-margin-left:auto;--stk-alignment-margin-right:auto;text-align:var(--stk-alignment-text-align,start)}.has-text-align-left-mobile{--stk-alignment-justify-content:flex-start;--stk-alignment-text-align:start;--stk-alignment-margin-left:0;--stk-alignment-margin-right:auto;text-align:var(--stk-alignment-text-align,start)}.has-text-align-right-mobile{--stk-alignment-justify-content:flex-end;--stk-alignment-text-align:end;--stk-alignment-margin-left:auto;--stk-alignment-margin-right:0;text-align:var(--stk-alignment-text-align,start)}.has-text-align-justify-mobile{--stk-alignment-text-align:justify}.has-text-align-space-between-mobile{--stk-alignment-justify-content:space-between}.has-text-align-space-around-mobile{--stk-alignment-justify-content:space-around}.has-text-align-space-evenly-mobile{--stk-alignment-justify-content:space-evenly}.entry-content .stk-block.stk-has-top-separator{padding-top:23vw}.entry-content .stk-block.stk-has-bottom-separator{padding-bottom:23vw}.entry-content .stk-block .stk-separator__wrapper{height:23vw}}#end-resizable-editor-section{display:none}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="Set%20Partitions_files/style.min.css" media="all">
+<style id="filebird-block-filebird-gallery-style-inline-css">
+ul.filebird-block-filebird-gallery{margin:auto!important;padding:0!important;width:100%}ul.filebird-block-filebird-gallery.layout-grid{display:grid;grid-gap:20px;align-items:stretch;grid-template-columns:repeat(var(--columns),1fr);justify-items:stretch}ul.filebird-block-filebird-gallery.layout-grid li img{border:1px solid #ccc;box-shadow:2px 2px 6px 0 rgba(0,0,0,.3);height:100%;max-width:100%;-o-object-fit:cover;object-fit:cover;width:100%}ul.filebird-block-filebird-gallery.layout-masonry{-moz-column-count:var(--columns);-moz-column-gap:var(--space);column-gap:var(--space);-moz-column-width:var(--min-width);columns:var(--min-width) var(--columns);display:block;overflow:auto}ul.filebird-block-filebird-gallery.layout-masonry li{margin-bottom:var(--space)}ul.filebird-block-filebird-gallery li{list-style:none}ul.filebird-block-filebird-gallery li figure{height:100%;margin:0;padding:0;position:relative;width:100%}ul.filebird-block-filebird-gallery li figure figcaption{background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);bottom:0;box-sizing:border-box;color:#fff;font-size:.8em;margin:0;max-height:100%;overflow:auto;padding:3em .77em .7em;position:absolute;text-align:center;width:100%;z-index:2}ul.filebird-block-filebird-gallery li figure figcaption a{color:inherit}
+
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--palette-color-1: var(--theme-palette-color-1, #fca311);--wp--preset--color--palette-color-2: var(--theme-palette-color-2, #0693e3);--wp--preset--color--palette-color-3: var(--theme-palette-color-3, #000000);--wp--preset--color--palette-color-4: var(--theme-palette-color-4, #4b4b4b);--wp--preset--color--palette-color-5: var(--theme-palette-color-5, #848484);--wp--preset--color--palette-color-6: var(--theme-palette-color-6, #bfbfbf);--wp--preset--color--palette-color-7: var(--theme-palette-color-7, #ffffff);--wp--preset--color--palette-color-8: var(--theme-palette-color-8, #ffffff);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--juicy-peach: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);--wp--preset--gradient--young-passion: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);--wp--preset--gradient--true-sunset: linear-gradient(to right, #fa709a 0%, #fee140 100%);--wp--preset--gradient--morpheus-den: linear-gradient(to top, #30cfd0 0%, #330867 100%);--wp--preset--gradient--plum-plate: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--wp--preset--gradient--aqua-splash: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);--wp--preset--gradient--love-kiss: linear-gradient(to top, #ff0844 0%, #ffb199 100%);--wp--preset--gradient--new-retrowave: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);--wp--preset--gradient--plum-bath: linear-gradient(to top, #cc208e 0%, #6713d2 100%);--wp--preset--gradient--high-flight: linear-gradient(to right, #0acffe 0%, #495aff 100%);--wp--preset--gradient--teen-party: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);--wp--preset--gradient--fabled-sunset: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);--wp--preset--gradient--arielle-smile: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);--wp--preset--gradient--itmeo-branding: linear-gradient(180deg, #2af598 0%, #009efd 100%);--wp--preset--gradient--deep-blue: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);--wp--preset--gradient--strong-bliss: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);--wp--preset--gradient--sweet-period: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);--wp--preset--gradient--purple-division: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);--wp--preset--gradient--cold-evening: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);--wp--preset--gradient--mountain-rock: linear-gradient(to right, #868f96 0%, #596164 100%);--wp--preset--gradient--desert-hump: linear-gradient(to top, #c79081 0%, #dfa579 100%);--wp--preset--gradient--ethernal-constance: linear-gradient(to top, #09203f 0%, #537895 100%);--wp--preset--gradient--happy-memories: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);--wp--preset--gradient--grown-early: linear-gradient(to top, #0ba360 0%, #3cba92 100%);--wp--preset--gradient--morning-salad: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);--wp--preset--gradient--night-call: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);--wp--preset--gradient--mind-crawl: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);--wp--preset--gradient--angel-care: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);--wp--preset--gradient--juicy-cake: linear-gradient(to top, #e14fad 0%, #f9d423 100%);--wp--preset--gradient--rich-metal: linear-gradient(to right, #d7d2cc 0%, #304352 100%);--wp--preset--gradient--mole-hall: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);--wp--preset--gradient--cloudy-knoxville: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);--wp--preset--gradient--soft-grass: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);--wp--preset--gradient--saint-petersburg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--wp--preset--gradient--everlasting-sky: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);--wp--preset--gradient--kind-steel: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);--wp--preset--gradient--over-sun: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);--wp--preset--gradient--premium-white: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);--wp--preset--gradient--clean-mirror: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);--wp--preset--gradient--wild-apple: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);--wp--preset--gradient--snow-again: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);--wp--preset--gradient--confident-cloud: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);--wp--preset--gradient--glass-water: linear-gradient(to top, #dfe9f3 0%, white 100%);--wp--preset--gradient--perfect-white: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: clamp(22px, 1.375rem + ((1vw - 3.2px) * 0.625), 30px);--wp--preset--font-size--x-large: clamp(30px, 1.875rem + ((1vw - 3.2px) * 1.563), 50px);--wp--preset--font-size--xx-large: clamp(45px, 2.813rem + ((1vw - 3.2px) * 2.734), 80px);--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: var(--theme-block-max-width);--wp--style--global--wide-size: var(--theme-block-wide-max-width); }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: var(--theme-content-spacing); margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: var(--theme-content-spacing); }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: var(--theme-content-spacing);margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: var(--theme-content-spacing);margin-block-end: 0;}:root :where(.is-layout-flex){gap: var(--theme-content-spacing);}:root :where(.is-layout-grid){gap: var(--theme-content-spacing);}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-color{color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-color{color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-color{color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-color{color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-color{color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-color{color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-color{color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-color{color: var(--wp--preset--color--palette-color-8) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-background-color{background-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-background-color{background-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-background-color{background-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-background-color{background-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-background-color{background-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-background-color{background-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-background-color{background-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-background-color{background-color: var(--wp--preset--color--palette-color-8) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-border-color{border-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-border-color{border-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-border-color{border-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-border-color{border-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-border-color{border-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-border-color{border-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-border-color{border-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-border-color{border-color: var(--wp--preset--color--palette-color-8) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-juicy-peach-gradient-background{background: var(--wp--preset--gradient--juicy-peach) !important;}.has-young-passion-gradient-background{background: var(--wp--preset--gradient--young-passion) !important;}.has-true-sunset-gradient-background{background: var(--wp--preset--gradient--true-sunset) !important;}.has-morpheus-den-gradient-background{background: var(--wp--preset--gradient--morpheus-den) !important;}.has-plum-plate-gradient-background{background: var(--wp--preset--gradient--plum-plate) !important;}.has-aqua-splash-gradient-background{background: var(--wp--preset--gradient--aqua-splash) !important;}.has-love-kiss-gradient-background{background: var(--wp--preset--gradient--love-kiss) !important;}.has-new-retrowave-gradient-background{background: var(--wp--preset--gradient--new-retrowave) !important;}.has-plum-bath-gradient-background{background: var(--wp--preset--gradient--plum-bath) !important;}.has-high-flight-gradient-background{background: var(--wp--preset--gradient--high-flight) !important;}.has-teen-party-gradient-background{background: var(--wp--preset--gradient--teen-party) !important;}.has-fabled-sunset-gradient-background{background: var(--wp--preset--gradient--fabled-sunset) !important;}.has-arielle-smile-gradient-background{background: var(--wp--preset--gradient--arielle-smile) !important;}.has-itmeo-branding-gradient-background{background: var(--wp--preset--gradient--itmeo-branding) !important;}.has-deep-blue-gradient-background{background: var(--wp--preset--gradient--deep-blue) !important;}.has-strong-bliss-gradient-background{background: var(--wp--preset--gradient--strong-bliss) !important;}.has-sweet-period-gradient-background{background: var(--wp--preset--gradient--sweet-period) !important;}.has-purple-division-gradient-background{background: var(--wp--preset--gradient--purple-division) !important;}.has-cold-evening-gradient-background{background: var(--wp--preset--gradient--cold-evening) !important;}.has-mountain-rock-gradient-background{background: var(--wp--preset--gradient--mountain-rock) !important;}.has-desert-hump-gradient-background{background: var(--wp--preset--gradient--desert-hump) !important;}.has-ethernal-constance-gradient-background{background: var(--wp--preset--gradient--ethernal-constance) !important;}.has-happy-memories-gradient-background{background: var(--wp--preset--gradient--happy-memories) !important;}.has-grown-early-gradient-background{background: var(--wp--preset--gradient--grown-early) !important;}.has-morning-salad-gradient-background{background: var(--wp--preset--gradient--morning-salad) !important;}.has-night-call-gradient-background{background: var(--wp--preset--gradient--night-call) !important;}.has-mind-crawl-gradient-background{background: var(--wp--preset--gradient--mind-crawl) !important;}.has-angel-care-gradient-background{background: var(--wp--preset--gradient--angel-care) !important;}.has-juicy-cake-gradient-background{background: var(--wp--preset--gradient--juicy-cake) !important;}.has-rich-metal-gradient-background{background: var(--wp--preset--gradient--rich-metal) !important;}.has-mole-hall-gradient-background{background: var(--wp--preset--gradient--mole-hall) !important;}.has-cloudy-knoxville-gradient-background{background: var(--wp--preset--gradient--cloudy-knoxville) !important;}.has-soft-grass-gradient-background{background: var(--wp--preset--gradient--soft-grass) !important;}.has-saint-petersburg-gradient-background{background: var(--wp--preset--gradient--saint-petersburg) !important;}.has-everlasting-sky-gradient-background{background: var(--wp--preset--gradient--everlasting-sky) !important;}.has-kind-steel-gradient-background{background: var(--wp--preset--gradient--kind-steel) !important;}.has-over-sun-gradient-background{background: var(--wp--preset--gradient--over-sun) !important;}.has-premium-white-gradient-background{background: var(--wp--preset--gradient--premium-white) !important;}.has-clean-mirror-gradient-background{background: var(--wp--preset--gradient--clean-mirror) !important;}.has-wild-apple-gradient-background{background: var(--wp--preset--gradient--wild-apple) !important;}.has-snow-again-gradient-background{background: var(--wp--preset--gradient--snow-again) !important;}.has-confident-cloud-gradient-background{background: var(--wp--preset--gradient--confident-cloud) !important;}.has-glass-water-gradient-background{background: var(--wp--preset--gradient--glass-water) !important;}.has-perfect-white-gradient-background{background: var(--wp--preset--gradient--perfect-white) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}
+:root :where(.wp-block-pullquote){font-size: clamp(0.984em, 0.984rem + ((1vw - 0.2em) * 0.645), 1.5em);line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="ct-main-styles-css" href="Set%20Partitions_files/main.min.css" media="all">
+<link rel="stylesheet" id="ct-admin-frontend-styles-css" href="Set%20Partitions_files/admin-frontend.min.css" media="all">
+<link rel="stylesheet" id="ct-stackable-styles-css" href="Set%20Partitions_files/stackable.min.css" media="all">
+<link rel="stylesheet" id="ct-wpforms-styles-css" href="Set%20Partitions_files/wpforms.min.css" media="all">
+<link rel="stylesheet" id="litespeed-cache-css" href="Set%20Partitions_files/litespeed.css" media="all">
+<link rel="stylesheet" id="wpforms-admin-bar-css" href="Set%20Partitions_files/admin-bar.min_002.css" media="all">
+<style id="wpforms-admin-bar-inline-css">
+#wpadminbar .wpforms-menu-notification-counter, #wpadminbar .wpforms-menu-notification-indicator {
+						background-color: #d63638 !important;
+						color: #ffffff !important;
+					}
+</style>
+<link rel="stylesheet" id="googlesitekit-fonts-css" href="Set%20Partitions_files/css.css" media="all">
+<link rel="stylesheet" id="googlesitekit-adminbar-css-css" href="Set%20Partitions_files/googlesitekit-adminbar-css-e9bad4695e968f579f39.min.css" media="all">
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script src="Set%20Partitions_files/js" id="google_gtagjs-js" async=""></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["jakehiance-com-243437.hostingersite.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-NBXFMLX");
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://jakehiance-com-243437.hostingersite.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://jakehiance-com-243437.hostingersite.com/wp-json/wp/v2/pages/8317"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://jakehiance-com-243437.hostingersite.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.7.2">
+<link rel="canonical" href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/set-partitions/">
+<link rel="shortlink" href="https://jakehiance-com-243437.hostingersite.com/?p=8317">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://jakehiance-com-243437.hostingersite.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjakehiance-com-243437.hostingersite.com%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://jakehiance-com-243437.hostingersite.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjakehiance-com-243437.hostingersite.com%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F&amp;format=xml">
+<meta name="generator" content="Site Kit by Google 1.156.0"><noscript><link rel='stylesheet' href='https://jakehiance-com-243437.hostingersite.com/wp-content/themes/blocksy/static/bundle/no-scripts.min.css' type='text/css'></noscript>
+<style type="text/css">.blue-message {
+background: none repeat scroll 0 0 #3399ff;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.green-message {
+background: none repeat scroll 0 0 #8cc14c;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.orange-message {
+background: none repeat scroll 0 0 #faa732;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.red-message {
+background: none repeat scroll 0 0 #da4d31;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.grey-message {
+background: none repeat scroll 0 0 #53555c;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.left-block {
+background: none repeat scroll 0 0px, radial-gradient(ellipse at center center, #ffffff 0%, #f2f2f2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #8b8e97;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+} 
+.right-block {
+background: none repeat scroll 0 0px, radial-gradient(ellipse at center center, #ffffff 0%, #f2f2f2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #8b8e97;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+} 
+.blockquotes {
+background: none;
+    border-left: 5px solid #f1f1f1;
+    color: #8B8E97;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 22px;
+    padding-left: 15px;
+    padding: 10px;
+    width: 60%;
+    float: left;
+} 
+</style><link rel="icon" href="Set%20Partitions_files/cropped-New_Logo-32x32.webp" sizes="32x32">
+<link rel="icon" href="Set%20Partitions_files/cropped-New_Logo-192x192.webp" sizes="192x192">
+<link rel="apple-touch-icon" href="Set%20Partitions_files/cropped-New_Logo-180x180.webp">
+<meta name="msapplication-TileImage" content="https://jakehiance-com-243437.hostingersite.com/wp-content/uploads/2023/04/cropped-New_Logo-270x270.png">
+		<style id="wp-custom-css">
+			.ct-container {
+	margin-left: 0;
+}
+
+.contents-container {
+	display: flex;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.contents-column {
+	flex: 1;
+	overflow-y: auto;
+	height: 100vh;
+	box-sizing: border-box;
+}		</style>
+			</head>
+
+
+<body class="page-template-default page page-id-8317 page-child parent-pageid-5061 logged-in admin-bar wp-custom-logo wp-embed-responsive stk--is-blocksy-theme customize-support" data-link="type-3" data-prefix="single_page" data-header="type-1" data-footer="type-1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+<script>
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+				request = true;
+	
+			b[c] = b[c].replace( rcs, ' ' );
+			// The customizer requires postMessage and CORS (if the site is cross domain).
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	
+</script>
+		<div id="wpadminbar" class="nojq">
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul role="menu" id="wp-admin-bar-root-default" class="ab-top-menu"><li role="group" id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/about.php"><span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul role="menu" aria-label="About WordPress" id="wp-admin-bar-wp-logo-default" class="ab-submenu"><li role="group" id="wp-admin-bar-about"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/about.php">About WordPress</a></li><li role="group" id="wp-admin-bar-contribute"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/contribute.php">Get Involved</a></li></ul><ul role="menu" aria-label="About WordPress" id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu"><li role="group" id="wp-admin-bar-wporg"><a class="ab-item" role="menuitem" href="https://wordpress.org/">WordPress.org</a></li><li role="group" id="wp-admin-bar-documentation"><a class="ab-item" role="menuitem" href="https://wordpress.org/documentation/">Documentation</a></li><li role="group" id="wp-admin-bar-learn"><a class="ab-item" role="menuitem" href="https://learn.wordpress.org/">Learn WordPress</a></li><li role="group" id="wp-admin-bar-support-forums"><a class="ab-item" role="menuitem" href="https://wordpress.org/support/forums/">Support</a></li><li role="group" id="wp-admin-bar-feedback"><a class="ab-item" role="menuitem" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li></ul></div></li><li role="group" id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/">jakehiance-com-243437.hostingersite.com</a><div class="ab-sub-wrapper"><ul role="menu" aria-label="jakehiance-com-243437.hostingersite.com" id="wp-admin-bar-site-name-default" class="ab-submenu"><li role="group" id="wp-admin-bar-dashboard"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/">Dashboard</a></li><li role="group" id="wp-admin-bar-plugins"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/plugins.php">Plugins</a></li></ul><ul role="menu" aria-label="jakehiance-com-243437.hostingersite.com" id="wp-admin-bar-appearance" class="ab-submenu"><li role="group" id="wp-admin-bar-themes"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/themes.php">Themes</a></li><li role="group" id="wp-admin-bar-widgets"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/widgets.php">Widgets</a></li><li role="group" id="wp-admin-bar-menus"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/nav-menus.php">Menus</a></li></ul></div></li><li role="group" id="wp-admin-bar-customize" class="hide-if-no-customize"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/customize.php?url=https%3A%2F%2Fjakehiance-com-243437.hostingersite.com%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F">Customize</a></li><li role="group" id="wp-admin-bar-updates"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/update-core.php"><span class="ab-icon" aria-hidden="true"></span><span class="ab-label" aria-hidden="true">11</span><span class="screen-reader-text updates-available-text">11 updates available</span></a></li><li role="group" id="wp-admin-bar-comments"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/edit-comments.php"><span class="ab-icon" aria-hidden="true"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text comments-in-moderation-text">0 Comments in moderation</span></a></li><li role="group" id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/post-new.php"><span class="ab-icon" aria-hidden="true"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul role="menu" aria-label="New" id="wp-admin-bar-new-content-default" class="ab-submenu"><li role="group" id="wp-admin-bar-new-post"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/post-new.php">Post</a></li><li role="group" id="wp-admin-bar-new-media"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/media-new.php">Media</a></li><li role="group" id="wp-admin-bar-new-page"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/post-new.php?post_type=page">Page</a></li><li role="group" id="wp-admin-bar-new-user"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/user-new.php">User</a></li><li role="group" id="wp-admin-bar-wpforms"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-builder">WPForms</a></li></ul></div></li><li role="group" id="wp-admin-bar-edit"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/post.php?post=8317&amp;action=edit">Edit Page</a></li><li role="group" id="wp-admin-bar-litespeed-menu" class="menupop litespeed-top-toolbar"><a class="ab-item" tabindex="0" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=litespeed"><span class="ab-icon"></span></a><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-litespeed-menu-default" class="ab-submenu"><li role="group" id="wp-admin-bar-litespeed-purge-single"><a class="ab-item" tabindex="0" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=purge&amp;LSCWP_NONCE=f76e701ee0&amp;litespeed_type=purge_front">Purge this page - LSCache</a></li><li role="group" id="wp-admin-bar-litespeed-single-action" class="menupop"><div class="ab-item ab-empty-item" tabindex="0" role="menuitem" aria-expanded="false"><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Mark this page as </div><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-litespeed-single-action-default" class="ab-submenu"><li role="group" id="wp-admin-bar-litespeed-single-forced_cache"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=conf&amp;LSCWP_NONCE=0f83777f20&amp;litespeed_type=set&amp;set%5Bcache-force_uri%5D%5B%5D=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F%24&amp;redirect=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F">Forced cacheable</a></li><li role="group" id="wp-admin-bar-litespeed-single-noncache"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=conf&amp;LSCWP_NONCE=0f83777f20&amp;litespeed_type=set&amp;set%5Bcache-exc%5D%5B%5D=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F%24&amp;redirect=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F">Non cacheable</a></li><li role="group" id="wp-admin-bar-litespeed-single-private"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=conf&amp;LSCWP_NONCE=0f83777f20&amp;litespeed_type=set&amp;set%5Bcache-priv_uri%5D%5B%5D=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F%24&amp;redirect=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F">Private cache</a></li><li role="group" id="wp-admin-bar-litespeed-single-nonoptimize"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=conf&amp;LSCWP_NONCE=0f83777f20&amp;litespeed_type=set&amp;set%5Boptm-exc%5D%5B%5D=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F%24&amp;redirect=%2Fthe-book-of-foundational-mathematics%2Fset-partitions%2F">No optimization</a></li><li role="group" id="wp-admin-bar-litespeed-single-more"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=litespeed-cache">More settings</a></li></ul></div></li><li role="group" id="wp-admin-bar-litespeed-purge-all"><a class="ab-item" tabindex="0" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=purge&amp;LSCWP_NONCE=f76e701ee0&amp;litespeed_type=purge_all&amp;_litespeed_ori=1">Purge All</a></li><li role="group" id="wp-admin-bar-litespeed-purge-all-lscache"><a class="ab-item" tabindex="0" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=purge&amp;LSCWP_NONCE=f76e701ee0&amp;litespeed_type=purge_all_lscache&amp;_litespeed_ori=1">Purge All - LSCache</a></li><li role="group" id="wp-admin-bar-litespeed-purge-cssjs"><a class="ab-item" tabindex="0" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=purge&amp;LSCWP_NONCE=f76e701ee0&amp;litespeed_type=purge_all_cssjs&amp;_litespeed_ori=1">Purge All - CSS/JS Cache</a></li><li role="group" id="wp-admin-bar-litespeed-purge-object"><a class="ab-item" tabindex="0" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=purge&amp;LSCWP_NONCE=f76e701ee0&amp;litespeed_type=purge_all_object&amp;_litespeed_ori=1">Purge All - Object Cache</a></li><li role="group" id="wp-admin-bar-litespeed-purge-opcache"><a class="ab-item" tabindex="0" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?LSCWP_CTRL=purge&amp;LSCWP_NONCE=f76e701ee0&amp;litespeed_type=purge_all_opcache&amp;_litespeed_ori=1">Purge All - Opcode Cache</a></li></ul></div></li><li role="group" id="wp-admin-bar-google-site-kit" class="menupop googlesitekit-wp-adminbar"><a class="ab-item" role="menuitem" href="#"><span class="googlesitekit-wp-adminbar__icon"></span> <span class="googlesitekit-wp-adminbar__label">Site Kit</span></a>		<div class="googlesitekit-plugin ab-sub-wrapper">
+						<noscript>
+				<div class="googlesitekit-noscript notice notice-warning">
+					<div class="mdc-layout-grid">
+						<div class="mdc-layout-grid__inner">
+							<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+								<p class="googlesitekit-noscript__text">
+									The Site Kit by Google plugin requires JavaScript to be enabled in your browser.								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</noscript>
+		
+			<div id="js-googlesitekit-adminbar" data-view-only="" class="googlesitekit-adminbar">
+
+				
+				<section id="js-googlesitekit-adminbar-modules" class="googlesitekit-adminbar-modules"></section>
+
+							</div>
+		</div>
+		</li><li role="group" id="wp-admin-bar-hostinger_admin_bar" class="menupop"><div class="ab-item ab-empty-item" role="menuitem" aria-expanded="false"><svg width="28" height="29" viewBox="0 0 28 29" fill="#9ca1a7" style="margin-right: 6px; max-height: 22px; float: left; margin-top: 4px;" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1.8669 13.6096V0.500465L8.48322 4.02842V9.93472L17.2419 9.93895L23.9655 13.6096H1.8669ZM19.033 8.85388V0.5L25.8277 3.94018V12.801L19.033 8.85388ZM19.033 24.8765V19.0211L10.2067 19.015C10.215 19.054 3.37149 15.2857 3.37149 15.2857L25.8277 15.3911V28.5L19.033 24.8765ZM1.86667 24.8765L1.8669 16.31L8.48322 20.1637V28.3164L1.86667 24.8765Z" fill=""></path>
+			</svg>Hostinger</div><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-hostinger_admin_bar-default" class="ab-submenu"><li role="group" id="wp-admin-bar-hostinger-ai-assistant-ai-content-creator"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=hostinger-ai-assistant">AI Content Creator</a></li></ul></div></li><li role="group" id="wp-admin-bar-wpforms-menu" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-overview">WPForms</a><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-wpforms-menu-default" class="ab-submenu"><li role="group" id="wp-admin-bar-wpforms-forms"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-overview">All Forms</a></li><li role="group" id="wp-admin-bar-wpforms-payments"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-payments">Payments</a></li><li role="group" id="wp-admin-bar-wpforms-add-new"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-builder">Add New</a></li><li role="group" id="wp-admin-bar-wpforms-settings" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings"><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Settings</a><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-wpforms-settings-default" class="ab-submenu"><li role="group" id="wp-admin-bar-wpforms-general-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=general">General</a></li><li role="group" id="wp-admin-bar-wpforms-email-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=email">Email</a></li><li role="group" id="wp-admin-bar-wpforms-captcha-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=captcha">CAPTCHA</a></li><li role="group" id="wp-admin-bar-wpforms-validation-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=validation">Validation</a></li><li role="group" id="wp-admin-bar-wpforms-payments-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=payments">Payments</a></li><li role="group" id="wp-admin-bar-wpforms-integrations-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=integrations">Integrations</a></li><li role="group" id="wp-admin-bar-wpforms-geolocation-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=geolocation">Geolocation</a></li><li role="group" id="wp-admin-bar-wpforms-access-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=access">Access Control</a></li><li role="group" id="wp-admin-bar-wpforms-misc-settings"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-settings&amp;view=misc">Misc</a></li></ul></div></li><li role="group" id="wp-admin-bar-wpforms-tools" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools"><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Tools</a><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-wpforms-tools-default" class="ab-submenu"><li role="group" id="wp-admin-bar-wpforms-tools-import"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=import">Import</a></li><li role="group" id="wp-admin-bar-wpforms-tools-export"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=export">Export</a></li><li role="group" id="wp-admin-bar-wpforms-tools-system"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=system">System Info</a></li><li role="group" id="wp-admin-bar-wpforms-tools-action-scheduler" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=action-scheduler&amp;s=wpforms"><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Scheduled Actions</a><div class="ab-sub-wrapper"><ul role="menu" id="wp-admin-bar-wpforms-tools-action-scheduler-default" class="ab-submenu"><li role="group" id="wp-admin-bar-wpforms-tools-action-scheduler-all"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=action-scheduler&amp;s=wpforms&amp;orderby=hook&amp;order=desc">View All</a></li><li role="group" id="wp-admin-bar-wpforms-tools-action-scheduler-complete"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=action-scheduler&amp;s=wpforms&amp;status=complete&amp;orderby=hook&amp;order=desc">Completed Actions</a></li><li role="group" id="wp-admin-bar-wpforms-tools-action-scheduler-failed"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=action-scheduler&amp;s=wpforms&amp;status=failed&amp;orderby=hook&amp;order=desc">Failed Actions</a></li><li role="group" id="wp-admin-bar-wpforms-tools-action-scheduler-pending"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=action-scheduler&amp;s=wpforms&amp;status=pending&amp;orderby=hook&amp;order=desc">Pending Actions</a></li><li role="group" id="wp-admin-bar-wpforms-tools-action-scheduler-past-due"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=action-scheduler&amp;s=wpforms&amp;status=past-due&amp;orderby=hook&amp;order=desc">Past Due Actions</a></li></ul></div></li><li role="group" id="wp-admin-bar-wpforms-tools-logs"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=logs">Logs</a></li><li role="group" id="wp-admin-bar-wpforms-tools-wpcode"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/admin.php?page=wpforms-tools&amp;view=wpcode">Code Snippets</a></li></ul></div></li><li role="group" id="wp-admin-bar-wpforms-community"><a class="ab-item" role="menuitem" href="https://www.facebook.com/groups/wpformsvip/" target="_blank" rel="noopener noreferrer">Community</a></li><li role="group" id="wp-admin-bar-wpforms-help-docs"><a class="ab-item" role="menuitem" href="https://wpforms.com/docs/?utm_campaign=liteplugin&amp;utm_medium=admin-bar&amp;utm_source=WordPress&amp;utm_content=Documentation" target="_blank" rel="noopener noreferrer">Help Docs</a></li><li role="group" id="wp-admin-bar-wpforms-upgrade"><a class="ab-item" role="menuitem" href="https://wpforms.com/lite-upgrade/?utm_campaign=liteplugin&amp;utm_source=WordPress&amp;utm_medium=admin-bar&amp;utm_content=Upgrade%20to%20Pro&amp;utm_locale=en_US" target="_blank" rel="noopener noreferrer">Upgrade to Pro</a></li></ul></div></li></ul><ul role="menu" id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li role="group" id="wp-admin-bar-my-account" class="menupop"><a class="ab-item" role="menuitem" aria-expanded="false" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/profile.php">Howdy, <span class="display-name">Jake Hiance</span></a><div class="ab-sub-wrapper"><ul role="menu" aria-label="Howdy, Jake Hiance" id="wp-admin-bar-user-actions" class="ab-submenu"><li role="group" id="wp-admin-bar-user-info"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-admin/profile.php"><span class="display-name">Jake Hiance</span><span class="username">jakehiance@gmail.com</span><span class="display-name edit-profile">Edit Profile</span></a></li><li role="group" id="wp-admin-bar-logout"><a class="ab-item" role="menuitem" href="https://jakehiance-com-243437.hostingersite.com/wp-login.php?action=logout&amp;_wpnonce=c61006903d">Log Out</a></li></ul></div></li><li role="group" id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1" role="menuitem"><form action="https://jakehiance-com-243437.hostingersite.com/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search"></form></div></li></ul>			</div>
+		</div>
+
+		<a class="skip-link screen-reader-text" href="#main">Skip to content</a><div class="ct-drawer-canvas" data-location="start"><div id="offcanvas" class="ct-panel ct-header" data-behaviour="right-side" aria-label="Offcanvas modal" inert=""><div class="ct-panel-inner">
+		<div class="ct-panel-actions">
+			
+			<button class="ct-toggle-close" data-type="type-1" aria-label="Close drawer">
+				<svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"></path></svg>
+			</button>
+		</div>
+		<div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
+<nav class="mobile-menu menu-container has-submenu" data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" data-submenu-dots="yes">
+
+	<ul><li class="page_item page-item-8301 page_item_has_children menu-item-has-children"><span class="ct-sub-menu-parent"><a href="https://jakehiance-com-243437.hostingersite.com/artwork/" class="ct-menu-link">Artwork</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span><ul class="sub-menu" role="menu"><li class="page_item page-item-8369"><a href="https://jakehiance-com-243437.hostingersite.com/artwork/jealous/" class="ct-menu-link">Jealous?</a></li></ul></li><li class="page_item page-item-3729"><a href="https://jakehiance-com-243437.hostingersite.com/about-me/" class="ct-menu-link">Blog</a></li><li class="page_item page-item-3957"><a href="https://jakehiance-com-243437.hostingersite.com/books/" class="ct-menu-link">Books</a></li><li class="page_item page-item-3727"><a href="https://jakehiance-com-243437.hostingersite.com/" class="ct-menu-link">Home</a></li><li class="page_item page-item-5684"><a href="https://jakehiance-com-243437.hostingersite.com/resume/" class="ct-menu-link">Resume</a></li><li class="page_item page-item-4257"><a href="https://jakehiance-com-243437.hostingersite.com/style-guide/" class="ct-menu-link">Style Guide</a></li><li class="page_item page-item-5061 page_item_has_children current_page_ancestor current_page_parent menu-item-has-children current-menu-ancestor current-menu-parent"><span class="ct-sub-menu-parent"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/" class="ct-menu-link">The Book of Foundational Mathematics</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span><ul class="sub-menu" role="menu"><li class="page_item page-item-8156"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/ordered-pairs-and-set-products/" class="ct-menu-link">Ordered Pairs and Set Products</a></li><li class="page_item page-item-3945"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/propositions/" class="ct-menu-link">Propositions</a></li><li class="page_item page-item-7398"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/sets/" class="ct-menu-link">Sets</a></li><li class="page_item page-item-6540"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/the-structure-of-basic-arguments/" class="ct-menu-link">The Structure of Basic Arguments</a></li><li class="page_item page-item-3816"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/modeling-logic-with-truth-tables/" class="ct-menu-link">Modeling Logic with Truth Tables</a></li><li class="page_item page-item-8219"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/properties-of-the-cartesian-product/" class="ct-menu-link">Properties of the Cartesian Product</a></li><li class="page_item page-item-6582"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/rules-of-inference/" class="ct-menu-link">Rules of Inference</a></li><li class="page_item page-item-7443"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/subsets/" class="ct-menu-link">Subsets</a></li><li class="page_item page-item-4424"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logical-equivalence/" class="ct-menu-link">Logical Equivalence</a></li><li class="page_item page-item-7400"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-element-arguments/" class="ct-menu-link">Proof Technique: Element Arguments</a></li><li class="page_item page-item-8223"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/relations/" class="ct-menu-link">Relations</a></li><li class="page_item page-item-6667"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/using-the-rules-of-inference/" class="ct-menu-link">Using the Rules of Inference</a></li><li class="page_item page-item-7402"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/a-set-of-operations-on-sets/" class="ct-menu-link">A Set of Operations on Sets</a></li><li class="page_item page-item-6759"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logically-equivalent-arguments/" class="ct-menu-link">Logically Equivalent Arguments</a></li><li class="page_item page-item-3828"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/the-laws-of-logic/" class="ct-menu-link">The Laws of Logic</a></li><li class="page_item page-item-6201"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/application-switching-networks/" class="ct-menu-link">Application: Switching Networks</a></li><li class="page_item page-item-6762"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/invalid-arguments/" class="ct-menu-link">Invalid Arguments</a></li><li class="page_item page-item-7404"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/the-laws-of-set-theory/" class="ct-menu-link">The Laws of Set Theory</a></li><li class="page_item page-item-4679"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logical-implications/" class="ct-menu-link">Logical Implications</a></li><li class="page_item page-item-7874"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-exhaustion/" class="ct-menu-link">Proof Technique: Exhaustion</a></li><li class="page_item page-item-6750"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/universal-specification/" class="ct-menu-link">Universal Specification</a></li><li class="page_item page-item-3841"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/propositional-variables/" class="ct-menu-link">Propositions with Variables</a></li><li class="page_item page-item-8317 current_page_item current-menu-item"><span class="ct-sub-menu-parent"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/set-partitions/" aria-current="page" class="ct-menu-link">Set Partitions</a></span></li><li class="page_item page-item-6840"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/universal-generalization/" class="ct-menu-link">Universal Generalization</a></li><li class="page_item page-item-6765"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/axioms-definitions-theorems-and-proofs/" class="ct-menu-link">Axioms, Definitions, Theorems, and Proofs</a></li><li class="page_item page-item-8319"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-casework/" class="ct-menu-link">Proof Technique: Casework</a></li><li class="page_item page-item-3844"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/quantifiers/" class="ct-menu-link">Quantifiers</a></li><li class="page_item page-item-6203"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logic-with-quantified-statements/" class="ct-menu-link">Logic with Quantified Statements</a></li><li class="page_item page-item-7129"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-direct-proofs/" class="ct-menu-link">Proof Technique: Direct Proofs</a></li><li class="page_item page-item-6156"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/nested-quantifiers/" class="ct-menu-link">Nested Quantifiers</a></li><li class="page_item page-item-7186"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-indirect-proofs/" class="ct-menu-link">Proof Technique: Indirect Proofs</a></li><li class="page_item page-item-7407"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/russells-paradox-and-a-formal-resolution/" class="ct-menu-link">Russell’s Paradox and a Formal Resolution</a></li><li class="page_item page-item-6459"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/application-logic-puzzles/" class="ct-menu-link">Application: Logic Puzzles</a></li><li class="page_item page-item-7215"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-contradiction/" class="ct-menu-link">Proof Technique: Contradiction</a></li><li class="page_item page-item-7872"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/set-theory-in-maple/" class="ct-menu-link">Set Theory in Maple</a></li><li class="page_item page-item-3859"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/a-primer-on-fuzzy-logic/" class="ct-menu-link">A Primer on Fuzzy Logic</a></li><li class="page_item page-item-7320"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/mistakes-in-proofs/" class="ct-menu-link">Mistakes in Proofs</a></li><li class="page_item page-item-6389"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/further-reading/" class="ct-menu-link">Further Reading</a></li><li class="page_item page-item-3854"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/mathematical-logic-with-maple/" class="ct-menu-link">Mathematical Logic With Maple</a></li><li class="page_item page-item-7372"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-equivalence/" class="ct-menu-link">Proof Technique: Equivalence</a></li><li class="page_item page-item-7830"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/defining-propositions-with-maple/" class="ct-menu-link">Defining Propositions With Maple</a></li><li class="page_item page-item-7870"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/verifying-mathematical-arguments-in-maple/" class="ct-menu-link">Verifying Mathematical Arguments in Maple</a></li></ul></li><li class="page_item page-item-5134 page_item_has_children menu-item-has-children"><span class="ct-sub-menu-parent"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/" class="ct-menu-link">The Book of Probability</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span><ul class="sub-menu" role="menu"><li class="page_item page-item-5924"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/conditional-probability/" class="ct-menu-link">Conditional Probability</a></li><li class="page_item page-item-5139"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/sample-spaces-and-events/" class="ct-menu-link">Sample Spaces and Events</a></li><li class="page_item page-item-5207"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/modeling-events-with-venn-diagrams-in-maple/" class="ct-menu-link">Modeling Events with Venn Diagrams</a></li><li class="page_item page-item-5279"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/the-axioms-of-probability/" class="ct-menu-link">The Axioms of Probability</a></li><li class="page_item page-item-5322"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/basic-theorems-derived-from-the-axioms/" class="ct-menu-link">Basic Theorems Derived From the Axioms</a></li><li class="page_item page-item-5395"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/uniform-randomness/" class="ct-menu-link">Uniform Randomness</a></li><li class="page_item page-item-5500"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/probability-via-counting/" class="ct-menu-link">Probability via Counting</a></li><li class="page_item page-item-5585"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/continuity-of-the-probability-function/" class="ct-menu-link">Continuity of the Probability Function</a></li><li class="page_item page-item-5680"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/probabilities-of-0-and-1/" class="ct-menu-link">Probabilities of 0 and 1</a></li><li class="page_item page-item-5721"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/geometric-probability/" class="ct-menu-link">Geometric Probability</a></li><li class="page_item page-item-5791"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/an-example-set-that-is-not-an-event/" class="ct-menu-link">An Example Set That Is Not an Event</a></li><li class="page_item page-item-5209"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-probability/estimating-probability-with-simulations/" class="ct-menu-link">Estimating Probability With Simulations</a></li></ul></li><li class="page_item page-item-3974 page_item_has_children menu-item-has-children"><span class="ct-sub-menu-parent"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/" class="ct-menu-link">The Book of Real Analysis</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span><ul class="sub-menu" role="menu"><li class="page_item page-item-4469"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/closed-sets/" class="ct-menu-link">Closed Sets</a></li><li class="page_item page-item-4999"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/closure-of-a-set/" class="ct-menu-link">Closure of a Set</a></li><li class="page_item page-item-4483"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/connected-sets/" class="ct-menu-link">Connected Sets</a></li><li class="page_item page-item-4944"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/further-topological-properties-of-real-numbers/" class="ct-menu-link">Further Topological Properties of Real Numbers</a></li><li class="page_item page-item-4429"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/metric-spaces/" class="ct-menu-link">Metric Spaces</a></li><li class="page_item page-item-4759"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/open-sets/" class="ct-menu-link">Open Sets</a></li><li class="page_item page-item-4298"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/properties-of-the-limit-superior-and-limit-inferior/" class="ct-menu-link">Properties of the Limit Superior and Limit Inferior</a></li><li class="page_item page-item-3994"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/the-limit-superior-and-limit-inferior-of-a-sequence/" class="ct-menu-link">The Limit Superior and Limit Inferior of a Sequence</a></li><li class="page_item page-item-4757"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/unions-and-intersections-of-sets/" class="ct-menu-link">Unions and Intersections of Sets</a></li><li class="page_item page-item-4635"><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-real-analysis/why-topology-matters/" class="ct-menu-link">Why Topology Matters</a></li></ul></li><li class="page_item page-item-7296"><a href="https://jakehiance-com-243437.hostingersite.com/tutoring/" class="ct-menu-link">Tutoring</a></li></ul></nav>
+
+
+<div class="ct-header-text " data-id="text">
+	<div class="entry-content is-layout-flow">
+		<p><strong>Physical Address</strong></p>
+<p>304 North Cardinal St.<br>Dorchester Center, MA 02124</p>	</div>
+</div>
+
+<div class="ct-header-socials " data-id="socials">
+
+	
+		<div class="ct-social-box" data-color="custom" data-icon-size="custom" data-icons-type="simple">
+			
+			
+							
+				<a href="#" data-network="facebook" aria-label="Facebook">
+					<span class="ct-icon-container">
+					<svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true">
+						<path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2,0.2,2.2,0.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path>
+					</svg>
+				</span>				</a>
+							
+				<a href="#" data-network="twitter" aria-label="X (Twitter)">
+					<span class="ct-icon-container">
+					<svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true">
+						<path d="M2.9 0C1.3 0 0 1.3 0 2.9v14.3C0 18.7 1.3 20 2.9 20h14.3c1.6 0 2.9-1.3 2.9-2.9V2.9C20 1.3 18.7 0 17.1 0H2.9zm13.2 3.8L11.5 9l5.5 7.2h-4.3l-3.3-4.4-3.8 4.4H3.4l5-5.7-5.3-6.7h4.4l3 4 3.5-4h2.1zM14.4 15 6.8 5H5.6l7.7 10h1.1z"></path>
+					</svg>
+				</span>				</a>
+							
+				<a href="#" data-network="instagram" aria-label="Instagram">
+					<span class="ct-icon-container">
+					<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+						<circle cx="10" cy="10" r="3.3"></circle>
+						<path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"></path>
+					</svg>
+				</span>				</a>
+							
+				<a href="#" data-network="pinterest" aria-label="Pinterest">
+					<span class="ct-icon-container">
+					<svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true">
+						<path d="M10,0C4.5,0,0,4.5,0,10c0,4.1,2.5,7.6,6,9.2c0-0.7,0-1.5,0.2-2.3c0.2-0.8,1.3-5.4,1.3-5.4s-0.3-0.6-0.3-1.6c0-1.5,0.9-2.6,1.9-2.6c0.9,0,1.3,0.7,1.3,1.5c0,0.9-0.6,2.3-0.9,3.5c-0.3,1.1,0.5,1.9,1.6,1.9c1.9,0,3.2-2.4,3.2-5.3c0-2.2-1.5-3.8-4.2-3.8c-3,0-4.9,2.3-4.9,4.8c0,0.9,0.3,1.5,0.7,2C6,12,6.1,12.1,6,12.4c0,0.2-0.2,0.6-0.2,0.8c-0.1,0.3-0.3,0.3-0.5,0.3c-1.4-0.6-2-2.1-2-3.8c0-2.8,2.4-6.2,7.1-6.2c3.8,0,6.3,2.8,6.3,5.7c0,3.9-2.2,6.9-5.4,6.9c-1.1,0-2.1-0.6-2.4-1.2c0,0-0.6,2.3-0.7,2.7c-0.2,0.8-0.6,1.5-1,2.1C8.1,19.9,9,20,10,20c5.5,0,10-4.5,10-10C20,4.5,15.5,0,10,0z"></path>
+					</svg>
+				</span>				</a>
+							
+				<a href="#" data-network="youtube" aria-label="YouTube">
+					<span class="ct-icon-container">
+					<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+						<path d="M15,0H5C2.2,0,0,2.2,0,5v10c0,2.8,2.2,5,5,5h10c2.8,0,5-2.2,5-5V5C20,2.2,17.8,0,15,0z M14.5,10.9l-6.8,3.8c-0.1,0.1-0.3,0.1-0.5,0.1c-0.5,0-1-0.4-1-1l0,0V6.2c0-0.5,0.4-1,1-1c0.2,0,0.3,0,0.5,0.1l6.8,3.8c0.5,0.3,0.7,0.8,0.4,1.3C14.8,10.6,14.6,10.8,14.5,10.9z"></path>
+					</svg>
+				</span>				</a>
+			
+			
+					</div>
+
+	
+</div>
+</div></div></div></div></div>
+<div id="main-container">
+	<header id="header" class="ct-header" data-id="type-1" itemscope="" itemtype="https://schema.org/WPHeader"><div data-device="desktop"></div><div data-device="mobile"><div data-row="middle" data-column-set="2"><div class="ct-container-fluid"><div data-column="start" data-placements="1"><div data-items="primary">
+<div class="site-branding" data-id="logo" data-logo="left">
+
+			<a href="https://jakehiance-com-243437.hostingersite.com/" class="site-logo-container" rel="home" itemprop="url"><img width="512" height="512" src="Set%20Partitions_files/cropped-New_Logo.webp" class="default-logo" alt="" decoding="async" fetchpriority="high" srcset="Set%20Partitions_files/cropped-New_Logo.webp 512w, Set%20Partitions_files/cropped-New_Logo-300x300.webp 300w, Set%20Partitions_files/cropped-New_Logo-150x150.webp 150w, Set%20Partitions_files/cropped-New_Logo-270x270.webp 270w, Set%20Partitions_files/cropped-New_Logo-192x192.webp 192w, Set%20Partitions_files/cropped-New_Logo-180x180.webp 180w, Set%20Partitions_files/cropped-New_Logo-32x32.webp 32w" sizes="(max-width: 512px) 100vw, 512px"></a>	
+			<div class="site-title-container">
+							<span class="site-title ">
+					<a href="https://jakehiance-com-243437.hostingersite.com/" rel="home">
+						Jake Hiance					</a>
+				</span>
+			
+					</div>
+	  </div>
+
+</div></div><div data-column="end" data-placements="1"><div data-items="primary">
+<button data-toggle-panel="#offcanvas" class="ct-header-trigger ct-toggle " data-design="simple" data-label="right" aria-label="Menu" data-id="trigger">
+
+	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Menu</span>
+
+	<svg class="ct-icon" width="18" height="14" viewBox="0 0 18 14" aria-hidden="true" data-type="type-1">
+
+		<rect y="0.00" width="18" height="1.7" rx="1"></rect>
+		<rect y="6.15" width="18" height="1.7" rx="1"></rect>
+		<rect y="12.3" width="18" height="1.7" rx="1"></rect>
+	</svg>
+</button>
+</div></div></div></div></div></header>
+	<main id="main" class="site-main hfeed">
+
+		
+	<div class="ct-container-full" data-content="normal">
+
+		
+		
+	<article id="post-8317" class="post-8317 page type-page status-publish hentry">
+
+		
+		
+		
+		<div class="entry-content is-layout-constrained">
+			
+<div class="wp-block-columns alignfull contents-container is-layout-flex wp-container-core-columns-is-layout-3 wp-block-columns-is-layout-flex">
+<div class="wp-block-column contents-column has-palette-color-3-background-color has-background is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:20%">
+<div class="wp-block-group has-palette-color-8-color has-text-color has-link-color wp-elements-dee6ecd4e0d781189201fbfc96d3fdd2 is-layout-constrained wp-container-core-group-is-layout-4 wp-block-group-is-layout-constrained" style="padding-right:1rem;padding-left:1rem">
+<h3 class="wp-block-heading has-text-align-center has-palette-color-8-color has-palette-color-3-background-color has-text-color has-background has-link-color wp-elements-b302101a6352072144ec6c467129c445" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">The Book of<br>Foundational Mathematics</h3>
+
+
+
+<figure class="wp-block-image aligncenter size-thumbnail"><img decoding="async" width="150" height="150" src="Set%20Partitions_files/Cover-1-150x150.webp" alt="" class="wp-image-5856" srcset="Set%20Partitions_files/Cover-1-150x150.webp 150w, Set%20Partitions_files/Cover-1-300x300.webp 300w, Set%20Partitions_files/Cover-1-1024x1024.webp 1024w, Set%20Partitions_files/Cover-1-768x768.webp 768w, Set%20Partitions_files/Cover-1-1536x1536.webp 1536w, Set%20Partitions_files/Cover-1.webp 2048w" sizes="(max-width: 150px) 100vw, 150px"></figure>
+
+
+
+<hr class="wp-block-separator has-text-color has-palette-color-8-color has-alpha-channel-opacity has-palette-color-8-background-color has-background is-style-wide">
+
+
+
+<p><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/" data-type="page" data-id="5061">Detailed Contents</a></p>
+
+
+<div class="lightweight-accordion has-background"><details><summary class="lightweight-accordion-title" style="background:var(--theme-palette-color-3, #000000);"><span>1 Propositional Logic</span></summary><div class="lightweight-accordion-body" style="border-color:var(--theme-palette-color-3, #000000);">
+
+<ol style="margin-right:1rem;margin-left:1rem" class="wp-block-list has-palette-color-3-background-color has-background">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/propositions/" data-type="page" data-id="3945">Propositions</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/modeling-logic-with-truth-tables/" data-type="page" data-id="3816">Modeling Logic with Truth Tables</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logical-equivalence/" data-type="page" data-id="4424">Logical Equivalence</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/the-laws-of-logic/" data-type="page" data-id="3828">The Laws of Logic</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/application-switching-networks/" data-type="page" data-id="6201">Application: Switching Networks</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logical-implications/" data-type="page" data-id="4679">Logical Implications</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/propositional-variables/" data-type="page" data-id="3841">Propositions with Variables</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/quantifiers/" data-type="page" data-id="3844">Quantifiers</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logic-with-quantified-statements/" data-type="page" data-id="6203">Logic with Quantified Statements</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/nested-quantifiers/" data-type="page" data-id="6156">Nested Quantifiers</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/application-logic-puzzles/" data-type="page" data-id="6459">Application: Logic Puzzles</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/a-primer-on-fuzzy-logic/" data-type="page" data-id="3859">A Primer on Fuzzy Logic</a></li>
+</ol>
+
+
+
+<ol style="margin-right:1rem;margin-left:1rem;list-style-type:upper-alpha" class="wp-block-list">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/mathematical-logic-with-maple/" data-type="page" data-id="3854">Mathematical Logic with Maple</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/defining-propositions-with-maple/" data-type="page" data-id="7830">Defining Propositions with Maple</a></li>
+</ol>
+
+</div></details></div>
+
+<div class="lightweight-accordion has-background"><details><summary class="lightweight-accordion-title" style="background:var(--theme-palette-color-3, #000000);"><span>2 Arguments and Proof</span></summary><div class="lightweight-accordion-body" style="border-color:var(--theme-palette-color-3, #000000);">
+
+<ol style="margin-right:1rem;margin-left:1rem" class="wp-block-list has-palette-color-3-background-color has-background">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/the-structure-of-basic-arguments/" data-type="page" data-id="6540">The Structure of Basic Arguments</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/rules-of-inference/" data-type="page" data-id="6582">Rules of Inference</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/using-the-rules-of-inference/" data-type="page" data-id="6667">Using the Rules of Inference</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/logically-equivalent-arguments/" data-type="page" data-id="6759">Logically Equivalent Arguments</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/invalid-arguments/" data-type="page" data-id="6762">Invalid Arguments</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/universal-specification/" data-type="page" data-id="6750">Universal Specification</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/universal-generalization/" data-type="page" data-id="6840">Universal Generalization</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/axioms-definitions-theorems-and-proofs/" data-type="page" data-id="6765">Axioms, Definitions, Theorems, and Proofs</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-direct-proofs/" data-type="page" data-id="7129">Proof Technique: Direct Proofs</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-indirect-proofs/" data-type="page" data-id="7186">Proof Technique: Indirect Proofs</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-contradiction/" data-type="page" data-id="7215">Proof Technique: Contradiction</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/mistakes-in-proofs/" data-type="page" data-id="7320">Mistakes in Proofs</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-equivalence/" data-type="page" data-id="7372">Proof Technique: Equivalence</a></li>
+</ol>
+
+
+
+<ol style="margin-right:1rem;margin-left:1rem;list-style-type:upper-alpha" class="wp-block-list">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/verifying-mathematical-arguments-in-maple/" data-type="page" data-id="7870">Verifying Mathematical Arguments in Maple</a></li>
+</ol>
+
+</div></details></div>
+
+<div class="lightweight-accordion has-background"><details><summary class="lightweight-accordion-title" style="background:var(--theme-palette-color-3, #000000);"><span>3 Set Theory</span></summary><div class="lightweight-accordion-body" style="border-color:var(--theme-palette-color-3, #000000);">
+
+<ol style="margin-right:1rem;margin-left:1rem" class="wp-block-list has-palette-color-3-background-color has-background">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/sets/" data-type="page" data-id="7398">Sets</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/subsets/" data-type="page" data-id="7443">Subsets</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-element-arguments/" data-type="page" data-id="7400">Proof Technique: Element Arguments</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/a-set-of-operations-on-sets/" data-type="page" data-id="7402">A Set of Operations on Sets</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/the-laws-of-set-theory/" data-type="page" data-id="7404">The Laws of Set Theory</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-exhaustion/" data-type="page" data-id="7874">Proof Technique: Exhaustion</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/set-partitions/" data-type="page" data-id="8317">Set Partitions</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/proof-technique-casework/" data-type="page" data-id="8319">Proof Technique: Casework</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/russells-paradox-and-a-formal-resolution/" data-type="page" data-id="7407">Russell’s Paradox and a Formal Resolution</a></li>
+</ol>
+
+
+
+<ol style="margin-right:1rem;margin-left:1rem;list-style-type:upper-alpha" class="wp-block-list">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/set-theory-in-maple/" data-type="page" data-id="7872">Set Theory in Maple</a></li>
+</ol>
+
+</div></details></div>
+
+<div class="lightweight-accordion has-background"><details><summary class="lightweight-accordion-title" style="background:var(--theme-palette-color-3, #000000);"><span>4 Relations and Functions</span></summary><div class="lightweight-accordion-body" style="border-color:var(--theme-palette-color-3, #000000);">
+
+<ol style="margin-right:1rem;margin-left:1rem" class="wp-block-list has-palette-color-3-background-color has-background">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/ordered-pairs-and-set-products/" data-type="page" data-id="8156">Ordered Pairs and Set Products</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/properties-of-the-cartesian-product/" data-type="page" data-id="8219">Properties of the Cartesian Product</a></li>
+
+
+
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/relations/" data-type="page" data-id="8223">Relations</a></li>
+</ol>
+
+</div></details></div>
+
+<div class="lightweight-accordion has-background"><details><summary class="lightweight-accordion-title" style="background:var(--theme-palette-color-3, #000000);"><span>Appendix</span></summary><div class="lightweight-accordion-body" style="border-color:var(--theme-palette-color-3, #000000);">
+
+<ul style="margin-right:1rem;margin-left:1rem" class="wp-block-list has-palette-color-3-background-color has-background">
+<li><a href="https://jakehiance-com-243437.hostingersite.com/the-book-of-foundational-mathematics/further-reading/" data-type="page" data-id="6389">Further Reading</a></li>
+</ul>
+
+</div></details></div>
+
+
+<hr class="wp-block-separator has-text-color has-palette-color-8-color has-alpha-channel-opacity has-palette-color-8-background-color has-background is-style-wide">
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h2 class="wp-block-heading has-text-align-center has-palette-color-8-color has-text-color has-link-color wp-elements-fb3d76d9926c713a90c4d3962583ce31">Quick Links</h2>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-1 wp-block-group-is-layout-constrained">
+<p><a href="https://jakehiance-com-243437.hostingersite.com/" data-type="page" data-id="3727">Home</a></p>
+
+
+
+<p><a href="https://jakehiance-com-243437.hostingersite.com/books/" data-type="page" data-id="3957">Books</a></p>
+
+
+
+<p><a href="https://jakehiance-com-243437.hostingersite.com/tutoring/" data-type="page" data-id="7296">Tutoring</a></p>
+
+
+
+<p><a href="https://jakehiance-com-243437.hostingersite.com/resume/" data-type="page" data-id="5684">Resume</a></p>
+
+
+
+<p><a href="https://jakehiance-com-243437.hostingersite.com/about-me/" data-type="page" data-id="3729">Blog</a></p>
+
+
+
+<p><a href="https://jakehiance-com-243437.hostingersite.com/artwork/" data-type="page" data-id="8301">Artwork</a></p>
+</div>
+
+
+
+<hr class="wp-block-separator has-text-color has-palette-color-8-color has-alpha-channel-opacity has-palette-color-8-background-color has-background is-style-wide">
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-2 wp-block-group-is-layout-constrained">
+<p><a href="https://jakehiance-com-243437.hostingersite.com/style-guide/" data-type="page" data-id="4257">Style Guide</a></p>
+
+
+
+<p><a href="https://github.com/Jakeman582?tab=repositories">GitHub Repository</a></p>
+
+
+
+<p><a href="https://www.paypal.com/donate/?hosted_button_id=WR7T4N7P2JHHJ">Support this Project</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column contents-column has-palette-color-8-background-color has-background is-layout-flow wp-block-column-is-layout-flow" style="padding-right:1rem;padding-left:1rem;flex-basis:80%">
+<div class="wp-block-group alignwide is-layout-constrained wp-block-group-is-layout-constrained" style="border-bottom-width:5px">
+<h2 class="wp-block-heading alignwide">Set Partitions</h2>
+</div>
+
+
+
+<div class="wp-block-group alignwide is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-6 wp-block-group-is-layout-constrained">
+<p>When working with a set of related objects, we may want to split that set up into smaller, more manageable sets.</p>
+
+
+
+<p>For example, we may want to split up the integers based on parity: 
+even integers, and odd integers. When dealing with the real numbers, we 
+may want to split them up into three separate sets: the positive real 
+numbers, the negative real numbers, and the number 0. One more example 
+may be the positive rational numbers, where we split them up based on 
+how big they are. We may have all of the positive rational numbers less 
+than 1 in one set, and all of the positive rational numbers greater than
+ or equal to 1 in the other set.</p>
+
+
+
+<p>No matter how we split up a set, we’ll want to make sure that all 
+elements of the original set are accounted for in one of the smaller 
+subsets we form.</p>
+</div>
+
+
+
+<div class="wp-block-group alignwide is-layout-constrained wp-block-group-is-layout-constrained" style="border-bottom-width:5px">
+<h2 class="wp-block-heading alignwide">Partitioning a Set</h2>
+</div>
+
+
+
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%">
+<p>In the introduction to this section, we mentioned three examples of 
+how we may split a large set into smaller subsets, making sure every 
+element with the original set is in one of the subsets. A <em>partition</em>
+ of a set creates these subsets, while making sure that every element is
+ accounted for, however, the word partition also invokes the idea of 
+separation: no two sets should share any elements. The following 
+definition of partition offers something more precise.</p>
+
+
+
+<div class="wp-block-group has-border-color has-pale-cyan-blue-border-color is-layout-constrained wp-container-core-group-is-layout-10 wp-block-group-is-layout-constrained" style="border-width:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<h3 class="wp-block-heading has-pale-cyan-blue-background-color has-background" style="margin-bottom:0px;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px">Partition</h3>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-9 wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:0;padding-right:var(--wp--preset--spacing--20);padding-bottom:0;padding-left:var(--wp--preset--spacing--20)">
+<p>Consider some set A ⊆ 𝒰 along with some index set I.</p>
+
+
+
+<p>For each i ∈ I, let A<sub>i</sub> ⊆ A such that A<sub>i</sub> ≠ ∅. Then the set </p>
+
+
+
+<p class="has-text-align-center">{ A<sub>i</sub> | i ∈ I }</p>
+
+
+
+<p>is called a <strong><span style="color: var(--theme-palette-color-2, #0693e3);" class="stk-highlight">partition</span></strong> of A if (and only if) the following two conditions are satisfied:</p>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-8 wp-block-group-is-layout-constrained">
+<figure class="wp-block-image size-full is-resized"><img decoding="async" width="236" height="120" src="Set%20Partitions_files/1-1.webp" alt="" class="wp-image-8346" style="width:178px;height:auto"></figure>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="880" height="67" src="Set%20Partitions_files/2.webp" alt="" class="wp-image-8347" srcset="Set%20Partitions_files/2.webp 880w, Set%20Partitions_files/2-300x23.webp 300w, Set%20Partitions_files/2-768x58.webp 768w" sizes="(max-width: 880px) 100vw, 880px"></figure>
+</div>
+</div>
+</div>
+
+
+
+<p>Note that none of the sets in the partition can be empty. The whole 
+point of forming a partition is take elements from the original set and 
+put them into a subset.</p>
+
+
+
+<div class="wp-block-group has-border-color has-light-green-cyan-border-color is-layout-constrained wp-container-core-group-is-layout-13 wp-block-group-is-layout-constrained" style="border-width:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-light-green-cyan-background-color has-background is-layout-constrained wp-container-core-group-is-layout-11 wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+<h3 class="wp-block-heading" style="margin-bottom:0px;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px">Example 3.7.1</h3>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-12 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:5px;padding-left:5px">
+<p>Consider the the following set of numbers</p>
+
+
+
+<p class="has-text-align-center">A = { 0, 1, -1, 2, -2, 3, -3, 4, -4 }</p>
+
+
+
+<p>If we want to partition this set, we need to form non-empty subsets 
+that are all disjoint, and such that all elements in A are in one of the
+ subsets.</p>
+
+
+
+<p>Here’s one way to partition A:</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A<sub>1</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0, 1 }</td></tr><tr><td class="has-text-align-right" data-align="right">A<sub>2</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -1, 2, -2 }</td></tr><tr><td class="has-text-align-right" data-align="right">A<sub>3</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 3, -3, 4, -4 }</td></tr></tbody></table></figure>
+
+
+
+<p>Notice that we didn’t start with the index set </p>
+
+
+
+<p class="has-text-align-center">I = { 1, 2, 3 }</p>
+
+
+
+<p>Instead, we formed the subsets first, and then indexed them. Of 
+course, we should check to see if the conditions specified in the 
+definition are met:</p>
+
+
+
+<p class="has-text-align-center">A<sub>1</sub> ∪ A<sub>2</sub> ∪ A<sub>3</sub> = A</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A<sub>1</sub> ∪ A<sub>2</sub> ∪ A<sub>3</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0, 1 } ∪ { -1, 2, -2 } ∪ { 3, -3, 4, -4 }</td></tr><tr><td class="has-text-align-right" data-align="right"></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">A</td></tr></tbody></table></figure>
+
+
+
+<p>This means that every element from A was accounted for. Now we check to see if all the subsets are disjoint:</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A<sub>1</sub> ∩ A<sub>2</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0, 1 } ∩ { -1, 2, -2 }</td></tr><tr><td class="has-text-align-right" data-align="right"></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">∅</td></tr></tbody></table></figure>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A<sub>1</sub> ∩ A<sub>3</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0, 1 } ∩ { 3, -3, 4, -4 }</td></tr><tr><td class="has-text-align-right" data-align="right"></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">∅</td></tr></tbody></table></figure>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A<sub>2</sub> ∩ A<sub>3</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -1, 2, -2 } ∩ { 3, -3, 4, -4 }</td></tr><tr><td class="has-text-align-right" data-align="right"></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">∅</td></tr></tbody></table></figure>
+
+
+
+<p>Both conditions have been met, so this is a legitimate partition of A.</p>
+</div>
+</div>
+
+
+
+<div class="wp-block-group has-border-color has-light-green-cyan-border-color is-layout-constrained wp-container-core-group-is-layout-16 wp-block-group-is-layout-constrained" style="border-width:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-light-green-cyan-background-color has-background is-layout-constrained wp-container-core-group-is-layout-14 wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+<h3 class="wp-block-heading" style="margin-bottom:0px;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px">Example 3.7.2</h3>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-15 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:5px;padding-left:5px">
+<p>There are other ways to partition the set </p>
+
+
+
+<p class="has-text-align-center">A = { 0, 1, -1, 2, -2, 3, -3, 4, -4 }</p>
+
+
+
+<p>One such way to partition the set is with the following:</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">X<sub>1</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0, 4 }</td></tr><tr><td class="has-text-align-right" data-align="right">X<sub>2</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -1 }</td></tr><tr><td class="has-text-align-right" data-align="right">X<sub>3</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 1, 2 }</td></tr><tr><td class="has-text-align-right" data-align="right">X<sub>4</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -2, -3, -4 }</td></tr><tr><td class="has-text-align-right" data-align="right">X<sub>5</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 3 }</td></tr></tbody></table></figure>
+
+
+
+<p>Notice that we didn’t use the letter A for the names of these 
+subsets. The important thing is the content of the subsets themselves, 
+not the name given to the subsets. As long as the two conditions are 
+met, the collection of sets form a partition. We could also put every 
+element in A into it’s own subset like so:</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">Y<sub>1</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>2</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 1 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>3</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -1 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>4</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 2 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>5</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -2 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>6</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 3 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>7</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -3 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>8</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 4 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y<sub>9</sub></td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ -4 }</td></tr></tbody></table></figure>
+
+
+
+<p>Yet another partition we could form is just by taking the entire set itself:</p>
+
+
+
+<p class="has-text-align-center">Z = { 0, 1, -1, 2, -2, 3, -3, 4, -4 }</p>
+
+
+
+<p>Since there are no other sets in this partition, it is trivially true
+ that the union of all the sets form A. Furthermore, since there are no 
+other sets in the partition, it is trivially true that all sets in the 
+partition are disjoint.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-group alignwide is-layout-constrained wp-block-group-is-layout-constrained" style="border-bottom-width:5px">
+<h2 class="wp-block-heading alignwide">Examples of Partitions</h2>
+</div>
+
+
+
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%">
+<div class="wp-block-group has-border-color has-light-green-cyan-border-color is-layout-constrained wp-container-core-group-is-layout-20 wp-block-group-is-layout-constrained" style="border-width:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-light-green-cyan-background-color has-background is-layout-constrained wp-container-core-group-is-layout-18 wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+<h3 class="wp-block-heading" style="margin-bottom:0px;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px">Example 3.7.3</h3>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-19 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:5px;padding-left:5px">
+<p>As mentioned in the introduction, one thing we can do is split up the
+ integers into two subsets: one containing the even integers, and a 
+second subset containing the odd integers.</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0, 2, -2, 4, -4, 6, -6, … }</td></tr><tr><td class="has-text-align-right" data-align="right">B</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 1, -1, 3, -3, 5, -5, 7, -7, … }</td></tr></tbody></table></figure>
+
+
+
+<p>Here, we didn’t use the same letter for the subset names, nor did we 
+use indices. Again, the names of the subsets is not important. What’s 
+important is knowing that all subsets are mutually disjoint, and that 
+all elements from the original set are accounted for.</p>
+</div>
+</div>
+
+
+
+<div class="wp-block-group has-border-color has-light-green-cyan-border-color is-layout-constrained wp-container-core-group-is-layout-23 wp-block-group-is-layout-constrained" style="border-width:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-light-green-cyan-background-color has-background is-layout-constrained wp-container-core-group-is-layout-21 wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+<h3 class="wp-block-heading" style="margin-bottom:0px;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px">Example 3.7.4</h3>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-22 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:5px;padding-left:5px">
+<p>One way to partition the real numbers ℝ is into three subsets: the 
+subset of all positive real numbers greater than 0, the subset of all 
+negative real numbers less than 0, and finally the subset containing 
+just the number 0.</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">X</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ x ∈ ℝ | x &lt; 0 }</td></tr><tr><td class="has-text-align-right" data-align="right">Y</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ 0 }</td></tr><tr><td class="has-text-align-right" data-align="right">Z</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ x ∈ ℝ | x &gt; 0 }</td></tr></tbody></table></figure>
+
+
+
+<p>Some numbers that are in X include -π, -12.3372, and -√2.</p>
+
+
+
+<p>Some numbers in Z include 1.2345, 12, and π * π.</p>
+</div>
+</div>
+
+
+
+<div class="wp-block-group has-border-color has-light-green-cyan-border-color is-layout-constrained wp-container-core-group-is-layout-26 wp-block-group-is-layout-constrained" style="border-width:5px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-light-green-cyan-background-color has-background is-layout-constrained wp-container-core-group-is-layout-24 wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+<h3 class="wp-block-heading" style="margin-bottom:0px;padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px">Example 3.7.5</h3>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-25 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:5px;padding-left:5px">
+<p>As one more example, we could partition the positive rational numbers into two separate subsets.</p>
+
+
+
+<figure class="wp-block-table aligncenter"><table style="border-style:none;border-width:0px"><tbody><tr><td class="has-text-align-right" data-align="right">A</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ a/b | a ∈ {0, 1, 2, 3, …} ∧ b ∈ {1, 2, 3, …} ∧ a/b &lt; 1}</td></tr><tr><td class="has-text-align-right" data-align="right">B</td><td class="has-text-align-center" data-align="center">=</td><td class="has-text-align-left" data-align="left">{ a/b | a ∈ {0, 1, 2, 3, …} ∧ b ∈ {1, 2, 3, …} ∧ a/b ≥ 1}</td></tr></tbody></table></figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+		</div>
+
+		
+		
+		
+		
+	</article>
+
+	
+		
+			</div>
+
+	</main>
+
+	<footer id="footer" class="ct-footer" data-id="type-1" itemscope="" itemtype="https://schema.org/WPFooter"></footer></div>
+
+<div class="ct-drawer-canvas" data-location="end"><div class="ct-drawer-inner">
+	<a href="#main-container" class="ct-back-to-top ct-hidden-sm" data-shape="square" data-alignment="right" title="Go to top" aria-label="Go to top" hidden="">
+
+		<svg class="ct-icon" width="15" height="15" viewBox="0 0 20 20"><path d="M18.1,9.4c-0.2,0.4-0.5,0.6-0.9,0.6h-3.7c0,0-0.6,8.7-0.9,9.1C12.2,19.6,11.1,20,10,20c-1,0-2.3-0.3-2.7-0.9C7,18.7,6.5,10,6.5,10H2.8c-0.4,0-0.7-0.2-1-0.6C1.7,9,1.7,8.6,1.9,8.3c2.8-4.1,7.2-8,7.4-8.1C9.5,0.1,9.8,0,10,0s0.5,0.1,0.6,0.2c0.2,0.1,4.6,3.9,7.4,8.1C18.2,8.7,18.3,9.1,18.1,9.4z"></path></svg>	</a>
+
+	</div></div><style id="core-block-supports-inline-css">
+.wp-elements-dee6ecd4e0d781189201fbfc96d3fdd2 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-8);}.wp-elements-b302101a6352072144ec6c467129c445 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-8);}.wp-elements-fb3d76d9926c713a90c4d3962583ce31 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--palette-color-8);}.wp-container-core-group-is-layout-1 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-1 > * + *{margin-block-start:0px;margin-block-end:0;}.wp-container-core-group-is-layout-2 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-2 > * + *{margin-block-start:0px;margin-block-end:0;}.wp-container-core-group-is-layout-4 > .alignfull{margin-right:calc(1rem * -1);margin-left:calc(1rem * -1);}.wp-container-core-group-is-layout-4 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-4 > * + *{margin-block-start:5px;margin-block-end:0;}.wp-container-core-group-is-layout-6 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left:0 !important;}.wp-container-core-group-is-layout-8 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:70%;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-8 > .alignwide{max-width:70%;}.wp-container-core-group-is-layout-8 .alignfull{max-width:none;}.wp-container-core-group-is-layout-9 > .alignfull{margin-right:calc(var(--wp--preset--spacing--20) * -1);margin-left:calc(var(--wp--preset--spacing--20) * -1);}.wp-container-core-group-is-layout-10 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-11 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-12 > .alignfull{margin-right:calc(5px * -1);margin-left:calc(5px * -1);}.wp-container-core-group-is-layout-13 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-14 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-15 > .alignfull{margin-right:calc(5px * -1);margin-left:calc(5px * -1);}.wp-container-core-group-is-layout-16 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-columns-is-layout-1{flex-wrap:nowrap;}.wp-container-core-group-is-layout-18 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-19 > .alignfull{margin-right:calc(5px * -1);margin-left:calc(5px * -1);}.wp-container-core-group-is-layout-20 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-21 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-22 > .alignfull{margin-right:calc(5px * -1);margin-left:calc(5px * -1);}.wp-container-core-group-is-layout-23 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-24 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-group-is-layout-25 > .alignfull{margin-right:calc(5px * -1);margin-left:calc(5px * -1);}.wp-container-core-group-is-layout-26 > .alignfull{margin-right:calc(0px * -1);margin-left:calc(0px * -1);}.wp-container-core-columns-is-layout-2{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-3{flex-wrap:nowrap;}
+</style>
+<script src="Set%20Partitions_files/hoverintent-js.min.js" id="hoverintent-js-js"></script>
+<script id="admin-bar-js-before">
+( function() {
+				function wpforms_admin_bar_menu_init() {
+					var template = document.getElementById( 'tmpl-wpforms-admin-menubar-data' ),
+						notifications = document.getElementById( 'wp-admin-bar-wpforms-notifications' );
+
+					if ( ! template ) {
+						return;
+					}
+
+					if ( ! notifications ) {
+						var menu = document.getElementById( 'wp-admin-bar-wpforms-menu-default' );
+
+						if ( ! menu ) {
+							return;
+						}
+
+						menu.insertAdjacentHTML( 'afterBegin', template.innerHTML );
+					} else {
+						notifications.insertAdjacentHTML( 'afterend', template.innerHTML );
+					}
+				};
+				document.addEventListener( 'DOMContentLoaded', wpforms_admin_bar_menu_init );
+			}() );
+</script>
+<script src="Set%20Partitions_files/admin-bar.min.js" id="admin-bar-js"></script>
+<script id="ct-scripts-js-extra">
+var ct_localizations = {"ajax_url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/admin-ajax.php","public_url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/themes\/blocksy\/static\/bundle\/","rest_url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-json\/","search_url":"https:\/\/jakehiance-com-243437.hostingersite.com\/search\/QUERY_STRING\/","show_more_text":"Show more","more_text":"More","search_live_results":"Search results","search_live_no_results":"No results","search_live_no_result":"No results","search_live_one_result":"You got %s result. Please press Tab to select it.","search_live_many_results":"You got %s results. Please press Tab to select one.","clipboard_copied":"Copied!","clipboard_failed":"Failed to Copy","expand_submenu":"Expand dropdown menu","collapse_submenu":"Collapse dropdown menu","dynamic_js_chunks":[{"id":"blocksy_sticky_header","selector":"header [data-sticky]","url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/plugins\/blocksy-companion\/static\/bundle\/sticky.js?ver=2.0.92"}],"dynamic_styles":{"lazy_load":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/themes\/blocksy\/static\/bundle\/non-critical-styles.min.css?ver=2.0.92","search_lazy":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/themes\/blocksy\/static\/bundle\/non-critical-search-styles.min.css?ver=2.0.92","back_to_top":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/themes\/blocksy\/static\/bundle\/back-to-top.min.css?ver=2.0.92"},"dynamic_styles_selectors":[{"selector":".ct-header-cart, #woo-cart-panel","url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/themes\/blocksy\/static\/bundle\/cart-header-element-lazy.min.css?ver=2.0.92"},{"selector":".flexy","url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/themes\/blocksy\/static\/bundle\/flexy.min.css?ver=2.0.92"},{"selector":"#account-modal","url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/plugins\/blocksy-companion\/static\/bundle\/header-account-modal-lazy.min.css?ver=2.0.92"},{"selector":".ct-header-account","url":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/plugins\/blocksy-companion\/static\/bundle\/header-account-dropdown-lazy.min.css?ver=2.0.92"}]};
+</script>
+<script src="Set%20Partitions_files/main.js" id="ct-scripts-js"></script>
+<script id="googlesitekit-tracking-data-js-extra">
+var _googlesitekitTrackingData = {"referenceSiteURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/","userIDHash":"22b3d5d993b4d863badd98971f5938b9","isAuthenticated":true,"userRoles":["administrator"],"activeModules":["search-console","analytics-4","pagespeed-insights"],"isSiteKitScreen":false,"trackingEnabled":true,"trackingID":"G-EQDN3BWDSD"};
+</script>
+<script src="Set%20Partitions_files/runtime-09b709733bacd5275e3c.js" id="googlesitekit-runtime-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-i18n-bc6710fe480079978219.js" id="googlesitekit-i18n-js"></script>
+<script id="googlesitekit-base-data-js-extra">
+var _googlesitekitBaseData = {"homeURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/","referenceSiteURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/","adminURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/","assetsURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-content\/plugins\/google-site-kit\/dist\/assets\/","widgetsAdminURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/widgets.php","blogPrefix":"wp_","ampMode":false,"isNetworkMode":false,"timezone":"","siteName":"","siteLocale":"en_US","enabledFeatures":[],"webStoriesActive":false,"postTypes":[{"slug":"post","label":"Posts"},{"slug":"page","label":"Pages"},{"slug":"attachment","label":"Media"}],"storagePrefix":"50c3df851680aeebeda6ab9557f325cc","referenceDate":null,"productPostType":null,"anyoneCanRegister":false,"isMultisite":false,"isOwner":true,"splashURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/admin.php?page=googlesitekit-splash","proxySetupURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/index.php?action=googlesitekit_proxy_setup_start&nonce=5f052a1850","proxyPermissionsURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/index.php?action=googlesitekit_proxy_permissions&nonce=34265614ab","usingProxy":true,"isAuthenticated":true,"setupErrorCode":null,"setupErrorMessage":null,"setupErrorRedoURL":null,"proxySupportLinkURL":"https:\/\/sitekit.withgoogle.com\/support","updateCoreURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/update-core.php","wpVersion":{"version":"6.7.2","major":6,"minor":7},"pluginBasename":"google-site-kit\/google-site-kit.php","userRoles":["administrator"],"activeModules":["search-console","analytics-4","pagespeed-insights"],"keyMetricsSetupNew":false,"keyMetricsSetupCompletedBy":0,"consentModeRegions":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"]};
+</script>
+<script src="Set%20Partitions_files/googlesitekit-polyfills-147c5aa43487b444ac6c.js" id="googlesitekit-polyfills-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-vendor-61b24bed15267d13bbf2.js" id="googlesitekit-vendor-js"></script>
+<script id="googlesitekit-commons-js-extra">
+var _googlesitekitLegacyData = {"admin":{"siteURL":"https:\/\/jakehiance-com-243437.hostingersite.com","resetSession":null,"newSitePosts":false,"connectURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/index.php?action=googlesitekit_connect&nonce=0c23ef17a7","disconnectURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/index.php?action=googlesitekit_disconnect&nonce=03bd7cca01"},"locale":"en_US","setup":{"isSiteKitConnected":true,"isResettable":true,"isAuthenticated":true,"requiredScopes":["openid","https:\/\/www.googleapis.com\/auth\/userinfo.profile","https:\/\/www.googleapis.com\/auth\/userinfo.email","https:\/\/www.googleapis.com\/auth\/siteverification","https:\/\/www.googleapis.com\/auth\/webmasters","https:\/\/www.googleapis.com\/auth\/analytics.readonly","https:\/\/www.googleapis.com\/auth\/tagmanager.readonly"],"grantedScopes":["https:\/\/www.googleapis.com\/auth\/siteverification","https:\/\/www.googleapis.com\/auth\/analytics.readonly","openid","https:\/\/www.googleapis.com\/auth\/userinfo.profile","https:\/\/www.googleapis.com\/auth\/webmasters","https:\/\/www.googleapis.com\/auth\/userinfo.email","https:\/\/www.googleapis.com\/auth\/tagmanager.readonly"],"unsatisfiedScopes":[],"needReauthenticate":false,"isVerified":true,"hasSearchConsoleProperty":true}};
+</script>
+<script id="googlesitekit-apifetch-data-js-extra">
+var _googlesitekitAPIFetchData = {"nonce":"7f91ae8f59","nonceEndpoint":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/admin-ajax.php?action=rest-nonce","preloadedData":{"\/google-site-kit\/v1\/core\/site\/data\/connection":{"body":{"connected":true,"resettable":true,"setupCompleted":true,"hasConnectedAdmins":true,"hasMultipleAdmins":false,"ownerID":1},"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/authentication":{"body":{"authenticated":true,"requiredScopes":["openid","https:\/\/www.googleapis.com\/auth\/userinfo.profile","https:\/\/www.googleapis.com\/auth\/userinfo.email","https:\/\/www.googleapis.com\/auth\/siteverification","https:\/\/www.googleapis.com\/auth\/webmasters","https:\/\/www.googleapis.com\/auth\/analytics.readonly","https:\/\/www.googleapis.com\/auth\/tagmanager.readonly"],"grantedScopes":["https:\/\/www.googleapis.com\/auth\/siteverification","https:\/\/www.googleapis.com\/auth\/analytics.readonly","openid","https:\/\/www.googleapis.com\/auth\/userinfo.profile","https:\/\/www.googleapis.com\/auth\/webmasters","https:\/\/www.googleapis.com\/auth\/userinfo.email","https:\/\/www.googleapis.com\/auth\/tagmanager.readonly"],"unsatisfiedScopes":[],"needsReauthentication":false,"disconnectedReason":"","connectedProxyURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/"},"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/user-input-settings":{"body":{"purpose":{"scope":"site","values":[]},"postFrequency":{"scope":"user","values":[]},"goals":{"scope":"user","values":[]},"includeConversionEvents":{"scope":"site","values":[]}},"headers":{"Allow":"GET, POST"}},"\/google-site-kit\/v1\/core\/user\/data\/audience-settings":{"body":{"configuredAudiences":null,"isAudienceSegmentationWidgetHidden":false,"didSetAudiences":false},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/core\/user\/data\/conversion-reporting-settings":{"body":{"newEventsCalloutDismissedAt":0,"lostEventsCalloutDismissedAt":0},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/core\/modules\/data\/list":{"body":[{"slug":"site-verification","name":"Site Verification","description":"Google Site Verification allows you to manage ownership of your site.","homepage":"https:\/\/www.google.com\/webmasters\/verification\/home","internal":true,"order":0,"forceActive":true,"recoverable":false,"shareable":false,"active":true,"connected":true,"dependencies":[],"dependants":[],"owner":null},{"slug":"search-console","name":"Search Console","description":"Google Search Console and helps you understand how Google views your site and optimize its performance in search results.","homepage":"https:\/\/search.google.com\/search-console","internal":false,"order":1,"forceActive":true,"recoverable":false,"shareable":true,"active":true,"connected":true,"dependencies":[],"dependants":[],"owner":{"id":1,"login":"jakehiance@gmail.com"}},{"slug":"ads","name":"Ads","description":"Track conversions for your existing Google Ads campaigns","homepage":"https:\/\/google.com\/ads","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":false,"active":false,"connected":false,"dependencies":[],"dependants":[],"owner":null},{"slug":"analytics-4","name":"Analytics","description":"Get a deeper understanding of your customers. Google Analytics gives you the free tools you need to analyze data for your business in one place.","homepage":"https:\/\/analytics.google.com\/analytics\/web","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":true,"active":true,"connected":true,"dependencies":[],"dependants":[],"owner":{"id":1,"login":"jakehiance@gmail.com"}},{"slug":"tagmanager","name":"Tag Manager","description":"Tag Manager creates an easy to manage way to create tags on your site without updating code","homepage":"https:\/\/tagmanager.google.com\/","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":false,"active":false,"connected":false,"dependencies":[],"dependants":[],"owner":null},{"slug":"adsense","name":"AdSense","description":"Earn money by placing ads on your website. It\u2019s free and easy.","homepage":"https:\/\/adsense.google.com\/start?source=site-kit&url=https:\/\/jakehiance-com-243437.hostingersite.com","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":false,"active":false,"connected":false,"dependencies":[],"dependants":[],"owner":null},{"slug":"pagespeed-insights","name":"PageSpeed Insights","description":"Google PageSpeed Insights gives you metrics about performance, accessibility, SEO and PWA","homepage":"https:\/\/pagespeed.web.dev","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":true,"active":true,"connected":true,"dependencies":[],"dependants":[],"owner":null},{"slug":"sign-in-with-google","name":"Sign in with Google","description":"Improve user engagement, trust and data privacy, while creating a simple, secure and personalized experience for your visitors","homepage":"https:\/\/developers.google.com\/identity\/gsi\/web\/guides\/overview","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":false,"active":false,"connected":false,"dependencies":[],"dependants":[],"owner":null},{"slug":"reader-revenue-manager","name":"Reader Revenue Manager","description":"Reader Revenue Manager helps publishers grow, retain, and engage their audiences, creating new revenue opportunities","homepage":"https:\/\/publishercenter.google.com","internal":false,"order":10,"forceActive":false,"recoverable":false,"shareable":false,"active":false,"connected":false,"dependencies":[],"dependants":[],"owner":null}],"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/modules\/search-console\/data\/settings":{"body":{"propertyID":"https:\/\/jakehiance-com-243437.hostingersite.com\/","ownerID":1},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/modules\/analytics-4\/data\/settings":{"body":{"ownerID":1,"propertyID":"358139770","webDataStreamID":"4701446468","measurementID":"G-SVXC0XFE11","useSnippet":true,"googleTagID":"GT-NBXFMLX","googleTagAccountID":"6076457783","googleTagContainerID":"104527252","googleTagLastSyncedAtMs":1742936842881,"availableCustomDimensions":[],"propertyCreateTime":1678749334000,"accountID":"260509109","adsConversionID":"","trackingDisabled":["loggedinUsers"],"adSenseLinked":false,"adSenseLinkedLastSyncedAt":0,"adsConversionIDMigratedAtMs":0,"adsLinked":true,"adsLinkedLastSyncedAt":1735355141,"googleTagContainerDestinationIDs":["G-SVXC0XFE11"],"detectedEvents":[],"audienceSegmentationSetupComplete":false,"newConversionEventsLastUpdateAt":0,"lostConversionEventsLastUpdateAt":0},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/modules\/pagespeed-insights\/data\/settings":{"body":{"ownerID":0},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/modules\/analytics-4\/data\/audience-settings":{"body":{"availableAudiences":[{"name":"properties\/358139770\/audiences\/4701526848","displayName":"All visitors","description":"All users","audienceType":"DEFAULT_AUDIENCE","audienceSlug":"all-users"},{"name":"properties\/358139770\/audiences\/4701526849","displayName":"Purchasers","description":"Users who have purchased in the last 540 days","audienceType":"DEFAULT_AUDIENCE","audienceSlug":"purchasers"}],"availableAudiencesLastSyncedAt":0,"audienceSegmentationSetupCompletedBy":null},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/core\/user\/data\/dismissed-items":{"body":["key-metrics-setup-cta-widget"],"headers":{"Allow":"GET, DELETE"}},"\/google-site-kit\/v1\/core\/user\/data\/expirable-items":{"body":[],"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/permissions":{"body":{"googlesitekit_authenticate":true,"googlesitekit_setup":true,"googlesitekit_view_posts_insights":true,"googlesitekit_view_dashboard":true,"googlesitekit_manage_options":true,"googlesitekit_update_plugins":true,"googlesitekit_view_splash":true,"googlesitekit_view_authenticated_dashboard":true,"googlesitekit_view_wp_dashboard_widget":true,"googlesitekit_view_admin_bar_menu":true,"googlesitekit_view_shared_dashboard":false,"googlesitekit_read_shared_module_data::[\"search-console\"]":false,"googlesitekit_read_shared_module_data::[\"analytics-4\"]":false,"googlesitekit_read_shared_module_data::[\"pagespeed-insights\"]":false,"googlesitekit_manage_module_sharing_options::[\"search-console\"]":true,"googlesitekit_manage_module_sharing_options::[\"analytics-4\"]":true,"googlesitekit_manage_module_sharing_options::[\"pagespeed-insights\"]":true,"googlesitekit_delegate_module_sharing_management::[\"search-console\"]":true,"googlesitekit_delegate_module_sharing_management::[\"analytics-4\"]":true,"googlesitekit_delegate_module_sharing_management::[\"pagespeed-insights\"]":false},"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/nonces":{"body":{"updates":"61f4c7f1fa"},"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/survey-timeouts":{"body":[],"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/tracking":{"body":{"enabled":true},"headers":{"Allow":"GET, POST"}},"\/google-site-kit\/v1\/core\/site\/data\/admin-bar-settings":{"body":{"enabled":true},"headers":{"Allow":"GET, POST"}},"\/google-site-kit\/v1\/core\/user\/data\/dismissed-tours":{"body":[],"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/user\/data\/key-metrics":{"body":{"widgetSlugs":[],"isWidgetHidden":false},"headers":{"Allow":"GET, POST"}},"\/google-site-kit\/v1\/core\/user\/data\/dismissed-prompts":{"body":[],"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/site\/data\/consent-mode":{"body":{"enabled":false,"regions":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"]},"headers":{"Allow":"GET, POST, PUT, PATCH"}},"\/google-site-kit\/v1\/core\/site\/data\/consent-api-info":{"body":{"hasConsentAPI":false,"wpConsentPlugin":{"installed":false,"installURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/update.php?action=install-plugin&plugin=wp-consent-api&_wpnonce=c4733b2e5b","activateURL":false}},"headers":{"Allow":"GET"}},"\/google-site-kit\/v1\/core\/site\/data\/conversion-tracking":{"body":{"enabled":false},"headers":{"Allow":"GET, POST, PUT, PATCH"}}},"rootURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-json\/"};
+</script>
+<script src="Set%20Partitions_files/googlesitekit-api-dc05e16c422c13f46b57.js" id="googlesitekit-api-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-data-f52927ecb8eaaa3eb882.js" id="googlesitekit-data-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-datastore-forms-49a688b0872b7e42e536.js" id="googlesitekit-datastore-forms-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-datastore-location-1a7dab85c4e97c27cbd5.js" id="googlesitekit-datastore-location-js"></script>
+<script id="googlesitekit-entity-data-js-extra">
+var _googlesitekitEntityData = {"currentEntityURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/the-book-of-foundational-mathematics\/set-partitions\/","currentEntityType":"post","currentEntityTitle":"Set Partitions","currentEntityID":8317};
+</script>
+<script src="Set%20Partitions_files/googlesitekit-datastore-site-0b5be9793870cfb20f27.js" id="googlesitekit-datastore-site-js"></script>
+<script id="googlesitekit-user-data-js-extra">
+var _googlesitekitUserData = {"user":{"id":1,"email":"jakehiance@gmail.com","name":"Jake Hiance","picture":"https:\/\/lh3.googleusercontent.com\/a\/ACg8ocL4h4ewokPgsKql3cwze5H5GcMJk4WA9nGNSjJMFb7g62TKRW_6=s100","full_name":"Jacob Hiance"},"connectURL":"https:\/\/jakehiance-com-243437.hostingersite.com\/wp-admin\/index.php?action=googlesitekit_connect&nonce=0c23ef17a7","hasMultipleAdmins":false,"initialVersion":"1.142.0","isUserInputCompleted":false,"verified":true};
+</script>
+<script src="Set%20Partitions_files/googlesitekit-datastore-user-393b11b36e1caa9573fd.js" id="googlesitekit-datastore-user-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-datastore-ui-427136abd3ce15149342.js" id="googlesitekit-datastore-ui-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-components-a0db6bb9e185c8836d69.js" id="googlesitekit-components-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-widgets-badcdbd332f57b829d41.js" id="googlesitekit-widgets-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-notifications-727db40d88136d1f9cb8.js" id="googlesitekit-notifications-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-adminbar-45908092d1d805de2ad1.js" id="googlesitekit-adminbar-js" defer="defer"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-b2d4d595bf080c395113.js" id="googlesitekit-modules-js"></script>
+<script id="googlesitekit-modules-data-js-extra">
+var _googlesitekitModulesData = {"analytics-4":{"customDimensionsDataAvailable":{"googlesitekit_post_date":false,"googlesitekit_post_author":false,"googlesitekit_post_categories":false,"googlesitekit_post_type":false},"resourceAvailabilityDates":{"audience":[],"customDimension":[],"property":[]},"tagIDMismatch":false,"newEvents":[],"lostEvents":[],"newBadgeEvents":[]},"data_available_search-console":true,"data_available_analytics-4":true};
+</script>
+<script src="Set%20Partitions_files/googlesitekit-modules-search-console-3e00a4306f834db02463.js" id="googlesitekit-modules-search-console-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-ads-f2f57189800362bba4a9.js" id="googlesitekit-modules-ads-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-analytics-4-007980886b1ef47fb921.js" id="googlesitekit-modules-analytics-4-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-tagmanager-89ff4998606af478ccba.js" id="googlesitekit-modules-tagmanager-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-adsense-82af7e2bea63979548ad.js" id="googlesitekit-modules-adsense-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-pagespeed-insights-5bf5ad4b94aaa19276d9.js" id="googlesitekit-modules-pagespeed-insights-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-sign-in-with-google-42610674b4d468e4254.js" id="googlesitekit-modules-sign-in-with-google-js"></script>
+<script src="Set%20Partitions_files/googlesitekit-modules-reader-revenue-manager-9a1d9d1102b1eb8b.js" id="googlesitekit-modules-reader-revenue-manager-js"></script>
+<script src="Set%20Partitions_files/jquery.min.js" id="jquery-core-js"></script>
+<script src="Set%20Partitions_files/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="Set%20Partitions_files/non-critical-styles.min.css"></body></html>
+<!-- Page cached by LiteSpeed Cache 7.1 on 2025-07-08 13:13:50 -->

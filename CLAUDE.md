@@ -153,6 +153,38 @@ The rule doesn't change inside a notice box: an example proposition inside an
 `example` box is LaTeX; the sentence introducing that box is plain Markdown,
 except for whichever variable names it happens to mention in passing.
 
+### Labeling a list of propositions
+
+When introducing a short list of labeled propositions or propositional
+functions (`$p$: ...`, `$s(n)$: ...`), use a two-column `\begin{array}{rl}`
+block, one proposition per row, with `\text{: }` immediately after the
+label so the colon and its trailing space are typeset together, and the
+statement itself in the second column. The label column is right-aligned
+(`r`), not left — this is what lines the colons up evenly when labels are
+different widths (`p` vs. `s(t)` vs. `\mathcal{U}$`), instead of leaving a
+ragged gap before each colon:
+
+```
+\[
+\begin{array}{rl}
+p\text{: } &\text{Statement for } p \text{.} \\
+q(x)\text{: } &\text{Statement for } q(x) \text{.}
+\end{array}
+\]
+```
+
+Add a third `l` column (`{rll}`) when a truth value or other trailing
+annotation needs its own column, e.g. `p\text{: } &\text{...} &\text{(true)}`
+— only the label column stays right-aligned; every column after it is left.
+
+This is what gives the label/colon/statement its consistent, evenly spaced
+look wherever it appears — see
+`content/books/foundational-mathematics/logic/quantifiers/_index.md` (the
+`$\alpha$`/`$\beta$` propositions in the introduction) for a clean worked
+example. Don't glue the colon directly onto the label (`p:`) or hand-tune
+spacing with `\quad`/`\;` — the array's own column alignment is what
+produces the even spacing, and doing it any other way is what breaks it.
+
 ## Step-by-step arithmetic and algebra
 
 Any worked derivation — simplifying an expression, evaluating a formula,
@@ -189,8 +221,29 @@ for this in place. Everything else about the format stays the same; only
 the connecting symbol changes, since it's literally a different relation
 (`\Longleftrightarrow` claims two propositions are logically equivalent, the
 same distinction documented under "Logical Equivalence" in the Laws of
-Logic page). Use the long form here, not inline `\Leftrightarrow` — inline
-equivalence statements outside a tabular derivation keep the short form.
+Logic page).
+
+This site-wide arrow convention holds everywhere, inline or tabular alike —
+it isn't context-dependent:
+
+- The implication *connective* is always the short form: `\to` (never
+  `\rightarrow` or `\longrightarrow`).
+- The biconditional *connective* is always the short form: `\leftrightarrow`
+  (never `\longleftrightarrow`).
+- The logical-equivalence *claim* arrow is always the long form:
+  `\Longleftrightarrow` (never inline `\Leftrightarrow`), including its
+  reverse-only form `\Longleftarrow` where that's the relation actually being
+  asserted.
+- The logical-implication *claim* arrow is always the long form:
+  `\Longrightarrow` (never inline `\Rightarrow`).
+
+The distinction driving this: a connective (`\to`, `\leftrightarrow`) is a
+piece of a proposition being built or discussed; a claim arrow
+(`\Longleftrightarrow`, `\Longrightarrow`, `\Longleftarrow`) asserts a
+relationship *about* two propositions or arguments (equivalence, logical
+implication) and is never part of the proposition itself — the length
+difference keeps that distinction visible at a glance, in prose and tables
+alike.
 
 Borders (`{l|l|l}` plus `\hline` under the header) are reserved for a
 *different* pattern — the small bridging tables that show one intermediary

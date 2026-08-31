@@ -57,15 +57,15 @@ we evaluate and combine to form larger statements.
 
 {{< example title="Some examples of propositions" >}}
 \[
-\begin{align*}
-w &\text{: H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.} \\
-t &\text{: Mr. T was a mathematics major at Prairie View A\&M University.} \\
-j &\text{: Thomas Jefferson was the second president of the United States.} \\
-b &\text{: Mary Shelley wrote Frankenstein or Alexandre Dumas wrote Moby Dick.} \\
-x &\text{: 12 is divisible by 3.} \\
-y &\text{: 3 + 3 = 7 and 4 + 4 = 8.} \\
-z &\text{: 2 is a solution to the equation } z^2 - 4 = 0 \text{.} \\
-\end{align*}
+\begin{array}{rl}
+w\text{: } &\text{H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.} \\
+t\text{: } &\text{Mr. T was a mathematics major at Prairie View A\&M University.} \\
+j\text{: } &\text{Thomas Jefferson was the second president of the United States.} \\
+b\text{: } &\text{Mary Shelley wrote Frankenstein or Alexandre Dumas wrote Moby Dick.} \\
+x\text{: } &\text{12 is divisible by 3.} \\
+y\text{: } &\text{3 + 3 = 7 and 4 + 4 = 8.} \\
+z\text{: } &\text{2 is a solution to the equation } z^2 - 4 = 0 \text{.}
+\end{array}
 \]
 {{< /example >}}
 
@@ -76,14 +76,14 @@ All of the sentences in the previous example have definite truth values.
 
 {{< example title="Looking at the truth values of the previous examples" >}}
 \[
-\begin{array}{ll}
-w\text{: H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.}  &\text{(true)} \\
-t\text{: Mr. T was a mathematics major at Prairie View A\&M University.}     &\text{(true)} \\
-j\text{: Thomas Jefferson was the second president of the United States.}     &\text{(false)} \\
-b\text{: Mary Shelley wrote Frankenstein or Alexandre Dumas wrote Moby Dick.} &\text{(true)} \\
-x\text{: 12 is divisible by 3.}                                               &\text{(true)} \\
-y\text{: 3 + 3 = 7 and 4 + 4 = 8.}                                            &\text{(false)} \\
-z\text{: 2 is a solution to the equation } z^2 - 4 = 0 \text{.}               &\text{(true)}
+\begin{array}{rll}
+w\text{: } &\text{H}_2\text{O is a liquid at 70 degrees Fahrenheit and 1 atmosphere.} &\text{(true)} \\
+t\text{: } &\text{Mr. T was a mathematics major at Prairie View A\&M University.} &\text{(true)} \\
+j\text{: } &\text{Thomas Jefferson was the second president of the United States.} &\text{(false)} \\
+b\text{: } &\text{Mary Shelley wrote Frankenstein or Alexandre Dumas wrote Moby Dick.} &\text{(true)} \\
+x\text{: } &\text{12 is divisible by 3.} &\text{(true)} \\
+y\text{: } &\text{3 + 3 = 7 and 4 + 4 = 8.} &\text{(false)} \\
+z\text{: } &\text{2 is a solution to the equation } z^2 - 4 = 0 \text{.} &\text{(true)}
 \end{array}
 \]
 {{< /example >}}
@@ -97,16 +97,16 @@ like they consist of simpler propositions.
 {{< example title="Breaking complex propositions into simple propositions" >}}
 Proposition $b$ from the previous two examples is made up of two simpler propositions:
 \[
-\begin{array}{ll}
-b_1\text{: Mary Shelley wrote Frankenstein.}  &\text{(true)}\\
-b_2\text{: Alexandre Dumas wrote Moby Dick.} &\text{(false)}
+\begin{array}{rll}
+b_1\text{: } &\text{Mary Shelley wrote Frankenstein.} &\text{(true)} \\
+b_2\text{: } &\text{Alexandre Dumas wrote Moby Dick.} &\text{(false)}
 \end{array}
 \]
 Proposition $y$ from the previous two examples is also made up of simpler propositions:
 \[
-\begin{array}{ll}
-y_1\text{: } 3 + 3 = 7 &\text{(false)} \\
-y_2\text{: } 4 + 4 = 8 &\text{(true)}
+\begin{array}{rll}
+y_1\text{: } &3 + 3 = 7 &\text{(false)} \\
+y_2\text{: } &4 + 4 = 8 &\text{(true)}
 \end{array}
 \]
 
@@ -181,17 +181,17 @@ The next definitions have to do with cause-and-effect type relationships between
 
 {{< definition terms="implication, conditional" >}}
 The ==implication== of two given propositions $p$ and $q$, denoted
-$p \longrightarrow q$, is false when $p$ is true and $q$ is false.
-Otherwise, $p \longrightarrow q$ is true.
+$p \to q$, is false when $p$ is true and $q$ is false.
+Otherwise, $p \to q$ is true.
 
 An implication is also called a ==conditional==.
 {{< /definition >}}
 
 {{< definition terms="biconditional" >}}
 The ==biconditional== of two given propositions $p$ and $q$, denoted
-$p \longleftrightarrow q$, is true when $p$ and $q$ have the same truth
+$p \leftrightarrow q$, is true when $p$ and $q$ have the same truth
 value — that is, when $p$ and $q$ are both true, or both false. Otherwise,
-$p \longleftrightarrow q$ is false.
+$p \leftrightarrow q$ is false.
 {{< /definition >}}
 
 ## Translating Compound Propositions into English Sentences
@@ -217,7 +217,7 @@ only one of the propositions is true.
 The implication is perhaps the most complex expression to translate into English. We won't be able to start appreciating why this is until 
 Chapter 2, but note that there are a wide variety of ways we can translate an implication into English. Some of these translations may seem confusing now, 
 but should become clear the more we work with implications (again, a detailed discussion of implications will be postponed to Chapter 2). For now, 
-here is a large list of possible translations for the logical expression $p \longrightarrow q$:
+here is a large list of possible translations for the logical expression $p \to q$:
 - "If $p$, then $q$"
 - "$p$ implies $q$"
 - "$p$ is sufficient for $q$"
@@ -229,7 +229,7 @@ here is a large list of possible translations for the logical expression $p \lon
 - "$q$ whenever $p$"
 
 Likewise, the biconditional can also be a bit cumbersome, but we will examine the biconditional in large detail in the upcoming sections. For now, 
-here is a list of ways the biconditional $p \longleftrightarrow q$ can be translated into English:
+here is a list of ways the biconditional $p \leftrightarrow q$ can be translated into English:
 - "$p$ if and only if $q$"
 - "$p$ is necessary and sufficient for $q$"
 
@@ -241,12 +241,12 @@ Consider the following propositions (disregarding for now whether they are
 true or not):
 
 \[
-\begin{align*}
-i &: \text{Aliens Florp and Flarp invade Earth.} \\
-f &: \text{The flying saucer has plenty of plutonium based fuel.} \\
-t &: \text{The flying saucer has enough capacity to store and transport three Earth specimens.} \\
-s &: \text{Florp and Flarp's invasion of Earth is successful.} \\
-\end{align*}
+\begin{array}{rl}
+i\text{: } &\text{Aliens Florp and Flarp invade Earth.} \\
+f\text{: } &\text{The flying saucer has plenty of plutonium based fuel.} \\
+t\text{: } &\text{The flying saucer has enough capacity to store and transport three Earth specimens.} \\
+s\text{: } &\text{Florp and Flarp's invasion of Earth is successful.}
+\end{array}
 \]
 
 Now we translate each of the following logical expressions into English
@@ -279,7 +279,7 @@ sentences:
 \end{align*}
 \]
 
-* $\neg f \longrightarrow \neg i$
+* $\neg f \to \neg i$
 \[
 \begin{align*}
 &\text{If the flying saucer is not stocked with plenty of plutonium-based fuel, then} \\
@@ -287,7 +287,7 @@ sentences:
 \end{align*}
 \]
 
-* $t \longrightarrow s$
+* $t \to s$
 \[
 \begin{align*}
 &\text{If the flying saucer has enough capacity to store and transport three Earth specimens, then} \\
@@ -295,7 +295,7 @@ sentences:
 \end{align*}
 \] 
 
-* $f \longleftrightarrow i$
+* $f \leftrightarrow i$
 \[
 \begin{align*}
 &\text{The flying saucer is stocked with plenty of plutonium-based fuel if and only if} \\

@@ -11,7 +11,7 @@ Consider the following propositional functions, both defined on the
 universe $\mathcal{U}$ of all integers:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 s(n)\text{: } &n^2 \text{ is even.} \\
 t(m, n)\text{: } &m^2 - n^2 \text{ is even.}
 \end{array}
@@ -25,7 +25,7 @@ true, while $m = 4$ and $n = -1$ make $t(m, n)$ false.
 Now consider the following statements:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 \alpha\text{: } &\text{For some } n \text{, } s(n) \text{ is true.} \\
 \beta\text{: } &\text{For all } m \text{ and all } n \text{, } t(m, n) \text{ is true.}
 \end{array}
@@ -97,8 +97,8 @@ consider the statements
 &\exists n\ [x(n) \land y(n)] \\
 &\exists n\ [x(n) \lor y(n)] \\
 &\exists n\ [x(n) \veebar y(n)] \\
-&\exists n\ [x(n) \longrightarrow y(n)] \\
-&\exists n\ [x(n) \longleftrightarrow y(n)]
+&\exists n\ [x(n) \to y(n)] \\
+&\exists n\ [x(n) \leftrightarrow y(n)]
 \end{align*}
 \]
 
@@ -111,8 +111,8 @@ is different from the statements
 &\exists n\ [x(n)] \land y(n) \\
 &\exists n\ [x(n)] \lor y(n) \\
 &\exists n\ [x(n)] \veebar y(n) \\
-&\exists n\ [x(n)] \longrightarrow y(n) \\
-&\exists n\ [x(n)] \longleftrightarrow y(n)
+&\exists n\ [x(n)] \to y(n) \\
+&\exists n\ [x(n)] \leftrightarrow y(n)
 \end{align*}
 \]
 
@@ -144,7 +144,7 @@ Consider the universe of all real numbers, along with the following open
 statements:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 p(x)\text{: } &x \geq 0 \\
 q(x)\text{: } &x^2 \geq 0 \\
 r(x)\text{: } &1 - x^2 = 0 \\
@@ -157,11 +157,11 @@ exists at least one value of $x$ ($x = 1$) that makes both $p(x) = 1$ and
 $r(x) = 1$. We can translate this statement as "There exists a value of
 $x$ such that $x \geq 0$ and $1 - x^2 = 0$."
 
-The statement $\exists x\ [p(x) \longrightarrow q(x)]$ is true, because
+The statement $\exists x\ [p(x) \to q(x)]$ is true, because
 there exists at least one value of $x$ ($x = -1$) such that $p(x) = 0$,
-$q(x) = 1$, and $0 \longrightarrow 1$ is true. Another value that makes
+$q(x) = 1$, and $0 \to 1$ is true. Another value that makes
 this statement true is $x = 5$, since $p(5) = 1$, $q(5) = 1$, and
-$1 \longrightarrow 1$ is true. We can translate this statement as "There
+$1 \to 1$ is true. We can translate this statement as "There
 exists at least one value of $x$ such that if $x \geq 0$, then
 $x^2 \geq 0$."
 
@@ -185,7 +185,7 @@ For the universe of discourse of all natural numbers (integers larger
 than $0$, not including $0$), consider the following open propositions:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 a(n)\text{: } &n^2 + 1 = 1 \\
 b(n)\text{: } &2n + 1 \text{ is an even number.} \\
 c(n)\text{: } &n^2 + 2 \text{ is a perfect square.}
@@ -238,7 +238,7 @@ Consider the universe of all real numbers, along with the following open
 statements:
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 p(x)\text{: } &x \geq 0 \\
 q(x)\text{: } &x^2 \geq 0 \\
 r(x)\text{: } &1 - x^2 = 0 \\
@@ -249,7 +249,7 @@ s(x)\text{: } &x^2 - 3x + 2 > 0
 The statement $\forall x\ [q(x)]$ is true, because *no matter what real
 number* we square, the result is always greater than or equal to $0$.
 
-As such, the statement $\forall x\ [p(x) \longrightarrow q(x)]$ is also
+As such, the statement $\forall x\ [p(x) \to q(x)]$ is also
 true, because squaring a positive number *always* yields a positive
 number.
 
@@ -292,7 +292,7 @@ explicitly.
 Let's introduce the propositional functions
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 f(x)\text{: } &x \text{ is a flying animal.} \\
 w(x)\text{: } &x \text{ is an animal with wings.}
 \end{array}
@@ -301,7 +301,7 @@ w(x)\text{: } &x \text{ is an animal with wings.}
 We can rewrite both bulleted statements above in a more mathematically
 precise way, using the universal quantifier, as
 
-$$\forall x\ [f(x) \longrightarrow w(x)].$$
+$$\forall x\ [f(x) \to w(x)].$$
 {{< /example >}}
 
 {{< example title="A second implicitly universally quantified statement" >}}
@@ -317,7 +317,7 @@ universal quantifier is used is the indefinite article "a."
 Using the propositional functions
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 c(q)\text{: } &q \text{ is a cyclic quadrilateral.} \\
 s(q)\text{: } &\text{The opposite angles of } q \text{ are supplementary.}
 \end{array}
@@ -325,7 +325,7 @@ s(q)\text{: } &\text{The opposite angles of } q \text{ are supplementary.}
 
 we can rewrite the sentence above in a mathematically precise way as
 
-$$\forall q\ [c(q) \longleftrightarrow s(q)].$$
+$$\forall q\ [c(q) \leftrightarrow s(q)].$$
 
 (The word "conversely" tells us that the converse of the statement is
 also true. We could rewrite the sentence above as "If the opposite

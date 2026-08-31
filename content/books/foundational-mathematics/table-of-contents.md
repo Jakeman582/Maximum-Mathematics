@@ -21,6 +21,23 @@ weight = -10
    11. Multiple Quantifiers
    12. Application: Modeling Logic Puzzles
 2. Proof
+   1. A Closer Look at the Implication
+   2. Variations on the Implication
+   3. Logical Implications
+   4. Quantified Logical Implications
+   5. Arguments
+   6. Rules of Inference
+   7. Using the Rules of Inference
+   8. Logically Equivalent Arguments
+   9. Invalid Arguments
+   10. Universal Specification
+   11. Universal Generalization
+   12. Axioms, Definitions, Theorems, and Proofs
+   13. Proof Technique: Direct Proofs
+   14. Proof Technique: Indirect Proofs
+   15. Proof Technique: Contradiction
+   16. Mistakes in Proofs
+   17. Proof Technique: Equivalence
 3. Set Theory
 4. Ubiquitous Sets of Numbers
 5. Functions

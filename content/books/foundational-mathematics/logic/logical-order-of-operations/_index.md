@@ -74,8 +74,8 @@ The following is a commonly used scheme for an order of operations:
 3. Conjunction $\land$
 4. Disjunction $\lor$
 5. Exclusive-or $\veebar$
-6. Implication $\longrightarrow$
-7. Biconditional $\longleftrightarrow$
+6. Implication $\to$
+7. Biconditional $\leftrightarrow$
 
 Using this order, we remove any ambiguity from logical expressions.
 
@@ -138,8 +138,8 @@ shallow use of it. Basically, what this effectively means is that we will
 make very liberal use of parentheses, even when they aren't strictly
 necessary.
 
-While the relative order between $\neg$, $\land$, $\lor$, $\longrightarrow$,
-and $\longleftrightarrow$ is *somewhat* standardized (heavy emphasis on the
+While the relative order between $\neg$, $\land$, $\lor$, $\to$,
+and $\leftrightarrow$ is *somewhat* standardized (heavy emphasis on the
 word "somewhat"), it is hardly universal. This is especially true when
 $\veebar$ is thrown into the mix.
 

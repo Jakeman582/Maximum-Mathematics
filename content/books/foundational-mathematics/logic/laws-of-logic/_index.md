@@ -192,7 +192,7 @@ biconditional is a tautology.
 Two propositions $S_1$ and $S_2$ are called ==logically
 equivalent==, and we write
 
-$$S_1 \Leftrightarrow S_2$$
+$$S_1 \Longleftrightarrow S_2$$
 
 whenever the biconditional
 

@@ -24,12 +24,12 @@ statements are logically equivalent.
 Consider open statements $p(x)$ and $q(x)$ defined on some universe
 $\mathcal{U}$.
 
-When $p(a) \longleftrightarrow q(a) = 1$ for every value $a$ within
-$\mathcal{U}$ — in other words, when $p(a) \longleftrightarrow q(a)$ is a
+When $p(a) \leftrightarrow q(a) = 1$ for every value $a$ within
+$\mathcal{U}$ — in other words, when $p(a) \leftrightarrow q(a)$ is a
 tautology — we say $p(x)$ and $q(x)$ are ==logically equivalent== open
 statements, and we write
 
-$$\forall x\ [p(x) \Leftrightarrow q(x)].$$
+$$\forall x\ [p(x) \Longleftrightarrow q(x)].$$
 {{< /definition >}}
 
 {{< example title="Logically equivalent open statements" >}}
@@ -37,7 +37,7 @@ Consider the universe of all planar triangles, along with the open
 statements
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 a(t)\text{: } &\text{All three angles of triangle } t \text{ are } 60°. \\
 s(t)\text{: } &\text{All three sides of triangle } t \text{ have equal measure.}
 \end{array}
@@ -46,9 +46,9 @@ s(t)\text{: } &\text{All three sides of triangle } t \text{ have equal measure.}
 From classical geometry, we know that for any particular triangle
 $\triangle ABC$,
 
-$$a(\triangle ABC) \Leftrightarrow s(\triangle ABC).$$
+$$a(\triangle ABC) \Longleftrightarrow s(\triangle ABC).$$
 
-As such, $\forall t\ [a(t) \Leftrightarrow s(t)]$.
+As such, $\forall t\ [a(t) \Longleftrightarrow s(t)]$.
 {{< /example >}}
 
 ## Conjunctions and Disjunctions with Quantifiers
@@ -58,7 +58,7 @@ As such, $\forall t\ [a(t) \Leftrightarrow s(t)]$.
 Consider the universe of all integers, along with the open statements
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 q_1(x)\text{: } &x^2 - 3x + 2 = 0 \\
 q_2(x)\text{: } &-x^2 - 3x - 2 = 0
 \end{array}
@@ -84,7 +84,7 @@ The previous example shows that the existential quantifier does not
 distribute over the conjunction operator $\land$. In other words, for
 general open statements $p(x)$ and $q(x)$,
 
-$$\exists x\ [p(x) \land q(x)] \not\Leftrightarrow \exists x\ [p(x)] \land \exists x\ [q(x)].$$
+$$\exists x\ [p(x) \land q(x)] \not\Longleftrightarrow \exists x\ [p(x)] \land \exists x\ [q(x)].$$
 
 It's still true that whenever $\exists x\ [p(x) \land q(x)]$ holds,
 $\exists x\ [p(x)] \land \exists x\ [q(x)]$ holds as well — it's just the
@@ -92,7 +92,7 @@ reverse direction that can fail, as the previous example showed.
 
 In general, we do have that
 
-$$\exists x\ [p(x) \lor q(x)] \Leftrightarrow \exists x\ [p(x)] \lor \exists x\ [q(x)],$$
+$$\exists x\ [p(x) \lor q(x)] \Longleftrightarrow \exists x\ [p(x)] \lor \exists x\ [q(x)],$$
 
 since if a value of $x$ within the universe exists that satisfies the
 disjunction, one of the statements in the disjunction must be true. So,
@@ -103,7 +103,7 @@ Consider the universe of all positive integers, along with the
 propositional functions
 
 \[
-\begin{array}{ll}
+\begin{array}{rl}
 s_1(n)\text{: } &n > 9 \\
 s_2(n)\text{: } &n^2 < 100
 \end{array}
@@ -127,14 +127,14 @@ $$\forall n\ [s_1(n) \land s_2(n)] = (\forall n\ [s_1(n)] \land \forall n\ [s_2(
 According to the previous example, for any two open statements $p(x)$
 and $q(x)$,
 
-$$\forall x\ [p(x)] \lor \forall x\ [q(x)] \not\Leftrightarrow \forall x\ [p(x) \lor q(x)],$$
+$$\forall x\ [p(x)] \lor \forall x\ [q(x)] \not\Longleftrightarrow \forall x\ [p(x) \lor q(x)],$$
 
 though whenever $\forall x\ [p(x)] \lor \forall x\ [q(x)]$ holds,
 $\forall x\ [p(x) \lor q(x)]$ is guaranteed to hold as well.
 
 On the other hand, it appears we have
 
-$$\forall x\ [p(x) \land q(x)] \Leftrightarrow \bigl(\forall x\ [p(x)] \land \forall x\ [q(x)]\bigr).$$
+$$\forall x\ [p(x) \land q(x)] \Longleftrightarrow \bigl(\forall x\ [p(x)] \land \forall x\ [q(x)]\bigr).$$
 
 So, the universal quantifier distributes over conjunction, but not over
 disjunction. We summarize the two equivalences below.
@@ -166,7 +166,7 @@ $\neg \exists x\ [p(x)]$ asserts that no value of $x$ makes $p(x)$ true —
 in other words, *every* value of $x$ makes $p(x)$ false. This is
 equivalent to $\forall x\ [\neg p(x)]$, so
 
-$$\neg \exists x\ [p(x)] \Leftrightarrow \forall x\ [\neg p(x)].$$
+$$\neg \exists x\ [p(x)] \Longleftrightarrow \forall x\ [\neg p(x)].$$
 
 Now consider $\neg \forall x\ [p(x)]$. Remember that $\forall x\ [p(x)]$
 asserts that every value of $x$ makes $p(x)$ true. So, naturally, the
@@ -174,7 +174,7 @@ negation of $\forall x\ [p(x)]$ means that not every value of $x$ makes
 $p(x)$ true — hence, there must *exist at least one value* of $x$ that
 makes $p(x)$ false. This is equivalent to $\exists x\ [\neg p(x)]$, so
 
-$$\neg \forall x\ [p(x)] \Leftrightarrow \exists x\ [\neg p(x)].$$
+$$\neg \forall x\ [p(x)] \Longleftrightarrow \exists x\ [\neg p(x)].$$
 
 Let's summarize this finding.
 
