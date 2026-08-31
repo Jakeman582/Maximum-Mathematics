@@ -10,34 +10,17 @@ weight = -10
 1. [Logic]({{% relref "/books/foundational-mathematics/logic" %}})
    1. [Propositions]({{% relref "/books/foundational-mathematics/logic/propositions" %}})
    2. [Modeling Logic with Truth Tables]({{% relref "/books/foundational-mathematics/logic/modeling-logic-with-truth-tables" %}})
-   3. Logical Order of Operations
-   4. Satisfiability
-   5. Laws of Logic
-   6. Simplifying Logical Expressions
-   7. Application: Switching Networks
-   8. Open Propositions
-   9. Quantifiers
-   10. Quantified Laws of Logic
-   11. Multiple Quantifiers
-   12. Application: Modeling Logic Puzzles
+   3. [Logical Order of Operations]({{% relref "/books/foundational-mathematics/logic/logical-order-of-operations" %}})
+   4. [Satisfiability]({{% relref "/books/foundational-mathematics/logic/satisfiability" %}})
+   5. [Laws of Logic]({{% relref "/books/foundational-mathematics/logic/laws-of-logic" %}})
+   6. [Simplifying Logical Expressions]({{% relref "/books/foundational-mathematics/logic/simplifying-logical-expressions" %}})
+   7. [Application: Switching Networks]({{% relref "/books/foundational-mathematics/logic/switching-networks" %}})
+   8. [Open Propositions]({{% relref "/books/foundational-mathematics/logic/open-propositions" %}})
+   9. [Quantifiers]({{% relref "/books/foundational-mathematics/logic/quantifiers" %}})
+   10. [Quantified Laws of Logic]({{% relref "/books/foundational-mathematics/logic/quantified-laws-of-logic" %}})
+   11. [Multiple Quantifiers]({{% relref "/books/foundational-mathematics/logic/multiple-quantifiers" %}})
+   12. [Application: Modeling Logic Puzzles]({{% relref "/books/foundational-mathematics/logic/modeling-logic-puzzles" %}})
 2. Proof
-   1. A Closer Look at the Implication
-   2. Variations on the Implication
-   3. Logical Implications
-   4. Quantified Logical Implications
-   5. Arguments
-   6. Rules of Inference
-   7. Using the Rules of Inference
-   8. Logically Equivalent Arguments
-   9. Invalid Arguments
-   10. Universal Specification
-   11. Universal Generalization
-   12. Axioms, Definitions, Theorems, and Proofs
-   13. Proof Technique: Direct Proofs
-   14. Proof Technique: Indirect Proofs
-   15. Proof Technique: Contradiction
-   16. Mistakes in Proofs
-   17. Proof Technique: Equivalence
 3. Set Theory
 4. Ubiquitous Sets of Numbers
 5. Functions
