@@ -2,7 +2,6 @@
 title = 'Proof'
 type = 'chapter'
 weight = 2
-draft = true
 
 [cascade.params]
   chapter = 2

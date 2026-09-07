@@ -2,7 +2,6 @@
 title = 'Proof Technique: Direct Proofs'
 type = 'chapter'
 weight = 13
-draft = true
 
 [params]
   section = 13
@@ -16,40 +15,66 @@ technique we have at our disposal.
 ## The Underlying Argument
 ---
 
-Consider a statement such as $p \to q$. How would we show
-this implication is always true — that is, that $p \Longrightarrow q$?
-Suppose we (somehow) knew that $p \Longrightarrow r$ and $r \Longrightarrow q$.
-This reduces to the Law of the Syllogism: since $p \to r$ and $r \to q$
-are always true,
+Consider a statement such as $p \to q$ — but remember that a theorem is
+almost always implicitly universally quantified, so what we really want
+to show is $\forall x\ [p(x) \to q(x)]$ for every element $x$ within
+some universe $\mathcal{U}$. How would we show this is always true?
+
+Recall the strategy behind the Rule of Universal Generalization: pick
+an arbitrary element $x_0 \in \mathcal{U}$, establish some property for
+that one element, then generalize the result to the entire universe.
+Suppose we assume $p(x_0)$ holds for our arbitrarily chosen $x_0$, and
+suppose we also have some already-established fact — a definition, a
+piece of algebra, or a previously proven theorem — telling us $p(x_0)
+\to q(x_0)$ is true for this particular $x_0$. The argument
 
 \[
 \begin{array}{l}
-p \\
-p \to r \\
-r \to q \\
+p(x_0) \\
+p(x_0) \to q(x_0) \\
 \hline
-\therefore q
+\therefore \forall x\ [p(x) \to q(x)]
 \end{array}
 \]
 
-The argument
+is the basis for any **direct proof**. Is this argument valid?
 
 \[
-\begin{array}{l}
-p \\
-p \to r \\
-r \to q \\
-\hline
-\therefore p \to q
+\begin{array}{lll}
+\textbf{Step} & \textbf{Proposition} & \textbf{Reason} \\
+(1) & x_0 \in \mathcal{U} & \text{We can always pick an arbitrary element from a non-empty universe} \\
+(2) & p(x_0) & \text{Assumed Premise} \\
+(3) & p(x_0) \to q(x_0) & \text{Established Fact} \\
+(4) & q(x_0) & \text{Modus Ponens on (2) and (3)} \\
+(5) & \therefore \forall x\ [p(x) \to q(x)] & \text{Rule of Universal Generalization on (1), (2), and (4)}
 \end{array}
 \]
 
-is the basis for any ==direct proof==. This strategy is called a direct
-proof because the proposition we're trying to show has $p$ as the
-hypothesis and $q$ as the conclusion — the first premise has $p$ as the
-hypothesis, and the last premise has $q$ as the conclusion. We're
-essentially chaining a bunch of implications together to get from $p$ to
-$q$.
+Notice that step (3) is labeled an *established* fact rather than an
+*assumed* one — it can't simply be handed to us as a premise, since
+that would already be the theorem we're trying to prove. Instead, it
+has to come from somewhere else entirely: a definition, an algebraic
+identity, or an already-proven theorem that happens to connect $p(x_0)$
+to $q(x_0)$ for this particular $x_0$. And step (5)'s conclusion isn't
+generalizing the bare fact $q(x_0)$ from step (4) alone — it's
+generalizing the *implication* $p(x_0) \to q(x_0)$, which is really
+what's been established once we notice that $q(x_0)$ only followed
+*because* we assumed $p(x_0)$ in the first place. That's why the
+citation for step (5) includes step (2) as well as step (4).
+
+Since $x_0$ was an arbitrary element of $\mathcal{U}$ — not some
+specific one — the Rule of Universal Generalization lets us conclude
+the implication holds for *every* element of $\mathcal{U}$, not just
+the one we happened to pick.
+
+This strategy is called a direct proof because we start by assuming the
+hypothesis $p(x_0)$, and derive the conclusion $q(x_0)$ from it
+directly, via a single use of Modus Ponens. In practice, establishing
+$p(x_0) \to q(x_0)$ itself might take several steps — appealing to
+definitions, algebra, or previously proven theorems along the way — but
+each of those steps is really just another instance of this same
+pattern: take a fact you already have, apply a known implication, get
+the next fact, and repeat until you reach the conclusion.
 
 ## An In-Depth Example
 ---
@@ -58,13 +83,22 @@ Let's break down a simple example of a proof for a mathematical
 proposition. Since we're providing a proof, we can call the proposition
 a theorem.
 
+{{< example title="A fully worked-out proof, using formal logic" >}}
 Consider the statement "If $n$ is an even integer, then $n + 1$ is an
 odd integer." Since the hypothesis and conclusion are both about
-integers, our universe of discourse is $\mathbb{Z}$. Implicit as usual
-is the universal quantifier, so this rewrites as $\forall n\ [e(n)
-\to o(n + 1)]$ (we don't write $\forall n \in \mathbb{Z}$
-explicitly, since it's clear from context that we're only considering
-integers).
+integers, our universe of discourse is $\mathbb{Z}$. Let
+
+\[
+\begin{array}{rl}
+e(n)\text{: } &n \text{ is even.} \\
+o(n)\text{: } &n \text{ is odd.}
+\end{array}
+\]
+
+Implicit as usual is the universal quantifier, so this rewrites as
+$\forall n\ [e(n) \to o(n + 1)]$ (we don't write $\forall n \in
+\mathbb{Z}$ explicitly, since it's clear from context that we're only
+considering integers).
 
 So, how do we show $e(n) \Longrightarrow o(n + 1)$? We can appeal to the
 definitions of even and odd. Since we're asserting $n$ is even (if it
@@ -77,16 +111,24 @@ or $n$ is, except that $n$ must be even — but everything we did applies
 to *all* even integers, meaning adding one to an even integer always
 gives an odd integer.
 
-Written out formally, with $e(n)$, $o(n)$, $p(n) : \exists k\ [n = 2k]$,
-and $q(n) : \exists k\ [n = 2k + 1]$, and picking a specific but
-arbitrary integer $n_0$ where $e(n_0)$ is assumed as a premise:
+Written out formally, with $e(n)$ and $o(n)$ as before, along with
+
+\[
+\begin{array}{rl}
+p(n)\text{: } &\exists k\ [n = 2k] \\
+q(n)\text{: } &\exists k\ [n = 2k + 1]
+\end{array}
+\]
+
+and picking a specific but arbitrary integer $n_0$ where $e(n_0)$ is
+assumed as a premise:
 
 \[
 \begin{array}{lll}
 \textbf{Step} & \textbf{Proposition} & \textbf{Reason} \\
 (1) & \forall n\ [e(n) \leftrightarrow p(n)] & \text{Definition of Even Integer} \\
 (2) & e(n_0) \leftrightarrow p(n_0) & \text{Universal Specification on (1)} \\
-(3) & (e(n_0) \to p(n_0)) \land (p(n_0) \to e(n_0)) & (p \leftrightarrow q) \Longleftrightarrow (p \to q) \land (q \to p) \\
+(3) & (e(n_0) \to p(n_0)) \land (p(n_0) \to e(n_0)) & \text{Law of Mutual Implication} \\
 (4) & e(n_0) \to p(n_0) & \text{Conjunctive Simplification on (3)} \\
 (5) & e(n_0) & \text{Assumed Premise} \\
 (6) & p(n_0) & \text{Modus Ponens on (4) and (5)} \\
@@ -95,7 +137,7 @@ arbitrary integer $n_0$ where $e(n_0)$ is assumed as a premise:
 (9) & q(n_0 + 1) & \text{Modus Ponens on (6) and (8)} \\
 (10) & \forall n\ [o(n) \leftrightarrow q(n)] & \text{Definition of Odd Integer} \\
 (11) & o(n_0 + 1) \leftrightarrow q(n_0 + 1) & \text{Universal Specification on (10)} \\
-(12) & (o(n_0 + 1) \to q(n_0 + 1)) \land (q(n_0 + 1) \to o(n_0 + 1)) & (p \leftrightarrow q) \Longleftrightarrow (p \to q) \land (q \to p) \\
+(12) & (o(n_0 + 1) \to q(n_0 + 1)) \land (q(n_0 + 1) \to o(n_0 + 1)) & \text{Law of Mutual Implication} \\
 (13) & q(n_0 + 1) \to o(n_0 + 1) & \text{Conjunctive Simplification on (12)} \\
 (14) & o(n_0 + 1) & \text{Modus Ponens on (9) and (13)} \\
 (15) & \therefore \forall n\ [e(n) \to o(n + 1)] & \text{Universal Generalization on (5) and (14)}
@@ -107,6 +149,7 @@ in the Universal Specification steps and the assumed premise alike —
 because we want to show that when *a particular* integer is even, the
 integer one more than it is odd. All our manipulations have to happen on
 the exact same number, or we wouldn't know the result holds.
+{{< /example >}}
 
 And there we have it — a fully worked-out proof for a simple result.
 Most of the time, proof-writing uses a mixture of English, arithmetic,
@@ -188,9 +231,9 @@ sure the relevant equations stayed balanced after adding $1$ to $n$.
 The third theorem had an interesting proof: we used two previous
 theorems, which is completely valid, since they're already proven to be
 true. The fourth theorem's proof is perhaps the simplest so far — we
-could have invoked the second theorem first on $n$, then the third on $n
-+ 1$, but the similarity to the third theorem's proof was close enough
-that we could almost copy it directly. Sometimes this is warranted;
+could have invoked the second theorem first on $n$, then the third on
+$n + 1$, but the similarity to the third theorem's proof was close
+enough that we could almost copy it directly. Sometimes this is warranted;
 other times there's enough of a difference to necessitate an original
 proof.
 
@@ -285,8 +328,8 @@ Because there exists an integer $c$ such that $mn = 2c + 1$, $mn$ is
 odd by definition, as desired.
 {{< /proof >}}
 
-Notice that in the last step, we simply replaced the quantity $2ab + a
-+ b$ with the single letter $c$ — since $2$, $a$, and $b$ are integers,
+Notice that in the last step, we simply replaced the quantity $2ab + a +
+b$ with the single letter $c$ — since $2$, $a$, and $b$ are integers,
 $2ab + a + b$ must be an integer too, so we can just refer to it as $c$
 to make the subsequent step easier. Just like we can always make
 substitutions in algebra, we can make substitutions for algebraic

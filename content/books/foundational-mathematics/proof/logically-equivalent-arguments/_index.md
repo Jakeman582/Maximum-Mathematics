@@ -2,7 +2,6 @@
 title = 'Logically Equivalent Arguments'
 type = 'chapter'
 weight = 8
-draft = true
 
 [params]
   section = 8
@@ -46,7 +45,7 @@ implication to be true — but this is logically equivalent to $\neg p_1
 \[
 \begin{array}{lll}
  & \boldsymbol{p_1 \to c} & \textbf{Reason} \\
-\Longleftrightarrow & \neg p_1 \lor c & (p \to q) \Longleftrightarrow (\neg p \lor q) \\
+\Longleftrightarrow & \neg p_1 \lor c & \text{Law of Material Implication} \\
 \Longleftrightarrow & \neg (p_1 \land \neg c) & \text{DeMorgan's Law}
 \end{array}
 \]

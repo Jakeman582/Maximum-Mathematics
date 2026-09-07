@@ -17,8 +17,9 @@ purposes, every time. Here's what each one means when you see it.
 ## Definition
 
 Introduces one or more terms — shown by name, in capitals, so it reads like a
-dictionary entry. A term highlighted in blue elsewhere on the page always
-refers back to one of these.
+dictionary entry. The term being defined is highlighted in blue right where
+it's introduced; that blue highlight is reserved for this box, so you won't
+see it anywhere else on the page.
 
 {{< definition terms="prime number" >}}
 A natural number greater than 1 with no positive divisors other than 1 and

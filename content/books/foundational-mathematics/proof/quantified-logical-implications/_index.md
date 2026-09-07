@@ -2,7 +2,6 @@
 title = 'Quantified Logical Implications'
 type = 'chapter'
 weight = 4
-draft = true
 
 [params]
   section = 4
@@ -10,8 +9,8 @@ draft = true
 
 Now that we've taken a closer look at the implication itself, let's
 revisit quantified statements to see how the same ideas — logical
-implication, equivalence, and the converse, inverse, and contrapositive —
-carry over to them.
+implication, and the converse, inverse, and contrapositive — carry over
+to them.
 
 ## A Simple Logical Implication
 ---
@@ -92,43 +91,11 @@ $\forall x\ [p(x)] \to \exists x\ [p(x)]$ is a tautology,
 where $\forall x\ [p(x)]$ is the hypothesis of the implication, and
 $\exists x\ [p(x)]$ is the conclusion.
 
-## Two Simple Definitions
+## A Simple Definition
 ---
 
-Just like with ordinary statements, we can ask whether two open
-statements are logically equivalent, or whether one open statement
-logically implies another.
-
-{{< definition terms="logically equivalent" >}}
-Consider open statements $p(x)$ and $q(x)$ defined on some universe
-$\mathcal{U}$.
-
-When $p(a) \leftrightarrow q(a) = 1$ for every value $a$ within
-$\mathcal{U}$ — in other words, when $p(a) \leftrightarrow q(a)$ is a
-tautology — we say $p(x)$ and $q(x)$ are ==logically equivalent== open
-statements, and we write
-
-$$\forall x\ [p(x) \Longleftrightarrow q(x)].$$
-{{< /definition >}}
-
-{{< example title="Logically equivalent open statements" >}}
-Consider the universe of all planar triangles, along with the open
-statements
-
-\[
-\begin{array}{rl}
-a(t)\text{: } &\text{All three angles of triangle } t \text{ are } 60°. \\
-s(t)\text{: } &\text{All three sides of triangle } t \text{ have equal measure.}
-\end{array}
-\]
-
-From classical geometry, we know that for any particular triangle
-$\triangle ABC$,
-
-$$a(\triangle ABC) \Longleftrightarrow s(\triangle ABC).$$
-
-As such, $\forall t\ [a(t) \Longleftrightarrow s(t)]$.
-{{< /example >}}
+Just like with ordinary statements, we can ask whether one open
+statement logically implies another.
 
 {{< definition terms="logically implies" >}}
 Consider open statements $p(x)$ and $q(x)$ defined on some universe
@@ -164,6 +131,89 @@ $$r(q_0) \not\Longrightarrow s(q_0),$$
 
 and so $\forall q\ [s(q) \Longrightarrow r(q)]$.
 {{< /example >}}
+
+## Conjunction, Disjunction, and Quantifiers
+---
+
+Recall from the previous chapter that the existential quantifier
+distributes over disjunction, and the universal quantifier distributes
+over conjunction:
+
+$$\exists x\ [p(x) \lor q(x)] \Longleftrightarrow \exists x\ [p(x)] \lor \exists x\ [q(x)],$$
+
+$$\forall x\ [p(x) \land q(x)] \Longleftrightarrow \forall x\ [p(x)] \land \forall x\ [q(x)].$$
+
+We also saw that the *other* pairing — the existential quantifier with
+conjunction, and the universal quantifier with disjunction — doesn't
+distribute the same way. Now that we have the language of logical
+implication, we can pin down exactly what *does* survive in those two
+cases.
+
+Suppose $\exists x\ [p(x) \land q(x)]$ is true. Then some value $a$
+within $\mathcal{U}$ makes $p(a) \land q(a)$ true, which means $p(a)$
+is true and $q(a)$ is true individually. Since $a$ makes $p(x)$ true,
+$\exists x\ [p(x)]$ is true; since $a$ also makes $q(x)$ true,
+$\exists x\ [q(x)]$ is true. So both $\exists x\ [p(x)]$ and
+$\exists x\ [q(x)]$ are true, meaning $\exists x\ [p(x)] \land \exists
+x\ [q(x)]$ is true as well. This holds no matter what $p(x)$ and $q(x)$
+are, so
+
+$$\exists x\ [p(x) \land q(x)] \Longrightarrow \bigl(\exists x\ [p(x)] \land \exists x\ [q(x)]\bigr).$$
+
+{{< example title="A witness for the conjunction is a witness for each half separately" >}}
+Consider the universe of all integers, along with the open statements
+
+\[
+\begin{array}{rl}
+p(x)\text{: } &x \text{ is even.} \\
+q(x)\text{: } &x \text{ is a perfect square.}
+\end{array}
+\]
+
+Since $x = 4$ is both even and a perfect square, $\exists x\ [p(x)
+\land q(x)]$ is true. As expected, that same $x = 4$ also makes $p(x)$
+true on its own and makes $q(x)$ true on its own, so $\exists x\
+[p(x)] \land \exists x\ [q(x)]$ is true too — exactly what the
+implication guarantees.
+{{< /example >}}
+
+By a similar argument, suppose $\forall x\ [p(x)] \lor \forall x\
+[q(x)]$ is true. Then at least one of $\forall x\ [p(x)]$ or $\forall
+x\ [q(x)]$ is true. If $\forall x\ [p(x)]$ is true, then every value of
+$x$ within $\mathcal{U}$ makes $p(x)$ true, which certainly means
+every value of $x$ makes $p(x) \lor q(x)$ true as well — so $\forall
+x\ [p(x) \lor q(x)]$ is true. The same reasoning applies if instead
+$\forall x\ [q(x)]$ is the true one. Either way,
+
+$$\bigl(\forall x\ [p(x)] \lor \forall x\ [q(x)]\bigr) \Longrightarrow \forall x\ [p(x) \lor q(x)].$$
+
+{{< example title="A universally true half is enough for the whole disjunction" >}}
+Consider the universe of all integers, along with the open statements
+
+\[
+\begin{array}{rl}
+p(x)\text{: } &x^2 \geq 0 \\
+q(x)\text{: } &x \text{ is negative.}
+\end{array}
+\]
+
+Every integer satisfies $p(x)$, so $\forall x\ [p(x)]$ is true, meaning
+$\forall x\ [p(x)] \lor \forall x\ [q(x)]$ is true. As expected, every
+integer also satisfies $p(x) \lor q(x)$, since $p(x)$ alone is already
+true for every $x$ — so $\forall x\ [p(x) \lor q(x)]$ is true too.
+{{< /example >}}
+
+{{< star title="Implications for Quantifiers with Conjunction and Disjunction" >}}
+Let $p(x)$ and $q(x)$ be any propositional functions defined on some
+universe $\mathcal{U}$.
+
+\[
+\begin{array}{lcl}
+\exists x\ [p(x) \land q(x)] & \Longrightarrow & \exists x\ [p(x)] \land \exists x\ [q(x)] \\
+\forall x\ [p(x)] \lor \forall x\ [q(x)] & \Longrightarrow & \forall x\ [p(x) \lor q(x)]
+\end{array}
+\]
+{{< /star >}}
 
 ## The Converse, Inverse, and Contrapositive of Quantifiers
 ---

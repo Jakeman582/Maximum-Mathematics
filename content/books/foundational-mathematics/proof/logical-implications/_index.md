@@ -2,16 +2,26 @@
 title = 'Logical Implications'
 type = 'chapter'
 weight = 3
-draft = true
 
 [params]
   section = 3
 +++
 
+So far, we've studied what an implication means on its own, and how it
+relates to variations like its converse, inverse, and contrapositive.
+Now we turn to a special kind of implication — one that's true no matter
+what truth values its hypothesis and conclusion happen to take on. These
+implications are especially useful, since knowing one holds lets us
+deduce its conclusion with total certainty the moment its hypothesis is
+satisfied.
+
 We already know, from the Law of Material Implication, that
 $p \to q$ is logically equivalent to $\neg p \lor q$. Before
 moving on, it's worth building some intuition for why that's true, and
 seeing what it buys us.
+
+## Building Intuition for the Material Implication
+---
 
 {{< example title="Deducing what an implication tells us" >}}
 Suppose we have $p \to q$ where
@@ -64,7 +74,7 @@ expression, so it only applies to $p$, not to the whole implication.
 This is a very different statement from $\neg (p \to q)$,
 as the truth table below makes clear.
 
-![The truth table for $\neg p \to q$ and $\neg (p \to q)$, side by side.](02.svg)
+![The truth table for $\neg p \to q$ and $\neg (p \to q)$, side by side.](01.svg)
 
 Any doubts about how an expression should be parsed can always be put
 to rest by adding parentheses of your own.
@@ -73,42 +83,47 @@ to rest by adding parentheses of your own.
 ---
 
 {{< example title="An implication that's always true" >}}
-Consider the statement $a \land (a \to b)$, where
+Consider two propositions $a$ and $b$, where
 
 \[
 \begin{array}{rl}
-a\text{: } &\text{Smith wields a red lightsaber.} \\
-b\text{: } &\text{Smith is a Sith.}
+a\text{: } &\text{Alvarez hauls up a red king crab pot.} \\
+b\text{: } &\text{Alvarez has to report the catch to the harbormaster.}
 \end{array}
 \]
 
-A direct translation of this statement would be "Smith wields a red
-lightsaber, and if Smith wields a red lightsaber, then Smith is a
-Sith." Notice that this statement alone doesn't say that Smith is a
-Sith directly — but since we know Smith wields a red lightsaber, we can
-use the implication to deduce that Smith is a Sith. So the conclusion we
-draw from both parts together is $b$.
+Let's compare two conjunctions built from these propositions and the
+implication $a \to b$: $a \land (a \to b)$, and $b \land (a \to b)$.
 
-What if we already knew $b$ — that Smith was a Sith? Does that give us
-enough information to conclude $a \land (a \to b)$? If
-$a = 0$ and $b = 1$, then $b \to (a \land (a \to
-b))$ would be false. In other words, we have
+Suppose $a \land (a \to b)$ is true. Then $a$ is true — Alvarez hauls up
+a red king crab pot — and $a \to b$ is true as well. Since $a$ is true
+and $a \to b$ is true, we can deduce $b$ must be true too — Alvarez has
+to report the catch. So $a \land (a \to b)$ being true pins down both
+$a$ and $b$.
 
-$$(a \land (a \to b)) \to b,$$
+Now suppose $b \land (a \to b)$ is true instead. Then $b$ is true —
+Alvarez has to report the catch. But once $b$ is true, the implication
+$a \to b$ is automatically true too, no matter what $a$ happens to
+be — an implication with a true conclusion can never be false. So
+$b \land (a \to b)$ being true doesn't actually tell us anything about
+$a$; it only ever tells us that $b$ is true.
 
-but not
+The truth table below confirms that $[a \land (a \to b)] \to b$ is a
+tautology:
 
-$$b \to (a \land (a \to b)).$$
+![The truth table for $a \to b$, $a \land (a \to b)$, and $[a \land (a \to b)] \to b$.](02.svg)
 
-The truth tables below confirm this:
+Every row in the $[a \land (a \to b)] \to b$ column is a $1$, so
+$a \land (a \to b)$ always forces $b$ to be true.
 
-![(a) shows the truth table for $(a \land (a \to b)) \to b$, a tautology. (b) shows the truth table for $(a \land (a \to b)) \leftrightarrow b$, which is satisfiable, but not a tautology.](04.svg)
+Now compare that against the truth table for $[b \land (a \to b)] \to
+a$:
 
-In (a), the truth table for $(a \land (a \to b))
-\to b$ has all $1$s in the last column, so this implication
-is a tautology. But in (b), the biconditional $(a \land (a
-\to b)) \leftrightarrow b$ has a single $0$ in its last
-column — it's satisfiable, but not a tautology.
+![The truth table for $a \to b$, $b \land (a \to b)$, and $[b \land (a \to b)] \to a$.](03.svg)
+
+Here, the $[b \land (a \to b)] \to a$ column has a single $0$, so this
+implication is *not* a tautology — $b \land (a \to b)$ being true
+doesn't let us conclude $a$.
 {{< /example >}}
 
 There's a special name for these kinds of implications.
@@ -125,8 +140,7 @@ If $a \to b$ is not a tautology, we write $a \not\Longrightarrow
 b$.
 {{< /definition >}}
 
-Based on the previous example, where we saw that $(a \land (a
-\to b)) \to b$ was a tautology, we can use this
-new notation and write
+Based on the previous example, where we saw that $(a \land (a \to
+b)) \to b$ was a tautology, we can use this new notation and write
 
 $$(a \land (a \to b)) \Longrightarrow b.$$

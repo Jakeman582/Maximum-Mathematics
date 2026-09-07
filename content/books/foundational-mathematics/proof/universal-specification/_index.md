@@ -2,7 +2,6 @@
 title = 'Universal Specification'
 type = 'chapter'
 weight = 10
-draft = true
 
 [params]
   section = 10
@@ -18,7 +17,7 @@ The reason we want to do this is that many of the results we're going
 to come across are stated in the language of quantifiers. For example,
 consider the Pythagorean Theorem:
 
-$$\text{If any triangle is a right triangle with legs of lengths } a \text{ and } b \text{, and hypotenuse of length } c \text{, then } a^2 + b^2 = c^2.$$
+$$\text{If any triangle has leg lengths } a \text{ and } b \text{, and hypotenuse length } c \text{, then } a^2 + b^2 = c^2.$$
 
 Notice that implicit in this statement is the universal quantifier "if
 any." We could write the Pythagorean Theorem using our current
@@ -50,7 +49,7 @@ of what's calculable in engineering, science, and mathematics is
 possible only because the underlying theorems are so extensive — and
 that's precisely because they're quantified.
 
-Here, we discuss ==Universal Specification==, one way to use quantifiers
+Here, we discuss **Universal Specification**, one way to use quantifiers
 in arguments that lets us go from broadly true statements to
 specifically true statements.
 
@@ -62,7 +61,12 @@ At a particular school, one of the most loved teachers by the students
 is Ms. Lippy, a very creative and sometimes eccentric teacher who loves
 the color green. Suppose we knew:
 
-$$\text{Everything Ms. Lippy owns is green.} \qquad \text{Ms. Lippy owns a car.}$$
+\[
+\begin{array}{l}
+\text{Everything Ms. Lippy owns is green.} \\[0.75em]
+\text{Ms. Lippy owns a car.}
+\end{array}
+\]
 
 What, if anything, can we figure out? Based on the first piece of
 information, we can sort every object into two categories: objects owned
@@ -80,7 +84,12 @@ One of Ms. Lippy's favorite students is named Billy, who has a very wild
 and active imagination. As part of his education, he's required to take
 Ms. Lippy's art class. Suppose we know:
 
-$$\text{Every duck that Billy draws is blue.} \qquad \text{Billy drew a duck for his art class assignment.}$$
+\[
+\begin{array}{l}
+\text{Every duck that Billy draws is blue.} \\[0.75em]
+\text{Billy drew a duck for his art class assignment.}
+\end{array}
+\]
 
 What, if anything, can we conclude? Just as before, we have two
 categories: ducks drawn by Billy, and ducks not drawn by Billy. Since
@@ -94,7 +103,12 @@ every duck Billy draws is blue.
 Billy isn't the only student in Ms. Lippy's art class — she manages a lot
 of students across all of her classes. Consider:
 
-$$\text{Every duck that Billy draws is blue.} \qquad \text{One duck submitted for Ms. Lippy's art class was not blue.}$$
+\[
+\begin{array}{l}
+\text{Every duck that Billy draws is blue.} \\[0.75em]
+\text{One duck submitted for Ms. Lippy's art class was not blue.}
+\end{array}
+\]
 
 What can we conclude here? Examining this a little more closely than
 before, we infer the implication "If Billy draws a duck, then that duck

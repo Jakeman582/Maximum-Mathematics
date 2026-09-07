@@ -2,7 +2,6 @@
 title = 'Universal Generalization'
 type = 'chapter'
 weight = 11
-draft = true
 
 [params]
   section = 11
@@ -293,8 +292,8 @@ Is this argument valid?
 \end{array}
 \]
 
-This argument — which we might call the ==Universally Generalized Law
-of the Syllogism== — is valid. Pay particular attention to step (2):
+This argument — which we might call the **Universally Generalized Law
+of the Syllogism** — is valid. Pay particular attention to step (2):
 here, we clearly specify that $c$ is an arbitrary element of
 $\mathcal{U}$, meaning whatever is true of $c$ is true for every
 element of $\mathcal{U}$. This is what allows us to use the Rule of
@@ -422,7 +421,7 @@ different argument would be needed to deal with those.
 This is why, if the conclusion of a proposed argument contains an
 implication, the hypothesis of that conclusion can be assumed true, and
 used as a premise of the argument. These are often referred to as
-==assumed premises==. When the conclusion is a universally quantified
+**assumed premises**. When the conclusion is a universally quantified
 implication, we can assume the truth of the hypothesis on an arbitrarily
 picked element, as in the example below.
 

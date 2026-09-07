@@ -2,7 +2,6 @@
 title = 'Axioms, Definitions, Theorems, and Proofs'
 type = 'chapter'
 weight = 12
-draft = true
 
 [params]
   section = 12

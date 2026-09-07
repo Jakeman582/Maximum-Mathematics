@@ -2,7 +2,6 @@
 title = 'Variations on the Implication'
 type = 'chapter'
 weight = 2
-draft = true
 
 [params]
   section = 2
@@ -10,8 +9,15 @@ draft = true
 
 There are some simple ways we can change around an implication. Exactly
 how we make these changes affects how the new implication we form is
-related to our original starting implication. The first two
-modifications are relatively straightforward.
+related to our original starting implication. In this section, we look
+at three such variations — the converse, the inverse, and the
+contrapositive — and see how each one relates back to the implication we
+started with.
+
+## The Converse, Inverse, and Contrapositive
+---
+
+The first two modifications are relatively straightforward.
 
 {{< definition terms="converse, inverse" >}}
 Consider the implication $p \to q$, which will act as our

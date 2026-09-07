@@ -2,7 +2,6 @@
 title = 'Using the Rules of Inference'
 type = 'chapter'
 weight = 7
-draft = true
 
 [params]
   section = 7
@@ -24,8 +23,8 @@ desired conclusion. We can determine if the argument is valid by
 appealing to the rules of inference.
 
 {{< example title="Validating an argument in prose" >}}
-Because AC/DC is the greatest band ever, you decide to purchase
-front-row tickets for their upcoming concert. The tickets are expensive,
+Because you love live rock music, you decide to purchase
+front-row tickets for an upcoming rock concert. The tickets are expensive,
 so you'll need to save up money working a summer job to purchase them.
 The problem is that everybody wants front-row seats, so they may be
 sold out by the time you have enough money.
@@ -36,7 +35,7 @@ Consider the propositions
 \begin{array}{rl}
 a\text{: } &\text{You save up enough money to purchase front-row seats.} \\
 b\text{: } &\text{There are no more front-row seats available.} \\
-c\text{: } &\text{You sit front row at the AC/DC concert.}
+c\text{: } &\text{You sit front row at the rock concert.}
 \end{array}
 \]
 
@@ -60,7 +59,7 @@ we also have $c$ by Modus Ponens.
 We just reached the desired conclusion $c$ by appealing to Modus Ponens
 twice, meaning the argument is valid. So, if there are front-row seats
 available, you'll be able to save up enough money to sit front row at
-the AC/DC concert. Awesome!
+the rock concert. Awesome!
 {{< /example >}}
 
 It seems a bit cumbersome to write out our logic in paragraphs like
@@ -69,7 +68,7 @@ logically equivalent, we can write out a sequence of steps in tabular
 form.
 
 {{< example title="Validating the same argument in tabular form" >}}
-Luckily for us, AC/DC are performing another concert, which means we
+Luckily for us, another rock concert is happening, which means we
 need to start saving even more money, hoping front-row seats are still
 available. Reconsider the argument from the previous example. We can
 write out the sequence of steps we took there in tabular form:
@@ -238,20 +237,21 @@ was constructed by means of a rule of inference.
 Consider the premises
 
 \[
-\begin{align*}
-&\text{If AC/DC can't perform their concert, or their t-shirts aren't available for} \\
-&\text{purchase at the concert, then the after-party will be cancelled, and you} \\
-&\text{will not purchase front-row seats. If the after-party is cancelled, then} \\
-&\text{ticket sales will have to be issued refunds. No refunds were issued.}
-\end{align*}
+\begin{array}{l}
+\text{If the band can't perform their concert, or their t-shirts aren't} \\
+\text{available for purchase at the concert, then the after-party will be} \\
+\text{cancelled, and you will not purchase front-row seats. If the} \\
+\text{after-party is cancelled, then ticket sales will have to be issued} \\
+\text{refunds. No refunds were issued.}
+\end{array}
 \]
 
 We pick out the propositions
 
 \[
 \begin{array}{rl}
-a\text{: } &\text{AC/DC can perform their concert.} \\
-t\text{: } &\text{AC/DC's t-shirts are available for purchase.} \\
+a\text{: } &\text{The band can perform their concert.} \\
+t\text{: } &\text{The band's t-shirts are available for purchase.} \\
 p\text{: } &\text{The after-party was cancelled.} \\
 y\text{: } &\text{You do not buy front-row seats.} \\
 r\text{: } &\text{Ticket sales are issued refunds.}
@@ -282,12 +282,12 @@ can make:
 Notice that one of our conclusions was $a$, in step (10). As such, we
 know that $[((\neg a \lor \neg t) \to (p \land y)) \land (p \to r) \land
 \neg r] \to a$ is a valid argument — with the given
-premises, we could deduce that AC/DC performed their concert!
+premises, we could deduce that the band performed their concert!
 
 We didn't stop at that one conclusion, though. Step (11) left us with
-conclusion $t$, meaning we could also deduce that AC/DC's t-shirts were
-available for purchase. Yet another inference we made was $\neg p$, in
-step (3), meaning the after-party was not cancelled!
+conclusion $t$, meaning we could also deduce that the band's t-shirts
+were available for purchase. Yet another inference we made was $\neg
+p$, in step (3), meaning the after-party was not cancelled!
 
 Any of the intermediate propositions that weren't premises are valid
 inferences from the given premises.
@@ -303,7 +303,7 @@ Consider the propositions
 \begin{array}{rl}
 s\text{: } &\text{Johnny had to go to summer school.} \\
 j\text{: } &\text{Johnny could work a summer job.} \\
-a\text{: } &\text{Johnny could purchase front-row seats at the AC/DC concert.}
+a\text{: } &\text{Johnny could purchase front-row seats at the rock concert.}
 \end{array}
 \]
 

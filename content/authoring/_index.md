@@ -255,8 +255,11 @@ Suppose, for contradiction, that $p$ is even. Then...
 `Question 2`, ...), with no chapter or section prefix, so the pair reads
 `Question 1` / `Solution 1`.
 
-Highlight a defined term inline, anywhere on the page — not just inside its
-own `definition` box — by wrapping it in `==double equals signs==`.
+Highlight the term being defined inside a `definition` box by wrapping it in
+`==double equals signs==`. Reserve this for that one context — don't use it
+elsewhere on the page, even to name a rule or technique introduced outside a
+`definition` box (Modus Ponens, a direct proof, and so on); use `**bold**`
+for that instead.
 
 ## Theme asides
 

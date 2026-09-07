@@ -185,6 +185,37 @@ example. Don't glue the colon directly onto the label (`p:`) or hand-tune
 spacing with `\quad`/`\;` — the array's own column alignment is what
 produces the even spacing, and doing it any other way is what breaks it.
 
+### Displaying several English propositions together
+
+When prose needs to display more than one full English proposition in a
+row — e.g. "Therefore, if `<premise 1>`; if `<premise 2>`; and `<premise
+3>` are all true, then `<conclusion>`" — put every proposition in one
+shared `\begin{array}{l}` block rather than several separate `\[ \]` or
+`$$ $$` blocks, one per proposition. Each display-math block centers
+itself on the page independently, so separate blocks of different widths
+end up with different left edges — a single shared block keeps every
+proposition flush against one common left margin instead. Capitalize the
+start of each proposition (it's presented as its own standalone
+statement, regardless of how the lead-in prose grammatically continues
+into it — same as any other displayed statement on this site), and add
+`\\[0.75em]` after the last line of every proposition but the final one,
+so each one reads as a visually distinct block rather than one
+run-on paragraph:
+
+```
+\[
+\begin{array}{l}
+\text{First proposition, wrapped across as many} \\
+\text{lines as it needs;} \\[0.75em]
+\text{Second proposition;} \\[0.75em]
+\text{Third and final proposition}
+\end{array}
+\]
+```
+
+See `content/books/foundational-mathematics/proof/arguments/_index.md`
+(the "Therefore, if ..." paragraph in Example 2.5.1) for this in place.
+
 ## Step-by-step arithmetic and algebra
 
 Any worked derivation — simplifying an expression, evaluating a formula,
@@ -366,11 +397,16 @@ Usage notes:
   behavior, not two coincidentally-matching ones. This numbering is
   independent of `statement`'s, which only ever uses `chapter`, never
   `section`.
-- Highlight a defined term inline, anywhere on the page — not just inside its
-  own `definition` box — by wrapping it in `==double equals signs==`
-  (Goldmark's `mark` extension, restyled from the default yellow highlight to
-  match `definition`'s blue). This is deliberately *not* a shortcode: see the
-  next section for why.
+- The blue highlight (`==double equals signs==`, Goldmark's `mark` extension,
+  restyled from the default yellow to blue) is reserved for the term actually
+  being defined *inside its own* `definition` box — e.g. `A ==proposition==
+  is...`. This is deliberately *not* a shortcode: see the next section for
+  why. Don't use it anywhere else on a page, even to call back to a term
+  defined elsewhere or to introduce a named rule/technique outside a
+  `definition` box (Modus Ponens, a direct proof, the converse of an
+  implication, and so on) — use plain `**bold**` for that kind of emphasis
+  instead. Blue is a signal that means one specific thing: "this box is
+  defining this word right now."
 
 ### Why raw HTML stays disabled, and what that means for new shortcodes
 

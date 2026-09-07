@@ -2,7 +2,6 @@
 title = 'Arguments'
 type = 'chapter'
 weight = 5
-draft = true
 
 [params]
   section = 5
@@ -43,7 +42,16 @@ Let's elaborate on the idea of using existing knowledge. We essentially
 take a collection of known facts together, and their combination
 provides some new fact:
 
-$$\text{IF known fact \#1 AND known fact \#2 AND} \dots \text{AND known fact \#}n \text{ THEN new fact.}$$
+\[
+\begin{array}{ll}
+\text{IF} & \text{known fact \#1} \\
+\text{AND} & \text{known fact \#2} \\
+\text{AND} & \text{known fact \#3} \\
+ & \vdots \\
+\text{AND} & \text{known fact \#}n \\
+\text{THEN} & \text{new fact.}
+\end{array}
+\]
 
 Notice that we combine several facts using the word "and." All the
 facts are supposed to come together in order to create the new fact —
@@ -84,9 +92,9 @@ Let $a$, $b$, $c$ represent the following propositions:
 
 \[
 \begin{array}{rl}
-a\text{: } &\text{Dexter keeps his laboratory door locked.} \\
-b\text{: } &\text{Deedee sneaks into Dexter's laboratory.} \\
-c\text{: } &\text{Dexter keeps his laboratory a secret from his parents.}
+a\text{: } &\text{The vault door is locked overnight.} \\
+b\text{: } &\text{A thief breaks into the vault.} \\
+c\text{: } &\text{The morning audit turns up clean.}
 \end{array}
 \]
 
@@ -108,31 +116,28 @@ and the conclusion is false. Working through a truth table for all
 three atomic propositions confirms that, in every row where $p_1 \land
 p_2 \land p_3$ is true, the conclusion $b$ is true as well — meaning the
 overall implication $(p_1 \land p_2 \land p_3) \to b$ has
-$1$s all the way down its column, and is a tautology. As such, we can
-write
+$1$s all the way down its column, and is a tautology.
+
+![The truth table for $p_1 \land p_2 \land p_3$, $b$, and $(p_1 \land p_2 \land p_3) \to b$.](01.svg)
+
+As such, we can write
 
 $$(p_1 \land p_2 \land p_3) \Longrightarrow b.$$
 
 So, the argument is a logical implication. Therefore, if
 
 \[
-\begin{align*}
-&\text{Dexter keeps his laboratory door locked, then Dexter is able to keep his} \\
-&\text{laboratory a secret from his parents;}
-\end{align*}
+\begin{array}{l}
+\text{The vault door is locked overnight, then the morning audit turns} \\
+\text{up clean;} \\[0.75em]
+\text{If no thief breaks into the vault, then the vault door is locked} \\
+\text{overnight; and} \\[0.75em]
+\text{The morning audit does not turn up clean}
+\end{array}
 \]
 
-\[
-\begin{align*}
-&\text{if Deedee does not sneak into Dexter's laboratory, then Dexter keeps} \\
-&\text{his laboratory door locked; and}
-\end{align*}
-\]
-
-$$\text{Dexter does not keep his laboratory a secret from his parents}$$
-
-are all true propositions, then Deedee likely sneaked into Dexter's
-laboratory somehow.
+are all true propositions, then a thief likely broke into the vault
+somehow.
 {{< /example >}}
 
 The previous example demonstrates something important about arguments:
@@ -185,7 +190,11 @@ c\text{: } &x \to z
 
 Filling out a truth table for $x$, $y$, $z$ and each of these
 propositions in turn confirms that the column for $[(x \to y) \land (y
-\to z)] \to (x \to z)$ is entirely $1$s. As such, the argument
+\to z)] \to (x \to z)$ is entirely $1$s.
+
+![The truth table for $x \to y$, $y \to z$, $(x \to y) \land (y \to z)$, $x \to z$, and $[(x \to y) \land (y \to z)] \to (x \to z)$.](02.svg)
+
+As such, the argument
 
 $$[(x \to y) \land (y \to z)] \to (x \to z)$$
 

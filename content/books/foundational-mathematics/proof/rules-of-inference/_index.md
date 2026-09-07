@@ -2,7 +2,6 @@
 title = 'Rules of Inference'
 type = 'chapter'
 weight = 6
-draft = true
 
 [params]
   section = 6
@@ -26,24 +25,25 @@ build up a list of implications we can use later.
 We introduce the first logical implication with an example.
 
 {{< example title="Deducing a conclusion from a true implication" >}}
-Suppose Mario likes to drive and race go-karts, and naturally tries to
-place 1st in every race he competes in. Consider the propositions
+Suppose a mechanic is servicing a car with a rough idle, and knows from
+experience that replacing a worn timing belt often fixes the issue.
+Consider the propositions
 
 \[
 \begin{array}{rl}
-p\text{: } &\text{Mario finishes the race in 1st place.} \\
-q\text{: } &\text{Mario wins a gold trophy.}
+p\text{: } &\text{The mechanic replaces the car's timing belt.} \\
+q\text{: } &\text{The car's engine runs smoothly.}
 \end{array}
 \]
 
-We know that *if* Mario finishes the race in 1st place, *then* he wins a
-gold trophy — that is, $p \to q = 1$. This alone doesn't
-tell us whether Mario won a gold trophy, because if $p = 0$, the
+We know that *if* the mechanic replaces the timing belt, *then* the
+engine runs smoothly — that is, $p \to q = 1$. This alone doesn't
+tell us whether the engine runs smoothly, because if $p = 0$, the
 implication is still true regardless of whether $q = 0$ or $q = 1$.
 
-However, suppose we also know that $p = 1$ — Mario did finish the race
-in 1st place. Now we do know that Mario won a gold trophy, because both
-$p = 1$ and $p \to q = 1$. The only way for both of these
+However, suppose we also know that $p = 1$ — the mechanic did replace
+the timing belt. Now we do know that the engine runs smoothly, because
+both $p = 1$ and $p \to q = 1$. The only way for both of these
 propositions to be true is for $q = 1$.
 {{< /example >}}
 
@@ -82,13 +82,13 @@ p \\
 \end{array}
 \]
 
-This kind of argument is commonly referred to as ==Modus Ponens==.
+This kind of argument is commonly referred to as **Modus Ponens**.
 
 There's another kind of valid argument closely related to Modus Ponens.
 Again, we demonstrate it with an example first.
 
 {{< example title="Deducing a negation from a true implication" >}}
-Returning to Mario and his go-kart racing, we know $p \to q
+Returning to the mechanic and the timing belt, we know $p \to q
 = 1$. This means there are only three possible combinations of truth
 values for $p$ and $q$: $p = 0, q = 0$; $p = 0, q = 1$; and $p = 1, q =
 1$.
@@ -99,10 +99,10 @@ it seems as if we have
 
 $$[(p \to q) \land \neg q] \to \neg p.$$
 
-In the context of this example, this means that if we knew "If Mario
-finishes the race in 1st place, then Mario will win a gold trophy" and
-"Mario did not win a gold trophy" were both true, we'd also know "Mario
-did not place 1st in the race" was true.
+In the context of this example, this means that if we knew "If the
+mechanic replaces the timing belt, then the engine runs smoothly" and
+"The engine does not run smoothly" were both true, we'd also know "The
+mechanic did not replace the timing belt" was true.
 {{< /example >}}
 
 A truth table confirms that $[(p \to q) \land \neg q]
@@ -122,7 +122,7 @@ p \to q \\
 \]
 
 is valid, as is the same argument with its premises swapped. This
-argument is commonly referred to as ==Modus Tollens==. Both Modus
+argument is commonly referred to as **Modus Tollens**. Both Modus
 Ponens and Modus Tollens have $p \to q$ as a premise — in
 some sense, Modus Tollens is the "contrapositive" of Modus Ponens.
 
@@ -142,7 +142,7 @@ q \to r \\
 
 is valid — we already confirmed this in the previous section, where we
 showed $[(x \to y) \land (y \to z)] \to (x \to z)$ is a tautology. This
-argument is commonly referred to as the ==Law of the Syllogism==.
+argument is commonly referred to as the **Law of the Syllogism**.
 
 Because $\land$ is commutative, the premises of any argument can be
 swapped and the argument remains valid — a fact we won't keep
@@ -181,7 +181,7 @@ q \\
 \end{array}
 \]
 
-is valid, and is called the ==Rule of Conjunction==. Why care about an
+is valid, and is called the **Rule of Conjunction**. Why care about an
 argument this simple? Because as we develop more sophisticated
 arguments, propositions $p$ and $q$ may come up — either as premises, or
 as results derived from other premises. When this happens, $p$ and $q$
@@ -193,22 +193,22 @@ next section.
 ---
 
 {{< example title="Eliminating a possibility with a disjunction" >}}
-Suppose Mario has a brother named Luigi, who also loves to race go-karts.
-Define
+Suppose a car won't start, and a mechanic determines that the problem
+must be either a dead battery or a faulty starter. Define
 
 \[
 \begin{array}{rl}
-M\text{: } &\text{Mario wins the race.} \\
-L\text{: } &\text{Luigi wins the race.}
+M\text{: } &\text{The car's battery is dead.} \\
+L\text{: } &\text{The car's starter is faulty.}
 \end{array}
 \]
 
-They're both really good at the sport and always finish first, so $M
-\lor L = 1$. Right now, we don't know which brother won — but suppose we
-also knew Luigi lost the race, meaning $\neg L = 1$. Since $M \lor L = 1$
-and $L = 0$, we'd have to have $M = 1$, meaning Mario won the race. We
-can represent this as the argument $[(M \lor L) \land \neg L]
-\to M$.
+Since the mechanic is confident it's one or the other, $M
+\lor L = 1$. Right now, we don't know which it is — but suppose the
+mechanic also tests the starter and finds it works fine, meaning $\neg L
+= 1$. Since $M \lor L = 1$ and $L = 0$, we'd have to have $M = 1$,
+meaning the battery is dead. We can represent this as the argument
+$[(M \lor L) \land \neg L] \to M$.
 {{< /example >}}
 
 As this example demonstrates, if we know at least one of two
@@ -225,7 +225,7 @@ p \lor q \\
 \end{array}
 \]
 
-is valid, and is called the ==Rule of Disjunctive Syllogism==. A truth
+is valid, and is called the **Rule of Disjunctive Syllogism**. A truth
 table readily confirms this.
 
 ## A Logical Implication Based on Contradictions
@@ -245,7 +245,7 @@ contradictions — hence we must have $p = 1$. The argument
 \end{array}
 \]
 
-is valid, and is called the ==Rule of Contradiction==. Since there's
+is valid, and is called the **Rule of Contradiction**. Since there's
 only one premise, $\neg p \to F_0$ (a proposition that's just
 $\neg p \to 0$, replacing the general contradiction $F_0$ with its truth
 value), there's no conjunction operator present. A truth table
@@ -256,164 +256,24 @@ is valid.
 ---
 
 We've presented five different kinds of arguments so far. These
-arguments are commonly referred to as ==rules of inference==, because
+arguments are commonly referred to as **rules of inference**, because
 they let us infer, or deduce, a conclusion given a list of premises.
 There are many more such rules; we present a sample of them below.
 
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \\
-p \to q \\
-\hline
-\therefore q
-\end{array}
-&
-[p \land (p \to q)] \Longrightarrow q \qquad \text{Modus Ponens (Rule of Detachment)}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \to q \\
-\neg q \\
-\hline
-\therefore \neg p
-\end{array}
-&
-[(p \to q) \land \neg q] \Longrightarrow \neg p \qquad \text{Modus Tollens}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \to q \\
-q \to r \\
-\hline
-\therefore p \to r
-\end{array}
-&
-[(p \to q) \land (q \to r)] \Longrightarrow (p \to r) \qquad \text{Law of the Syllogism}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \\
-q \\
-\hline
-\therefore p \land q
-\end{array}
-&
-(p \land q) \Longrightarrow (p \land q) \qquad \text{Rule of Conjunction}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \lor q \\
-\neg q \\
-\hline
-\therefore p
-\end{array}
-&
-[(p \lor q) \land \neg q] \Longrightarrow p \qquad \text{Rule of Disjunctive Syllogism}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-\neg p \to F_0 \\
-\hline
-\therefore p
-\end{array}
-&
-(\neg p \to F_0) \Longrightarrow p \qquad \text{Rule of Contradiction}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \land q \\
-\hline
-\therefore p
-\end{array}
-&
-(p \land q) \Longrightarrow p \qquad \text{Rule of Conjunctive Simplification}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \\
-\hline
-\therefore p \lor q
-\end{array}
-&
-p \Longrightarrow (p \lor q) \qquad \text{Rule of Disjunctive Amplification}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \land q \\
-p \to (q \to r) \\
-\hline
-\therefore r
-\end{array}
-&
-[(p \land q) \land (p \to (q \to r))] \Longrightarrow r \qquad \text{Rule of Conditional Proof}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \to r \\
-q \to r \\
-\hline
-\therefore (p \lor q) \to r
-\end{array}
-&
-[(p \to r) \land (q \to r)] \Longrightarrow [(p \lor q) \to r] \qquad \text{Rule of Proof by Cases}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \to q \\
-r \to s \\
-p \lor r \\
-\hline
-\therefore q \lor s
-\end{array}
-&
-[(p \to q) \land (r \to s) \land (p \lor r)] \Longrightarrow (q \lor s) \qquad \text{Rule of the Constructive Dilemma}
-\end{array}
-\]
-
-\[
-\begin{array}{ll}
-\begin{array}{l}
-p \to q \\
-r \to s \\
-\neg q \lor \neg s \\
-\hline
-\therefore \neg p \lor \neg r
-\end{array}
-&
-[(p \to q) \land (r \to s) \land (\neg q \lor \neg s)] \Longrightarrow (\neg p \lor \neg r) \qquad \text{Rule of the Destructive Dilemma}
-\end{array}
-\]
+|  |  |  |
+|---|---|---|
+| Modus Ponens (Rule of Detachment) | $\begin{array}{l} p \\ p \to q \\ \hline \therefore q \end{array}$ | $[p \land (p \to q)] \Longrightarrow q$ |
+| Modus Tollens | $\begin{array}{l} p \to q \\ \neg q \\ \hline \therefore \neg p \end{array}$ | $[(p \to q) \land \neg q] \Longrightarrow \neg p$ |
+| Law of the Syllogism | $\begin{array}{l} p \to q \\ q \to r \\ \hline \therefore p \to r \end{array}$ | $[(p \to q) \land (q \to r)] \Longrightarrow (p \to r)$ |
+| Rule of Conjunction | $\begin{array}{l} p \\ q \\ \hline \therefore p \land q \end{array}$ | $(p \land q) \Longrightarrow (p \land q)$ |
+| Rule of Disjunctive Syllogism | $\begin{array}{l} p \lor q \\ \neg q \\ \hline \therefore p \end{array}$ | $[(p \lor q) \land \neg q] \Longrightarrow p$ |
+| Rule of Contradiction | $\begin{array}{l} \neg p \to F_0 \\ \hline \therefore p \end{array}$ | $(\neg p \to F_0) \Longrightarrow p$ |
+| Rule of Conjunctive Simplification | $\begin{array}{l} p \land q \\ \hline \therefore p \end{array}$ | $(p \land q) \Longrightarrow p$ |
+| Rule of Disjunctive Amplification | $\begin{array}{l} p \\ \hline \therefore p \lor q \end{array}$ | $p \Longrightarrow (p \lor q)$ |
+| Rule of Conditional Proof | $\begin{array}{l} p \land q \\ p \to (q \to r) \\ \hline \therefore r \end{array}$ | $[(p \land q) \land (p \to (q \to r))] \Longrightarrow r$ |
+| Rule of Proof by Cases | $\begin{array}{l} p \to r \\ q \to r \\ \hline \therefore (p \lor q) \to r \end{array}$ | $[(p \to r) \land (q \to r)] \Longrightarrow [(p \lor q) \to r]$ |
+| Rule of the Constructive Dilemma | $\begin{array}{l} p \to q \\ r \to s \\ p \lor r \\ \hline \therefore q \lor s \end{array}$ | $[(p \to q) \land (r \to s) \land (p \lor r)] \Longrightarrow (q \lor s)$ |
+| Rule of the Destructive Dilemma | $\begin{array}{l} p \to q \\ r \to s \\ \neg q \lor \neg s \\ \hline \therefore \neg p \lor \neg r \end{array}$ | $[(p \to q) \land (r \to s) \land (\neg q \lor \neg s)] \Longrightarrow (\neg p \lor \neg r)$ |
 
 ## Rules of Inference $\neq$ Logical Equivalencies
 ---

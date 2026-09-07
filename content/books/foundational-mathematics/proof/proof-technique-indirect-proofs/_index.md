@@ -2,7 +2,6 @@
 title = 'Proof Technique: Indirect Proofs'
 type = 'chapter'
 weight = 14
-draft = true
 
 [params]
   section = 14
@@ -17,23 +16,46 @@ If we're ever stuck trying to show a proposition is a theorem by taking
 a direct approach, we can use mathematical logic to prove an equivalent
 implication instead. Since we're not proving the original implication to
 be a logical implication, but rather showing a logically equivalent one
-is, this is called an ==indirect== approach.
+is, this is called an **indirect** approach.
 
 ## The Underlying Argument
 ---
 
-Suppose we're trying to show $p \to q$ is a logical
-implication — that is, $p \Longrightarrow q$. Remember that an implication
-is logically equivalent to its contrapositive: $(p \to q) \Longleftrightarrow
-(\neg q \to \neg p)$. As such, $p \to q$ and $\neg q \to \neg p$ are
-logically equivalent arguments — so if we ever want to prove a statement
-of the form $p \to q$, we can instead prove $\neg q \to \neg p$. This
-method is also commonly called ==Proof by Contraposition==.
+Suppose we're trying to show $p \to q$ is a logical implication for
+every element of some universe $\mathcal{U}$ — that is, $\forall x\
+[p(x) \Longrightarrow q(x)]$, meaning the argument
 
-We won't show a fully tabulated argument here, since that's no longer
-the goal — instead, we want to get comfortable taking the contrapositive
-of a given implication, and showing that the contrapositive is always
-true.
+\[
+\begin{array}{l}
+p(x_0) \\
+\hline
+\therefore \forall x\ [p(x) \to q(x)]
+\end{array}
+\]
+
+is valid, where $x_0$ is an arbitrarily chosen element of $\mathcal{U}$.
+Remember that an implication is logically equivalent to its
+contrapositive: $(p \to q) \Longleftrightarrow (\neg q \to \neg p)$. As
+such, this argument is logically equivalent to
+
+\[
+\begin{array}{l}
+\neg q(x_0) \\
+\hline
+\therefore \forall x\ [\neg q(x) \to \neg p(x)]
+\end{array}
+\]
+
+so if we ever want to prove a statement of the form $\forall x\
+[p(x) \to q(x)]$, we can instead prove $\forall x\ [\neg q(x) \to
+\neg p(x)]$. This method is also commonly called **Proof by
+Contraposition**.
+
+We won't re-derive why these two arguments are equivalent here, since
+that's just the logical equivalence of an implication and its
+contrapositive from the previous chapter — instead, we want to get
+comfortable taking the contrapositive of a given implication, and
+showing that the contrapositive is always true.
 
 ## Revisiting a Previous Proof
 ---

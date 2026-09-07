@@ -2,7 +2,6 @@
 title = 'Proof Technique: Contradiction'
 type = 'chapter'
 weight = 15
-draft = true
 
 [params]
   section = 15
@@ -32,10 +31,13 @@ representing the valid argument
 \end{array}
 \]
 
-Now suppose we're trying to prove $p \to q$. What happens if
-we assume $p = 1$ and $q = 0$ (meaning $\neg q = 1$)? The implication $p
-\to q$ would be false. Let's look at what happens in an argument where
-we assume both $p$ and $\neg q$ as premises: a truth table confirms that
+Now suppose we're trying to prove $\forall x\ [p(x) \to q(x)]$ for
+every element of some universe $\mathcal{U}$. Pick an arbitrarily
+chosen element $x_0 \in \mathcal{U}$. What happens if we assume
+$p(x_0) = 1$ and $q(x_0) = 0$ (meaning $\neg q(x_0) = 1$)? The
+implication $p(x_0) \to q(x_0)$ would be false. Let's look at what
+happens in an argument where we assume both $p(x_0)$ and $\neg q(x_0)$
+as premises: a truth table confirms that
 
 $$[(p \land \neg q) \to F_0] \Longleftrightarrow (p \to q),$$
 
@@ -43,8 +45,8 @@ which means the argument
 
 \[
 \begin{array}{l}
-p \\
-\neg q \\
+p(x_0) \\
+\neg q(x_0) \\
 \hline
 \therefore F_0
 \end{array}
@@ -54,15 +56,16 @@ is logically equivalent to the argument
 
 \[
 \begin{array}{l}
-p \\
+p(x_0) \\
 \hline
-\therefore q
+\therefore \forall x\ [p(x) \to q(x)]
 \end{array}
 \]
 
-Thus, in order to show $p \Longrightarrow q$, we could instead show $(p
-\land \neg q) \Longrightarrow F_0$. This is the idea behind ==proof by
-contradiction==: assume the negation of the desired conclusion as an
+Thus, in order to show $\forall x\ [p(x) \to q(x)]$, we could instead
+show $[p(x_0) \land \neg q(x_0)] \Longrightarrow F_0$ for our
+arbitrarily chosen $x_0$. This is the idea behind **proof by
+contradiction**: assume the negation of the desired conclusion as an
 additional premise, then show that doing so yields a contradiction.
 
 ## Revisiting a Previous Theorem
@@ -154,11 +157,11 @@ If $n$ is even, then $n$ is not odd.
 {{< proof >}}
 By hypothesis, $n$ is even, so there's some integer $a$ such that $n =
 2a$. Presume (for the purpose of showing a contradiction) that $n$ also
-happened to be odd — meaning there's some integer $b$ such that $n = 2b
-+ 1$.
+happened to be odd — meaning there's some integer $b$ such that
+$n = 2b + 1$.
 
-Since we're assuming it's simultaneously true that $n = 2a$ and $n = 2b
-+ 1$, we must have
+Since we're assuming it's simultaneously true that $n = 2a$ and
+$n = 2b + 1$, we must have
 
 \[
 \begin{array}{lll}
@@ -227,8 +230,8 @@ Adding $m$ and $n$ together:
 \end{array}
 \]
 
-Since $b$ and $c$ are integers, $b + c$ is an integer too, meaning $m +
-n$ is odd by definition. However, this contradicts our premise that $m
-+ n$ must be even. Hence, $m$ and $n$ can't have different parity — as
-such, they must have the same parity, as desired.
+Since $b$ and $c$ are integers, $b + c$ is an integer too, meaning
+$m + n$ is odd by definition. However, this contradicts our premise
+that $m + n$ must be even. Hence, $m$ and $n$ can't have different
+parity — as such, they must have the same parity, as desired.
 {{< /proof >}}

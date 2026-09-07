@@ -2,7 +2,6 @@
 title = 'Proof Technique: Equivalence'
 type = 'chapter'
 weight = 17
-draft = true
 
 [params]
   section = 17
@@ -39,6 +38,25 @@ reminder: to prove $a \Longrightarrow b$, we assume $a$ is true and deduce
 the truth of $b$; to prove $b \Longrightarrow a$, we assume $b$ is true and
 deduce the truth of $a$. Of course, any proof technique already
 discussed can be used for either direction.
+
+Since a theorem is almost always implicitly universally quantified,
+what we're really trying to show is $\forall x\ [p(x) \leftrightarrow
+q(x)]$ for every element $x$ within some universe $\mathcal{U}$. The
+argument
+
+\[
+\begin{array}{l}
+\forall x\ [p(x) \to q(x)] \\
+\forall x\ [q(x) \to p(x)] \\
+\hline
+\therefore \forall x\ [p(x) \leftrightarrow q(x)]
+\end{array}
+\]
+
+is the basis for any proof of logical equivalence: once both
+directions have each been established on their own — using whatever
+proof technique fits each one — the Law of Mutual Implication combines
+them into the desired biconditional.
 
 ## Another Result About Even and Odd Numbers
 ---
@@ -131,6 +149,24 @@ The most straightforward way to show $a \Longleftrightarrow b \Longleftrightarro
 c$ is to first show $a \Longrightarrow b$, then $b \Longrightarrow c$, and
 finally $c \Longrightarrow a$.
 
+Extending this to three open propositions $p(x)$, $q(x)$, and $r(x)$,
+the argument
+
+\[
+\begin{array}{l}
+\forall x\ [p(x) \to q(x)] \\
+\forall x\ [q(x) \to r(x)] \\
+\forall x\ [r(x) \to p(x)] \\
+\hline
+\therefore \forall x\ [p(x) \leftrightarrow q(x) \leftrightarrow r(x)]
+\end{array}
+\]
+
+is the basis for showing all three are logically equivalent — proving
+each implication around the cycle separately is enough to guarantee
+$p(x)$, $q(x)$, and $r(x)$ all share the same truth value, for every
+$x$.
+
 {{< theorem title="Three equivalent statements about even and odd" >}}
 The following statements are all logically equivalent:
 
@@ -174,4 +210,12 @@ we can logically show. For example, if we wanted to show that some
 collection of $n$ propositions were all logically equivalent, we'd make
 use of the fact that
 
-$$(p_1 \leftrightarrow p_2 \leftrightarrow \dots \leftrightarrow p_{n-1} \leftrightarrow p_n) \leftrightarrow (p_1 \leftrightarrow p_2) \land (p_2 \leftrightarrow p_3) \land \dots \land (p_{n-1} \leftrightarrow p_n) \land (p_n \leftrightarrow p_1).$$
+\[
+\begin{array}{llll}
+(p_1 \leftrightarrow p_2 \leftrightarrow \cdots \leftrightarrow p_n) & \Longleftrightarrow & (p_1 \to p_2) & \land \\
+ & & (p_2 \to p_3) & \land \\
+ & & \vdots & \\
+ & & (p_{n-1} \to p_n) & \land \\
+ & & (p_n \to p_1) &
+\end{array}
+\]

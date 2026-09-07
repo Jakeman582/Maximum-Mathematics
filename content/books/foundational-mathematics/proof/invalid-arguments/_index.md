@@ -2,7 +2,6 @@
 title = 'Invalid Arguments'
 type = 'chapter'
 weight = 9
-draft = true
 
 [params]
   section = 9
@@ -50,7 +49,7 @@ meaning $p \to q = 1$. Since $q = 1$, this holds whether $p
 $0$. Since we can simultaneously make $(p_1 \land p_2) = 1$ and $c = 0$,
 this argument is invalid.
 
-This is sometimes referred to as an argument by the ==converse==.
+This is sometimes referred to as an argument by the **converse**.
 
 Before showing another invalid argument, it's worth comparing this
 invalid argument to the closely related, but actually valid, Modus
@@ -147,7 +146,7 @@ tautology, meaning it isn't a logical implication:
 
 $$[(p \to q) \land \neg p] \not\Longrightarrow \neg q.$$
 
-So, this is sometimes referred to as an argument by the ==inverse==.
+So, this is sometimes referred to as an argument by the **inverse**.
 Again, it's worth comparing this invalid argument to a valid one it
 resembles:
 

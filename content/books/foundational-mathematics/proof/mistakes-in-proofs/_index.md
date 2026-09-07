@@ -2,7 +2,6 @@
 title = 'Mistakes in Proofs'
 type = 'chapter'
 weight = 16
-draft = true
 
 [params]
   section = 16
