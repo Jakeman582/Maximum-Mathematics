@@ -153,6 +153,51 @@ The rule doesn't change inside a notice box: an example proposition inside an
 `example` box is LaTeX; the sentence introducing that box is plain Markdown,
 except for whichever variable names it happens to mention in passing.
 
+### Parenthesizing compound propositions around a connective
+
+When a logical connective (`\to`, `\leftrightarrow`, `\land`, `\lor`,
+`\veebar`, or a long claim arrow like `\Longrightarrow`/`\Longleftrightarrow`)
+joins two propositions and at least one side is *compound* — it has its own
+internal structure, such as a relation (`x \in A`, `A \subseteq B`), an
+inequality (`n^2 < 100`), or an equation (`A \cap B = A`) — wrap each
+compound side in parentheses:
+
+```
+$x \in A \to x \in B$          →  $(x \in A) \to (x \in B)$
+$A \cap B = \emptyset \Longleftrightarrow A \cup B = A \triangle B$
+                                →  $(A \cap B = \emptyset) \Longleftrightarrow (A \cup B = A \triangle B)$
+```
+
+This applies however deep the nesting goes — a side that's itself a
+conjunction/disjunction of two further compound pieces gets each of *those*
+wrapped too, e.g.
+`$((x \in A) \land (x \notin B)) \lor ((x \notin A) \land (x \in B))$`. A
+quantified statement standing as one whole side of a connective gets the
+same treatment: `$(x \in \bigcup_{i \in I} A_i) \Longleftrightarrow (\exists i \in I\ [x \in A_i])$`.
+
+Leave a side unparenthesized when it's atomic — a single propositional
+symbol or a propositional function application, the same kind of thing
+Chapter 1/2 write bare in arguments and rules of inference:
+`$p \to q$`, `$p(c) \to q(c)$`, and the existing
+`$[(p \to q) \land (q \to r)] \Longrightarrow (p \to r)$`-style rule-of-inference
+entries in `content/books/foundational-mathematics/proof/rules-of-inference/_index.md`
+stay exactly as they are — wrapping `p` or `p(c)` in parentheses would add
+nothing, since there's no internal structure to disambiguate. That existing
+bracket-for-the-outer-grouping/parens-for-each-inner-piece pattern (used
+when a whole conjunction of implications feeds into an outer `\Longrightarrow`)
+is also where a square bracket, rather than a second layer of parentheses,
+belongs: reach for `[...]` only at the outermost grouping of an
+already-parenthesized compound, never as a substitute for the inner parens
+themselves.
+
+As of this writing this convention has only been swept across the Set
+Theory chapter (`content/books/foundational-mathematics/set-theory/`) — see
+`content/books/foundational-mathematics/set-theory/subsets/_index.md` or
+`.../a-set-of-operations-on-sets/_index.md` for it fully in place. Logic and
+Proof haven't been retrofitted; don't assume every `\to`/`\land` there is
+already following this rule, and check with the user before sweeping those
+chapters too.
+
 ### Labeling a list of propositions
 
 When introducing a short list of labeled propositions or propositional
